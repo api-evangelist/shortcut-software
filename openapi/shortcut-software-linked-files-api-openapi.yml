@@ -1,0 +1,338 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Linked Files API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Linked Files
+paths:
+  /api/v3/linked-files:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LinkedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listLinkedFiles
+      description: List Linked Files returns a list of all Linked-Files and their attributes.
+      summary: List Linked Files
+      tags:
+      - Linked Files
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLinkedFile'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createLinkedFile
+      description: Create Linked File allows you to create a new Linked File in Shortcut.
+      summary: Create Linked File
+      tags:
+      - Linked Files
+  /api/v3/linked-files/{linked-file-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: linked-file-public-id
+        description: The unique identifier of the linked file.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getLinkedFile
+      description: Get File returns information about the selected Linked File.
+      summary: Get Linked File
+      tags:
+      - Linked Files
+    put:
+      parameters:
+      - in: path
+        name: linked-file-public-id
+        description: The unique identifier of the linked file.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLinkedFile'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateLinkedFile
+      description: Updated Linked File allows you to update properties of a previously attached Linked-File.
+      summary: Update Linked File
+      tags:
+      - Linked Files
+    delete:
+      parameters:
+      - in: path
+        name: linked-file-public-id
+        description: The unique identifier of the linked file.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteLinkedFile
+      description: Delete Linked File can be used to delete any previously attached Linked-File.
+      summary: Delete Linked File
+      tags:
+      - Linked Files
+components:
+  schemas:
+    LinkedFile:
+      description: Linked files are stored on a third-party website and linked to one or more Stories. Shortcut currently supports linking files from Google Drive, Dropbox, Box, and by URL.
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The IDs of the stories this file is attached to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The members that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The name of the linked file.
+          type: string
+        thumbnail_url:
+          description: The URL of the file thumbnail, if the integration provided it.
+          type: string
+          nullable: true
+        type:
+          description: The integration type (e.g. google, dropbox, box).
+          type: string
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+          nullable: true
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+          nullable: true
+        updated_at:
+          description: The time/date the LinkedFile was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: The groups that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The unique identifier for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL of the file.
+          type: string
+        created_at:
+          description: The time/date the LinkedFile was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - type
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - group_mention_ids
+      - id
+      - url
+      - created_at
+    CreateLinkedFile:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 512
+          description: The description of the file.
+          type: string
+        story_id:
+          description: The ID of the linked story.
+          type: integer
+          format: int64
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of the file.
+          type: string
+        thumbnail_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of the thumbnail, if the integration provided it.
+          type: string
+        type:
+          description: The integration type of the file (e.g. google, dropbox, box).
+          type: string
+          enum:
+          - google
+          - url
+          - dropbox
+          - box
+          - onedrive
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          maxLength: 128
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of linked file.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+      - type
+      - url
+    UpdateLinkedFile:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 512
+          description: The description of the file.
+          type: string
+        story_id:
+          description: The ID of the linked story.
+          type: integer
+          format: int64
+        name:
+          minLength: 1
+          description: The name of the file.
+          type: string
+        thumbnail_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of the thumbnail, if the integration provided it.
+          type: string
+        type:
+          description: The integration type of the file (e.g. google, dropbox, box).
+          type: string
+          enum:
+          - google
+          - url
+          - dropbox
+          - box
+          - onedrive
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of linked file.
+          type: string
+      additionalProperties: false
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

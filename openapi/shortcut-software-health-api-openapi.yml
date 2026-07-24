@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Health API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Health
+paths:
+  /api/v3/health/{health-public-id}:
+    put:
+      parameters:
+      - in: path
+        name: health-public-id
+        description: The unique ID of the Health record.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateHealth'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateHealth
+      description: Update an existing health status by its ID.
+      summary: Update Health
+      tags:
+      - Health
+components:
+  schemas:
+    UpdateHealth:
+      x-doc-skip: true
+      type: object
+      properties:
+        status:
+          description: The health status of the Epic.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        text:
+          description: The description of the Health status.
+          type: string
+      additionalProperties: false
+    Health:
+      description: The current health status of the Epic.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        author_id:
+          description: The ID of the permission who created or updated the Health record.
+          type: string
+          format: uuid
+        epic_id:
+          description: The ID of the Epic associated with this Health record.
+          type: integer
+          format: int64
+        objective_id:
+          description: The ID of the Objective associated with this Health record.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time that the Health record was updated.
+          type: string
+          format: date-time
+        status:
+          description: The health status of the Epic or Objective.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        id:
+          description: The unique ID of the Health record.
+          type: string
+          format: uuid
+          nullable: true
+        created_at:
+          description: The time that the Health record was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Health record.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - status
+      - id
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

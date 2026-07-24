@@ -1,0 +1,230 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Story Links API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Story Links
+paths:
+  /api/v3/story-links:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStoryLink'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryLink'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createStoryLink
+      description: 'Story Links (called Story Relationships in the UI) allow you create semantic relationships between two stories. The parameters read like an active voice grammatical sentence:  subject -> verb -> object.
+
+
+        The subject story acts on the object Story; the object story is the direct object of the sentence.
+
+
+        The subject story "blocks", "duplicates", or "relates to" the object story.  Examples:
+
+        - "story 5 blocks story 6” -- story 6 is now "blocked" until story 5 is moved to a Done workflow state.
+
+        - "story 2 duplicates story 1” -- Story 2 represents the same body of work as Story 1 (and should probably be archived).
+
+        - "story 7 relates to story 3”'
+      summary: Create Story Link
+      tags:
+      - Story Links
+  /api/v3/story-links/{story-link-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: story-link-public-id
+        description: The unique ID of the Story Link.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryLink'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getStoryLink
+      description: Returns the stories and their relationship for the given Story Link.
+      summary: Get Story Link
+      tags:
+      - Story Links
+    put:
+      parameters:
+      - in: path
+        name: story-link-public-id
+        description: The unique ID of the Story Link.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStoryLink'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryLink'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateStoryLink
+      description: Updates the stories and/or the relationship for the given Story Link.
+      summary: Update Story Link
+      tags:
+      - Story Links
+    delete:
+      parameters:
+      - in: path
+        name: story-link-public-id
+        description: The unique ID of the Story Link.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteStoryLink
+      description: Removes the relationship between the stories for the given Story Link.
+      summary: Delete Story Link
+      tags:
+      - Story Links
+components:
+  schemas:
+    UpdateStoryLink:
+      x-doc-skip: true
+      type: object
+      properties:
+        verb:
+          description: The type of link.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+    CreateStoryLink:
+      x-doc-skip: true
+      type: object
+      properties:
+        verb:
+          description: The type of link.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - verb
+      - subject_id
+      - object_id
+    StoryLink:
+      description: Story links allow you create semantic relationships between two stories. Relationship types are relates to, blocks / blocked by, and duplicates / is duplicated by. The format is `subject -> link -> object`, or for example "story 5 blocks story 6".
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - verb
+      - object_id
+      - created_at
+      - updated_at
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

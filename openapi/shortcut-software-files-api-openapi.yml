@@ -1,0 +1,300 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Files API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Files
+paths:
+  /api/v3/files:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UploadedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listFiles
+      description: List Files returns a list of all UploadedFiles in the workspace.
+      summary: List Files
+      tags:
+      - Files
+    post:
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                story_id:
+                  description: The story ID that these files will be associated with.
+                  type: integer
+                  format: int64
+                file0:
+                  description: A file upload. At least one is required.
+                  type: string
+                  format: binary
+                file1:
+                  description: Optional additional files.
+                  type: string
+                  format: binary
+                file2:
+                  description: Optional additional files.
+                  type: string
+                  format: binary
+                file3:
+                  description: Optional additional files.
+                  type: string
+                  format: binary
+              required:
+              - file0
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UploadedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: uploadFiles
+      description: "Upload Files uploads one or many files and optionally associates them with a story.\n   Use the multipart/form-data content-type to upload.\n   Each `file` key should contain a separate file.\n   Each UploadedFile's name comes from the Content-Disposition header \"filename\" directive for that field."
+      summary: Upload Files
+      tags:
+      - Files
+  /api/v3/files/{file-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: file-public-id
+        description: The File’s unique ID.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getFile
+      description: Get File returns information about the selected UploadedFile.
+      summary: Get File
+      tags:
+      - Files
+    put:
+      parameters:
+      - in: path
+        name: file-public-id
+        description: The unique ID assigned to the file in Shortcut.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateFile'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateFile
+      description: Update File updates the properties of an UploadedFile (but not its content).
+      summary: Update File
+      tags:
+      - Files
+    delete:
+      parameters:
+      - in: path
+        name: file-public-id
+        description: The File’s unique ID.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteFile
+      description: Delete File deletes a previously uploaded file.
+      summary: Delete File
+      tags:
+      - Files
+components:
+  schemas:
+    UploadedFile:
+      description: 'An UploadedFile is any document uploaded to your Shortcut Workspace. Files attached from a third-party service are different: see the Linked Files endpoint.'
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The unique IDs of the Stories associated with this file.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The unique IDs of the Members who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The optional User-specified name of the file.
+          type: string
+        thumbnail_url:
+          description: The url where the thumbnail of the file can be found in Shortcut.
+          type: string
+          nullable: true
+        size:
+          description: The size of the file.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The unique ID of the Member who uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: Free form string corresponding to a text or image file.
+          type: string
+        updated_at:
+          description: The time/date that the file was updated.
+          type: string
+          format: date-time
+          nullable: true
+        filename:
+          description: The name assigned to the file in Shortcut upon upload.
+          type: string
+        group_mention_ids:
+          description: The unique IDs of the Groups who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the File has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL for the file.
+          type: string
+          nullable: true
+        created_at:
+          description: The time/date that the file was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - filename
+      - group_mention_ids
+      - external_id
+      - id
+      - url
+      - created_at
+    UpdateFile:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 4096
+          description: The description of the file.
+          type: string
+        created_at:
+          description: The time/date that the file was uploaded.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date that the file was last updated.
+          type: string
+          format: date-time
+        name:
+          maxLength: 1024
+          minLength: 1
+          description: The name of the file.
+          type: string
+        uploader_id:
+          description: The unique ID assigned to the Member who uploaded the file to Shortcut.
+          type: string
+          format: uuid
+        external_id:
+          maxLength: 2048
+          description: An additional ID that you may wish to assign to the file.
+          type: string
+      additionalProperties: false
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

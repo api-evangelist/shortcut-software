@@ -1,0 +1,505 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories External Link API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: External Link
+paths:
+  /api/v3/external-link/stories:
+    get:
+      parameters:
+      - in: query
+        name: external_link
+        description: The external link associated with one or more stories.
+        required: true
+        schema:
+          type: string
+          maxLength: 2048
+          pattern: ^https?://.+$
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StorySlim'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getExternalLinkStories
+      description: Get Stories which have a given External Link associated with them.
+      summary: Get External Link Stories
+      tags:
+      - External Link
+components:
+  schemas:
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
+          type: string
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
+    StorySlim:
+      description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Story.
+          type: string
+        description:
+          description: The description of the Story.
+          type: string
+        archived:
+          description: True if the story has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Story has been started.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the Story.
+          type: array
+          items:
+            $ref: '#/components/schemas/TypedStoryLink'
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        task_ids:
+          description: An array of IDs of Tasks attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        synced_item:
+          $ref: '#/components/schemas/SyncedItem'
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of CustomField value assertions for the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryCustomField'
+        file_ids:
+          description: An array of IDs of Files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        num_tasks_completed:
+          description: The number of tasks on the story which are complete.
+          type: integer
+          format: int64
+        workflow_id:
+          description: The ID of the workflow the story belongs to.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the story.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Story has been completed.
+          type: boolean
+        blocker:
+          description: A true/false boolean indicating if the Story is currently a blocker of another story.
+          type: boolean
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The ID of the story template used to create this story, or null if not created using a template.
+          type: string
+          format: uuid
+          nullable: true
+        external_links:
+          description: An array of external links (strings) associated with a Story
+          type: array
+          items:
+            type: string
+        previous_iteration_ids:
+          description: The IDs of the iteration the story belongs to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        sub_task_story_ids:
+          description: 'The Story IDs of Sub-tasks attached to the Story
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            type: integer
+            format: int64
+        formatted_vcs_branch_name:
+          description: The formatted branch name for this story.
+          x-doc-skip: true
+          type: string
+          nullable: true
+        label_ids:
+          description: An array of label ids attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: The ID of the group associated with the story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story is currently in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Story.
+          type: integer
+          format: int64
+        lead_time:
+          description: The lead time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        parent_story_id:
+          description: 'The ID of the parent story to this story (making this story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        position:
+          description: A number representing the position of the story in relation to every other story in the current project.
+          type: integer
+          format: int64
+        blocked:
+          description: A true/false boolean indicating if the Story is currently blocked.
+          type: boolean
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of IDs of LinkedFiles attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        stats:
+          $ref: '#/components/schemas/StoryStats'
+        comment_ids:
+          description: An array of IDs of Comments attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        cycle_time:
+          description: The cycle time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+        moved_at:
+          description: The time/date the Story was last changed workflow-state.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - story_links
+      - entity_type
+      - labels
+      - task_ids
+      - mention_ids
+      - member_mention_ids
+      - story_type
+      - file_ids
+      - num_tasks_completed
+      - workflow_id
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - blocker
+      - epic_id
+      - story_template_id
+      - external_links
+      - previous_iteration_ids
+      - requested_by_id
+      - iteration_id
+      - label_ids
+      - started_at_override
+      - group_id
+      - workflow_state_id
+      - updated_at
+      - group_mention_ids
+      - follower_ids
+      - owner_ids
+      - external_id
+      - id
+      - estimate
+      - position
+      - blocked
+      - project_id
+      - linked_file_ids
+      - deadline
+      - stats
+      - comment_ids
+      - created_at
+      - moved_at
+    StoryCustomField:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    StoryStats:
+      description: The stats object for Stories
+      type: object
+      properties:
+        num_related_documents:
+          description: The number of documents related to this Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

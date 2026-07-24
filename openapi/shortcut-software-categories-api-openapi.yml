@@ -1,0 +1,433 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Categories
+paths:
+  /api/v3/categories:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listCategories
+      description: List Categories returns a list of all Categories and their attributes.
+      summary: List Categories
+      tags:
+      - Categories
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCategory'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createCategory
+      description: Create Category allows you to create a new Category in Shortcut.
+      summary: Create Category
+      tags:
+      - Categories
+  /api/v3/categories/{category-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: category-public-id
+        description: The unique ID of the Category.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getCategory
+      description: Get Category returns information about the selected Category.
+      summary: Get Category
+      tags:
+      - Categories
+    put:
+      parameters:
+      - in: path
+        name: category-public-id
+        description: The unique ID of the Category you wish to update.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCategory'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateCategory
+      description: Update Category allows you to replace a Category name with another name. If you try to name a Category something that already exists, you will receive a 422 response.
+      summary: Update Category
+      tags:
+      - Categories
+    delete:
+      parameters:
+      - in: path
+        name: category-public-id
+        description: The unique ID of the Category.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteCategory
+      description: Delete Category can be used to delete any Category.
+      summary: Delete Category
+      tags:
+      - Categories
+  /api/v3/categories/{category-public-id}/milestones:
+    get:
+      parameters:
+      - in: path
+        name: category-public-id
+        description: The unique ID of the Category.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Milestone'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listCategoryMilestones
+      description: List Category Milestones returns a list of all Milestones with the Category.
+      summary: List Category Milestones
+      tags:
+      - Categories
+  /api/v3/categories/{category-public-id}/objectives:
+    get:
+      parameters:
+      - in: path
+        name: category-public-id
+        description: The unique ID of the Category.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Milestone'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listCategoryObjectives
+      description: Returns a list of all Objectives with the Category.
+      summary: List Category Objectives
+      tags:
+      - Categories
+components:
+  schemas:
+    Category:
+      description: A Category can be used to associate Objectives.
+      type: object
+      properties:
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Category.
+          type: string
+        global_id:
+          description: The Global ID of the Category.
+          x-doc-skip: true
+          type: string
+        type:
+          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Category was updated.
+          type: string
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Category.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Category was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - type
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    Milestone:
+      description: (Deprecated) A Milestone is a collection of Epics that represent a release or some other large initiative that you are working on. Milestones have become Objectives, so you should use Objective-related API resources instead of Milestone ones.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Milestone.
+          type: string
+        description:
+          description: The Milestone's description.
+          type: string
+        archived:
+          description: A boolean indicating whether the Milestone has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Milestone has been started.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        completed_at_override:
+          description: A manual override for the time/date the Milestone was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Milestone was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Milestone was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the Milestone.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Milestone has been completed.
+          type: boolean
+        state:
+          description: The workflow state that the Milestone is in.
+          type: string
+        started_at_override:
+          description: A manual override for the time/date the Milestone was started.
+          type: string
+          format: date-time
+          nullable: true
+        updated_at:
+          description: The time/date the Milestone was updated.
+          type: string
+          format: date-time
+        categories:
+          description: An array of Categories attached to the Milestone.
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        id:
+          description: The unique ID of the Milestone.
+          type: integer
+          format: int64
+        key_result_ids:
+          description: The IDs of the Key Results associated with the Objective.
+          type: array
+          items:
+            type: string
+            format: uuid
+        position:
+          description: A number representing the position of the Milestone in relation to every other Milestone within the Workspace.
+          type: integer
+          format: int64
+        stats:
+          $ref: '#/components/schemas/MilestoneStats'
+        created_at:
+          description: The time/date the Milestone was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - started
+      - entity_type
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - state
+      - started_at_override
+      - updated_at
+      - categories
+      - id
+      - key_result_ids
+      - position
+      - stats
+      - created_at
+    CreateCategory:
+      x-doc-skip: true
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Category.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        type:
+          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
+          x-doc-skip: true
+      additionalProperties: false
+      required:
+      - name
+    MilestoneStats:
+      description: A group of calculated values for this Milestone.
+      type: object
+      properties:
+        average_cycle_time:
+          description: The average cycle time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        average_lead_time:
+          description: The average lead time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The number of related documents to this Milestone.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+    UpdateCategory:
+      x-doc-skip: true
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The new name of the Category.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

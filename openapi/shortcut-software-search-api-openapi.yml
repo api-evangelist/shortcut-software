@@ -1,0 +1,2827 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Search API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Search
+paths:
+  /api/v3/search:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: search
+      description: Search lets you search Epics and Stories based on desired parameters. Since ordering of the results can change over time (due to search ranking decay, new Epics and Stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search
+      tags:
+      - Search
+  /api/v3/search/documents:
+    get:
+      parameters:
+      - in: query
+        name: title
+        description: Search text to match against document titles. Supports fuzzy matching. Required.
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: archived
+        description: When true, find archived documents. When false, find non-archived documents.
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: created_by_me
+        description: When true, find documents created by the current user. When false, find documents NOT created by current user.
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: followed_by_me
+        description: When true, find documents that the current user is following. When false, find documents NOT followed.
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocSearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '403':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisabledFeatureError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchDocuments
+      description: "Search Documents lets you search Documents based on desired parameters.\n                          Supports structured filters: title, archived, created_by_me, followed_by_me."
+      summary: Search Documents
+      tags:
+      - Search
+  /api/v3/search/epics:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EpicSearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchEpics
+      description: Search Epics lets you search Epics based on desired parameters. Since ordering of stories can change over time (due to search ranking decay, new Epics being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search Epics
+      tags:
+      - Search
+  /api/v3/search/iterations:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IterationSearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchIterations
+      description: Search Iterations lets you search Iterations based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Iterations being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search Iterations
+      tags:
+      - Search
+  /api/v3/search/milestones:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectiveSearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchMilestones
+      description: Search Milestones lets you search Milestones based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Milestones being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search Milestones
+      tags:
+      - Search
+  /api/v3/search/objectives:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectiveSearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchObjectives
+      description: Search Objectives lets you search Objectives based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Objectives being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search Objectives
+      tags:
+      - Search
+  /api/v3/search/stories:
+    get:
+      parameters:
+      - in: query
+        name: query
+        description: See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - in: query
+        name: page_size
+        description: The number of search results to include in a page. Minimum of 1 and maximum of 250.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: detail
+        description: "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+        required: false
+        schema:
+          type: string
+          enum:
+          - full
+          - slim
+      - in: query
+        name: next
+        description: The next page token.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: entity_types
+        description: 'A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story.'
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - story
+            - milestone
+            - epic
+            - iteration
+            - objective
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StorySearchResults'
+        '400':
+          description: '**Either:** (1) Schema mismatch **or** (2) Maximum of 1000 search results exceeded '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MaxSearchResultsExceededError'
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: searchStories
+      description: Search Stories lets you search Stories based on desired parameters. Since ordering of stories can change over time (due to search ranking decay, new stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering.
+      summary: Search Stories
+      tags:
+      - Search
+components:
+  schemas:
+    StoryReaction:
+      description: Emoji reaction on a comment.
+      type: object
+      properties:
+        emoji:
+          description: Emoji text of the reaction.
+          type: string
+        permission_ids:
+          description: Permissions who have reacted with this.
+          type: array
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+      required:
+      - emoji
+      - permission_ids
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
+    StoryComment:
+      description: A Comment is any note added within the Comment field of a Story.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Comment.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: True/false boolean indicating whether the Comment has been deleted.
+          type: boolean
+        story_id:
+          description: The ID of the Story on which the Comment appears.
+          type: integer
+          format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        author_id:
+          description: The unique ID of the Member who is the Comment's author.
+          type: string
+          format: uuid
+          nullable: true
+        member_mention_ids:
+          description: The unique IDs of the Member who are mentioned in the Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        blocker:
+          description: Marks the comment as a blocker that can be surfaced to permissions or teams mentioned in the comment. Can only be used on a top-level comment.
+          type: boolean
+        linked_to_slack:
+          description: Whether the Comment is currently the root of a thread that is linked to Slack.
+          type: boolean
+        updated_at:
+          description: The time/date when the Comment was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: The unique IDs of the Group who are mentioned in the Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        parent_id:
+          description: The ID of the parent Comment this Comment is threaded under.
+          type: integer
+          format: int64
+          nullable: true
+        id:
+          description: The unique ID of the Comment.
+          type: integer
+          format: int64
+        position:
+          description: The Comments numerical position in the list from oldest to newest.
+          type: integer
+          format: int64
+        unblocks_parent:
+          description: Marks the comment as an unblocker to its  blocker parent. Can only be set on a threaded comment who has a parent with `blocker` set.
+          type: boolean
+        reactions:
+          description: A set of Reactions to this Comment.
+          x-doc-skip: true
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryReaction'
+        created_at:
+          description: The time/date when the Comment was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Comment. In the case that the Comment has been deleted, this field can be set to nil.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - deleted
+      - story_id
+      - mention_ids
+      - author_id
+      - member_mention_ids
+      - linked_to_slack
+      - updated_at
+      - group_mention_ids
+      - external_id
+      - id
+      - position
+      - reactions
+      - created_at
+      - text
+    Commit:
+      description: Commit refers to a VCS commit and all associated details.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        author_id:
+          description: The ID of the Member that authored the Commit, if known.
+          type: string
+          format: uuid
+          nullable: true
+        hash:
+          description: The Commit hash.
+          type: string
+        updated_at:
+          description: The time/date the Commit was updated.
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          description: The unique ID of the Commit.
+          type: integer
+          format: int64
+          nullable: true
+        url:
+          description: The URL of the Commit.
+          type: string
+        author_email:
+          description: The email address of the VCS user that authored the Commit.
+          type: string
+        timestamp:
+          description: The time/date the Commit was pushed.
+          type: string
+          format: date-time
+        author_identity:
+          $ref: '#/components/schemas/Identity'
+        repository_id:
+          description: The ID of the Repository that contains the Commit.
+          type: integer
+          format: int64
+          nullable: true
+        created_at:
+          description: The time/date the Commit was created.
+          type: string
+          format: date-time
+        message:
+          description: The Commit message.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - author_id
+      - hash
+      - updated_at
+      - id
+      - url
+      - author_email
+      - timestamp
+      - author_identity
+      - repository_id
+      - created_at
+      - message
+    StoryCustomField:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
+    PullRequest:
+      description: Corresponds to a VCS Pull Request attached to a Shortcut story.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        closed:
+          description: True/False boolean indicating whether the VCS pull request has been closed.
+          type: boolean
+        merged:
+          description: True/False boolean indicating whether the VCS pull request has been merged.
+          type: boolean
+        num_added:
+          description: Number of lines added in the pull request, according to VCS.
+          type: integer
+          format: int64
+        branch_id:
+          description: The ID of the branch for the particular pull request.
+          type: integer
+          format: int64
+        overlapping_stories:
+          description: An array of Story ids that have Pull Requests that change at least one of the same lines this Pull Request changes.
+          type: array
+          items:
+            type: integer
+            format: int64
+        number:
+          description: The pull request's unique number ID in VCS.
+          type: integer
+          format: int64
+        branch_name:
+          description: The name of the branch for the particular pull request.
+          type: string
+        target_branch_name:
+          description: The name of the target branch for the particular pull request.
+          type: string
+        num_commits:
+          description: The number of commits on the pull request.
+          type: integer
+          format: int64
+          nullable: true
+        title:
+          description: The title of the pull request.
+          type: string
+        updated_at:
+          description: The time/date the pull request was created.
+          type: string
+          format: date-time
+        has_overlapping_stories:
+          description: Boolean indicating that the Pull Request has Stories that have Pull Requests that change at least one of the same lines this Pull Request changes.
+          type: boolean
+        draft:
+          description: True/False boolean indicating whether the VCS pull request is in the draft state.
+          type: boolean
+        id:
+          description: The unique ID associated with the pull request in Shortcut.
+          type: integer
+          format: int64
+        vcs_labels:
+          description: An array of PullRequestLabels attached to the PullRequest.
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequestLabel'
+          nullable: true
+        url:
+          description: The URL for the pull request.
+          type: string
+        num_removed:
+          description: Number of lines removed in the pull request, according to VCS.
+          type: integer
+          format: int64
+        review_status:
+          description: The status of the review for the pull request.
+          type: string
+        num_modified:
+          description: Number of lines modified in the pull request, according to VCS.
+          type: integer
+          format: int64
+          nullable: true
+        build_status:
+          description: The status of the Continuous Integration workflow for the pull request.
+          type: string
+        target_branch_id:
+          description: The ID of the target branch for the particular pull request.
+          type: integer
+          format: int64
+        repository_id:
+          description: The ID of the repository for the particular pull request.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the pull request was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - closed
+      - merged
+      - num_added
+      - branch_id
+      - number
+      - branch_name
+      - target_branch_name
+      - num_commits
+      - title
+      - updated_at
+      - has_overlapping_stories
+      - draft
+      - id
+      - url
+      - num_removed
+      - num_modified
+      - target_branch_id
+      - repository_id
+      - created_at
+    IterationAssociatedGroup:
+      x-doc-skip: true
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Iteration.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
+    EpicAssociatedGroup:
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
+    LabelStats:
+      description: A group of calculated values for this Label. This is not included if the slim? flag is set to true for the List Labels endpoint.
+      type: object
+      properties:
+        num_related_documents:
+          description: The total number of Documents associated this Label.
+          type: integer
+          format: int64
+        num_epics:
+          description: The total number of Epics with this Label.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of stories unstarted Stories with this Label.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories with this Label.
+          type: integer
+          format: int64
+        num_epics_unstarted:
+          description: The number of unstarted epics associated with this label.
+          type: integer
+          format: int64
+        num_epics_in_progress:
+          description: The number of in progress epics associated with this label.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points with this Label.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate with this Label.
+          type: integer
+          format: int64
+        num_points_in_progress:
+          description: The total number of in-progress points with this Label.
+          type: integer
+          format: int64
+        num_epics_total:
+          description: The total number of Epics associated with this Label.
+          type: integer
+          format: int64
+        num_stories_completed:
+          description: The total number of completed Stories with this Label.
+          type: integer
+          format: int64
+        num_points_completed:
+          description: The total number of completed points with this Label.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of stories backlog Stories with this Label.
+          type: integer
+          format: int64
+        num_points_total:
+          description: The total number of points with this Label.
+          type: integer
+          format: int64
+        num_stories_in_progress:
+          description: The total number of in-progress Stories with this Label.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points with this Label.
+          type: integer
+          format: int64
+        num_epics_completed:
+          description: The number of completed Epics associated with this Label.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+      - num_epics
+      - num_stories_unstarted
+      - num_stories_total
+      - num_epics_unstarted
+      - num_epics_in_progress
+      - num_points_unstarted
+      - num_stories_unestimated
+      - num_points_in_progress
+      - num_epics_total
+      - num_stories_completed
+      - num_points_completed
+      - num_stories_backlog
+      - num_points_total
+      - num_stories_in_progress
+      - num_points_backlog
+      - num_epics_completed
+    Category:
+      description: A Category can be used to associate Objectives.
+      type: object
+      properties:
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Category.
+          type: string
+        global_id:
+          description: The Global ID of the Category.
+          x-doc-skip: true
+          type: string
+        type:
+          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Category was updated.
+          type: string
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Category.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Category was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - type
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    EpicStats:
+      description: A group of calculated values for this Epic.
+      type: object
+      properties:
+        num_points_done:
+          description: The total number of completed points in this Epic.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The total number of documents associated with this Epic.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of unstarted Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories in this Epic.
+          type: integer
+          format: int64
+        last_story_update:
+          description: The date of the last update of a Story in this Epic.
+          type: string
+          format: date-time
+          nullable: true
+        num_points_started:
+          description: The total number of started points in this Epic.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points in this Epic.
+          type: integer
+          format: int64
+        num_stories_started:
+          description: The total number of started Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of backlog Stories in this Epic.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points in this Epic.
+          type: integer
+          format: int64
+        num_points:
+          description: The total number of points in this Epic.
+          type: integer
+          format: int64
+        num_stories_done:
+          description: The total number of done Stories in this Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_points_done
+      - num_related_documents
+      - num_stories_unstarted
+      - num_stories_total
+      - last_story_update
+      - num_points_started
+      - num_points_unstarted
+      - num_stories_started
+      - num_stories_unestimated
+      - num_stories_backlog
+      - num_points_backlog
+      - num_points
+      - num_stories_done
+    DocSearchResults:
+      description: The results of the Document search query.
+      x-doc-skip: true
+      type: object
+      properties:
+        total:
+          description: The total number of matches for the search query. The first 1000 matches can be paged through via the API.
+          type: integer
+          format: int64
+        data:
+          description: A list of document search results.
+          type: array
+          items:
+            $ref: '#/components/schemas/DocSlim'
+        next:
+          description: The URL path and query string for the next page of search results.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - total
+      - data
+      - next
+    UploadedFile:
+      description: 'An UploadedFile is any document uploaded to your Shortcut Workspace. Files attached from a third-party service are different: see the Linked Files endpoint.'
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The unique IDs of the Stories associated with this file.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The unique IDs of the Members who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The optional User-specified name of the file.
+          type: string
+        thumbnail_url:
+          description: The url where the thumbnail of the file can be found in Shortcut.
+          type: string
+          nullable: true
+        size:
+          description: The size of the file.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The unique ID of the Member who uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: Free form string corresponding to a text or image file.
+          type: string
+        updated_at:
+          description: The time/date that the file was updated.
+          type: string
+          format: date-time
+          nullable: true
+        filename:
+          description: The name assigned to the file in Shortcut upon upload.
+          type: string
+        group_mention_ids:
+          description: The unique IDs of the Groups who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the File has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL for the file.
+          type: string
+          nullable: true
+        created_at:
+          description: The time/date that the file was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - filename
+      - group_mention_ids
+      - external_id
+      - id
+      - url
+      - created_at
+    Task:
+      description: A Task on a Story.
+      type: object
+      properties:
+        description:
+          description: Full text of the Task.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_id:
+          description: The unique identifier of the parent Story.
+          type: integer
+          format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of UUIDs of Members mentioned in this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        completed_at:
+          description: The time/date the Task was completed.
+          type: string
+          format: date-time
+          nullable: true
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date the Task was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: An array of UUIDs of Groups mentioned in this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the Owners of this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Task.
+          type: integer
+          format: int64
+        position:
+          description: The number corresponding to the Task's position within a list of Tasks on a Story.
+          type: integer
+          format: int64
+        complete:
+          description: True/false boolean indicating whether the Task has been completed.
+          type: boolean
+        created_at:
+          description: The time/date the Task was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_id
+      - mention_ids
+      - member_mention_ids
+      - completed_at
+      - global_id
+      - updated_at
+      - group_mention_ids
+      - owner_ids
+      - external_id
+      - id
+      - position
+      - complete
+      - created_at
+    MilestoneStats:
+      description: A group of calculated values for this Milestone.
+      type: object
+      properties:
+        average_cycle_time:
+          description: The average cycle time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        average_lead_time:
+          description: The average lead time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The number of related documents to this Milestone.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+    MaxSearchResultsExceededError:
+      description: Error returned when total maximum supported results have been reached.
+      type: object
+      properties:
+        error:
+          description: The name for this type of error, `maximum-results-exceeded`
+          type: string
+          enum:
+          - maximum-results-exceeded
+        message:
+          description: 'An explanatory message: "A maximum of 1000 search results are supported."'
+          type: string
+        maximum-results:
+          description: The maximum number of search results supported, `1000`
+          type: integer
+          format: int64
+          enum:
+          - 1000
+      additionalProperties: false
+      required:
+      - error
+      - message
+      - maximum-results
+    ObjectiveSearchResults:
+      description: The results of the Objective search query.
+      type: object
+      properties:
+        total:
+          description: The total number of matches for the search query. The first 1000 matches can be paged through via the API.
+          type: integer
+          format: int64
+        data:
+          description: A list of search results.
+          type: array
+          items:
+            $ref: '#/components/schemas/ObjectiveSearchResult'
+        next:
+          description: The URL path and query string for the next page of search results.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - total
+      - data
+      - next
+    ThreadedComment:
+      description: Comments associated with Epic Discussions.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Comment.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: True/false boolean indicating whether the Comment is deleted.
+          type: boolean
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        author_id:
+          description: The unique ID of the Member that authored the Comment.
+          type: string
+          format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in this Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        comments:
+          description: A nested array of threaded comments.
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadedComment'
+        updated_at:
+          description: The time/date the Comment was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in this Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Comment.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Comment was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Comment.
+          type: string
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - deleted
+      - mention_ids
+      - author_id
+      - member_mention_ids
+      - comments
+      - updated_at
+      - group_mention_ids
+      - external_id
+      - id
+      - created_at
+      - text
+    IterationStats:
+      description: A group of calculated values for this Iteration.
+      type: object
+      properties:
+        num_points_done:
+          description: The total number of completed points in this Iteration.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The total number of documents related to an Iteration
+          type: integer
+          format: int64
+        average_cycle_time:
+          description: The average cycle time (in seconds) of completed stories in this Iteration.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of unstarted Stories in this Iteration.
+          type: integer
+          format: int64
+        num_points_started:
+          description: The total number of started points in this Iteration.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points in this Iteration.
+          type: integer
+          format: int64
+        num_stories_started:
+          description: The total number of started Stories in this Iteration.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of backlog Stories in this Iteration.
+          type: integer
+          format: int64
+        average_lead_time:
+          description: The average lead time (in seconds) of completed stories in this Iteration.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points in this Iteration.
+          type: integer
+          format: int64
+        num_points:
+          description: The total number of points in this Iteration.
+          type: integer
+          format: int64
+        num_stories_done:
+          description: The total number of done Stories in this Iteration.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_points_done
+      - num_related_documents
+      - num_stories_unstarted
+      - num_points_started
+      - num_points_unstarted
+      - num_stories_started
+      - num_stories_unestimated
+      - num_stories_backlog
+      - num_points_backlog
+      - num_points
+      - num_stories_done
+    EpicSearchResult:
+      description: An Epic in search results. This is typed differently from Epic because the details=slim search argument will omit some fields.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Epic.
+          type: string
+        description:
+          description: The Epic's description.
+          type: string
+        archived:
+          description: True/false boolean that indicates whether the Epic is archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Epic has been started.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of Labels attached to the Epic.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        associated_groups:
+          description: An array containing Group IDs and Group-owned story counts for the Epic's associated groups.
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicAssociatedGroup'
+        project_ids:
+          description: The IDs of Projects related to this Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        stories_without_projects:
+          description: The number of stories in this epic which are not associated with a project.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Epic was completed.
+          type: string
+          format: date-time
+          nullable: true
+        productboard_plugin_id:
+          description: The ID of the associated productboard integration.
+          type: string
+          format: uuid
+          nullable: true
+        started_at:
+          description: The time/date the Epic was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Epic was completed.
+          type: string
+          format: date-time
+          nullable: true
+        objective_ids:
+          description: An array of IDs for Objectives to which this epic is related.
+          type: array
+          items:
+            type: integer
+            format: int64
+        name:
+          description: The name of the Epic.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Epic has been completed.
+          type: boolean
+        comments:
+          description: A nested array of threaded comments.
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadedComment'
+        productboard_url:
+          description: The URL of the associated productboard feature.
+          type: string
+          nullable: true
+        planned_start_date:
+          description: The Epic's planned start date.
+          type: string
+          format: date-time
+          nullable: true
+        state:
+          description: '`Deprecated` The workflow state that the Epic is in.'
+          type: string
+        milestone_id:
+          description: '`Deprecated` The ID of the Objective this Epic is related to. Use `objective_ids`.'
+          type: integer
+          format: int64
+          nullable: true
+        requested_by_id:
+          description: The ID of the Member that requested the epic.
+          type: string
+          format: uuid
+        epic_state_id:
+          description: The ID of the Epic State.
+          type: integer
+          format: int64
+        label_ids:
+          description: An array of Label ids attached to the Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Epic was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
+          type: string
+          format: uuid
+          nullable: true
+        updated_at:
+          description: The time/date the Epic was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        productboard_id:
+          description: The ID of the associated productboard feature.
+          type: string
+          format: uuid
+          nullable: true
+        follower_ids:
+          description: An array of UUIDs for any Members you want to add as Followers on this Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDS for Groups to which this Epic is related.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Epic.
+          type: integer
+          format: int64
+        health:
+          $ref: '#/components/schemas/Health'
+        position:
+          description: The Epic's relative position in the Epic workflow state.
+          type: integer
+          format: int64
+        productboard_name:
+          description: The name of the associated productboard feature.
+          type: string
+          nullable: true
+        deadline:
+          description: The Epic's deadline.
+          type: string
+          format: date-time
+          nullable: true
+        stats:
+          $ref: '#/components/schemas/EpicStats'
+        created_at:
+          description: The time/date the Epic was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - associated_groups
+      - project_ids
+      - stories_without_projects
+      - completed_at_override
+      - productboard_plugin_id
+      - started_at
+      - completed_at
+      - objective_ids
+      - name
+      - global_id
+      - completed
+      - productboard_url
+      - planned_start_date
+      - state
+      - milestone_id
+      - requested_by_id
+      - epic_state_id
+      - label_ids
+      - started_at_override
+      - group_id
+      - updated_at
+      - group_mention_ids
+      - productboard_id
+      - follower_ids
+      - group_ids
+      - owner_ids
+      - external_id
+      - id
+      - position
+      - productboard_name
+      - deadline
+      - stats
+      - created_at
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
+          type: string
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
+    StorySearchResults:
+      description: The results of the Story search query.
+      type: object
+      properties:
+        total:
+          description: The total number of matches for the search query. The first 1000 matches can be paged through via the API.
+          type: integer
+          format: int64
+        data:
+          description: A list of search results.
+          type: array
+          items:
+            $ref: '#/components/schemas/StorySearchResult'
+        next:
+          description: The URL path and query string for the next page of search results.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - total
+      - data
+      - next
+    SearchResults:
+      description: The results of the multi-entity search query.
+      type: object
+      properties:
+        epics:
+          $ref: '#/components/schemas/EpicSearchResults'
+        stories:
+          $ref: '#/components/schemas/StorySearchResults'
+        iterations:
+          $ref: '#/components/schemas/IterationSearchResults'
+        milestones:
+          $ref: '#/components/schemas/ObjectiveSearchResults'
+      additionalProperties: false
+    LinkedFile:
+      description: Linked files are stored on a third-party website and linked to one or more Stories. Shortcut currently supports linking files from Google Drive, Dropbox, Box, and by URL.
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The IDs of the stories this file is attached to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The members that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The name of the linked file.
+          type: string
+        thumbnail_url:
+          description: The URL of the file thumbnail, if the integration provided it.
+          type: string
+          nullable: true
+        type:
+          description: The integration type (e.g. google, dropbox, box).
+          type: string
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+          nullable: true
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+          nullable: true
+        updated_at:
+          description: The time/date the LinkedFile was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: The groups that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The unique identifier for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL of the file.
+          type: string
+        created_at:
+          description: The time/date the LinkedFile was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - type
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - group_mention_ids
+      - id
+      - url
+      - created_at
+    Branch:
+      description: Branch refers to a VCS branch. Branches are feature branches associated with Shortcut Stories.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: A true/false boolean indicating if the Branch has been deleted.
+          type: boolean
+        name:
+          description: The name of the Branch.
+          type: string
+        persistent:
+          description: This field is deprecated, and will always be false.
+          type: boolean
+        updated_at:
+          description: The time/date the Branch was updated.
+          type: string
+          format: date-time
+          nullable: true
+        pull_requests:
+          description: An array of PullRequests attached to the Branch (there is usually only one).
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequest'
+        merged_branch_ids:
+          description: The IDs of the Branches the Branch has been merged into.
+          type: array
+          items:
+            type: integer
+            format: int64
+        id:
+          description: The unique ID of the Branch.
+          type: integer
+          format: int64
+          nullable: true
+        url:
+          description: The URL of the Branch.
+          type: string
+        repository_id:
+          description: The ID of the Repository that contains the Branch.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Branch was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - deleted
+      - name
+      - persistent
+      - updated_at
+      - pull_requests
+      - merged_branch_ids
+      - id
+      - url
+      - repository_id
+      - created_at
+    ObjectiveSearchResult:
+      description: A Milestone in search results. This is typed differently from Milestone because the details=slim search argument will omit some fields.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Milestone.
+          type: string
+        description:
+          description: The Milestone's description.
+          type: string
+        archived:
+          description: A boolean indicating whether the Milestone has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Milestone has been started.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        completed_at_override:
+          description: A manual override for the time/date the Milestone was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Milestone was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Milestone was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the Milestone.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Milestone has been completed.
+          type: boolean
+        state:
+          description: The workflow state that the Milestone is in.
+          type: string
+        started_at_override:
+          description: A manual override for the time/date the Milestone was started.
+          type: string
+          format: date-time
+          nullable: true
+        updated_at:
+          description: The time/date the Milestone was updated.
+          type: string
+          format: date-time
+        categories:
+          description: An array of Categories attached to the Milestone.
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        id:
+          description: The unique ID of the Milestone.
+          type: integer
+          format: int64
+        key_result_ids:
+          description: The IDs of the Key Results associated with the Objective.
+          type: array
+          items:
+            type: string
+            format: uuid
+        position:
+          description: A number representing the position of the Milestone in relation to every other Milestone within the Workspace.
+          type: integer
+          format: int64
+        stats:
+          $ref: '#/components/schemas/MilestoneStats'
+        created_at:
+          description: The time/date the Milestone was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - entity_type
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - state
+      - started_at_override
+      - updated_at
+      - categories
+      - id
+      - key_result_ids
+      - position
+      - stats
+      - created_at
+    IterationSearchResults:
+      description: The results of the Iteration search query.
+      type: object
+      properties:
+        total:
+          description: The total number of matches for the search query. The first 1000 matches can be paged through via the API.
+          type: integer
+          format: int64
+        data:
+          description: A list of search results.
+          type: array
+          items:
+            $ref: '#/components/schemas/IterationSlim'
+        next:
+          description: The URL path and query string for the next page of search results.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - total
+      - data
+      - next
+    DocSlim:
+      x-doc-skip: true
+      type: object
+      properties:
+        id:
+          description: The public id of the Doc
+          type: string
+          format: uuid
+        title:
+          description: The Docs Title
+          type: string
+          nullable: true
+        app_url:
+          description: The Shortcut application url for the Doc.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - title
+      - app_url
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    Health:
+      description: The current health status of the Epic.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        author_id:
+          description: The ID of the permission who created or updated the Health record.
+          type: string
+          format: uuid
+        epic_id:
+          description: The ID of the Epic associated with this Health record.
+          type: integer
+          format: int64
+        objective_id:
+          description: The ID of the Objective associated with this Health record.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time that the Health record was updated.
+          type: string
+          format: date-time
+        status:
+          description: The health status of the Epic or Objective.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        id:
+          description: The unique ID of the Health record.
+          type: string
+          format: uuid
+          nullable: true
+        created_at:
+          description: The time that the Health record was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Health record.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - status
+      - id
+    DisabledFeatureError:
+      type: object
+      properties:
+        feature_tag:
+          description: The feature that is disabled
+          type: string
+        message:
+          description: The message explaining the error
+          type: string
+      additionalProperties: false
+      required:
+      - feature_tag
+      - message
+    EpicSearchResults:
+      description: The results of the Epic search query.
+      type: object
+      properties:
+        total:
+          description: The total number of matches for the search query. The first 1000 matches can be paged through via the API.
+          type: integer
+          format: int64
+        data:
+          description: A list of search results.
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicSearchResult'
+        next:
+          description: The URL path and query string for the next page of search results.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - total
+      - data
+      - next
+    Label:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        stats:
+          $ref: '#/components/schemas/LabelStats'
+        created_at:
+          description: The time/date that the Label was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    Identity:
+      description: The Identity of the VCS user that authored the Commit.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        name:
+          description: This is your login in VCS.
+          type: string
+          nullable: true
+        type:
+          description: The service this Identity is for.
+          type: string
+          enum:
+          - slack
+          - github
+          - gitlab
+          - bitbucket
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - name
+      - type
+    StorySearchResult:
+      description: A Story in search results. This is typed differently from Story because the details=slim search argument will omit some fields.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Story.
+          type: string
+        description:
+          description: The description of the story.
+          type: string
+        archived:
+          description: True if the story has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Story has been started.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the Story.
+          type: array
+          items:
+            $ref: '#/components/schemas/TypedStoryLink'
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        task_ids:
+          description: An array of IDs of Tasks attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        synced_item:
+          $ref: '#/components/schemas/SyncedItem'
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of CustomField value assertions for the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryCustomField'
+        linked_files:
+          description: An array of linked files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedFile'
+        file_ids:
+          description: An array of IDs of Files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        num_tasks_completed:
+          description: The number of tasks on the story which are complete.
+          type: integer
+          format: int64
+        workflow_id:
+          description: The ID of the workflow the story belongs to.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the story.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Story has been completed.
+          type: boolean
+        comments:
+          description: An array of comments attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryComment'
+        blocker:
+          description: A true/false boolean indicating if the Story is currently a blocker of another story.
+          type: boolean
+        branches:
+          description: An array of Git branches attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Branch'
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The ID of the story template used to create this story, or null if not created using a template.
+          type: string
+          format: uuid
+          nullable: true
+        external_links:
+          description: An array of external links (strings) associated with a Story
+          type: array
+          items:
+            type: string
+        previous_iteration_ids:
+          description: The IDs of the iteration the story belongs to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        sub_task_story_ids:
+          description: 'The Story IDs of Sub-tasks attached to the Story
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            type: integer
+            format: int64
+        tasks:
+          description: An array of tasks connected to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+        formatted_vcs_branch_name:
+          description: The formatted branch name for this story.
+          x-doc-skip: true
+          type: string
+          nullable: true
+        label_ids:
+          description: An array of label ids attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: The ID of the group associated with the story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story is currently in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+          nullable: true
+        pull_requests:
+          description: An array of Pull/Merge Requests attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequest'
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Story.
+          type: integer
+          format: int64
+        lead_time:
+          description: The lead time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        parent_story_id:
+          description: 'The ID of the parent story to this story (making this story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        commits:
+          description: An array of commits attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Commit'
+        files:
+          description: An array of files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/UploadedFile'
+        position:
+          description: A number representing the position of the story in relation to every other story in the current project.
+          type: integer
+          format: int64
+        blocked:
+          description: A true/false boolean indicating if the Story is currently blocked.
+          type: boolean
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of IDs of LinkedFiles attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        stats:
+          $ref: '#/components/schemas/StoryStats'
+        comment_ids:
+          description: An array of IDs of Comments attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        cycle_time:
+          description: The cycle time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+        moved_at:
+          description: The time/date the Story was last changed workflow-state.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - story_links
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - story_type
+      - workflow_id
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - blocker
+      - epic_id
+      - story_template_id
+      - external_links
+      - previous_iteration_ids
+      - requested_by_id
+      - iteration_id
+      - label_ids
+      - started_at_override
+      - group_id
+      - workflow_state_id
+      - updated_at
+      - group_mention_ids
+      - follower_ids
+      - owner_ids
+      - external_id
+      - id
+      - estimate
+      - position
+      - blocked
+      - project_id
+      - deadline
+      - stats
+      - created_at
+      - moved_at
+    IterationSlim:
+      description: 'IterationSlim represents the same resource as an Iteration, but is more light-weight. Use the [Get Iteration](#Get-Iteration) endpoint to fetch the unabridged payload for an Iteration. '
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Iteration.
+          type: string
+        entity_type:
+          description: A string description of this resource
+          type: string
+        labels:
+          description: An array of labels attached to the iteration.
+          type: array
+          items:
+            $ref: '#/components/schemas/Label'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        associated_groups:
+          description: An array containing Group IDs and Group-owned story counts for the Iteration's associated groups.
+          x-doc-skip: true
+          type: array
+          items:
+            $ref: '#/components/schemas/IterationAssociatedGroup'
+        name:
+          description: The name of the iteration.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        label_ids:
+          description: An array of label ids attached to the iteration.
+          type: array
+          items:
+            type: integer
+            format: int64
+        updated_at:
+          description: The instant when this iteration was last updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        end_date:
+          description: The date this iteration ends.
+          type: string
+          format: date-time
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
+          type: array
+          items:
+            type: string
+            format: uuid
+        start_date:
+          description: The date this iteration begins.
+          type: string
+          format: date-time
+        status:
+          description: The status of the iteration. Values are either "unstarted", "started", or "done".
+          type: string
+        id:
+          description: The ID of the iteration.
+          type: integer
+          format: int64
+        stats:
+          $ref: '#/components/schemas/IterationStats'
+        created_at:
+          description: The instant when this iteration was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - associated_groups
+      - name
+      - global_id
+      - label_ids
+      - updated_at
+      - group_mention_ids
+      - end_date
+      - follower_ids
+      - group_ids
+      - start_date
+      - status
+      - id
+      - stats
+      - created_at
+    PullRequestLabel:
+      description: Corresponds to a VCS Label associated with a Pull Request.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the VCS Label.
+          type: integer
+          format: int64
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The color of the VCS label.
+          minLength: 1
+          type: string
+        description:
+          description: The description of the VCS label.
+          type: string
+          nullable: true
+        name:
+          description: The name of the VCS label.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - color
+      - name
+    StoryStats:
+      description: The stats object for Stories
+      type: object
+      properties:
+        num_related_documents:
+          description: The number of documents related to this Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

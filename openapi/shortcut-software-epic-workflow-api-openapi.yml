@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Epic Workflow API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Epic Workflow
+paths:
+  /api/v3/epic-workflow:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EpicWorkflow'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getEpicWorkflow
+      description: Returns the Epic Workflow for the Workspace.
+      summary: Get Epic Workflow
+      tags:
+      - Epic Workflow
+components:
+  schemas:
+    EpicState:
+      description: 'Epic State is any of the at least 3 columns. Epic States correspond to one of 3 types: Unstarted, Started, or Done.'
+      type: object
+      properties:
+        description:
+          description: The description of what sort of Epics belong in that Epic State.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color for this Epic State.
+          minLength: 1
+          type: string
+        name:
+          description: The Epic State's name.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        type:
+          description: The type of Epic State (Unstarted, Started, or Done)
+          type: string
+        updated_at:
+          description: When the Epic State was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique ID of the Epic State.
+          type: integer
+          format: int64
+        position:
+          description: The position that the Epic State is in, starting with 0 at the left.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Epic State was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - name
+      - global_id
+      - type
+      - updated_at
+      - id
+      - position
+      - created_at
+    EpicWorkflow:
+      description: 'Epic Workflow is the array of defined Epic States. Epic Workflow can be queried using the API but must be updated in the Shortcut UI. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the Epic Workflow.
+          type: integer
+          format: int64
+        created_at:
+          description: The date the Epic Workflow was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The date the Epic Workflow was updated.
+          type: string
+          format: date-time
+        default_epic_state_id:
+          description: The unique ID of the default Epic State that new Epics are assigned by default.
+          type: integer
+          format: int64
+        epic_states:
+          description: A map of the Epic States in this Epic Workflow.
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicState'
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - created_at
+      - updated_at
+      - default_epic_state_id
+      - epic_states
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

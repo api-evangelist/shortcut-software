@@ -1,0 +1,4739 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Stories API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Stories
+paths:
+  /api/v3/stories:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStoryParams'
+        description: Request parameters for creating a story.
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Story'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createStory
+      description: "Create Story is used to add a new story to your Shortcut Workspace.\n    This endpoint requires that either **workflow_state_id** or **project_id** be provided, but will reject the request if both or neither are specified. The workflow_state_id has been marked as required and is the recommended field to specify because we are in the process of sunsetting Projects in Shortcut."
+      summary: Create Story
+      tags:
+      - Stories
+  /api/v3/stories/bulk:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStories'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StorySlim'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createMultipleStories
+      description: Create Multiple Stories allows you to create multiple stories in a single request using the same syntax as [Create Story](https://developer.shortcut.com/api/rest/v3#create-story).
+      summary: Create Multiple Stories
+      tags:
+      - Stories
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStories'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StorySlim'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateMultipleStories
+      description: Update Multiple Stories allows you to make changes to numerous stories at once.
+      summary: Update Multiple Stories
+      tags:
+      - Stories
+    delete:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteStories'
+        required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteMultipleStories
+      description: Delete Multiple Stories allows you to delete multiple archived stories at once.
+      summary: Delete Multiple Stories
+      tags:
+      - Stories
+  /api/v3/stories/from-template:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStoryFromTemplateParams'
+        description: Request parameters for creating a story from a story template. These parameters are merged with the values derived from the template.
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Story'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createStoryFromTemplate
+      description: Create Story From Template is used to add a new story derived from a template to your Shortcut Workspace.
+      summary: Create Story From Template
+      tags:
+      - Stories
+  /api/v3/stories/search:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchStories'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StorySlim'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: queryStories
+      description: Search Stories lets you search Stories based on desired parameters.
+      summary: Query Stories
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Story'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getStory
+      description: Get Story returns information about a chosen Story.
+      summary: Get Story
+      tags:
+      - Stories
+    put:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The unique identifier of this story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStory'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Story'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateStory
+      description: Update Story can be used to update Story properties.
+      summary: Update Story
+      tags:
+      - Stories
+    delete:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteStory
+      description: Delete Story can be used to delete any Story.
+      summary: Delete Story
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/comments:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryComment'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listStoryComment
+      description: Lists Comments associated with a Story
+      summary: List Story Comment
+      tags:
+      - Stories
+    post:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStoryComment'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryComment'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createStoryComment
+      description: Create Comment allows you to create a Comment on any Story.
+      summary: Create Story Comment
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/comments/{comment-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryComment'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getStoryComment
+      description: Get Comment is used to get Comment information.
+      summary: Get Story Comment
+      tags:
+      - Stories
+    put:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStoryComment'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryComment'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateStoryComment
+      description: Update Comment replaces the text of the existing Comment.
+      summary: Update Story Comment
+      tags:
+      - Stories
+    delete:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteStoryComment
+      description: Delete a Comment from any story.
+      summary: Delete Story Comment
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/comments/{comment-public-id}/reactions:
+    post:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrDeleteStoryReaction'
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StoryReaction'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createStoryReaction
+      description: Create a reaction to a story comment.
+      summary: Create Story Reaction
+      tags:
+      - Stories
+    delete:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Comment is in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/CreateOrDeleteStoryReaction'
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteStoryReaction
+      description: Delete a reaction from any story comment.
+      summary: Delete Story Reaction
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/comments/{comment-public-id}/unlink-from-slack:
+    post:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story to unlink.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: comment-public-id
+        description: The ID of the Comment to unlink.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryComment'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: unlinkCommentThreadFromSlack
+      description: Unlinks a Comment from its linked Slack thread (Comment replies and Slack replies will no longer be synced)
+      summary: Unlink Comment thread from Slack
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/history:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/History'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: storyHistory
+      summary: Story History
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/sub-tasks:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StorySlim'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listStorySubTasks
+      description: List Story Sub tasks returns a list of all Sub-task Stories for a given parent Story.
+      summary: List Story Sub tasks
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/tasks:
+    post:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The ID of the Story that the Task will be in.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTask'
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createTask
+      description: Create Task is used to create a new task in a Story.
+      summary: Create Task
+      tags:
+      - Stories
+  /api/v3/stories/{story-public-id}/tasks/{task-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The unique ID of the Story this Task is associated with.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: task-public-id
+        description: The unique ID of the Task.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getTask
+      description: Returns information about a chosen Task.
+      summary: Get Task
+      tags:
+      - Stories
+    put:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The unique identifier of the parent Story.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: task-public-id
+        description: The unique identifier of the Task you wish to update.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTask'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateTask
+      description: Update Task can be used to update Task properties.
+      summary: Update Task
+      tags:
+      - Stories
+    delete:
+      parameters:
+      - in: path
+        name: story-public-id
+        description: The unique ID of the Story this Task is associated with.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: path
+        name: task-public-id
+        description: The unique ID of the Task.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteTask
+      description: Delete Task can be used to delete any previously created Task on a Story.
+      summary: Delete Task
+      tags:
+      - Stories
+components:
+  schemas:
+    CreateStoryFromTemplateParams:
+      description: Request parameters for creating a story from a story template. These parameters are merged with the values derived from the template.
+      type: object
+      properties:
+        description:
+          maxLength: 100000
+          description: The description of the story.
+          type: string
+        archived:
+          description: Controls the story's archived state.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStoryLinkParams'
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        external_links_add:
+          description: An array of External Links associated with this story. These will be added to any links provided by the template. Cannot be used in conjunction with `external_links`.
+          type: array
+          items:
+            type: string
+          uniqueItems: true
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        custom_fields:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        move_to:
+          description: One of "first" or "last". This can be used to move the given story to the first or last position in the workflow state.
+          type: string
+          enum:
+          - last
+          - first
+        file_ids:
+          description: An array of IDs of files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        source_task_id:
+          description: Given this story was converted from a task in another story, this is the original task ID that was converted to this story.
+          type: integer
+          format: int64
+          nullable: true
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+        name:
+          maxLength: 512
+          minLength: 1
+          description: The name of the story. Must be provided if the template does not provide a name.
+          type: string
+        file_ids_add:
+          description: An array of IDs of files attached to the story in addition to files from the template. Cannot be used in conjunction with `file_ids`.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        file_ids_remove:
+          description: An array of IDs of files removed from files from the template. Cannot be used in conjunction with `file_ids`.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        comments:
+          description: An array of comments to add to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStoryCommentParams'
+        follower_ids_add:
+          description: The UUIDs of the new followers to be added in addition to followers from the template. Cannot be used in conjunction with `follower_ids.`
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The id of the story template used to create this story.
+          type: string
+          format: uuid
+        external_links:
+          description: An array of External Links associated with this story.
+          type: array
+          items:
+            type: string
+        follower_ids_remove:
+          description: The UUIDs of the new followers to be removed from followers from the template. Cannot be used in conjunction with `follower_ids`.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        sub_tasks:
+          description: 'An array of maps specifying sub-tasks to be associated with the created story. Each map can either link to an existing story or create a new sub-task story to be linked to the created story.
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/LinkSubTaskParams'
+            - $ref: '#/components/schemas/CreateSubTaskParams'
+        linked_file_ids_remove:
+          description: An array of IDs of linked files removed from files from the template. Cannot be used in conjunction with `linked_files.`
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        requested_by_id:
+          description: The ID of the member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        custom_fields_remove:
+          description: A map specifying a CustomField ID. These will be removed from any fields provided by the template. Cannot be used in conjunction with `custom_fields`.
+          type: array
+          items:
+            $ref: '#/components/schemas/RemoveCustomFieldParams'
+          uniqueItems: true
+        tasks:
+          description: An array of tasks connected to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateTaskParams'
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+        labels_add:
+          description: An array of labels attached to the story in addition to the labels provided by the template. Cannot be used in conjunction with `labels`.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+          uniqueItems: true
+        group_id:
+          description: The id of the group to associate with this story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story will be in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+        follower_ids:
+          description: An array of UUIDs of the followers of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        external_id:
+          maxLength: 1024
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        parent_story_id:
+          description: 'The ID of the parent story to associate with this story (making the created story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        owner_ids_remove:
+          description: The UUIDs of the new owners to be removed from owners from the template. Cannot be used in conjunction with `owners`.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        custom_fields_add:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField. These will be added to any fields provided by the template. Cannot be used in conjunction with `custom_fields`.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+          uniqueItems: true
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids_add:
+          description: An array of IDs of linked files attached to the story in addition to files from the template. Cannot be used in conjunction with `linked_files`.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        linked_file_ids:
+          description: An array of IDs of linked files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        labels_remove:
+          description: An array of labels to remove from the labels provided by the template. Cannot be used in conjunction with `labels`.
+          type: array
+          items:
+            $ref: '#/components/schemas/RemoveLabelParams'
+          uniqueItems: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        owner_ids_add:
+          description: The UUIDs of the new owners to be added in addition to owners from the template. Cannot be used in conjunction with `owners`.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+        external_links_remove:
+          description: An array of External Links associated with this story. These will be removed from any links provided by the template. Cannot be used in conjunction with `external_links`.
+          type: array
+          items:
+            type: string
+          uniqueItems: true
+      additionalProperties: false
+      required:
+      - story_template_id
+    UploadedFile:
+      description: 'An UploadedFile is any document uploaded to your Shortcut Workspace. Files attached from a third-party service are different: see the Linked Files endpoint.'
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The unique IDs of the Stories associated with this file.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The unique IDs of the Members who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The optional User-specified name of the file.
+          type: string
+        thumbnail_url:
+          description: The url where the thumbnail of the file can be found in Shortcut.
+          type: string
+          nullable: true
+        size:
+          description: The size of the file.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The unique ID of the Member who uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: Free form string corresponding to a text or image file.
+          type: string
+        updated_at:
+          description: The time/date that the file was updated.
+          type: string
+          format: date-time
+          nullable: true
+        filename:
+          description: The name assigned to the file in Shortcut upon upload.
+          type: string
+        group_mention_ids:
+          description: The unique IDs of the Groups who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the File has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL for the file.
+          type: string
+          nullable: true
+        created_at:
+          description: The time/date that the file was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - filename
+      - group_mention_ids
+      - external_id
+      - id
+      - url
+      - created_at
+    HistoryActionStoryLinkCreate:
+      description: An action representing a Story Link being created.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+        verb:
+          description: The verb describing the link's relationship.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The Story ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The Story ID of the object Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - verb
+      - subject_id
+      - object_id
+    HistoryActionLabelDelete:
+      description: An action representing a Label being deleted.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - delete
+        name:
+          description: The name of the Label.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - name
+    HistoryActionStoryLinkDelete:
+      description: An action representing a Story Link being deleted.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - delete
+        verb:
+          description: The verb describing the link's relationship.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The Story ID of the subject Story.
+          type: integer
+          format: int64
+          nullable: true
+        object_id:
+          description: The Story ID of the object Story.
+          type: integer
+          format: int64
+          nullable: true
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - verb
+      - subject_id
+      - object_id
+    UpdateStories:
+      x-doc-skip: true
+      type: object
+      properties:
+        archived:
+          description: If the Stories should be archived or not.
+          type: boolean
+        story_ids:
+          description: The Ids of the Stories you wish to update.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        move_to:
+          description: One of "first" or "last". This can be used to move the given story to the first or last position in the workflow state.
+          type: string
+          enum:
+          - last
+          - first
+        follower_ids_add:
+          description: The UUIDs of the new followers to be added.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        external_links:
+          description: An array of External Links associated with this story.
+          type: array
+          items:
+            type: string
+        follower_ids_remove:
+          description: The UUIDs of the followers to be removed.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        requested_by_id:
+          description: The ID of the member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        custom_fields_remove:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        labels_add:
+          description: An array of labels to be added.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        group_id:
+          description: The Id of the Group the Stories should belong to.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state to put the stories in.
+          type: integer
+          format: int64
+        before_id:
+          description: The ID of the story that the stories are to be moved before.
+          type: integer
+          format: int64
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        after_id:
+          description: The ID of the story that the stories are to be moved below.
+          type: integer
+          format: int64
+        owner_ids_remove:
+          description: The UUIDs of the owners to be removed.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        custom_fields_add:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        project_id:
+          description: The ID of the Project the Stories should belong to.
+          type: integer
+          format: int64
+          nullable: true
+        labels_remove:
+          description: An array of labels to be removed.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        owner_ids_add:
+          description: The UUIDs of the new owners to be added.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+      additionalProperties: false
+      required:
+      - story_ids
+    StoryHistoryChangeOldNewBool:
+      description: True if the Story has archived, otherwise false.
+      type: object
+      properties:
+        old:
+          description: The old value.
+          type: boolean
+        new:
+          description: The new value.
+          type: boolean
+      additionalProperties: false
+    HistoryActionPullRequest:
+      description: An action representing various operations for a Pull Request.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - open
+          - update
+          - reopen
+          - close
+          - sync
+          - comment
+        number:
+          description: The VCS Repository-specific ID for the Pull Request.
+          type: integer
+          format: int64
+        title:
+          description: The title of the Pull Request.
+          type: string
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL from the provider of the VCS Pull Request.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - number
+      - title
+      - url
+    HistoryActionBranchPush:
+      description: An action representing a VCS Branch being pushed.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the VCS Branch that was pushed
+          type: string
+        url:
+          description: The URL from the provider of the VCS Branch that was pushed
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - push
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+      - url
+      - action
+    HistoryChangesStoryLink:
+      description: The changes that have occurred as a result of the action.
+      type: object
+      properties:
+        verb:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+        object_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        subject_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+      additionalProperties: false
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    CreateLabelParams:
+      description: Request parameters for creating a Label on a Shortcut Story.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Label.
+          type: string
+        description:
+          maxLength: 1024
+          description: The description of the new Label.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+    StoryHistoryChangeOldNewStr:
+      description: A timestamp that represents the Story's deadline.
+      type: object
+      properties:
+        old:
+          description: The old value.
+          type: string
+          nullable: true
+        new:
+          description: The new value.
+          type: string
+      additionalProperties: false
+    CreateTask:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 2048
+          minLength: 1
+          description: The Task description.
+          type: string
+        complete:
+          description: True/false boolean indicating whether the Task is completed. Defaults to false.
+          type: boolean
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          maxLength: 128
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        created_at:
+          description: Defaults to the time/date the Task is created but can be set to reflect another creation time/date.
+          type: string
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the Task is created in Shortcut but can be set to reflect another time/date.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+    StoryHistoryChangeAddsRemovesUuid:
+      description: Custom Field Enum Value IDs that have been added or removed from the Story.
+      type: object
+      properties:
+        adds:
+          description: The values that have been added.
+          type: array
+          items:
+            type: string
+            format: uuid
+        removes:
+          description: The values that have been removed
+          type: array
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+    HistoryActionStoryUpdate:
+      description: An action representing a Story being updated.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - update
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Story.
+          type: string
+        changes:
+          $ref: '#/components/schemas/HistoryChangesStory'
+        name:
+          description: The name of the Story.
+          type: string
+        story_type:
+          description: The type of Story; either feature, bug, or chore.
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        parent_story_id:
+          description: The Story's Parent ID (only applicable if Story is a Sub-task)
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - app_url
+      - name
+      - story_type
+    HistoryActionWorkspace2BulkUpdate:
+      description: An action representing a bulk operation within a workspace2.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: string
+          format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - bulk-update
+        name:
+          description: The name of the workspace2 in which the BulkUpdate occurred.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - name
+    HistoryReferenceWorkflowState:
+      description: A references to a Story Workflow State.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        type:
+          description: Either "backlog", "unstarted", "started", or "done".
+          type: string
+          enum:
+          - started
+          - backlog
+          - unstarted
+          - done
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - type
+      - name
+    StoryStats:
+      description: The stats object for Stories
+      type: object
+      properties:
+        num_related_documents:
+          description: The number of documents related to this Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+    CreateStories:
+      x-doc-skip: true
+      type: object
+      properties:
+        stories:
+          description: An array of stories to be created.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStoryParams'
+      additionalProperties: false
+      required:
+      - stories
+    StoryReaction:
+      description: Emoji reaction on a comment.
+      type: object
+      properties:
+        emoji:
+          description: Emoji text of the reaction.
+          type: string
+        permission_ids:
+          description: Permissions who have reacted with this.
+          type: array
+          items:
+            type: string
+            format: uuid
+      additionalProperties: false
+      required:
+      - emoji
+      - permission_ids
+    UpdateTask:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 2048
+          minLength: 1
+          description: The Task's description.
+          type: string
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        complete:
+          description: A true/false boolean indicating whether the task is complete.
+          type: boolean
+        before_id:
+          description: Move task before this task ID.
+          type: integer
+          format: int64
+        after_id:
+          description: Move task after this task ID.
+          type: integer
+          format: int64
+      additionalProperties: false
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
+    HistoryChangesStory:
+      description: The changes that have occurred as a result of the action.
+      type: object
+      properties:
+        description:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+        archived:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        started:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        task_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        mention_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+        story_type:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+        name:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+        completed:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        blocker:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        epic_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        branch_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        commit_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        requested_by_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewUuid'
+        iteration_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        label_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        group_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewUuid'
+        workflow_state_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        object_story_link_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        follower_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+        owner_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+        custom_field_value_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+        parent_story_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        estimate:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        subject_story_link_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesInt'
+        blocked:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        project_id:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewInt'
+        deadline:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+      additionalProperties: false
+    StoryComment:
+      description: A Comment is any note added within the Comment field of a Story.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Comment.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: True/false boolean indicating whether the Comment has been deleted.
+          type: boolean
+        story_id:
+          description: The ID of the Story on which the Comment appears.
+          type: integer
+          format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        author_id:
+          description: The unique ID of the Member who is the Comment's author.
+          type: string
+          format: uuid
+          nullable: true
+        member_mention_ids:
+          description: The unique IDs of the Member who are mentioned in the Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        blocker:
+          description: Marks the comment as a blocker that can be surfaced to permissions or teams mentioned in the comment. Can only be used on a top-level comment.
+          type: boolean
+        linked_to_slack:
+          description: Whether the Comment is currently the root of a thread that is linked to Slack.
+          type: boolean
+        updated_at:
+          description: The time/date when the Comment was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: The unique IDs of the Group who are mentioned in the Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        parent_id:
+          description: The ID of the parent Comment this Comment is threaded under.
+          type: integer
+          format: int64
+          nullable: true
+        id:
+          description: The unique ID of the Comment.
+          type: integer
+          format: int64
+        position:
+          description: The Comments numerical position in the list from oldest to newest.
+          type: integer
+          format: int64
+        unblocks_parent:
+          description: Marks the comment as an unblocker to its  blocker parent. Can only be set on a threaded comment who has a parent with `blocker` set.
+          type: boolean
+        reactions:
+          description: A set of Reactions to this Comment.
+          x-doc-skip: true
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryReaction'
+        created_at:
+          description: The time/date when the Comment was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Comment. In the case that the Comment has been deleted, this field can be set to nil.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - deleted
+      - story_id
+      - mention_ids
+      - author_id
+      - member_mention_ids
+      - linked_to_slack
+      - updated_at
+      - group_mention_ids
+      - external_id
+      - id
+      - position
+      - reactions
+      - created_at
+      - text
+    StoryCustomField:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
+    PullRequest:
+      description: Corresponds to a VCS Pull Request attached to a Shortcut story.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        closed:
+          description: True/False boolean indicating whether the VCS pull request has been closed.
+          type: boolean
+        merged:
+          description: True/False boolean indicating whether the VCS pull request has been merged.
+          type: boolean
+        num_added:
+          description: Number of lines added in the pull request, according to VCS.
+          type: integer
+          format: int64
+        branch_id:
+          description: The ID of the branch for the particular pull request.
+          type: integer
+          format: int64
+        overlapping_stories:
+          description: An array of Story ids that have Pull Requests that change at least one of the same lines this Pull Request changes.
+          type: array
+          items:
+            type: integer
+            format: int64
+        number:
+          description: The pull request's unique number ID in VCS.
+          type: integer
+          format: int64
+        branch_name:
+          description: The name of the branch for the particular pull request.
+          type: string
+        target_branch_name:
+          description: The name of the target branch for the particular pull request.
+          type: string
+        num_commits:
+          description: The number of commits on the pull request.
+          type: integer
+          format: int64
+          nullable: true
+        title:
+          description: The title of the pull request.
+          type: string
+        updated_at:
+          description: The time/date the pull request was created.
+          type: string
+          format: date-time
+        has_overlapping_stories:
+          description: Boolean indicating that the Pull Request has Stories that have Pull Requests that change at least one of the same lines this Pull Request changes.
+          type: boolean
+        draft:
+          description: True/False boolean indicating whether the VCS pull request is in the draft state.
+          type: boolean
+        id:
+          description: The unique ID associated with the pull request in Shortcut.
+          type: integer
+          format: int64
+        vcs_labels:
+          description: An array of PullRequestLabels attached to the PullRequest.
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequestLabel'
+          nullable: true
+        url:
+          description: The URL for the pull request.
+          type: string
+        num_removed:
+          description: Number of lines removed in the pull request, according to VCS.
+          type: integer
+          format: int64
+        review_status:
+          description: The status of the review for the pull request.
+          type: string
+        num_modified:
+          description: Number of lines modified in the pull request, according to VCS.
+          type: integer
+          format: int64
+          nullable: true
+        build_status:
+          description: The status of the Continuous Integration workflow for the pull request.
+          type: string
+        target_branch_id:
+          description: The ID of the target branch for the particular pull request.
+          type: integer
+          format: int64
+        repository_id:
+          description: The ID of the repository for the particular pull request.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the pull request was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - closed
+      - merged
+      - num_added
+      - branch_id
+      - number
+      - branch_name
+      - target_branch_name
+      - num_commits
+      - title
+      - updated_at
+      - has_overlapping_stories
+      - draft
+      - id
+      - url
+      - num_removed
+      - num_modified
+      - target_branch_id
+      - repository_id
+      - created_at
+    HistoryActionBranchMerge:
+      description: An action representing a VCS Branch being merged.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the VCS Branch that was pushed
+          type: string
+        url:
+          description: The URL from the provider of the VCS Branch that was pushed
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - merge
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+      - url
+      - action
+    History:
+      description: A history item is a group of actions that represent a transactional change to a Story.
+      type: object
+      properties:
+        actor_name:
+          description: The name of the actor that performed the action, if it can be determined.
+          type: string
+        changed_at:
+          description: The date when the change occurred.
+          type: string
+        primary_id:
+          description: The ID of the primary entity that has changed, if applicable.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        references:
+          description: An array of objects affected by the change. Reference objects provide basic information for the entities reference in the history actions. Some have specific fields, but they always contain an id, entity_type, and a name.
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/HistoryReferenceBranch'
+            - $ref: '#/components/schemas/HistoryReferenceCommit'
+            - $ref: '#/components/schemas/HistoryReferenceEpic'
+            - $ref: '#/components/schemas/HistoryReferenceGroup'
+            - $ref: '#/components/schemas/HistoryReferenceIteration'
+            - $ref: '#/components/schemas/HistoryReferenceLabel'
+            - $ref: '#/components/schemas/HistoryReferenceProject'
+            - $ref: '#/components/schemas/HistoryReferenceStory'
+            - $ref: '#/components/schemas/HistoryReferenceStoryTask'
+            - $ref: '#/components/schemas/HistoryReferenceCustomFieldEnumValue'
+            - $ref: '#/components/schemas/HistoryReferenceWorkflowState'
+            - $ref: '#/components/schemas/HistoryReferenceGeneral'
+        actions:
+          description: An array of actions that were performed for the change.
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/HistoryActionBranchCreate'
+            - $ref: '#/components/schemas/HistoryActionBranchMerge'
+            - $ref: '#/components/schemas/HistoryActionBranchPush'
+            - $ref: '#/components/schemas/HistoryActionLabelCreate'
+            - $ref: '#/components/schemas/HistoryActionLabelUpdate'
+            - $ref: '#/components/schemas/HistoryActionLabelDelete'
+            - $ref: '#/components/schemas/HistoryActionProjectUpdate'
+            - $ref: '#/components/schemas/HistoryActionPullRequest'
+            - $ref: '#/components/schemas/HistoryActionStoryCreate'
+            - $ref: '#/components/schemas/HistoryActionStoryUpdate'
+            - $ref: '#/components/schemas/HistoryActionStoryDelete'
+            - $ref: '#/components/schemas/HistoryActionStoryCommentCreate'
+            - $ref: '#/components/schemas/HistoryActionStoryLinkCreate'
+            - $ref: '#/components/schemas/HistoryActionStoryLinkUpdate'
+            - $ref: '#/components/schemas/HistoryActionStoryLinkDelete'
+            - $ref: '#/components/schemas/HistoryActionTaskCreate'
+            - $ref: '#/components/schemas/HistoryActionTaskUpdate'
+            - $ref: '#/components/schemas/HistoryActionTaskDelete'
+            - $ref: '#/components/schemas/HistoryActionWorkspace2BulkUpdate'
+        member_id:
+          description: The ID of the member who performed the change.
+          type: string
+          format: uuid
+        external_id:
+          description: The ID of the webhook that handled the change.
+          type: string
+        id:
+          description: The ID representing the change for the story.
+          type: string
+          format: uuid
+        version:
+          description: The version of the change format.
+          type: string
+          enum:
+          - v1
+        webhook_id:
+          description: The ID of the webhook that handled the change.
+          type: string
+          nullable: true
+        automation_id:
+          description: The ID of the automation that performed the change.
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - changed_at
+      - actions
+      - id
+      - version
+    LinkSubTaskParams:
+      type: object
+      properties:
+        story_id:
+          description: The ID of the story to link as a sub-task of the parent story
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - story_id
+    CustomFieldValueParams:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for the CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for the CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A literal value for the CustomField. Currently ignored.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+    HistoryActionStoryCommentCreate:
+      description: An action representing a Story Comment being created.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Story Comment.
+          type: string
+        author_id:
+          description: The Member ID of who created the Story Comment.
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - app_url
+      - author_id
+    HistoryActionTaskCreate:
+      description: An action representing a Task being created.
+      type: object
+      properties:
+        description:
+          description: The description of the Task.
+          type: string
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        mention_ids:
+          description: An array of Member IDs that represent who has been mentioned in the Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_mention_ids:
+          description: An array of Groups IDs that represent which have been mentioned in the Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of Member IDs that represent the Task's owners.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+        complete:
+          description: Whether or not the Task is complete.
+          type: boolean
+        deadline:
+          description: A timestamp that represent's the Task's deadline.
+          type: string
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - id
+      - action
+      - complete
+    UpdateStory:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 100000
+          description: The description of the story.
+          type: string
+        archived:
+          description: True if the story is archived, otherwise false.
+          type: boolean
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        pull_request_ids:
+          description: An array of IDs of Pull/Merge Requests attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        custom_fields:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        move_to:
+          description: One of "first" or "last". This can be used to move the given story to the first or last position in the workflow state.
+          type: string
+          enum:
+          - last
+          - first
+        file_ids:
+          description: An array of IDs of files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          maxLength: 512
+          minLength: 1
+          description: The title of the story.
+          type: string
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        external_links:
+          description: An array of External Links associated with this story.
+          type: array
+          items:
+            type: string
+        branch_ids:
+          description: An array of IDs of Branches attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        commit_ids:
+          description: An array of IDs of Commits attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        sub_tasks:
+          description: An array of story IDs to attach to this story as sub-tasks. This list represents the final state of the parent's sub-tasks - missing stories will be unlinked, new stories will be linked, and the input order reflects sub-task positions.
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkSubTaskParams'
+        requested_by_id:
+          description: The ID of the member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: The ID of the group to associate with this story
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state to put the story in.
+          type: integer
+          format: int64
+        follower_ids:
+          description: An array of UUIDs of the followers of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        parent_story_id:
+          description: The parent story id. If you want to unset this value set parent_story_id to null.
+          x-doc-skip: true
+          type: integer
+          format: int64
+          nullable: true
+        before_id:
+          description: The ID of the story we want to move this story before.
+          type: integer
+          format: int64
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        after_id:
+          description: The ID of the story we want to move this story after.
+          type: integer
+          format: int64
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of IDs of linked files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    StorySlim:
+      description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Story.
+          type: string
+        description:
+          description: The description of the Story.
+          type: string
+        archived:
+          description: True if the story has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Story has been started.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the Story.
+          type: array
+          items:
+            $ref: '#/components/schemas/TypedStoryLink'
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        task_ids:
+          description: An array of IDs of Tasks attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        synced_item:
+          $ref: '#/components/schemas/SyncedItem'
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of CustomField value assertions for the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryCustomField'
+        file_ids:
+          description: An array of IDs of Files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        num_tasks_completed:
+          description: The number of tasks on the story which are complete.
+          type: integer
+          format: int64
+        workflow_id:
+          description: The ID of the workflow the story belongs to.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the story.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Story has been completed.
+          type: boolean
+        blocker:
+          description: A true/false boolean indicating if the Story is currently a blocker of another story.
+          type: boolean
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The ID of the story template used to create this story, or null if not created using a template.
+          type: string
+          format: uuid
+          nullable: true
+        external_links:
+          description: An array of external links (strings) associated with a Story
+          type: array
+          items:
+            type: string
+        previous_iteration_ids:
+          description: The IDs of the iteration the story belongs to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        sub_task_story_ids:
+          description: 'The Story IDs of Sub-tasks attached to the Story
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            type: integer
+            format: int64
+        formatted_vcs_branch_name:
+          description: The formatted branch name for this story.
+          x-doc-skip: true
+          type: string
+          nullable: true
+        label_ids:
+          description: An array of label ids attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: The ID of the group associated with the story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story is currently in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Story.
+          type: integer
+          format: int64
+        lead_time:
+          description: The lead time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        parent_story_id:
+          description: 'The ID of the parent story to this story (making this story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        position:
+          description: A number representing the position of the story in relation to every other story in the current project.
+          type: integer
+          format: int64
+        blocked:
+          description: A true/false boolean indicating if the Story is currently blocked.
+          type: boolean
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of IDs of LinkedFiles attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        stats:
+          $ref: '#/components/schemas/StoryStats'
+        comment_ids:
+          description: An array of IDs of Comments attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        cycle_time:
+          description: The cycle time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+        moved_at:
+          description: The time/date the Story was last changed workflow-state.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - story_links
+      - entity_type
+      - labels
+      - task_ids
+      - mention_ids
+      - member_mention_ids
+      - story_type
+      - file_ids
+      - num_tasks_completed
+      - workflow_id
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - blocker
+      - epic_id
+      - story_template_id
+      - external_links
+      - previous_iteration_ids
+      - requested_by_id
+      - iteration_id
+      - label_ids
+      - started_at_override
+      - group_id
+      - workflow_state_id
+      - updated_at
+      - group_mention_ids
+      - follower_ids
+      - owner_ids
+      - external_id
+      - id
+      - estimate
+      - position
+      - blocked
+      - project_id
+      - linked_file_ids
+      - deadline
+      - stats
+      - comment_ids
+      - created_at
+      - moved_at
+    StoryHistoryChangeOldNewUuid:
+      description: The Team ID for the Story.
+      type: object
+      properties:
+        old:
+          description: The old value.
+          type: string
+          format: uuid
+        new:
+          description: The new value.
+          type: string
+          format: uuid
+      additionalProperties: false
+    Branch:
+      description: Branch refers to a VCS branch. Branches are feature branches associated with Shortcut Stories.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: A true/false boolean indicating if the Branch has been deleted.
+          type: boolean
+        name:
+          description: The name of the Branch.
+          type: string
+        persistent:
+          description: This field is deprecated, and will always be false.
+          type: boolean
+        updated_at:
+          description: The time/date the Branch was updated.
+          type: string
+          format: date-time
+          nullable: true
+        pull_requests:
+          description: An array of PullRequests attached to the Branch (there is usually only one).
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequest'
+        merged_branch_ids:
+          description: The IDs of the Branches the Branch has been merged into.
+          type: array
+          items:
+            type: integer
+            format: int64
+        id:
+          description: The unique ID of the Branch.
+          type: integer
+          format: int64
+          nullable: true
+        url:
+          description: The URL of the Branch.
+          type: string
+        repository_id:
+          description: The ID of the Repository that contains the Branch.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Branch was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - deleted
+      - name
+      - persistent
+      - updated_at
+      - pull_requests
+      - merged_branch_ids
+      - id
+      - url
+      - repository_id
+      - created_at
+    HistoryReferenceLabel:
+      description: A reference to an Label.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Label.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - app_url
+      - name
+    HistoryReferenceCommit:
+      description: A reference to a VCS Commit.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        message:
+          description: The message from the Commit.
+          type: string
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The external URL for the Branch.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - message
+      - url
+    HistoryActionStoryLinkUpdate:
+      description: An action representing a Story Link being updated.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - update
+        verb:
+          description: The verb describing the link's relationship.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The Story ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The Story ID of the object Story.
+          type: integer
+          format: int64
+        changes:
+          $ref: '#/components/schemas/HistoryChangesStoryLink'
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - verb
+      - subject_id
+      - object_id
+      - changes
+    HistoryReferenceStoryTask:
+      description: A reference to a Story Task.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        description:
+          description: The description of the Story Task.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - description
+    HistoryChangesTask:
+      description: The changes that have occurred as a result of the action.
+      type: object
+      properties:
+        complete:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewBool'
+        description:
+          $ref: '#/components/schemas/StoryHistoryChangeOldNewStr'
+        mention_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+        owner_ids:
+          $ref: '#/components/schemas/StoryHistoryChangeAddsRemovesUuid'
+      additionalProperties: false
+    HistoryActionLabelUpdate:
+      description: An action representing a Label being updated.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - update
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+    CreateStoryComment:
+      x-doc-skip: true
+      type: object
+      properties:
+        text:
+          maxLength: 100000
+          description: The comment text.
+          type: string
+        author_id:
+          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
+          type: string
+          format: uuid
+        created_at:
+          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
+          type: string
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
+          type: string
+          format: date-time
+        external_id:
+          maxLength: 1024
+          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        parent_id:
+          description: The ID of the Comment that this comment is threaded under.
+          type: integer
+          format: int64
+          nullable: true
+      additionalProperties: false
+      required:
+      - text
+    DeleteStories:
+      x-doc-skip: true
+      type: object
+      properties:
+        story_ids:
+          description: An array of IDs of Stories to delete.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+      additionalProperties: false
+      required:
+      - story_ids
+    HistoryReferenceStory:
+      description: A reference to a Story.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Story.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+        story_type:
+          description: If the referenced entity is a Story, either "bug", "chore", or "feature".
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        parent_story_id:
+          description: The Story's Parent ID (only applicable if Story is a Sub-task)
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - app_url
+      - name
+      - story_type
+    Task:
+      description: A Task on a Story.
+      type: object
+      properties:
+        description:
+          description: Full text of the Task.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_id:
+          description: The unique identifier of the parent Story.
+          type: integer
+          format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of UUIDs of Members mentioned in this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        completed_at:
+          description: The time/date the Task was completed.
+          type: string
+          format: date-time
+          nullable: true
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date the Task was updated.
+          type: string
+          format: date-time
+          nullable: true
+        group_mention_ids:
+          description: An array of UUIDs of Groups mentioned in this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the Owners of this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Task.
+          type: integer
+          format: int64
+        position:
+          description: The number corresponding to the Task's position within a list of Tasks on a Story.
+          type: integer
+          format: int64
+        complete:
+          description: True/false boolean indicating whether the Task has been completed.
+          type: boolean
+        created_at:
+          description: The time/date the Task was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_id
+      - mention_ids
+      - member_mention_ids
+      - completed_at
+      - global_id
+      - updated_at
+      - group_mention_ids
+      - owner_ids
+      - external_id
+      - id
+      - position
+      - complete
+      - created_at
+    HistoryReferenceGroup:
+      description: A reference to a Group.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: string
+          format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+    CreateTaskParams:
+      description: Request parameters for creating a Task on a Story.
+      type: object
+      properties:
+        description:
+          maxLength: 2048
+          minLength: 1
+          description: The Task description.
+          type: string
+        complete:
+          description: True/false boolean indicating whether the Task is completed. Defaults to false.
+          type: boolean
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          maxLength: 128
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        created_at:
+          description: Defaults to the time/date the Task is created but can be set to reflect another creation time/date.
+          type: string
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the Task is created in Shortcut but can be set to reflect another time/date.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
+          type: string
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
+    HistoryReferenceEpic:
+      description: A reference to an Epic.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Epic.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - app_url
+      - name
+    HistoryReferenceGeneral:
+      description: A default reference for entity types that don't have extra fields.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+    CreateStoryParams:
+      description: Request parameters for creating a story.
+      type: object
+      properties:
+        description:
+          maxLength: 100000
+          description: The description of the story.
+          type: string
+        archived:
+          description: Controls the story's archived state.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStoryLinkParams'
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        custom_fields:
+          description: A map specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        move_to:
+          description: One of "first" or "last". This can be used to move the given story to the first or last position in the workflow state.
+          type: string
+          enum:
+          - last
+          - first
+        file_ids:
+          description: An array of IDs of files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        source_task_id:
+          description: Given this story was converted from a task in another story, this is the original task ID that was converted to this story.
+          type: integer
+          format: int64
+          nullable: true
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+        name:
+          maxLength: 512
+          minLength: 1
+          description: The name of the story.
+          type: string
+        comments:
+          description: An array of comments to add to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateStoryCommentParams'
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The id of the story template used to create this story, if applicable. This is just an association; no content from the story template is inherited by the story simply by setting this field.
+          type: string
+          format: uuid
+          nullable: true
+        external_links:
+          description: An array of External Links associated with this story.
+          type: array
+          items:
+            type: string
+        sub_tasks:
+          description: 'An array of maps specifying sub-tasks to be associated with the created story. Each map can either link to an existing story or create a new sub-task story to be linked to the created story.
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/LinkSubTaskParams'
+            - $ref: '#/components/schemas/CreateSubTaskParams'
+        requested_by_id:
+          description: The ID of the member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        tasks:
+          description: An array of tasks connected to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateTaskParams'
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+        group_id:
+          description: The id of the group to associate with this story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story will be in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+        follower_ids:
+          description: An array of UUIDs of the followers of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        external_id:
+          maxLength: 1024
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        parent_story_id:
+          description: 'The ID of the parent story to associate with this story (making the created story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of IDs of linked files attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - name
+    HistoryActionTaskDelete:
+      description: An action representing a Task being deleted.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - delete
+        description:
+          description: The description of the Task being deleted.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - description
+    HistoryActionStoryCreate:
+      description: An action representing a Story being created.
+      type: object
+      properties:
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Story.
+          type: string
+        description:
+          description: The description of the Story.
+          type: string
+        started:
+          description: Whether or not the Story has been started.
+          type: boolean
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        task_ids:
+          description: An array of Task IDs on this Story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        story_type:
+          description: The type of Story; either feature, bug, or chore.
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        name:
+          description: The name of the Story.
+          type: string
+        completed:
+          description: Whether or not the Story is completed.
+          type: boolean
+        blocker:
+          description: Whether or not the Story is blocking another Story.
+          type: boolean
+        epic_id:
+          description: The Epic ID for this Story.
+          type: integer
+          format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the Story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The Iteration ID the Story is in.
+          type: integer
+          format: int64
+          nullable: true
+        label_ids:
+          description: An array of Labels IDs attached to the Story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        group_id:
+          description: The Team IDs for the followers of the Story.
+          type: string
+          format: uuid
+        workflow_state_id:
+          description: An array of Workflow State IDs attached to the Story.
+          type: integer
+          format: int64
+        object_story_link_ids:
+          description: An array of Story IDs that are the object of a Story Link relationship.
+          type: array
+          items:
+            type: integer
+            format: int64
+        follower_ids:
+          description: An array of Member IDs for the followers of the Story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of Member IDs that are the owners of the Story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        custom_field_value_ids:
+          description: An array of Custom Field Enum Value ids on this Story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        parent_story_id:
+          description: The Story's Parent ID (only applicable if Story is a Sub-task)
+          type: integer
+          format: int64
+        estimate:
+          description: The estimate (or point value) for the Story.
+          type: integer
+          format: int64
+        subject_story_link_ids:
+          description: An array of Story IDs that are the subject of a Story Link relationship.
+          type: array
+          items:
+            type: integer
+            format: int64
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+        blocked:
+          description: Whether or not the Story is blocked by another Story.
+          type: boolean
+        project_id:
+          description: The Project ID of the Story is in.
+          type: integer
+          format: int64
+        deadline:
+          description: The timestamp representing the Story's deadline.
+          type: string
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - story_type
+      - name
+      - id
+      - action
+    CreateOrDeleteStoryReaction:
+      x-doc-skip: true
+      type: object
+      properties:
+        emoji:
+          description: The emoji short-code to add / remove. E.g. `:thumbsup::skin-tone-4:`.
+          type: string
+      additionalProperties: false
+      required:
+      - emoji
+    HistoryReferenceCustomFieldEnumValue:
+      description: A reference to a CustomField value asserted on a Story.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        string_value:
+          description: The custom-field enum value as a string.
+          type: string
+          nullable: true
+        enum_value_enabled:
+          description: Whether or not the custom-field enum value is enabled.
+          type: boolean
+          nullable: true
+        field_id:
+          description: The public-id of the parent custom-field of this enum value.
+          type: string
+          format: uuid
+        field_type:
+          description: The type variety of the parent custom-field of this enum value.
+          type: string
+        field_name:
+          description: The name as it is displayed to the user of the parent custom-field of this enum value.
+          type: string
+        field_enabled:
+          description: Whether or not the custom-field is enabled.
+          type: boolean
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - string_value
+      - enum_value_enabled
+      - field_id
+      - field_type
+      - field_name
+      - field_enabled
+    RemoveLabelParams:
+      description: Request parameters for removing a Label from a Shortcut Story.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Label to remove.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+    Story:
+      description: Stories are the standard unit of work in Shortcut and represent individual features, bugs, and chores.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Story.
+          type: string
+        description:
+          description: The description of the story.
+          type: string
+        archived:
+          description: True if the story has been archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Story has been started.
+          type: boolean
+        story_links:
+          description: An array of story links attached to the Story.
+          type: array
+          items:
+            $ref: '#/components/schemas/TypedStoryLink'
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        synced_item:
+          $ref: '#/components/schemas/SyncedItem'
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of CustomField value assertions for the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryCustomField'
+        linked_files:
+          description: An array of linked files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedFile'
+        workflow_id:
+          description: The ID of the workflow the story belongs to.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        started_at:
+          description: The time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: The time/date the Story was completed.
+          type: string
+          format: date-time
+          nullable: true
+        name:
+          description: The name of the story.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Story has been completed.
+          type: boolean
+        comments:
+          description: An array of comments attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryComment'
+        blocker:
+          description: A true/false boolean indicating if the Story is currently a blocker of another story.
+          type: boolean
+        branches:
+          description: An array of Git branches attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Branch'
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        story_template_id:
+          description: The ID of the story template used to create this story, or null if not created using a template.
+          type: string
+          format: uuid
+          nullable: true
+        external_links:
+          description: An array of external links (strings) associated with a Story
+          type: array
+          items:
+            type: string
+        previous_iteration_ids:
+          description: The IDs of the iteration the story belongs to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the story.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        sub_task_story_ids:
+          description: 'The Story IDs of Sub-tasks attached to the Story
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            type: integer
+            format: int64
+        tasks:
+          description: An array of tasks connected to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+        formatted_vcs_branch_name:
+          description: The formatted branch name for this story.
+          x-doc-skip: true
+          type: string
+          nullable: true
+        label_ids:
+          description: An array of label ids attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Story was started.
+          type: string
+          format: date-time
+          nullable: true
+        group_id:
+          description: The ID of the group associated with the story.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state the story is currently in.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time/date the Story was updated.
+          type: string
+          format: date-time
+          nullable: true
+        pull_requests:
+          description: An array of Pull/Merge Requests attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/PullRequest'
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Story.
+          type: integer
+          format: int64
+        lead_time:
+          description: The lead time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        parent_story_id:
+          description: 'The ID of the parent story to this story (making this story a sub-task).
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: integer
+          format: int64
+          nullable: true
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+          nullable: true
+        commits:
+          description: An array of commits attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/Commit'
+        files:
+          description: An array of files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/UploadedFile'
+        position:
+          description: A number representing the position of the story in relation to every other story in the current project.
+          type: integer
+          format: int64
+        blocked:
+          description: A true/false boolean indicating if the Story is currently blocked.
+          type: boolean
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+        stats:
+          $ref: '#/components/schemas/StoryStats'
+        cycle_time:
+          description: The cycle time (in seconds) of this story when complete.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Story was created.
+          type: string
+          format: date-time
+        moved_at:
+          description: The time/date the Story was last changed workflow-state.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - started
+      - story_links
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - story_type
+      - linked_files
+      - workflow_id
+      - completed_at_override
+      - started_at
+      - completed_at
+      - name
+      - global_id
+      - completed
+      - comments
+      - blocker
+      - branches
+      - epic_id
+      - story_template_id
+      - external_links
+      - previous_iteration_ids
+      - requested_by_id
+      - iteration_id
+      - tasks
+      - label_ids
+      - started_at_override
+      - group_id
+      - workflow_state_id
+      - updated_at
+      - pull_requests
+      - group_mention_ids
+      - follower_ids
+      - owner_ids
+      - external_id
+      - id
+      - estimate
+      - commits
+      - files
+      - position
+      - blocked
+      - project_id
+      - deadline
+      - stats
+      - created_at
+      - moved_at
+    HistoryActionBranchCreate:
+      description: An action representing a VCS Branch being created.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the VCS Branch that was pushed
+          type: string
+        url:
+          description: The URL from the provider of the VCS Branch that was pushed
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+      - url
+      - action
+    HistoryReferenceBranch:
+      description: A reference to a VCS Branch.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The external URL for the Branch.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - name
+      - url
+    CreateSubTaskParams:
+      type: object
+      properties:
+        name:
+          maxLength: 512
+          minLength: 1
+          description: The name of the SubTask.
+          type: string
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        workflow_state_id:
+          description: The ID of the workflow state the story will be in.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - name
+    HistoryActionLabelCreate:
+      description: An action representing a Label being created.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - create
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Label.
+          type: string
+        name:
+          description: The name of the Label.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - app_url
+      - name
+    Commit:
+      description: Commit refers to a VCS commit and all associated details.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        author_id:
+          description: The ID of the Member that authored the Commit, if known.
+          type: string
+          format: uuid
+          nullable: true
+        hash:
+          description: The Commit hash.
+          type: string
+        updated_at:
+          description: The time/date the Commit was updated.
+          type: string
+          format: date-time
+          nullable: true
+        id:
+          description: The unique ID of the Commit.
+          type: integer
+          format: int64
+          nullable: true
+        url:
+          description: The URL of the Commit.
+          type: string
+        author_email:
+          description: The email address of the VCS user that authored the Commit.
+          type: string
+        timestamp:
+          description: The time/date the Commit was pushed.
+          type: string
+          format: date-time
+        author_identity:
+          $ref: '#/components/schemas/Identity'
+        repository_id:
+          description: The ID of the Repository that contains the Commit.
+          type: integer
+          format: int64
+          nullable: true
+        created_at:
+          description: The time/date the Commit was created.
+          type: string
+          format: date-time
+        message:
+          description: The Commit message.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - author_id
+      - hash
+      - updated_at
+      - id
+      - url
+      - author_email
+      - timestamp
+      - author_identity
+      - repository_id
+      - created_at
+      - message
+    StoryHistoryChangeAddsRemovesInt:
+      description: Task IDs that have been added or removed from the Story.
+      type: object
+      properties:
+        adds:
+          description: The values that have been added.
+          type: array
+          items:
+            type: integer
+            format: int64
+        removes:
+          description: The values that have been removed
+          type: array
+          items:
+            type: integer
+            format: int64
+      additionalProperties: false
+    HistoryActionProjectUpdate:
+      description: An action representing a Project being updated.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - update
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Project.
+          type: string
+        name:
+          description: The name of the Project.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - app_url
+      - name
+    HistoryActionStoryDelete:
+      description: An action representing a Story being deleted.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - delete
+        name:
+          description: The name of the Story.
+          type: string
+        story_type:
+          description: The type of Story; either feature, bug, or chore.
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        parent_story_id:
+          description: The Story's Parent ID (only applicable if Story is a Sub-task)
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - name
+      - story_type
+    UpdateStoryComment:
+      x-doc-skip: true
+      type: object
+      properties:
+        text:
+          maxLength: 100000
+          description: The updated comment text.
+          type: string
+      additionalProperties: false
+      required:
+      - text
+    RemoveCustomFieldParams:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for the CustomField.
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - field_id
+    LinkedFile:
+      description: Linked files are stored on a third-party website and linked to one or more Stories. Shortcut currently supports linking files from Google Drive, Dropbox, Box, and by URL.
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The IDs of the stories this file is attached to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The members that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The name of the linked file.
+          type: string
+        thumbnail_url:
+          description: The URL of the file thumbnail, if the integration provided it.
+          type: string
+          nullable: true
+        type:
+          description: The integration type (e.g. google, dropbox, box).
+          type: string
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+          nullable: true
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+          nullable: true
+        updated_at:
+          description: The time/date the LinkedFile was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: The groups that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The unique identifier for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL of the file.
+          type: string
+        created_at:
+          description: The time/date the LinkedFile was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - type
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - group_mention_ids
+      - id
+      - url
+      - created_at
+    CreateStoryLinkParams:
+      description: Request parameters for creating a Story Link within a Story.
+      type: object
+      properties:
+        subject_id:
+          description: The unique ID of the Story defined as subject.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        object_id:
+          description: The unique ID of the Story defined as object.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - verb
+    HistoryActionTaskUpdate:
+      description: An action representing a Task being updated.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          type: integer
+          format: int64
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        action:
+          description: The action of the entity referenced.
+          type: string
+          enum:
+          - update
+        changes:
+          $ref: '#/components/schemas/HistoryChangesTask'
+        complete:
+          description: Whether or not the Task is complete.
+          type: boolean
+        description:
+          description: The description of the Task.
+          type: string
+        story_id:
+          description: The Story ID that contains the Task.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - action
+      - changes
+      - description
+      - story_id
+    SearchStories:
+      x-doc-skip: true
+      type: object
+      properties:
+        archived:
+          description: A true/false boolean indicating whether the Story is in archived state.
+          type: boolean
+        owner_id:
+          description: An array of UUIDs for any Users who may be Owners of the Stories.
+          type: string
+          format: uuid
+          nullable: true
+        story_type:
+          description: The type of Stories that you want returned.
+          type: string
+          enum:
+          - feature
+          - chore
+          - bug
+        epic_ids:
+          description: The Epic IDs that may be associated with the Stories.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        project_ids:
+          description: The IDs for the Projects the Stories may be assigned to.
+          type: array
+          items:
+            type: integer
+            format: int64
+            nullable: true
+          uniqueItems: true
+        updated_at_end:
+          description: Stories should have been updated on or before this date.
+          type: string
+          format: date-time
+        completed_at_end:
+          description: Stories should have been completed on or before this date.
+          type: string
+          format: date-time
+        workflow_state_types:
+          description: The type of Workflow State the Stories may be in.
+          type: array
+          items:
+            type: string
+            enum:
+            - started
+            - backlog
+            - unstarted
+            - done
+        deadline_end:
+          description: Stories should have a deadline on or before this date.
+          type: string
+          format: date-time
+        created_at_start:
+          description: Stories should have been created on or after this date.
+          type: string
+          format: date-time
+        epic_id:
+          description: The Epic IDs that may be associated with the Stories.
+          type: integer
+          format: int64
+          nullable: true
+        label_name:
+          minLength: 1
+          description: The name of any associated Labels.
+          type: string
+        requested_by_id:
+          description: The UUID of any Users who may have requested the Stories.
+          type: string
+          format: uuid
+        iteration_id:
+          description: The Iteration ID that may be associated with the Stories.
+          type: integer
+          format: int64
+          nullable: true
+        label_ids:
+          description: The Label IDs that may be associated with the Stories.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        group_id:
+          description: The Group ID that is associated with the Stories
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The unique IDs of the specific Workflow States that the Stories should be in.
+          type: integer
+          format: int64
+        iteration_ids:
+          description: The Iteration IDs that may be associated with the Stories.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        created_at_end:
+          description: Stories should have been created on or before this date.
+          type: string
+          format: date-time
+        deadline_start:
+          description: Stories should have a deadline on or after this date.
+          type: string
+          format: date-time
+        group_ids:
+          description: The Group IDs that are associated with the Stories
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        owner_ids:
+          description: An array of UUIDs for any Users who may be Owners of the Stories.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        external_id:
+          maxLength: 1024
+          description: An ID or URL that references an external resource. Useful during imports.
+          type: string
+        includes_description:
+          description: Whether to include the story description in the response.
+          type: boolean
+        estimate:
+          description: The number of estimate points associate with the Stories.
+          type: integer
+          format: int64
+        project_id:
+          description: The IDs for the Projects the Stories may be assigned to.
+          type: integer
+          format: int64
+          nullable: true
+        completed_at_start:
+          description: Stories should have been completed on or after this date.
+          type: string
+          format: date-time
+        updated_at_start:
+          description: Stories should have been updated on or after this date.
+          type: string
+          format: date-time
+      additionalProperties: false
+    CreateStoryCommentParams:
+      description: Request parameters for creating a Comment on a Shortcut Story.
+      type: object
+      properties:
+        text:
+          maxLength: 100000
+          description: The comment text.
+          type: string
+        author_id:
+          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
+          type: string
+          format: uuid
+        created_at:
+          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
+          type: string
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
+          type: string
+          format: date-time
+        external_id:
+          maxLength: 1024
+          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+        parent_id:
+          description: The ID of the Comment that this comment is threaded under.
+          type: integer
+          format: int64
+          nullable: true
+      additionalProperties: false
+      required:
+      - text
+    Identity:
+      description: The Identity of the VCS user that authored the Commit.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        name:
+          description: This is your login in VCS.
+          type: string
+          nullable: true
+        type:
+          description: The service this Identity is for.
+          type: string
+          enum:
+          - slack
+          - github
+          - gitlab
+          - bitbucket
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - name
+      - type
+    HistoryReferenceProject:
+      description: A reference to an Project.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Project.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - app_url
+      - name
+    PullRequestLabel:
+      description: Corresponds to a VCS Label associated with a Pull Request.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the VCS Label.
+          type: integer
+          format: int64
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The color of the VCS label.
+          minLength: 1
+          type: string
+        description:
+          description: The description of the VCS label.
+          type: string
+          nullable: true
+        name:
+          description: The name of the VCS label.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - color
+      - name
+    StoryHistoryChangeOldNewInt:
+      description: The estimate value for the Story
+      type: object
+      properties:
+        old:
+          description: The old value.
+          type: integer
+          format: int64
+        new:
+          description: The new value.
+          type: integer
+          format: int64
+      additionalProperties: false
+    HistoryReferenceIteration:
+      description: A reference to an Iteration.
+      type: object
+      properties:
+        id:
+          description: The ID of the entity referenced.
+          oneOf:
+          - type: integer
+            format: int64
+          - type: string
+            format: uuid
+        entity_type:
+          description: The type of entity referenced.
+          type: string
+        app_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The application URL of the Iteration.
+          type: string
+        name:
+          description: The name of the entity referenced.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - entity_type
+      - app_url
+      - name
+  requestBodies:
+    CreateOrDeleteStoryReaction:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateOrDeleteStoryReaction'
+      required: true
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

@@ -1,0 +1,926 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Entity Templates API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Entity Templates
+paths:
+  /api/v3/entity-templates:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EntityTemplate'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listEntityTemplates
+      description: List all the entity templates for the Workspace.
+      summary: List Entity Templates
+      tags:
+      - Entity Templates
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEntityTemplate'
+        description: Request parameters for creating an entirely new entity template.
+        required: true
+      responses:
+        '201':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTemplate'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createEntityTemplate
+      description: Create a new entity template for the Workspace.
+      summary: Create Entity Template
+      tags:
+      - Entity Templates
+  /api/v3/entity-templates/disable:
+    put:
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: disableStoryTemplates
+      description: Disables the Story Template feature for the Workspace.
+      summary: Disable Story Templates
+      tags:
+      - Entity Templates
+  /api/v3/entity-templates/enable:
+    put:
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: enableStoryTemplates
+      description: Enables the Story Template feature for the Workspace.
+      summary: Enable Story Templates
+      tags:
+      - Entity Templates
+  /api/v3/entity-templates/{entity-template-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: entity-template-public-id
+        description: The unique ID of the entity template.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTemplate'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getEntityTemplate
+      description: Get Entity Template returns information about a given entity template.
+      summary: Get Entity Template
+      tags:
+      - Entity Templates
+    put:
+      parameters:
+      - in: path
+        name: entity-template-public-id
+        description: The unique ID of the template to be updated.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEntityTemplate'
+        description: "Request parameters for changing either a template's name or any of\n  the attributes it is designed to pre-populate."
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityTemplate'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateEntityTemplate
+      description: Update an entity template's name or its contents.
+      summary: Update Entity Template
+      tags:
+      - Entity Templates
+    delete:
+      parameters:
+      - in: path
+        name: entity-template-public-id
+        description: The unique ID of the entity template.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteEntityTemplate
+      summary: Delete Entity Template
+      tags:
+      - Entity Templates
+components:
+  schemas:
+    CreateLabelParams:
+      description: Request parameters for creating a Label on a Shortcut Story.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Label.
+          type: string
+        description:
+          maxLength: 1024
+          description: The description of the new Label.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+    UpdateEntityTemplate:
+      description: "Request parameters for changing either a template's name or any of\n  the attributes it is designed to pre-populate."
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The updated template name.
+          type: string
+        story_contents:
+          $ref: '#/components/schemas/UpdateStoryContents'
+      additionalProperties: false
+    CreateEntityTemplate:
+      description: Request parameters for creating an entirely new entity template.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new entity template
+          type: string
+        author_id:
+          description: The id of the user creating this template.
+          type: string
+          format: uuid
+        story_contents:
+          $ref: '#/components/schemas/CreateStoryContents'
+      additionalProperties: false
+      required:
+      - name
+      - story_contents
+    EntityTemplate:
+      description: An entity template can be used to prefill various fields when creating new stories.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique identifier for the entity template.
+          type: string
+          format: uuid
+        created_at:
+          description: The time/date when the entity template was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date when the entity template was last updated.
+          type: string
+          format: date-time
+        name:
+          description: The template's name.
+          type: string
+        author_id:
+          description: The unique ID of the member who created the template.
+          type: string
+          format: uuid
+        last_used_at:
+          description: The last time that someone created an entity using this template.
+          type: string
+          format: date-time
+        story_contents:
+          $ref: '#/components/schemas/StoryContents'
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - created_at
+      - updated_at
+      - name
+      - author_id
+      - last_used_at
+      - story_contents
+    UploadedFile:
+      description: 'An UploadedFile is any document uploaded to your Shortcut Workspace. Files attached from a third-party service are different: see the Linked Files endpoint.'
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The unique IDs of the Stories associated with this file.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The unique IDs of the Members who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The optional User-specified name of the file.
+          type: string
+        thumbnail_url:
+          description: The url where the thumbnail of the file can be found in Shortcut.
+          type: string
+          nullable: true
+        size:
+          description: The size of the file.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The unique ID of the Member who uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: Free form string corresponding to a text or image file.
+          type: string
+        updated_at:
+          description: The time/date that the file was updated.
+          type: string
+          format: date-time
+          nullable: true
+        filename:
+          description: The name assigned to the file in Shortcut upon upload.
+          type: string
+        group_mention_ids:
+          description: The unique IDs of the Groups who are mentioned in the file description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the File has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL for the file.
+          type: string
+          nullable: true
+        created_at:
+          description: The time/date that the file was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - filename
+      - group_mention_ids
+      - external_id
+      - id
+      - url
+      - created_at
+    LinkedFile:
+      description: Linked files are stored on a third-party website and linked to one or more Stories. Shortcut currently supports linking files from Google Drive, Dropbox, Box, and by URL.
+      type: object
+      properties:
+        description:
+          description: The description of the file.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        story_ids:
+          description: The IDs of the stories this file is attached to.
+          type: array
+          items:
+            type: integer
+            format: int64
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: The members that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        name:
+          description: The name of the linked file.
+          type: string
+        thumbnail_url:
+          description: The URL of the file thumbnail, if the integration provided it.
+          type: string
+          nullable: true
+        type:
+          description: The integration type (e.g. google, dropbox, box).
+          type: string
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+          nullable: true
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+          nullable: true
+        updated_at:
+          description: The time/date the LinkedFile was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: The groups that are mentioned in the description of the file.
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The unique identifier for the file.
+          type: integer
+          format: int64
+        url:
+          description: The URL of the file.
+          type: string
+        created_at:
+          description: The time/date the LinkedFile was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - story_ids
+      - mention_ids
+      - member_mention_ids
+      - name
+      - thumbnail_url
+      - type
+      - size
+      - uploader_id
+      - content_type
+      - updated_at
+      - group_mention_ids
+      - id
+      - url
+      - created_at
+    CreateSubTaskParams:
+      type: object
+      properties:
+        name:
+          maxLength: 512
+          minLength: 1
+          description: The name of the SubTask.
+          type: string
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        workflow_state_id:
+          description: The ID of the workflow state the story will be in.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - name
+    StoryContents:
+      description: A container entity for the attributes this template should populate.
+      type: object
+      properties:
+        description:
+          description: The description of the story.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of labels attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of maps specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        linked_files:
+          description: An array of linked files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkedFile'
+        name:
+          description: The name of the story.
+          type: string
+        epic_id:
+          description: The ID of the epic the story belongs to.
+          type: integer
+          format: int64
+        external_links:
+          description: An array of external links connected to the story.
+          type: array
+          items:
+            type: string
+        sub_tasks:
+          description: 'An array of maps specifying the sub-tasks to create and link to the story.
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateSubTaskParams'
+        iteration_id:
+          description: The ID of the iteration the story belongs to.
+          type: integer
+          format: int64
+        tasks:
+          description: An array of tasks connected to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryContentsTask'
+        label_ids:
+          description: An array of label ids attached to the story.
+          type: array
+          items:
+            type: integer
+            format: int64
+        group_id:
+          description: The ID of the group to which the story is assigned.
+          type: string
+          format: uuid
+        workflow_state_id:
+          description: The ID of the workflow state the story is currently in.
+          type: integer
+          format: int64
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        estimate:
+          description: The numeric point estimate of the story. Can also be null, which means unestimated.
+          type: integer
+          format: int64
+        files:
+          description: An array of files attached to the story.
+          type: array
+          items:
+            $ref: '#/components/schemas/UploadedFile'
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+      additionalProperties: false
+    CreateStoryContents:
+      description: A map of story attributes this template populates.
+      type: object
+      properties:
+        description:
+          description: The description of the story.
+          type: string
+        labels:
+          description: An array of labels to be populated by the template.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of maps specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        file_ids:
+          description: An array of the attached file IDs to be populated.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        name:
+          maxLength: 512
+          description: The name of the story.
+          type: string
+        epic_id:
+          description: The ID of the epic the to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        external_links:
+          description: An array of external links to be populated.
+          type: array
+          items:
+            type: string
+        sub_tasks:
+          description: 'An array of maps specifying the sub-tasks to create and link to the story.
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateSubTaskParams'
+        iteration_id:
+          description: The ID of the iteration the to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        tasks:
+          description: An array of tasks to be populated by the template.
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseTaskParams'
+        group_id:
+          description: The ID of the group to be populated.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        estimate:
+          description: The numeric point estimate to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+        linked_file_ids:
+          description: An array of the linked file IDs to be populated.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    BaseTaskParams:
+      description: Request parameters for specifying how to pre-populate a task through a template.
+      type: object
+      properties:
+        description:
+          maxLength: 2048
+          minLength: 1
+          description: The Task description.
+          type: string
+        complete:
+          description: True/false boolean indicating whether the Task is completed. Defaults to false.
+          type: boolean
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          maxLength: 128
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - description
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type: string
+          nullable: true
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type: string
+          nullable: true
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    CustomFieldValueParams:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for the CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for the CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A literal value for the CustomField. Currently ignored.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+    StoryContentsTask:
+      type: object
+      properties:
+        description:
+          description: Full text of the Task.
+          type: string
+        position:
+          description: The number corresponding to the Task's position within a list of Tasks on a Story.
+          type: integer
+          format: int64
+        complete:
+          description: True/false boolean indicating whether the Task has been completed.
+          type: boolean
+        owner_ids:
+          description: An array of UUIDs of the Owners of this Task.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Task has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - description
+    UpdateStoryContents:
+      description: Updated attributes for the template to populate.
+      type: object
+      properties:
+        description:
+          description: The description of the story.
+          type: string
+        labels:
+          description: An array of labels to be populated by the template.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        story_type:
+          description: The type of story (feature, bug, chore).
+          type: string
+        custom_fields:
+          description: An array of maps specifying a CustomField ID and CustomFieldEnumValue ID that represents an assertion of some value for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueParams'
+        file_ids:
+          description: An array of the attached file IDs to be populated.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        name:
+          description: The name of the story.
+          type: string
+        epic_id:
+          description: The ID of the epic the to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        external_links:
+          description: An array of external links to be populated.
+          type: array
+          items:
+            type: string
+        sub_tasks:
+          description: 'An array of maps specifying the sub-tasks to create and link to the story.
+
+            Field only applicable when Sub-task feature is enabled.'
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateSubTaskParams'
+        iteration_id:
+          description: The ID of the iteration the to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        tasks:
+          description: An array of tasks to be populated by the template.
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseTaskParams'
+        group_id:
+          description: The ID of the group to be populated.
+          type: string
+          format: uuid
+          nullable: true
+        workflow_state_id:
+          description: The ID of the workflow state to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs of the owners of this story.
+          type: array
+          items:
+            type: string
+            format: uuid
+        estimate:
+          description: The numeric point estimate to be populated.
+          type: integer
+          format: int64
+          nullable: true
+        project_id:
+          description: The ID of the project the story belongs to.
+          type: integer
+          format: int64
+          nullable: true
+        linked_file_ids:
+          description: An array of the linked file IDs to be populated.
+          type: array
+          items:
+            type: integer
+            format: int64
+          uniqueItems: true
+        deadline:
+          description: The due date of the story.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

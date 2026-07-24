@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Integrations API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Integrations
+paths:
+  /api/v3/integrations/webhook:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGenericIntegration'
+        required: true
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: createGenericIntegration
+      summary: Create Generic Integration
+      tags:
+      - Integrations
+  /api/v3/integrations/webhook/{integration-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: integration-public-id
+        description: ''
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getGenericIntegration
+      summary: Get Generic Integration
+      tags:
+      - Integrations
+    delete:
+      parameters:
+      - in: path
+        name: integration-public-id
+        description: ''
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteGenericIntegration
+      summary: Delete Generic Integration
+      tags:
+      - Integrations
+components:
+  schemas:
+    CreateGenericIntegration:
+      type: object
+      properties:
+        webhook_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          type: string
+        secret:
+          maxLength: 128
+          minLength: 1
+          type: string
+      additionalProperties: false
+      required:
+      - webhook_url
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

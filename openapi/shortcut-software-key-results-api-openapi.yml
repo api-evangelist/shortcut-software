@@ -1,0 +1,146 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Key Results API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Key Results
+paths:
+  /api/v3/key-results/{key-result-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: key-result-public-id
+        description: The ID of the Key Result.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyResult'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getKeyResult
+      description: Get Key Result returns information about a chosen Key Result.
+      summary: Get Key Result
+      tags:
+      - Key Results
+    put:
+      parameters:
+      - in: path
+        name: key-result-public-id
+        description: The ID of the Key Result.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateKeyResult'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyResult'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: updateKeyResult
+      description: Update Key Result allows updating a Key Result's name or initial, observed, or target values.
+      summary: Update Key Result
+      tags:
+      - Key Results
+components:
+  schemas:
+    KeyResultValue:
+      description: The starting value of the Key Result.
+      type: object
+      properties:
+        numeric_value:
+          description: The numeric value, as a decimal string. No more than two decimal places are allowed.
+          type: string
+        boolean_value:
+          description: The boolean value.
+          type: boolean
+      additionalProperties: false
+    UpdateKeyResult:
+      type: object
+      properties:
+        name:
+          maxLength: 1024
+          description: The name of the Key Result.
+          type: string
+        initial_observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        target_value:
+          $ref: '#/components/schemas/KeyResultValue'
+      additionalProperties: false
+    KeyResult:
+      type: object
+      properties:
+        id:
+          description: The ID of the Key Result.
+          type: string
+          format: uuid
+        name:
+          description: The name of the Key Result.
+          type: string
+        objective_id:
+          description: The Objective to which this Key Result belongs.
+          type: integer
+          format: int64
+        type:
+          description: The type of the Key Result (numeric, percent, or boolean).
+          type: string
+          enum:
+          - percent
+          - boolean
+          - numeric
+        initial_observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        current_observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        current_target_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        progress:
+          description: The integer percentage of progress toward completion of the Key Result.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - id
+      - name
+      - objective_id
+      - type
+      - initial_observed_value
+      - current_observed_value
+      - current_target_value
+      - progress
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

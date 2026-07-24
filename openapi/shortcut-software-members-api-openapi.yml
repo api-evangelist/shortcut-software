@@ -1,0 +1,246 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Members API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Members
+paths:
+  /api/v3/members:
+    get:
+      parameters:
+      - in: query
+        name: org-public-id
+        description: The unique ID of the Organization to limit the list to.
+        required: false
+        x-doc-skip: true
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: disabled
+        description: Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listMembers
+      description: Returns information about members of the Workspace.
+      summary: List Members
+      tags:
+      - Members
+  /api/v3/members/{member-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: member-public-id
+        description: The Member's unique ID.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - in: query
+        name: org-public-id
+        description: The unique ID of the Organization to limit the lookup to.
+        required: false
+        x-doc-skip: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getMember
+      description: Returns information about a Member.
+      summary: Get Member
+      tags:
+      - Members
+components:
+  schemas:
+    Profile:
+      description: A group of Member profile details.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deactivated:
+          description: A true/false boolean indicating whether the Member has been deactivated within Shortcut.
+          type: boolean
+        two_factor_auth_activated:
+          description: If Two Factor Authentication is activated for this User.
+          type: boolean
+        mention_name:
+          description: The Member's username within the Organization.
+          type: string
+        name:
+          description: The Member's name within the Organization.
+          type: string
+          nullable: true
+        is_agent:
+          description: Whether this profile is an Agent/Bot user.
+          x-doc-skip: true
+          type: boolean
+        gravatar_hash:
+          description: This is the gravatar hash associated with email_address.
+          type: string
+          nullable: true
+        id:
+          description: The unique identifier of the profile.
+          type: string
+          format: uuid
+        display_icon:
+          $ref: '#/components/schemas/Icon'
+        is_owner:
+          description: A boolean indicating whether this profile is an owner at their associated organization.
+          type: boolean
+        email_address:
+          description: The primary email address of the Member with the Organization.
+          type: string
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - deactivated
+      - mention_name
+      - name
+      - gravatar_hash
+      - id
+      - display_icon
+      - is_owner
+      - email_address
+    Member:
+      description: Details about an individual user within the Workspace.
+      type: object
+      properties:
+        role:
+          description: The Member's role in the Workspace.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        disabled:
+          description: True/false boolean indicating whether the Member has been disabled within the Workspace.
+          type: boolean
+        global_id:
+          x-doc-skip: true
+          type: string
+        state:
+          description: The user state, one of partial, full, disabled, or imported.  A partial user is disabled, has no means to log in, and is not an import user.  A full user is enabled and has a means to log in.  A disabled user is disabled and has a means to log in.  An import user is disabled, has no means to log in, and is marked as an import user.
+          type: string
+          enum:
+          - partial
+          - full
+          - disabled
+          - imported
+        updated_at:
+          description: The time/date the Member was last updated.
+          type: string
+          format: date-time
+          nullable: true
+        created_without_invite:
+          description: Whether this member was created as a placeholder entity.
+          x-doc-skip: true
+          type: boolean
+        group_ids:
+          description: The Member's group ids
+          type: array
+          items:
+            type: string
+            format: uuid
+        id:
+          description: The Member's ID in Shortcut.
+          type: string
+          format: uuid
+        installation_id:
+          description: Only set for agents. The installation id associated with this agent.
+          x-doc-skip: true
+          type: string
+          format: uuid
+        profile:
+          $ref: '#/components/schemas/Profile'
+        created_at:
+          description: The time/date the Member was created.
+          type: string
+          format: date-time
+          nullable: true
+        replaced_by:
+          description: The id of the member that replaces this one when merged.
+          x-doc-skip: true
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - role
+      - entity_type
+      - disabled
+      - global_id
+      - state
+      - updated_at
+      - created_without_invite
+      - group_ids
+      - id
+      - profile
+      - created_at
+    Icon:
+      description: Icons are used to attach images to Groups, Workspaces, Members, and Loading screens in the Shortcut web application.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the Icon.
+          type: string
+          format: uuid
+        created_at:
+          description: The time/date that the Icon was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date that the Icon was updated.
+          type: string
+          format: date-time
+        url:
+          description: The URL of the Icon.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - created_at
+      - updated_at
+      - url
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

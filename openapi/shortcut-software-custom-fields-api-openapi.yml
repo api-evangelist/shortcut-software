@@ -1,0 +1,325 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Custom Fields API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Custom Fields
+paths:
+  /api/v3/custom-fields:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomField'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listCustomFields
+      summary: List Custom Fields
+      tags:
+      - Custom Fields
+  /api/v3/custom-fields/{custom-field-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: custom-field-public-id
+        description: The unique ID of the CustomField.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomField'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getCustomField
+      summary: Get Custom Field
+      tags:
+      - Custom Fields
+    put:
+      parameters:
+      - in: path
+        name: custom-field-public-id
+        description: The unique ID of the CustomField.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomField'
+        required: true
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomField'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '409':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataConflictError'
+        '422':
+          description: Unprocessable
+      operationId: updateCustomField
+      description: 'Update Custom Field can be used to update the definition of a Custom Field. The order of items in the ''values'' collection is interpreted to be their ascending sort order.To delete an existing enum value, simply omit it from the ''values'' collection. New enum values may be created inline by including an object in the ''values'' collection having a ''value'' entry with no ''id'' (eg. {''value'': ''myNewValue'', ''color_key'': ''green''}).'
+      summary: Update Custom Field
+      tags:
+      - Custom Fields
+    delete:
+      parameters:
+      - in: path
+        name: custom-field-public-id
+        description: The unique ID of the CustomField.
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: No Content
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: deleteCustomField
+      summary: Delete Custom Field
+      tags:
+      - Custom Fields
+components:
+  schemas:
+    UpdateCustomField:
+      type: object
+      properties:
+        enabled:
+          description: Indicates whether the Field is enabled for the Workspace. Only enabled fields can be applied to Stories.
+          type: boolean
+        name:
+          maxLength: 63
+          minLength: 1
+          description: A collection of objects representing reporting periods for years.
+          type: string
+        values:
+          description: A collection of EnumValue objects representing the values in the domain of some Custom Field.
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateCustomFieldEnumValue'
+        icon_set_identifier:
+          maxLength: 63
+          minLength: 1
+          description: A frontend-controlled string that represents the icon for this custom field.
+          type: string
+        description:
+          description: A description of the purpose of this field.
+          type: string
+        before_id:
+          description: The ID of the CustomField we want to move this CustomField before.
+          type: string
+          format: uuid
+        after_id:
+          description: The ID of the CustomField we want to move this CustomField after.
+          type: string
+          format: uuid
+      additionalProperties: false
+    CustomFieldEnumValue:
+      type: object
+      properties:
+        id:
+          description: The unique public ID for the Custom Field.
+          type: string
+          format: uuid
+        value:
+          maxLength: 63
+          minLength: 1
+          description: A string value within the domain of this Custom Field.
+          type: string
+        position:
+          description: An integer indicating the position of this Value with respect to the other CustomFieldEnumValues in the enumeration.
+          type: integer
+          format: int64
+        color_key:
+          description: A color key associated with this CustomFieldEnumValue.
+          type: string
+          nullable: true
+        entity_type:
+          description: A string description of this resource.
+          type: string
+          enum:
+          - custom-field-enum-value
+        enabled:
+          description: When true, the CustomFieldEnumValue can be selected for the CustomField.
+          x-doc-skip: true
+          type: boolean
+      additionalProperties: false
+      required:
+      - id
+      - value
+      - position
+      - color_key
+      - entity_type
+      - enabled
+    UpdateCustomFieldEnumValue:
+      type: object
+      properties:
+        id:
+          description: The unique ID of an existing EnumValue within the CustomField's domain.
+          type: string
+          format: uuid
+        value:
+          maxLength: 63
+          minLength: 1
+          description: A string value within the domain of this Custom Field.
+          type: string
+        color_key:
+          description: A color key associated with this EnumValue within the CustomField's domain.
+          type: string
+          enum:
+          - blue
+          - purple
+          - midnight-blue
+          - orange
+          - yellow-green
+          - brass
+          - gray
+          - fuchsia
+          - yellow
+          - pink
+          - sky-blue
+          - green
+          - red
+          - black
+          - slate
+          - turquoise
+          nullable: true
+        enabled:
+          description: Whether this EnumValue is enabled for its CustomField or not. Leaving this key out of the request leaves the current enabled state untouched.
+          type: boolean
+      additionalProperties: false
+    CustomField:
+      type: object
+      properties:
+        description:
+          maxLength: 512
+          minLength: 1
+          description: A string description of the CustomField
+          type: string
+        icon_set_identifier:
+          maxLength: 63
+          minLength: 1
+          description: A string that represents the icon that corresponds to this custom field.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+          enum:
+          - custom-field
+        story_types:
+          description: The types of stories this CustomField is scoped to.
+          x-doc-skip: true
+          type: array
+          items:
+            type: string
+        name:
+          maxLength: 63
+          minLength: 1
+          description: The name of the Custom Field.
+          type: string
+        fixed_position:
+          description: When true, the CustomFieldEnumValues may not be reordered.
+          x-doc-skip: true
+          type: boolean
+        updated_at:
+          description: The instant when this CustomField was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique public ID for the CustomField.
+          type: string
+          format: uuid
+        values:
+          description: A collection of legal values for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldEnumValue'
+        field_type:
+          description: The type of Custom Field, eg. 'enum'.
+          type: string
+          enum:
+          - enum
+        position:
+          description: An integer indicating the position of this Custom Field with respect to the other CustomField
+          type: integer
+          format: int64
+        canonical_name:
+          description: The canonical name for a Shortcut-defined field.
+          type: string
+        enabled:
+          description: When true, the CustomField can be applied to entities in the Workspace.
+          type: boolean
+        created_at:
+          description: The instant when this CustomField was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - name
+      - updated_at
+      - id
+      - field_type
+      - position
+      - enabled
+      - created_at
+    DataConflictError:
+      description: Error returned when Datomic tx fails due to Datomc :db.error/cas-failed error
+      type: object
+      properties:
+        error:
+          type: string
+          enum:
+          - data-conflict-error
+        message:
+          description: 'An explanatory message: "The update failed due to a data conflict. Please refresh and try again."'
+          type: string
+      additionalProperties: false
+      required:
+      - error
+      - message
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

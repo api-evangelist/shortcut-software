@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Repositories API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Repositories
+paths:
+  /api/v3/repositories:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Repository'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: listRepositories
+      description: List Repositories returns a list of all Repositories and their attributes.
+      summary: List Repositories
+      tags:
+      - Repositories
+  /api/v3/repositories/{repo-public-id}:
+    get:
+      parameters:
+      - in: path
+        name: repo-public-id
+        description: The unique ID of the Repository.
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Repository'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getRepository
+      description: Get Repository returns information about the selected Repository.
+      summary: Get Repository
+      tags:
+      - Repositories
+components:
+  schemas:
+    Repository:
+      description: Repository refers to a VCS repository.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        name:
+          description: The shorthand name of the VCS repository.
+          type: string
+          nullable: true
+        type:
+          description: The VCS provider for the Repository.
+          type: string
+          enum:
+          - github
+          - gitlab
+          - bitbucket
+        updated_at:
+          description: The time/date the Repository was updated.
+          type: string
+          format: date-time
+          nullable: true
+        external_id:
+          description: The VCS unique identifier for the Repository.
+          type: string
+          nullable: true
+        id:
+          description: The ID associated to the VCS repository in Shortcut.
+          type: integer
+          format: int64
+          nullable: true
+        url:
+          description: The URL of the Repository.
+          type: string
+          nullable: true
+        full_name:
+          description: The full name of the VCS repository.
+          type: string
+          nullable: true
+        created_at:
+          description: The time/date the Repository was created.
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+      required:
+      - entity_type
+      - name
+      - type
+      - updated_at
+      - external_id
+      - id
+      - url
+      - full_name
+      - created_at
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token

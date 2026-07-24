@@ -1,0 +1,109 @@
+openapi: 3.0.0
+info:
+  title: Shortcut Categories Member API
+  version: '3.0'
+  description: Shortcut API
+servers:
+- url: https://api.app.shortcut.com
+security:
+- api_token: []
+tags:
+- name: Member
+paths:
+  /api/v3/member:
+    get:
+      responses:
+        '200':
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberInfo'
+        '400':
+          description: Schema mismatch
+        '404':
+          description: Resource does not exist
+        '422':
+          description: Unprocessable
+      operationId: getCurrentMemberInfo
+      description: Returns information about the authenticated member.
+      summary: Get Current Member Info
+      tags:
+      - Member
+components:
+  schemas:
+    MemberInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        is_owner:
+          type: boolean
+        mention_name:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+        workspace2:
+          $ref: '#/components/schemas/BasicWorkspaceInfo'
+        organization2:
+          $ref: '#/components/schemas/MemberInfoOrganization2'
+      additionalProperties: false
+      required:
+      - id
+      - is_owner
+      - mention_name
+      - name
+      - role
+      - workspace2
+      - organization2
+    MemberInfoOrganization2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - id
+    BasicWorkspaceInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        created_at:
+          type: string
+          format: date-time
+        default_workflow_id:
+          type: integer
+          format: int64
+        estimate_scale:
+          type: array
+          items:
+            type: integer
+            format: int64
+        name:
+          type: string
+        url_slug:
+          type: string
+        utc_offset:
+          type: string
+        korey_enabled:
+          type: boolean
+      additionalProperties: false
+      required:
+      - id
+      - created_at
+      - default_workflow_id
+      - estimate_scale
+      - name
+      - url_slug
+      - utc_offset
+  securitySchemes:
+    api_token:
+      type: apiKey
+      in: header
+      name: Shortcut-Token
