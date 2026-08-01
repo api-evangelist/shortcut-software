@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.shortcut.com/api/rest/v3 + https://www.shortcut.com/release-notes/
+versioning:
+  scheme: uri-path
+  current: v3
+  path: /api/v3
+  deprecated: [v2]
+  migration: change /v2/ to /v3/ in the URL path
+  next: v4 (alpha, announced 2026-05-12 — "expand capabilities and optimize agent compatibility")
+  docs: https://developer.shortcut.com/api/rest/v3
+deprecation:
+  policy_url: https://developer.shortcut.com/api/rest/v3
+  sunset_header: false
+  notes: >-
+    v2 is deprecated in favor of v3. No RFC 8594 Sunset/Deprecation header support
+    is documented; deprecation is communicated via docs and release notes.
+status_page: https://status.shortcut.com
+changelog: https://www.shortcut.com/release-notes/
+sla:
+  notes: >-
+    SOC 2 Type 2 covers availability; enterprise SLAs are contract-based. No public
+    numeric uptime target is published.
+deprecated_operations: []

@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/shortcut-software-openapi-original.json
+note: >-
+  Provider ships an official hosted MCP server (https://mcp.shortcut.com/mcp) and an
+  mcp-server-shortcut repo but no packaged "Agent Skill" files; these are generated from
+  the OpenAPI + conventions, grounded in real operationIds.
+skills:
+- file: shortcut-software-create-and-track-story.md
+  name: Create and track a Story
+  api: openapi/shortcut-software-openapi-original.json
+  operations: [getCurrentMemberInfo, createStory, getStory, updateStory, createStoryComment, createTask]
+- file: shortcut-software-plan-an-iteration.md
+  name: Plan an iteration (sprint)
+  api: openapi/shortcut-software-openapi-original.json
+  operations: [createEpic, createIteration, createStory, listIterationStories]
+- file: shortcut-software-search-workspace.md
+  name: Search the workspace
+  api: openapi/shortcut-software-openapi-original.json
+  operations: [search, searchStories, searchEpics]

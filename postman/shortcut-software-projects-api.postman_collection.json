@@ -1,0 +1,1475 @@
+{
+  "info": {
+    "_postman_id": "760ac79a-a243-47a3-8599-107282023aa9",
+    "name": "Shortcut Categories Projects API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:17.000Z",
+    "updatedAt": "2026-07-28T02:54:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-760ac79a-a243-47a3-8599-107282023aa9"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "projects",
+              "item": [
+                {
+                  "name": "{project-public-id}",
+                  "item": [
+                    {
+                      "name": "stories",
+                      "item": [
+                        {
+                          "name": "List Stories",
+                          "id": "00b80a5f-cbbe-4b80-9118-419bf42da808",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id/stories?includes_description=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                  "key": "includes_description",
+                                  "value": "<boolean>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "e3d6865b-cd1a-416f-9ed2-5d0d161cbe30",
+                                  "key": "project-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) The unique ID of the Project."
+                                }
+                              ]
+                            },
+                            "description": "List Stories returns a list of all Stories in a selected Project and their attributes."
+                          },
+                          "response": [
+                            {
+                              "id": "68aab6b8-d5f9-4a20-8843-47ac4513d8de",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/projects/:project-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "projects",
+                                    ":project-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#0bFb5e\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#BDB93e\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#FaCc1b\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#bE840b\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:54:18.000Z",
+                              "updatedAt": "2026-07-28T02:54:18.000Z",
+                              "uid": "35240-68aab6b8-d5f9-4a20-8843-47ac4513d8de"
+                            },
+                            {
+                              "id": "f6b79781-3644-429d-99e5-701188e7a4df",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/projects/:project-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "projects",
+                                    ":project-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:54:18.000Z",
+                              "updatedAt": "2026-07-28T02:54:18.000Z",
+                              "uid": "35240-f6b79781-3644-429d-99e5-701188e7a4df"
+                            },
+                            {
+                              "id": "70ec4cfd-782e-4373-947d-db8a2c412f6f",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/projects/:project-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "projects",
+                                    ":project-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:54:18.000Z",
+                              "updatedAt": "2026-07-28T02:54:18.000Z",
+                              "uid": "35240-70ec4cfd-782e-4373-947d-db8a2c412f6f"
+                            },
+                            {
+                              "id": "0105e506-c722-43a9-a928-a4d8e5305d0b",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/projects/:project-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "projects",
+                                    ":project-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:54:18.000Z",
+                              "updatedAt": "2026-07-28T02:54:18.000Z",
+                              "uid": "35240-0105e506-c722-43a9-a928-a4d8e5305d0b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-00b80a5f-cbbe-4b80-9118-419bf42da808"
+                        }
+                      ],
+                      "id": "fffd2e64-6ea4-41c8-ba0f-d4a7cda7d52d",
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-fffd2e64-6ea4-41c8-ba0f-d4a7cda7d52d"
+                    },
+                    {
+                      "name": "Get Project",
+                      "id": "a9d6b741-7c97-48e6-a20f-4f9e0e29b82d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects",
+                            ":project-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "33b3cf40-74c1-43f5-a837-57dd1141eab2",
+                              "key": "project-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Project."
+                            }
+                          ]
+                        },
+                        "description": "Get Project returns information about the selected Project."
+                      },
+                      "response": [
+                        {
+                          "id": "cd42d5f9-2b12-4c9e-a5fe-450f7f40e9b2",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#afD83C\",\n  \"workflow_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"stats\": {\n    \"num_stories\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_related_documents\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-cd42d5f9-2b12-4c9e-a5fe-450f7f40e9b2"
+                        },
+                        {
+                          "id": "aa4286b5-c7c3-4410-bc35-d40070693293",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-aa4286b5-c7c3-4410-bc35-d40070693293"
+                        },
+                        {
+                          "id": "1806e9d6-2bee-4139-92b4-03305ed6edb1",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-1806e9d6-2bee-4139-92b4-03305ed6edb1"
+                        },
+                        {
+                          "id": "4b23fe4b-d596-486b-be80-cff5d02c2637",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-4b23fe4b-d596-486b-be80-cff5d02c2637"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-a9d6b741-7c97-48e6-a20f-4f9e0e29b82d"
+                    },
+                    {
+                      "name": "Update Project",
+                      "id": "e10e143d-c2de-4c55-ac71-175d77c590ce",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#dA23B8\",\n  \"name\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"abbreviation\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects",
+                            ":project-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "38260726-b314-412e-98cd-1c4959e23bfc",
+                              "key": "project-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Project."
+                            }
+                          ]
+                        },
+                        "description": "Update Project can be used to change properties of a Project."
+                      },
+                      "response": [
+                        {
+                          "id": "9cd20977-21ea-412b-8131-7e18f6e3f85e",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#dA23B8\",\n  \"name\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"abbreviation\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#afD83C\",\n  \"workflow_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"stats\": {\n    \"num_stories\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_related_documents\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-9cd20977-21ea-412b-8131-7e18f6e3f85e"
+                        },
+                        {
+                          "id": "511c6365-fedd-41c0-916a-ffe9fb2e2175",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#dA23B8\",\n  \"name\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"abbreviation\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-511c6365-fedd-41c0-916a-ffe9fb2e2175"
+                        },
+                        {
+                          "id": "5a75ad1e-acf5-48b2-8319-1353f3cdde09",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#dA23B8\",\n  \"name\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"abbreviation\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-5a75ad1e-acf5-48b2-8319-1353f3cdde09"
+                        },
+                        {
+                          "id": "b12b4086-ca0b-4112-933b-2c08f31bb8fc",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#dA23B8\",\n  \"name\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"abbreviation\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-b12b4086-ca0b-4112-933b-2c08f31bb8fc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-e10e143d-c2de-4c55-ac71-175d77c590ce"
+                    },
+                    {
+                      "name": "Delete Project",
+                      "id": "80dd7853-e755-4e6b-a462-7e8ef03390e8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects",
+                            ":project-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "d1c12c87-31eb-4f0f-a271-b4956d322914",
+                              "key": "project-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Project."
+                            }
+                          ]
+                        },
+                        "description": "Delete Project can be used to delete a Project. Projects can only be deleted if all associated Stories are moved or deleted. In the case that the Project cannot be deleted, you will receive a 422 response."
+                      },
+                      "response": [
+                        {
+                          "id": "e8927707-dc2f-43e9-86ff-ca029fe7efb6",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-e8927707-dc2f-43e9-86ff-ca029fe7efb6"
+                        },
+                        {
+                          "id": "a3792864-c8d2-4cd7-9242-f7c0b6349b88",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-a3792864-c8d2-4cd7-9242-f7c0b6349b88"
+                        },
+                        {
+                          "id": "975f57fd-a37c-43c7-b20c-fa8c19b8e618",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-975f57fd-a37c-43c7-b20c-fa8c19b8e618"
+                        },
+                        {
+                          "id": "2838c295-dbcf-45ae-9f30-fb20d6411d80",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/projects/:project-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "projects",
+                                ":project-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "project-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:18.000Z",
+                          "updatedAt": "2026-07-28T02:54:18.000Z",
+                          "uid": "35240-2838c295-dbcf-45ae-9f30-fb20d6411d80"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-80dd7853-e755-4e6b-a462-7e8ef03390e8"
+                    }
+                  ],
+                  "id": "112d5a46-6e96-456c-b176-ca1e7e1f7a1a",
+                  "createdAt": "2026-07-28T02:54:18.000Z",
+                  "updatedAt": "2026-07-28T02:54:18.000Z",
+                  "uid": "35240-112d5a46-6e96-456c-b176-ca1e7e1f7a1a"
+                },
+                {
+                  "name": "List Projects",
+                  "id": "fbc40615-1076-4c4f-bcf3-b7655cf2fda8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/projects",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "projects"
+                      ]
+                    },
+                    "description": "List Projects returns a list of all Projects and their attributes."
+                  },
+                  "response": [
+                    {
+                      "id": "9515d292-f652-4e27-980b-10c31afb1cfd",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"days_to_thermometer\": \"<long>\",\n    \"color\": \"#cfA2Eb\",\n    \"workflow_id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"start_time\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"show_thermometer\": \"<boolean>\",\n    \"team_id\": \"<long>\",\n    \"iteration_length\": \"<long>\",\n    \"abbreviation\": \"<string>\",\n    \"stats\": {\n      \"num_stories\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_related_documents\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"days_to_thermometer\": \"<long>\",\n    \"color\": \"#eC7f90\",\n    \"workflow_id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"start_time\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"show_thermometer\": \"<boolean>\",\n    \"team_id\": \"<long>\",\n    \"iteration_length\": \"<long>\",\n    \"abbreviation\": \"<string>\",\n    \"stats\": {\n      \"num_stories\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_related_documents\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-9515d292-f652-4e27-980b-10c31afb1cfd"
+                    },
+                    {
+                      "id": "bb78f16b-ad25-4b4d-bd9c-b698de3941aa",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-bb78f16b-ad25-4b4d-bd9c-b698de3941aa"
+                    },
+                    {
+                      "id": "9fdd06c2-4c35-4734-a6e7-9452ad4045ab",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-9fdd06c2-4c35-4734-a6e7-9452ad4045ab"
+                    },
+                    {
+                      "id": "a362d377-4c5d-4536-9dd8-033f36df7ece",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-a362d377-4c5d-4536-9dd8-033f36df7ece"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:54:18.000Z",
+                  "updatedAt": "2026-07-28T02:54:18.000Z",
+                  "uid": "35240-fbc40615-1076-4c4f-bcf3-b7655cf2fda8"
+                },
+                {
+                  "name": "Create Project",
+                  "id": "a6159f8c-494b-4a4e-a5fd-f94ea21f3617",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"team_id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"color\": \"#0Fc3Ea\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/projects",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "projects"
+                      ]
+                    },
+                    "description": "Create Project is used to create a new Shortcut Project."
+                  },
+                  "response": [
+                    {
+                      "id": "5f1122e9-5419-41ce-8eea-09eecc30a989",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"team_id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"color\": \"#0Fc3Ea\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"days_to_thermometer\": \"<long>\",\n  \"color\": \"#afD83C\",\n  \"workflow_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"show_thermometer\": \"<boolean>\",\n  \"team_id\": \"<long>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"stats\": {\n    \"num_stories\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_related_documents\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-5f1122e9-5419-41ce-8eea-09eecc30a989"
+                    },
+                    {
+                      "id": "0c6abd97-cd4d-4bf0-99b0-66bda0a201e6",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"team_id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"color\": \"#0Fc3Ea\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-0c6abd97-cd4d-4bf0-99b0-66bda0a201e6"
+                    },
+                    {
+                      "id": "b3b7ed13-9680-4c34-8e91-c40ebc9d9f52",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"team_id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"color\": \"#0Fc3Ea\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-b3b7ed13-9680-4c34-8e91-c40ebc9d9f52"
+                    },
+                    {
+                      "id": "8bb3f68b-a9ab-46b3-889d-e69bd8fed4fa",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"team_id\": \"<long>\",\n  \"description\": \"<string>\",\n  \"color\": \"#0Fc3Ea\",\n  \"start_time\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"iteration_length\": \"<long>\",\n  \"abbreviation\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "projects"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:18.000Z",
+                      "updatedAt": "2026-07-28T02:54:18.000Z",
+                      "uid": "35240-8bb3f68b-a9ab-46b3-889d-e69bd8fed4fa"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:54:18.000Z",
+                  "updatedAt": "2026-07-28T02:54:18.000Z",
+                  "uid": "35240-a6159f8c-494b-4a4e-a5fd-f94ea21f3617"
+                }
+              ],
+              "id": "f829c4b9-2753-44d3-a177-e3db04366665",
+              "createdAt": "2026-07-28T02:54:18.000Z",
+              "updatedAt": "2026-07-28T02:54:18.000Z",
+              "uid": "35240-f829c4b9-2753-44d3-a177-e3db04366665"
+            }
+          ],
+          "id": "7590aac0-85c4-4290-ae17-05f563f7365a",
+          "createdAt": "2026-07-28T02:54:18.000Z",
+          "updatedAt": "2026-07-28T02:54:18.000Z",
+          "uid": "35240-7590aac0-85c4-4290-ae17-05f563f7365a"
+        }
+      ],
+      "id": "794fdd20-04c2-414a-b56a-84e93e52ad8d",
+      "createdAt": "2026-07-28T02:54:18.000Z",
+      "updatedAt": "2026-07-28T02:54:18.000Z",
+      "uid": "35240-794fdd20-04c2-414a-b56a-84e93e52ad8d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

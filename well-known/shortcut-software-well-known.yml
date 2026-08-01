@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of /.well-known/ on API + docs + marketing hosts
+hosts:
+- host: https://api.app.shortcut.com
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: shortcut-software-oauth-authorization-server.json
+  - path: /.well-known/security.txt                  # returns 401 org-context error, not a real security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+- host: https://developer.shortcut.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://www.shortcut.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  The API host publishes RFC 8414 OAuth Authorization Server Metadata at
+  /.well-known/oauth-authorization-server (issuer https://api.app.shortcut.com),
+  which backs the hosted MCP server's OAuth flow. No security.txt / OIDC discovery
+  is exposed publicly (the API host returns a 401 organization-context error for
+  those paths rather than a document).

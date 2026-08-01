@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "00674541-b270-4c5b-8d9f-2a64e2fa88e3",
+    "name": "Shortcut Categories Member API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:23.000Z",
+    "updatedAt": "2026-07-28T02:53:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-00674541-b270-4c5b-8d9f-2a64e2fa88e3"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "member",
+              "item": [
+                {
+                  "name": "Get Current Member Info",
+                  "id": "f23997a3-a1ae-4da4-b539-166ed830369a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/member",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "member"
+                      ]
+                    },
+                    "description": "Returns information about the authenticated member."
+                  },
+                  "response": [
+                    {
+                      "id": "46ebccdb-e7f4-4fcd-a6a2-5abfc3881502",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/member",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "member"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<uuid>\",\n  \"is_owner\": \"<boolean>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"role\": \"<string>\",\n  \"workspace2\": {\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"default_workflow_id\": \"<long>\",\n    \"estimate_scale\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"url_slug\": \"<string>\",\n    \"utc_offset\": \"<string>\",\n    \"korey_enabled\": \"<boolean>\"\n  },\n  \"organization2\": {\n    \"id\": \"<uuid>\"\n  }\n}",
+                      "createdAt": "2026-07-28T02:53:24.000Z",
+                      "updatedAt": "2026-07-28T02:53:24.000Z",
+                      "uid": "35240-46ebccdb-e7f4-4fcd-a6a2-5abfc3881502"
+                    },
+                    {
+                      "id": "9b59cd14-1452-4426-b12c-e7f1137d2d9d",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/member",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "member"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:24.000Z",
+                      "updatedAt": "2026-07-28T02:53:24.000Z",
+                      "uid": "35240-9b59cd14-1452-4426-b12c-e7f1137d2d9d"
+                    },
+                    {
+                      "id": "f671e0f3-81c0-487b-b7c7-97ff99421453",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/member",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "member"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:24.000Z",
+                      "updatedAt": "2026-07-28T02:53:24.000Z",
+                      "uid": "35240-f671e0f3-81c0-487b-b7c7-97ff99421453"
+                    },
+                    {
+                      "id": "3f9e191b-5e33-416e-8912-4ad86d5c4428",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/member",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "member"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:24.000Z",
+                      "updatedAt": "2026-07-28T02:53:24.000Z",
+                      "uid": "35240-3f9e191b-5e33-416e-8912-4ad86d5c4428"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:24.000Z",
+                  "updatedAt": "2026-07-28T02:53:24.000Z",
+                  "uid": "35240-f23997a3-a1ae-4da4-b539-166ed830369a"
+                }
+              ],
+              "id": "493655f8-41e3-4ee6-bb48-e02a65d05ef9",
+              "createdAt": "2026-07-28T02:53:24.000Z",
+              "updatedAt": "2026-07-28T02:53:24.000Z",
+              "uid": "35240-493655f8-41e3-4ee6-bb48-e02a65d05ef9"
+            }
+          ],
+          "id": "ad416631-4125-4aae-8459-790a1e4e90ea",
+          "createdAt": "2026-07-28T02:53:24.000Z",
+          "updatedAt": "2026-07-28T02:53:24.000Z",
+          "uid": "35240-ad416631-4125-4aae-8459-790a1e4e90ea"
+        }
+      ],
+      "id": "466a402e-9a88-4b09-bcf3-ca28c7a98027",
+      "createdAt": "2026-07-28T02:53:24.000Z",
+      "updatedAt": "2026-07-28T02:53:24.000Z",
+      "uid": "35240-466a402e-9a88-4b09-bcf3-ca28c7a98027"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

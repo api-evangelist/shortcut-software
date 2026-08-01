@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+spec_type: Webhooks
+source: https://developer.shortcut.com/api/webhook/v1
+docs:
+- https://developer.shortcut.com/api/webhook/v1
+- https://help.shortcut.com/hc/en-us/articles/115005093963-Setting-up-Outgoing-Webhooks
+- https://help.shortcut.com/hc/en-us/articles/34734717380756-Registering-Outgoing-Webhooks-API
+direction: outgoing
+description: >-
+  Outgoing Webhooks notify a registered URL whenever any change happens in a Shortcut
+  workspace — changes made by users AND changes made via API-token requests. There is
+  no published AsyncAPI document; this captures the webhook surface.
+registration:
+  ui: Settings > Integrations > Outgoing Webhooks
+  api:
+    method: POST
+    path: /api/v3/integrations/webhook
+    auth_header: Shortcut-Token
+    body:
+      webhook_url: required
+      secret: optional
+security:
+  signature_header: Shortcut-Signature
+  signature_algorithm: HMAC hex digest over the payload using the configured secret
+payload:
+  format: application/json
+  content: >-
+    Webhook payloads describe the changed entities (actions with entity references)
+    across Stories, Epics, Iterations, and related workspace objects.
+notes: >-
+  Payload is delivered as a POST to the registered URL; verify authenticity with the
+  Shortcut-Signature HMAC header when a secret is configured.

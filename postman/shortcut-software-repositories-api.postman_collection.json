@@ -1,0 +1,473 @@
+{
+  "info": {
+    "_postman_id": "52d7aa8e-6a0c-48ef-a9c3-fafaa5ef7f98",
+    "name": "Shortcut Categories Repositories API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:18.000Z",
+    "updatedAt": "2026-07-28T02:54:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-52d7aa8e-6a0c-48ef-a9c3-fafaa5ef7f98"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "repositories",
+              "item": [
+                {
+                  "name": "{repo-public-id}",
+                  "item": [
+                    {
+                      "name": "Get Repository",
+                      "id": "b8d3a86b-dcb9-4140-a837-0c0425676203",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/repositories/:repo-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "repositories",
+                            ":repo-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "5cd42a29-0f40-45b9-9c20-a1c3ce942c82",
+                              "key": "repo-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Repository."
+                            }
+                          ]
+                        },
+                        "description": "Get Repository returns information about the selected Repository."
+                      },
+                      "response": [
+                        {
+                          "id": "b5b5f15c-aebc-42c0-b50d-1b809ae17f8b",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/repositories/:repo-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "repositories",
+                                ":repo-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "repo-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"gitlab\",\n  \"updated_at\": \"<dateTime>\",\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:54:19.000Z",
+                          "updatedAt": "2026-07-28T02:54:19.000Z",
+                          "uid": "35240-b5b5f15c-aebc-42c0-b50d-1b809ae17f8b"
+                        },
+                        {
+                          "id": "2deef740-966c-45aa-91d6-2bf1435ded2c",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/repositories/:repo-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "repositories",
+                                ":repo-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "repo-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:19.000Z",
+                          "updatedAt": "2026-07-28T02:54:19.000Z",
+                          "uid": "35240-2deef740-966c-45aa-91d6-2bf1435ded2c"
+                        },
+                        {
+                          "id": "af33dba6-101a-4d96-ad7b-43a87c87b944",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/repositories/:repo-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "repositories",
+                                ":repo-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "repo-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:19.000Z",
+                          "updatedAt": "2026-07-28T02:54:19.000Z",
+                          "uid": "35240-af33dba6-101a-4d96-ad7b-43a87c87b944"
+                        },
+                        {
+                          "id": "abbb2542-29ce-410a-acd2-5728e32403c3",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/repositories/:repo-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "repositories",
+                                ":repo-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "repo-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:19.000Z",
+                          "updatedAt": "2026-07-28T02:54:19.000Z",
+                          "uid": "35240-abbb2542-29ce-410a-acd2-5728e32403c3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:19.000Z",
+                      "updatedAt": "2026-07-28T02:54:19.000Z",
+                      "uid": "35240-b8d3a86b-dcb9-4140-a837-0c0425676203"
+                    }
+                  ],
+                  "id": "a3dbbea8-fcb4-4d64-9f07-d4dff4a48de5",
+                  "createdAt": "2026-07-28T02:54:19.000Z",
+                  "updatedAt": "2026-07-28T02:54:19.000Z",
+                  "uid": "35240-a3dbbea8-fcb4-4d64-9f07-d4dff4a48de5"
+                },
+                {
+                  "name": "List Repositories",
+                  "id": "43f11ec6-7f21-486c-9ff3-7191fb167291",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/repositories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "repositories"
+                      ]
+                    },
+                    "description": "List Repositories returns a list of all Repositories and their attributes."
+                  },
+                  "response": [
+                    {
+                      "id": "92a20d88-b6fd-4a93-8ec8-b029d6e56eae",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/repositories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "repositories"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"entity_type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"type\": \"github\",\n    \"updated_at\": \"<dateTime>\",\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"entity_type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"type\": \"github\",\n    \"updated_at\": \"<dateTime>\",\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:54:19.000Z",
+                      "updatedAt": "2026-07-28T02:54:19.000Z",
+                      "uid": "35240-92a20d88-b6fd-4a93-8ec8-b029d6e56eae"
+                    },
+                    {
+                      "id": "82e0e458-f395-44c4-a1ff-c6942be7a068",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/repositories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "repositories"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:19.000Z",
+                      "updatedAt": "2026-07-28T02:54:19.000Z",
+                      "uid": "35240-82e0e458-f395-44c4-a1ff-c6942be7a068"
+                    },
+                    {
+                      "id": "a4405109-bffb-4e88-b996-ad1798708a60",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/repositories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "repositories"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:19.000Z",
+                      "updatedAt": "2026-07-28T02:54:19.000Z",
+                      "uid": "35240-a4405109-bffb-4e88-b996-ad1798708a60"
+                    },
+                    {
+                      "id": "9e4123a4-b32b-4382-99d9-c6eafeabe1dd",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/repositories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "repositories"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:19.000Z",
+                      "updatedAt": "2026-07-28T02:54:19.000Z",
+                      "uid": "35240-9e4123a4-b32b-4382-99d9-c6eafeabe1dd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:54:19.000Z",
+                  "updatedAt": "2026-07-28T02:54:19.000Z",
+                  "uid": "35240-43f11ec6-7f21-486c-9ff3-7191fb167291"
+                }
+              ],
+              "id": "082a4412-ca81-49df-b7b4-813445093a2a",
+              "createdAt": "2026-07-28T02:54:19.000Z",
+              "updatedAt": "2026-07-28T02:54:19.000Z",
+              "uid": "35240-082a4412-ca81-49df-b7b4-813445093a2a"
+            }
+          ],
+          "id": "9999eb30-0d5f-455e-95d2-451fa58c44fd",
+          "createdAt": "2026-07-28T02:54:19.000Z",
+          "updatedAt": "2026-07-28T02:54:19.000Z",
+          "uid": "35240-9999eb30-0d5f-455e-95d2-451fa58c44fd"
+        }
+      ],
+      "id": "c2e5e474-7b4d-4006-a538-e8dcfa05a146",
+      "createdAt": "2026-07-28T02:54:19.000Z",
+      "updatedAt": "2026-07-28T02:54:19.000Z",
+      "uid": "35240-c2e5e474-7b4d-4006-a538-e8dcfa05a146"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

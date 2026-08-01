@@ -1,0 +1,298 @@
+{
+  "info": {
+    "_postman_id": "97daf783-8aae-4dd8-a51d-0d27f8c110eb",
+    "name": "Shortcut Categories External Link API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:10.000Z",
+    "updatedAt": "2026-07-28T02:53:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-97daf783-8aae-4dd8-a51d-0d27f8c110eb"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "external-link",
+              "item": [
+                {
+                  "name": "stories",
+                  "item": [
+                    {
+                      "name": "Get External Link Stories",
+                      "id": "3ec1b1a8-6d4b-44b7-b53c-46c25479bebf",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/external-link/stories?external_link=https://$hzw%+9-8J",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "external-link",
+                            "stories"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The external link associated with one or more stories.",
+                              "key": "external_link",
+                              "value": "https://$hzw%+9-8J"
+                            }
+                          ]
+                        },
+                        "description": "Get Stories which have a given External Link associated with them."
+                      },
+                      "response": [
+                        {
+                          "id": "b7b619f3-0757-44eb-aef3-23c48c97ec40",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/external-link/stories?external_link=https://$hzw%+9-8J",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "external-link",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The external link associated with one or more stories.",
+                                  "key": "external_link",
+                                  "value": "https://$hzw%+9-8J"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#aBE484\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#6BCBE3\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#F2f82f\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#F8BC9c\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  }\n]",
+                          "createdAt": "2026-07-28T02:53:11.000Z",
+                          "updatedAt": "2026-07-28T02:53:11.000Z",
+                          "uid": "35240-b7b619f3-0757-44eb-aef3-23c48c97ec40"
+                        },
+                        {
+                          "id": "ca3ddb2c-aef2-4ed8-b17f-36d24e452841",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/external-link/stories?external_link=https://$hzw%+9-8J",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "external-link",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The external link associated with one or more stories.",
+                                  "key": "external_link",
+                                  "value": "https://$hzw%+9-8J"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:11.000Z",
+                          "updatedAt": "2026-07-28T02:53:11.000Z",
+                          "uid": "35240-ca3ddb2c-aef2-4ed8-b17f-36d24e452841"
+                        },
+                        {
+                          "id": "42e46a29-b302-49c5-a634-63a6e6010a96",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/external-link/stories?external_link=https://$hzw%+9-8J",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "external-link",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The external link associated with one or more stories.",
+                                  "key": "external_link",
+                                  "value": "https://$hzw%+9-8J"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:11.000Z",
+                          "updatedAt": "2026-07-28T02:53:11.000Z",
+                          "uid": "35240-42e46a29-b302-49c5-a634-63a6e6010a96"
+                        },
+                        {
+                          "id": "29102638-02f7-4f40-bc3f-003ed304e9ea",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/external-link/stories?external_link=https://$hzw%+9-8J",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "external-link",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The external link associated with one or more stories.",
+                                  "key": "external_link",
+                                  "value": "https://$hzw%+9-8J"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:11.000Z",
+                          "updatedAt": "2026-07-28T02:53:11.000Z",
+                          "uid": "35240-29102638-02f7-4f40-bc3f-003ed304e9ea"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:11.000Z",
+                      "updatedAt": "2026-07-28T02:53:11.000Z",
+                      "uid": "35240-3ec1b1a8-6d4b-44b7-b53c-46c25479bebf"
+                    }
+                  ],
+                  "id": "7f8c8d29-c947-40f1-8cdf-650f9f7032d8",
+                  "createdAt": "2026-07-28T02:53:11.000Z",
+                  "updatedAt": "2026-07-28T02:53:11.000Z",
+                  "uid": "35240-7f8c8d29-c947-40f1-8cdf-650f9f7032d8"
+                }
+              ],
+              "id": "2fe0b224-47a0-4bb8-9bd7-d651946ac99c",
+              "createdAt": "2026-07-28T02:53:11.000Z",
+              "updatedAt": "2026-07-28T02:53:11.000Z",
+              "uid": "35240-2fe0b224-47a0-4bb8-9bd7-d651946ac99c"
+            }
+          ],
+          "id": "f7603360-c74f-4fee-bbd4-73d8eb4dea61",
+          "createdAt": "2026-07-28T02:53:11.000Z",
+          "updatedAt": "2026-07-28T02:53:11.000Z",
+          "uid": "35240-f7603360-c74f-4fee-bbd4-73d8eb4dea61"
+        }
+      ],
+      "id": "b91360ad-40d1-4161-89c4-3132e38ef9bf",
+      "createdAt": "2026-07-28T02:53:11.000Z",
+      "updatedAt": "2026-07-28T02:53:11.000Z",
+      "uid": "35240-b91360ad-40d1-4161-89c4-3132e38ef9bf"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

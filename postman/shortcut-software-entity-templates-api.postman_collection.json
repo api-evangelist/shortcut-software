@@ -1,0 +1,1574 @@
+{
+  "info": {
+    "_postman_id": "caa8e51e-bbf4-48cf-8b0e-464c564412b1",
+    "name": "Shortcut Categories Entity Templates API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:06.000Z",
+    "updatedAt": "2026-07-28T02:53:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-caa8e51e-bbf4-48cf-8b0e-464c564412b1"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "entity-templates",
+              "item": [
+                {
+                  "name": "disable",
+                  "item": [
+                    {
+                      "name": "Disable Story Templates",
+                      "id": "7bdc472a-e6f7-4653-b8f0-e7662020e35d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates/disable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates",
+                            "disable"
+                          ]
+                        },
+                        "description": "Disables the Story Template feature for the Workspace."
+                      },
+                      "response": [
+                        {
+                          "id": "78725594-ecf5-49a4-a191-bc164dc099e5",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-78725594-ecf5-49a4-a191-bc164dc099e5"
+                        },
+                        {
+                          "id": "9651fcce-8bb4-43e8-8c86-093369aed7fa",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-9651fcce-8bb4-43e8-8c86-093369aed7fa"
+                        },
+                        {
+                          "id": "74a2508c-474d-42c9-85a7-fbf9f137701d",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-74a2508c-474d-42c9-85a7-fbf9f137701d"
+                        },
+                        {
+                          "id": "5ff6c9fb-eb67-463d-89b6-1e7c56984c13",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-5ff6c9fb-eb67-463d-89b6-1e7c56984c13"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-7bdc472a-e6f7-4653-b8f0-e7662020e35d"
+                    }
+                  ],
+                  "id": "dae299ab-0d80-4b50-b4a8-daaa9035d24d",
+                  "createdAt": "2026-07-28T02:53:07.000Z",
+                  "updatedAt": "2026-07-28T02:53:07.000Z",
+                  "uid": "35240-dae299ab-0d80-4b50-b4a8-daaa9035d24d"
+                },
+                {
+                  "name": "enable",
+                  "item": [
+                    {
+                      "name": "Enable Story Templates",
+                      "id": "06151db4-da2b-4f7b-8f8b-721c3779b876",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates/enable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates",
+                            "enable"
+                          ]
+                        },
+                        "description": "Enables the Story Template feature for the Workspace."
+                      },
+                      "response": [
+                        {
+                          "id": "85e6e690-715a-4041-a1de-babcbfa5d14b",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-85e6e690-715a-4041-a1de-babcbfa5d14b"
+                        },
+                        {
+                          "id": "1928bc84-ce43-4a36-a02e-dff2b38112c8",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-1928bc84-ce43-4a36-a02e-dff2b38112c8"
+                        },
+                        {
+                          "id": "c0794ea7-5bf1-46a5-8e54-e90ba079c74a",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-c0794ea7-5bf1-46a5-8e54-e90ba079c74a"
+                        },
+                        {
+                          "id": "61106883-e59f-4bc8-99ad-e9b6f59bdce8",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-61106883-e59f-4bc8-99ad-e9b6f59bdce8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-06151db4-da2b-4f7b-8f8b-721c3779b876"
+                    }
+                  ],
+                  "id": "a79f973a-98fe-401b-bc1b-037c1b2ba562",
+                  "createdAt": "2026-07-28T02:53:07.000Z",
+                  "updatedAt": "2026-07-28T02:53:07.000Z",
+                  "uid": "35240-a79f973a-98fe-401b-bc1b-037c1b2ba562"
+                },
+                {
+                  "name": "{entity-template-public-id}",
+                  "item": [
+                    {
+                      "name": "Get Entity Template",
+                      "id": "478faf64-140a-45b0-9cfe-c4d8e61143b3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates",
+                            ":entity-template-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "55309a0e-4a3a-430d-af41-9e327d9976a1",
+                              "key": "entity-template-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the entity template."
+                            }
+                          ]
+                        },
+                        "description": "Get Entity Template returns information about a given entity template."
+                      },
+                      "response": [
+                        {
+                          "id": "b36bf154-d689-40c5-8483-b0bd03733d99",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"author_id\": \"<uuid>\",\n  \"last_used_at\": \"<dateTime>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#5cFAc8\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#a1DE8A\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"linked_files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"project_id\": \"<long>\",\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-b36bf154-d689-40c5-8483-b0bd03733d99"
+                        },
+                        {
+                          "id": "96e1776e-a475-4425-86bc-e9735930b942",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-96e1776e-a475-4425-86bc-e9735930b942"
+                        },
+                        {
+                          "id": "2e3d76fa-2c89-4bc9-8b43-adeef71115c4",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-2e3d76fa-2c89-4bc9-8b43-adeef71115c4"
+                        },
+                        {
+                          "id": "edc24ff7-5307-403d-bec5-124cab809507",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-edc24ff7-5307-403d-bec5-124cab809507"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-478faf64-140a-45b0-9cfe-c4d8e61143b3"
+                    },
+                    {
+                      "name": "Update Entity Template",
+                      "id": "6097556a-388f-4220-9ba0-5723dc85935e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fe5aC5\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#2836fa\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates",
+                            ":entity-template-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "aa939037-3871-4143-88df-ad46927ff35f",
+                              "key": "entity-template-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the template to be updated."
+                            }
+                          ]
+                        },
+                        "description": "Update an entity template's name or its contents."
+                      },
+                      "response": [
+                        {
+                          "id": "fdbd09d3-114c-44b8-adae-cbd6e24d09c9",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fe5aC5\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#2836fa\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"author_id\": \"<uuid>\",\n  \"last_used_at\": \"<dateTime>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#5cFAc8\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#a1DE8A\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"linked_files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"project_id\": \"<long>\",\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-fdbd09d3-114c-44b8-adae-cbd6e24d09c9"
+                        },
+                        {
+                          "id": "0842b6f2-2e9e-4b93-826c-3d711d0fba68",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fe5aC5\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#2836fa\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-0842b6f2-2e9e-4b93-826c-3d711d0fba68"
+                        },
+                        {
+                          "id": "b7a844df-8d7e-493a-946b-ba08af2c7f7c",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fe5aC5\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#2836fa\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-b7a844df-8d7e-493a-946b-ba08af2c7f7c"
+                        },
+                        {
+                          "id": "3851e36f-3dab-4b21-8bc7-a3e70ecd0ead",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fe5aC5\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#2836fa\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-3851e36f-3dab-4b21-8bc7-a3e70ecd0ead"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-6097556a-388f-4220-9ba0-5723dc85935e"
+                    },
+                    {
+                      "name": "Delete Entity Template",
+                      "id": "2b13cd4e-3f3f-44ac-b7ef-a7fe443b17eb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates",
+                            ":entity-template-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "37e44f0e-5be2-4f63-ba7d-92c8c711ae10",
+                              "key": "entity-template-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the entity template."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "037e6b20-09d3-4f8f-99ee-3c2f056f00ff",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-037e6b20-09d3-4f8f-99ee-3c2f056f00ff"
+                        },
+                        {
+                          "id": "2c735175-dd8e-4c27-a0e7-f7f0f82adc53",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-2c735175-dd8e-4c27-a0e7-f7f0f82adc53"
+                        },
+                        {
+                          "id": "55198b35-8d59-425a-bf8d-cef236d74e7e",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-55198b35-8d59-425a-bf8d-cef236d74e7e"
+                        },
+                        {
+                          "id": "a3f48f18-ae86-4412-aaf1-4d07d3f6b47e",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/entity-templates/:entity-template-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "entity-templates",
+                                ":entity-template-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "entity-template-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:07.000Z",
+                          "updatedAt": "2026-07-28T02:53:07.000Z",
+                          "uid": "35240-a3f48f18-ae86-4412-aaf1-4d07d3f6b47e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-2b13cd4e-3f3f-44ac-b7ef-a7fe443b17eb"
+                    }
+                  ],
+                  "id": "52b6717f-4255-4859-964b-6c7b30e22148",
+                  "createdAt": "2026-07-28T02:53:07.000Z",
+                  "updatedAt": "2026-07-28T02:53:07.000Z",
+                  "uid": "35240-52b6717f-4255-4859-964b-6c7b30e22148"
+                },
+                {
+                  "name": "List Entity Templates",
+                  "id": "0b6fa1f8-5df4-4b6a-9a71-d4fe21411d32",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/entity-templates",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "entity-templates"
+                      ]
+                    },
+                    "description": "List all the entity templates for the Workspace."
+                  },
+                  "response": [
+                    {
+                      "id": "cfd07f72-fc6c-4bfa-884e-b794c92618bf",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"entity_type\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"author_id\": \"<uuid>\",\n    \"last_used_at\": \"<dateTime>\",\n    \"story_contents\": {\n      \"description\": \"<string>\",\n      \"entity_type\": \"<string>\",\n      \"labels\": [\n        {\n          \"app_url\": \"<string>\",\n          \"description\": \"<string>\",\n          \"archived\": \"<boolean>\",\n          \"entity_type\": \"<string>\",\n          \"color\": \"#90eDd9\",\n          \"name\": \"<string>\",\n          \"global_id\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"app_url\": \"<string>\",\n          \"description\": \"<string>\",\n          \"archived\": \"<boolean>\",\n          \"entity_type\": \"<string>\",\n          \"color\": \"#2d9470\",\n          \"name\": \"<string>\",\n          \"global_id\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"story_type\": \"<string>\",\n      \"custom_fields\": [\n        {\n          \"field_id\": \"<uuid>\",\n          \"value_id\": \"<uuid>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"field_id\": \"<uuid>\",\n          \"value_id\": \"<uuid>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"linked_files\": [\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"type\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"type\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"epic_id\": \"<long>\",\n      \"external_links\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sub_tasks\": [\n        {\n          \"name\": \"<string>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"workflow_state_id\": \"<long>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"workflow_state_id\": \"<long>\"\n        }\n      ],\n      \"iteration_id\": \"<long>\",\n      \"tasks\": [\n        {\n          \"description\": \"<string>\",\n          \"position\": \"<long>\",\n          \"complete\": \"<boolean>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"position\": \"<long>\",\n          \"complete\": \"<boolean>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\"\n        }\n      ],\n      \"label_ids\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"group_id\": \"<uuid>\",\n      \"workflow_state_id\": \"<long>\",\n      \"follower_ids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"owner_ids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"estimate\": \"<long>\",\n      \"files\": [\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"filename\": \"<string>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"filename\": \"<string>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"project_id\": \"<long>\",\n      \"deadline\": \"<dateTime>\"\n    }\n  },\n  {\n    \"entity_type\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"author_id\": \"<uuid>\",\n    \"last_used_at\": \"<dateTime>\",\n    \"story_contents\": {\n      \"description\": \"<string>\",\n      \"entity_type\": \"<string>\",\n      \"labels\": [\n        {\n          \"app_url\": \"<string>\",\n          \"description\": \"<string>\",\n          \"archived\": \"<boolean>\",\n          \"entity_type\": \"<string>\",\n          \"color\": \"#59AaF9\",\n          \"name\": \"<string>\",\n          \"global_id\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"app_url\": \"<string>\",\n          \"description\": \"<string>\",\n          \"archived\": \"<boolean>\",\n          \"entity_type\": \"<string>\",\n          \"color\": \"#bf2484\",\n          \"name\": \"<string>\",\n          \"global_id\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"story_type\": \"<string>\",\n      \"custom_fields\": [\n        {\n          \"field_id\": \"<uuid>\",\n          \"value_id\": \"<uuid>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"field_id\": \"<uuid>\",\n          \"value_id\": \"<uuid>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"linked_files\": [\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"type\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"type\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"name\": \"<string>\",\n      \"epic_id\": \"<long>\",\n      \"external_links\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sub_tasks\": [\n        {\n          \"name\": \"<string>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"workflow_state_id\": \"<long>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"workflow_state_id\": \"<long>\"\n        }\n      ],\n      \"iteration_id\": \"<long>\",\n      \"tasks\": [\n        {\n          \"description\": \"<string>\",\n          \"position\": \"<long>\",\n          \"complete\": \"<boolean>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"position\": \"<long>\",\n          \"complete\": \"<boolean>\",\n          \"owner_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\"\n        }\n      ],\n      \"label_ids\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"group_id\": \"<uuid>\",\n      \"workflow_state_id\": \"<long>\",\n      \"follower_ids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"owner_ids\": [\n        \"<uuid>\",\n        \"<uuid>\"\n      ],\n      \"estimate\": \"<long>\",\n      \"files\": [\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"filename\": \"<string>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        },\n        {\n          \"description\": \"<string>\",\n          \"entity_type\": \"<string>\",\n          \"story_ids\": [\n            \"<long>\",\n            \"<long>\"\n          ],\n          \"mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"member_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"name\": \"<string>\",\n          \"thumbnail_url\": \"<string>\",\n          \"size\": \"<long>\",\n          \"uploader_id\": \"<uuid>\",\n          \"content_type\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"filename\": \"<string>\",\n          \"group_mention_ids\": [\n            \"<uuid>\",\n            \"<uuid>\"\n          ],\n          \"external_id\": \"<string>\",\n          \"id\": \"<long>\",\n          \"url\": \"<string>\",\n          \"created_at\": \"<dateTime>\"\n        }\n      ],\n      \"project_id\": \"<long>\",\n      \"deadline\": \"<dateTime>\"\n    }\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-cfd07f72-fc6c-4bfa-884e-b794c92618bf"
+                    },
+                    {
+                      "id": "a91ba3a5-9617-4dca-8923-7a76743b3cc6",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-a91ba3a5-9617-4dca-8923-7a76743b3cc6"
+                    },
+                    {
+                      "id": "9a6d016d-bac9-4fb0-a0d8-bbf1486692ba",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-9a6d016d-bac9-4fb0-a0d8-bbf1486692ba"
+                    },
+                    {
+                      "id": "555c1d60-ceae-4e3b-b2e1-641366d8e9e3",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-555c1d60-ceae-4e3b-b2e1-641366d8e9e3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:07.000Z",
+                  "updatedAt": "2026-07-28T02:53:07.000Z",
+                  "uid": "35240-0b6fa1f8-5df4-4b6a-9a71-d4fe21411d32"
+                },
+                {
+                  "name": "Create Entity Template",
+                  "id": "7d8d01b3-c86f-473b-a596-770d2d160431",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#81E06d\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fbcCFd\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  },\n  \"author_id\": \"<uuid>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/entity-templates",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "entity-templates"
+                      ]
+                    },
+                    "description": "Create a new entity template for the Workspace."
+                  },
+                  "response": [
+                    {
+                      "id": "775ce638-a81d-446b-8460-76ed7a9423f6",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#81E06d\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fbcCFd\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  },\n  \"author_id\": \"<uuid>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<uuid>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"author_id\": \"<uuid>\",\n  \"last_used_at\": \"<dateTime>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#5cFAc8\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#a1DE8A\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"linked_files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"type\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"position\": \"<long>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"files\": [\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"entity_type\": \"<string>\",\n        \"story_ids\": [\n          \"<long>\",\n          \"<long>\"\n        ],\n        \"mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"member_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"name\": \"<string>\",\n        \"thumbnail_url\": \"<string>\",\n        \"size\": \"<long>\",\n        \"uploader_id\": \"<uuid>\",\n        \"content_type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"filename\": \"<string>\",\n        \"group_mention_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"url\": \"<string>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"project_id\": \"<long>\",\n    \"deadline\": \"<dateTime>\"\n  }\n}",
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-775ce638-a81d-446b-8460-76ed7a9423f6"
+                    },
+                    {
+                      "id": "f3979141-ab0b-4046-af08-41c100cee898",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#81E06d\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fbcCFd\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  },\n  \"author_id\": \"<uuid>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-f3979141-ab0b-4046-af08-41c100cee898"
+                    },
+                    {
+                      "id": "ff71da93-366b-4bfb-b328-28a87d02dd0d",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#81E06d\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fbcCFd\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  },\n  \"author_id\": \"<uuid>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-ff71da93-366b-4bfb-b328-28a87d02dd0d"
+                    },
+                    {
+                      "id": "1c9cf5c2-cd54-4af7-a45f-30a4f81163b6",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"story_contents\": {\n    \"description\": \"<string>\",\n    \"labels\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#81E06d\",\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"color\": \"#fbcCFd\",\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"story_type\": \"<string>\",\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"epic_id\": \"<long>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"sub_tasks\": [\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"workflow_state_id\": \"<long>\"\n      }\n    ],\n    \"iteration_id\": \"<long>\",\n    \"tasks\": [\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      },\n      {\n        \"description\": \"<string>\",\n        \"complete\": \"<boolean>\",\n        \"owner_ids\": [\n          \"<uuid>\",\n          \"<uuid>\"\n        ],\n        \"external_id\": \"<string>\"\n      }\n    ],\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"estimate\": \"<long>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\"\n  },\n  \"author_id\": \"<uuid>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/entity-templates",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "entity-templates"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:07.000Z",
+                      "updatedAt": "2026-07-28T02:53:07.000Z",
+                      "uid": "35240-1c9cf5c2-cd54-4af7-a45f-30a4f81163b6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:07.000Z",
+                  "updatedAt": "2026-07-28T02:53:07.000Z",
+                  "uid": "35240-7d8d01b3-c86f-473b-a596-770d2d160431"
+                }
+              ],
+              "id": "fe054b49-5194-424c-83cc-6551bb1f96cc",
+              "createdAt": "2026-07-28T02:53:07.000Z",
+              "updatedAt": "2026-07-28T02:53:07.000Z",
+              "uid": "35240-fe054b49-5194-424c-83cc-6551bb1f96cc"
+            }
+          ],
+          "id": "844afbb7-0809-4cc1-af06-1f5835b5056c",
+          "createdAt": "2026-07-28T02:53:07.000Z",
+          "updatedAt": "2026-07-28T02:53:07.000Z",
+          "uid": "35240-844afbb7-0809-4cc1-af06-1f5835b5056c"
+        }
+      ],
+      "id": "ca13c2ea-1ba8-4a66-ab25-c9a205789f3d",
+      "createdAt": "2026-07-28T02:53:07.000Z",
+      "updatedAt": "2026-07-28T02:53:07.000Z",
+      "uid": "35240-ca13c2ea-1ba8-4a66-ab25-c9a205789f3d"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

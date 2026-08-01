@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://api.app.shortcut.com/.well-known/oauth-authorization-server
+docs: https://www.shortcut.com/release-notes/
+schemes:
+- name: OAuth2
+  source: well-known/shortcut-software-oauth-authorization-server.json
+  issuer: https://api.app.shortcut.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.app.shortcut.com/oauth-authorization-code-flow/code
+    tokenUrl: https://api.app.shortcut.com/oauth-authorization-code-flow/token
+    registrationUrl: https://api.app.shortcut.com/oauth-client-registration-flow/register
+    pkce: S256
+scopes:
+- scope: openid
+  description: OpenID Connect authentication of the Shortcut member.
+  flows: [authorizationCode]
+- scope: read
+  description: Read-only access to workspace data.
+  flows: [authorizationCode]
+- scope: write
+  description: Read/write access to workspace data.
+  flows: [authorizationCode]
+- scope: story-write
+  description: Create and update Stories.
+  flows: [authorizationCode]
+- scope: comment-write
+  description: Create and update comments.
+  flows: [authorizationCode]
+- scope: admin
+  description: Administrative access to the workspace.
+  flows: [authorizationCode]
+notes: >-
+  OAuth 2.0 (authorization code + PKCE, dynamic client registration) is advertised
+  via the RFC 8414 metadata document and backs the hosted MCP server. The primary
+  REST auth remains the Shortcut-Token API key header. As of the 2026-01-20 release,
+  API tokens themselves also support read-only vs read/write scoped permissions.

@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://www.shortcut.com/help/integrations/mcp-server/
+server:
+  name: shortcut
+  transport: http
+  url: https://mcp.shortcut.com/mcp
+  auth: oauth2
+  auth_notes: >-
+    No API token or local setup required — authentication is handled via OAuth on
+    first use, backed by the RFC 8414 metadata at
+    https://api.app.shortcut.com/.well-known/oauth-authorization-server.
+  repo: https://github.com/useshortcut/mcp-server-shortcut
+docs:
+- https://www.shortcut.com/help/integrations/mcp-server/
+- https://www.shortcut.com/blog/why-we-built-the-shortcut-mcp-server/
+capabilities:
+  description: >-
+    Shortcut's hosted MCP server exposes tools for finding, creating, and updating
+    workspace entities so agents (Cursor, Claude Code, Claude Desktop, VS Code, Zed)
+    can plan and ship work directly in Shortcut.
+  entities:
+  - {entity: Stories, operations: [retrieve, create, update]}
+  - {entity: Epics, operations: [retrieve, create]}
+  - {entity: Iterations, operations: [retrieve, create]}
+  - {entity: Objectives, operations: [retrieve]}
+  - {entity: Teams, operations: [retrieve]}
+  - {entity: Members, operations: [retrieve]}
+  - {entity: Workflows, operations: [retrieve]}
+  - {entity: Docs, operations: [retrieve, create, update]}
+clients:
+- Cursor
+- Claude Code
+- Claude Desktop
+- VS Code
+- Zed (useshortcut/zed-extension-mcp-server-shortcut)

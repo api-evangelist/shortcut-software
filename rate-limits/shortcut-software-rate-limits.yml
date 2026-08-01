@@ -1,0 +1,25 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Shortcut Software
+providerId: shortcut-software
+generated: '2026-07-21'
+method: searched
+created: '2026-07-21'
+modified: '2026-07-21'
+tags:
+- Rate Limiting
+- Project Management
+description: >-
+  The Shortcut REST API v3 enforces a fixed limit of 200 requests per minute; requests
+  over the threshold receive HTTP 429. Limits are not published per plan tier.
+sources:
+- https://developer.shortcut.com/api/rest/v3
+responseCodes:
+  throttled: 429
+limits:
+- name: All API requests
+  scope: token
+  metric: requests_per_minute
+  limit: 200
+  timeFrame: minute

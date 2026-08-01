@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.shortcut.com/release-notes/
+scheme: date-based
+current: v3 (v4 alpha)
+url: https://www.shortcut.com/release-notes/
+entries:
+- date: '2026-07-10'
+  title: Card Aging
+  type: addition
+  highlights: Stories gradually fade to highlight inactive work; customizable aging thresholds at workspace/team level.
+- date: '2026-05-12'
+  title: API v4 Alpha
+  type: addition
+  highlights: Public API upgrade to expand capabilities and optimize agent compatibility.
+- date: '2026-04-20'
+  title: Korey Chrome Extension
+  type: addition
+  highlights: Chat with the Korey AI assistant from any webpage via a floating chat panel.
+- date: '2026-04-15'
+  title: Teams on Roadmap
+  type: addition
+  highlights: Epic team owners now visible in timeline bars.
+- date: '2026-03-17'
+  title: SLA Alerts
+  type: addition
+  highlights: Built-in alerts for Stories with automatic deadlines and breach warnings.
+- date: '2026-02-10'
+  title: Right-Click AI Access
+  type: addition
+  highlights: Access Korey from context menus to refine descriptions and generate sub-tasks.
+- date: '2026-01-29'
+  title: Backticks in Story Titles
+  type: addition
+  highlights: Story titles support inline code formatting with backticks.
+- date: '2026-01-20'
+  title: Read-Only API Tokens
+  type: addition
+  highlights: API tokens support read-only and read/write access with scoped permissions.

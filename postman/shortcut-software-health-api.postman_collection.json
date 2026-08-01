@@ -1,0 +1,361 @@
+{
+  "info": {
+    "_postman_id": "53d56679-939a-419e-86df-454549c955cb",
+    "name": "Shortcut Categories Health API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:16.000Z",
+    "updatedAt": "2026-07-28T02:53:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-53d56679-939a-419e-86df-454549c955cb"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "health",
+              "item": [
+                {
+                  "name": "{health-public-id}",
+                  "item": [
+                    {
+                      "name": "Update Health",
+                      "id": "01bf106a-743a-40f6-9e30-96c7c8ea1d0d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"status\": \"No Health\",\n  \"text\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/health/:health-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "health",
+                            ":health-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e46e2f56-9a5f-4d2e-9330-be8d6085e758",
+                              "key": "health-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the Health record."
+                            }
+                          ]
+                        },
+                        "description": "Update an existing health status by its ID."
+                      },
+                      "response": [
+                        {
+                          "id": "fbd5cf99-7a55-4603-8bed-cbd0e735d1c4",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"status\": \"No Health\",\n  \"text\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/health/:health-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "health",
+                                ":health-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "health-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"status\": \"On Track\",\n  \"id\": \"<uuid>\",\n  \"author_id\": \"<uuid>\",\n  \"epic_id\": \"<long>\",\n  \"objective_id\": \"<long>\",\n  \"updated_at\": \"<dateTime>\",\n  \"created_at\": \"<dateTime>\",\n  \"text\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:16.000Z",
+                          "updatedAt": "2026-07-28T02:53:16.000Z",
+                          "uid": "35240-fbd5cf99-7a55-4603-8bed-cbd0e735d1c4"
+                        },
+                        {
+                          "id": "ccb30fa1-10e3-4f05-90df-6d292d0af33d",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"status\": \"No Health\",\n  \"text\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/health/:health-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "health",
+                                ":health-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "health-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:16.000Z",
+                          "updatedAt": "2026-07-28T02:53:16.000Z",
+                          "uid": "35240-ccb30fa1-10e3-4f05-90df-6d292d0af33d"
+                        },
+                        {
+                          "id": "5e7d9e80-022e-4f9d-a48b-0c6390926470",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"status\": \"No Health\",\n  \"text\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/health/:health-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "health",
+                                ":health-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "health-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:16.000Z",
+                          "updatedAt": "2026-07-28T02:53:16.000Z",
+                          "uid": "35240-5e7d9e80-022e-4f9d-a48b-0c6390926470"
+                        },
+                        {
+                          "id": "31d383cc-75c5-431d-b405-c582238384f5",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"status\": \"No Health\",\n  \"text\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/health/:health-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "health",
+                                ":health-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "health-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:16.000Z",
+                          "updatedAt": "2026-07-28T02:53:16.000Z",
+                          "uid": "35240-31d383cc-75c5-431d-b405-c582238384f5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:16.000Z",
+                      "updatedAt": "2026-07-28T02:53:16.000Z",
+                      "uid": "35240-01bf106a-743a-40f6-9e30-96c7c8ea1d0d"
+                    }
+                  ],
+                  "id": "6de080c1-ebf4-4b6d-9e9a-a716f14319f7",
+                  "createdAt": "2026-07-28T02:53:16.000Z",
+                  "updatedAt": "2026-07-28T02:53:16.000Z",
+                  "uid": "35240-6de080c1-ebf4-4b6d-9e9a-a716f14319f7"
+                }
+              ],
+              "id": "88fe4745-7db1-4f91-9f53-82e535057802",
+              "createdAt": "2026-07-28T02:53:16.000Z",
+              "updatedAt": "2026-07-28T02:53:16.000Z",
+              "uid": "35240-88fe4745-7db1-4f91-9f53-82e535057802"
+            }
+          ],
+          "id": "63870119-5d6c-425b-9275-dfc68444261c",
+          "createdAt": "2026-07-28T02:53:16.000Z",
+          "updatedAt": "2026-07-28T02:53:16.000Z",
+          "uid": "35240-63870119-5d6c-425b-9275-dfc68444261c"
+        }
+      ],
+      "id": "70de0b9b-276b-4e08-a6f9-940b8f5029eb",
+      "createdAt": "2026-07-28T02:53:16.000Z",
+      "updatedAt": "2026-07-28T02:53:16.000Z",
+      "uid": "35240-70de0b9b-276b-4e08-a6f9-940b8f5029eb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

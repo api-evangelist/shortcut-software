@@ -1,0 +1,1029 @@
+{
+  "info": {
+    "_postman_id": "266519af-2831-4a51-9341-3c588890a7c5",
+    "name": "Shortcut Categories Story Links API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:24.000Z",
+    "updatedAt": "2026-07-28T02:54:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-266519af-2831-4a51-9341-3c588890a7c5"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "story-links",
+              "item": [
+                {
+                  "name": "{story-link-public-id}",
+                  "item": [
+                    {
+                      "name": "Get Story Link",
+                      "id": "5c240e4d-5287-411b-b58b-79e1229e57e8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links",
+                            ":story-link-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "070770b7-94f4-429f-baa5-c37f31eef6db",
+                              "key": "story-link-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Story Link."
+                            }
+                          ]
+                        },
+                        "description": "Returns the stories and their relationship for the given Story Link."
+                      },
+                      "response": [
+                        {
+                          "id": "5416d67b-1541-4470-a4f2-c22581dce951",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"subject_id\": \"<long>\",\n  \"subject_workflow_state_id\": \"<long>\",\n  \"verb\": \"<string>\",\n  \"object_id\": \"<long>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-5416d67b-1541-4470-a4f2-c22581dce951"
+                        },
+                        {
+                          "id": "5228a03d-3cd1-4fe2-b8d7-7f4275a9de57",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-5228a03d-3cd1-4fe2-b8d7-7f4275a9de57"
+                        },
+                        {
+                          "id": "c5eccb1b-6b2d-455e-8121-32e0fe2e22c6",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-c5eccb1b-6b2d-455e-8121-32e0fe2e22c6"
+                        },
+                        {
+                          "id": "fee75534-775a-4f5d-a346-d1886492230e",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-fee75534-775a-4f5d-a346-d1886492230e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-5c240e4d-5287-411b-b58b-79e1229e57e8"
+                    },
+                    {
+                      "name": "Update Story Link",
+                      "id": "7750467b-fd0b-41ac-82ee-c01e62ad787f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"verb\": \"relates to\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links",
+                            ":story-link-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "81248281-d6b7-4e87-85c5-334334e35232",
+                              "key": "story-link-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Story Link."
+                            }
+                          ]
+                        },
+                        "description": "Updates the stories and/or the relationship for the given Story Link."
+                      },
+                      "response": [
+                        {
+                          "id": "db3bdbc0-185b-4406-a308-373db221dd35",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"verb\": \"relates to\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"subject_id\": \"<long>\",\n  \"subject_workflow_state_id\": \"<long>\",\n  \"verb\": \"<string>\",\n  \"object_id\": \"<long>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-db3bdbc0-185b-4406-a308-373db221dd35"
+                        },
+                        {
+                          "id": "2f45ec90-9562-4159-b906-dc8d18750749",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"verb\": \"relates to\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-2f45ec90-9562-4159-b906-dc8d18750749"
+                        },
+                        {
+                          "id": "91d63b80-ee5f-4e04-b638-2140e076eac1",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"verb\": \"relates to\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-91d63b80-ee5f-4e04-b638-2140e076eac1"
+                        },
+                        {
+                          "id": "c41e177d-7f9d-48da-a8b3-f7bf2c7b72cf",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"verb\": \"relates to\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-c41e177d-7f9d-48da-a8b3-f7bf2c7b72cf"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-7750467b-fd0b-41ac-82ee-c01e62ad787f"
+                    },
+                    {
+                      "name": "Delete Story Link",
+                      "id": "38928a22-0a46-4169-9842-fe99d645edc4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links",
+                            ":story-link-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "6f923e44-d62a-4972-9ed6-ac3c9050d8a2",
+                              "key": "story-link-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Story Link."
+                            }
+                          ]
+                        },
+                        "description": "Removes the relationship between the stories for the given Story Link."
+                      },
+                      "response": [
+                        {
+                          "id": "025879e7-ee98-4a2d-9814-7c8e11a19bc8",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-025879e7-ee98-4a2d-9814-7c8e11a19bc8"
+                        },
+                        {
+                          "id": "987a2018-528b-41d7-9566-5c59b3b19c11",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-987a2018-528b-41d7-9566-5c59b3b19c11"
+                        },
+                        {
+                          "id": "e8219000-fe04-451c-9e42-cccb1d004d6f",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-e8219000-fe04-451c-9e42-cccb1d004d6f"
+                        },
+                        {
+                          "id": "30253dd6-f11f-4b35-b602-2ac69ab412ef",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/story-links/:story-link-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "story-links",
+                                ":story-link-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "story-link-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:24.000Z",
+                          "updatedAt": "2026-07-28T02:54:24.000Z",
+                          "uid": "35240-30253dd6-f11f-4b35-b602-2ac69ab412ef"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-38928a22-0a46-4169-9842-fe99d645edc4"
+                    }
+                  ],
+                  "id": "63416bef-60a5-425a-8b5d-0b53ac89b6a8",
+                  "createdAt": "2026-07-28T02:54:24.000Z",
+                  "updatedAt": "2026-07-28T02:54:24.000Z",
+                  "uid": "35240-63416bef-60a5-425a-8b5d-0b53ac89b6a8"
+                },
+                {
+                  "name": "Create Story Link",
+                  "id": "f9d9f437-2282-4d56-b0bd-be454eb3667d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"verb\": \"duplicates\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/story-links",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "story-links"
+                      ]
+                    },
+                    "description": "Story Links (called Story Relationships in the UI) allow you create semantic relationships between two stories. The parameters read like an active voice grammatical sentence:  subject -> verb -> object.\n\nThe subject story acts on the object Story; the object story is the direct object of the sentence.\n\nThe subject story \"blocks\", \"duplicates\", or \"relates to\" the object story.  Examples:\n- \"story 5 blocks story 6\u201d -- story 6 is now \"blocked\" until story 5 is moved to a Done workflow state.\n- \"story 2 duplicates story 1\u201d -- Story 2 represents the same body of work as Story 1 (and should probably be archived).\n- \"story 7 relates to story 3\u201d"
+                  },
+                  "response": [
+                    {
+                      "id": "03dcc7da-9137-4d78-95e1-dc6d85d9a1c7",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"verb\": \"duplicates\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"entity_type\": \"<string>\",\n  \"id\": \"<long>\",\n  \"subject_id\": \"<long>\",\n  \"subject_workflow_state_id\": \"<long>\",\n  \"verb\": \"<string>\",\n  \"object_id\": \"<long>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-03dcc7da-9137-4d78-95e1-dc6d85d9a1c7"
+                    },
+                    {
+                      "id": "eb73cfec-08ff-42ce-89d3-845d25a491f7",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"verb\": \"duplicates\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-eb73cfec-08ff-42ce-89d3-845d25a491f7"
+                    },
+                    {
+                      "id": "c1b1d07c-5902-44d5-acad-3d8fdad2c8c5",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"verb\": \"duplicates\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-c1b1d07c-5902-44d5-acad-3d8fdad2c8c5"
+                    },
+                    {
+                      "id": "c688079d-8c44-4f9e-aa91-2389a53d43dc",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"verb\": \"duplicates\",\n  \"subject_id\": \"<long>\",\n  \"object_id\": \"<long>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/story-links",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "story-links"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:54:24.000Z",
+                      "updatedAt": "2026-07-28T02:54:24.000Z",
+                      "uid": "35240-c688079d-8c44-4f9e-aa91-2389a53d43dc"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:54:24.000Z",
+                  "updatedAt": "2026-07-28T02:54:24.000Z",
+                  "uid": "35240-f9d9f437-2282-4d56-b0bd-be454eb3667d"
+                }
+              ],
+              "id": "efd139bd-984a-4b4d-9206-4275bd5a769e",
+              "createdAt": "2026-07-28T02:54:24.000Z",
+              "updatedAt": "2026-07-28T02:54:24.000Z",
+              "uid": "35240-efd139bd-984a-4b4d-9206-4275bd5a769e"
+            }
+          ],
+          "id": "ac4e730b-4a20-4736-97b6-b0d62b7e73a1",
+          "createdAt": "2026-07-28T02:54:24.000Z",
+          "updatedAt": "2026-07-28T02:54:24.000Z",
+          "uid": "35240-ac4e730b-4a20-4736-97b6-b0d62b7e73a1"
+        }
+      ],
+      "id": "bb01a89e-7724-4e44-90a1-0b2a8b7430ad",
+      "createdAt": "2026-07-28T02:54:24.000Z",
+      "updatedAt": "2026-07-28T02:54:24.000Z",
+      "uid": "35240-bb01a89e-7724-4e44-90a1-0b2a8b7430ad"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

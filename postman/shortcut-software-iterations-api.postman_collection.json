@@ -1,0 +1,1834 @@
+{
+  "info": {
+    "_postman_id": "5d263cd9-f147-456b-8234-89ed6f42f409",
+    "name": "Shortcut Categories Iterations API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:19.000Z",
+    "updatedAt": "2026-07-28T02:53:19.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5d263cd9-f147-456b-8234-89ed6f42f409"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "iterations",
+              "item": [
+                {
+                  "name": "disable",
+                  "item": [
+                    {
+                      "name": "Disable Iterations",
+                      "id": "4e7adbcd-03c3-4b23-afb1-85c5bb3d0797",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations/disable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations",
+                            "disable"
+                          ]
+                        },
+                        "description": "Disables Iterations for the current workspace"
+                      },
+                      "response": [
+                        {
+                          "id": "ed0021ed-2a6c-42e3-8d7c-7073191b6d3e",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-ed0021ed-2a6c-42e3-8d7c-7073191b6d3e"
+                        },
+                        {
+                          "id": "e630a675-52df-46b7-b75e-100608b64233",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-e630a675-52df-46b7-b75e-100608b64233"
+                        },
+                        {
+                          "id": "e058a627-e710-4575-9401-ebf9f1987363",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-e058a627-e710-4575-9401-ebf9f1987363"
+                        },
+                        {
+                          "id": "6816856f-7c44-4125-a5a4-84ce9aca4822",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/disable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "disable"
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-6816856f-7c44-4125-a5a4-84ce9aca4822"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-4e7adbcd-03c3-4b23-afb1-85c5bb3d0797"
+                    }
+                  ],
+                  "id": "9c65720e-48cc-4f30-8171-b1307604b737",
+                  "createdAt": "2026-07-28T02:53:20.000Z",
+                  "updatedAt": "2026-07-28T02:53:20.000Z",
+                  "uid": "35240-9c65720e-48cc-4f30-8171-b1307604b737"
+                },
+                {
+                  "name": "enable",
+                  "item": [
+                    {
+                      "name": "Enable Iterations",
+                      "id": "a8b4d8ee-8bfd-4673-b7f5-83ff40816217",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations/enable",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations",
+                            "enable"
+                          ]
+                        },
+                        "description": "Enables Iterations for the current workspace"
+                      },
+                      "response": [
+                        {
+                          "id": "d90a4255-022a-46cd-a59f-cba9edfec155",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-d90a4255-022a-46cd-a59f-cba9edfec155"
+                        },
+                        {
+                          "id": "6ce0a470-dc9d-4b57-b5c1-86f823145cf3",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-6ce0a470-dc9d-4b57-b5c1-86f823145cf3"
+                        },
+                        {
+                          "id": "84edc5e1-7240-4e07-a40b-3a1f4d63779a",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-84edc5e1-7240-4e07-a40b-3a1f4d63779a"
+                        },
+                        {
+                          "id": "6208095f-01b8-4294-af60-90bdecb5b603",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/enable",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                "enable"
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-6208095f-01b8-4294-af60-90bdecb5b603"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-a8b4d8ee-8bfd-4673-b7f5-83ff40816217"
+                    }
+                  ],
+                  "id": "eb4e0ad1-e272-4318-bfe6-7b6f649361be",
+                  "createdAt": "2026-07-28T02:53:20.000Z",
+                  "updatedAt": "2026-07-28T02:53:20.000Z",
+                  "uid": "35240-eb4e0ad1-e272-4318-bfe6-7b6f649361be"
+                },
+                {
+                  "name": "{iteration-public-id}",
+                  "item": [
+                    {
+                      "name": "stories",
+                      "item": [
+                        {
+                          "name": "List Iteration Stories",
+                          "id": "622e94af-aae2-46d1-bcae-a1dc6bc17f0c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id/stories?includes_description=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                  "key": "includes_description",
+                                  "value": "<boolean>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1b4a4d0b-89aa-438c-beab-6bc904f9b330",
+                                  "key": "iteration-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) The unique ID of the Iteration."
+                                }
+                              ]
+                            },
+                            "description": "Get a list of all Stories in an Iteration."
+                          },
+                          "response": [
+                            {
+                              "id": "a7caa96f-fc28-4820-916e-5f9316bfdddd",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "iterations",
+                                    ":iteration-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "iteration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#2b0Ba3\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#FC33Ac\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#eCE4b4\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#0a0b7f\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:53:20.000Z",
+                              "updatedAt": "2026-07-28T02:53:20.000Z",
+                              "uid": "35240-a7caa96f-fc28-4820-916e-5f9316bfdddd"
+                            },
+                            {
+                              "id": "fe48af42-cadc-43b6-acd5-8763f7feb8f3",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "iterations",
+                                    ":iteration-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "iteration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:20.000Z",
+                              "updatedAt": "2026-07-28T02:53:20.000Z",
+                              "uid": "35240-fe48af42-cadc-43b6-acd5-8763f7feb8f3"
+                            },
+                            {
+                              "id": "1fd64e23-46b2-4fa6-beb6-fd8c4df805e3",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "iterations",
+                                    ":iteration-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "iteration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:20.000Z",
+                              "updatedAt": "2026-07-28T02:53:20.000Z",
+                              "uid": "35240-1fd64e23-46b2-4fa6-beb6-fd8c4df805e3"
+                            },
+                            {
+                              "id": "566f5019-a415-43e9-949c-faf11f1a67df",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id/stories?includes_description=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "iterations",
+                                    ":iteration-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A true/false boolean indicating whether to return Stories with their descriptions.",
+                                      "key": "includes_description",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "iteration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:20.000Z",
+                              "updatedAt": "2026-07-28T02:53:20.000Z",
+                              "uid": "35240-566f5019-a415-43e9-949c-faf11f1a67df"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-622e94af-aae2-46d1-bcae-a1dc6bc17f0c"
+                        }
+                      ],
+                      "id": "e1ecedda-36c0-4fc2-afcb-8164ca2cdb98",
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-e1ecedda-36c0-4fc2-afcb-8164ca2cdb98"
+                    },
+                    {
+                      "name": "Get Iteration",
+                      "id": "2b100bc4-39e8-4d80-afb3-35f7f6a9146c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations",
+                            ":iteration-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "fcd26238-9f6d-4e62-82ac-d0a3e930c2d8",
+                              "key": "iteration-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Iteration."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "80dce22e-b039-4d96-b8ec-61e7f2ecea10",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"labels\": [\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#72aCBB\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    },\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#C926fd\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    },\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"label_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"end_date\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"start_date\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"stats\": {\n    \"num_points_done\": \"<long>\",\n    \"num_related_documents\": \"<long>\",\n    \"num_stories_unstarted\": \"<long>\",\n    \"num_points_started\": \"<long>\",\n    \"num_points_unstarted\": \"<long>\",\n    \"num_stories_started\": \"<long>\",\n    \"num_stories_unestimated\": \"<long>\",\n    \"num_stories_backlog\": \"<long>\",\n    \"num_points_backlog\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_stories_done\": \"<long>\",\n    \"average_cycle_time\": \"<long>\",\n    \"average_lead_time\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-80dce22e-b039-4d96-b8ec-61e7f2ecea10"
+                        },
+                        {
+                          "id": "acb7c553-2ae2-43f7-99c4-89583af1adf0",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-acb7c553-2ae2-43f7-99c4-89583af1adf0"
+                        },
+                        {
+                          "id": "adfa8bfd-d0ab-4243-86fc-5d79eadb7413",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-adfa8bfd-d0ab-4243-86fc-5d79eadb7413"
+                        },
+                        {
+                          "id": "04f99857-3e7c-4dc8-aaf5-0f2405658170",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-04f99857-3e7c-4dc8-aaf5-0f2405658170"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-2b100bc4-39e8-4d80-afb3-35f7f6a9146c"
+                    },
+                    {
+                      "name": "Update Iteration",
+                      "id": "ffcc92a8-19be-46aa-bf98-4daad1a9e358",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#ddEbC3\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#de9e40\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations",
+                            ":iteration-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3e63d524-a1ad-4203-939b-f544883e952d",
+                              "key": "iteration-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Iteration."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "6b96968e-d22e-4793-b2ae-487e7fdce567",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#ddEbC3\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#de9e40\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"labels\": [\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#72aCBB\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    },\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#C926fd\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    },\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"label_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"end_date\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"start_date\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"stats\": {\n    \"num_points_done\": \"<long>\",\n    \"num_related_documents\": \"<long>\",\n    \"num_stories_unstarted\": \"<long>\",\n    \"num_points_started\": \"<long>\",\n    \"num_points_unstarted\": \"<long>\",\n    \"num_stories_started\": \"<long>\",\n    \"num_stories_unestimated\": \"<long>\",\n    \"num_stories_backlog\": \"<long>\",\n    \"num_points_backlog\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_stories_done\": \"<long>\",\n    \"average_cycle_time\": \"<long>\",\n    \"average_lead_time\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-6b96968e-d22e-4793-b2ae-487e7fdce567"
+                        },
+                        {
+                          "id": "62d0982c-c0f5-4544-a377-97a9643a523c",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#ddEbC3\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#de9e40\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-62d0982c-c0f5-4544-a377-97a9643a523c"
+                        },
+                        {
+                          "id": "0067389b-0d29-4b71-ace9-dbf5914ef16c",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#ddEbC3\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#de9e40\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-0067389b-0d29-4b71-ace9-dbf5914ef16c"
+                        },
+                        {
+                          "id": "77881f2c-0c4f-4452-97f4-9e6057e34798",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#ddEbC3\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#de9e40\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-77881f2c-0c4f-4452-97f4-9e6057e34798"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-ffcc92a8-19be-46aa-bf98-4daad1a9e358"
+                    },
+                    {
+                      "name": "Delete Iteration",
+                      "id": "158e43ea-7c2d-443e-827e-d273f2ea1437",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations",
+                            ":iteration-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "0c0e735c-0a81-4e60-b33b-abb863852238",
+                              "key": "iteration-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Iteration."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "05e3a4e8-2004-4f84-beab-b21c532629cf",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-05e3a4e8-2004-4f84-beab-b21c532629cf"
+                        },
+                        {
+                          "id": "d21614fc-29b9-4dba-b0bc-727073c9d3d9",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-d21614fc-29b9-4dba-b0bc-727073c9d3d9"
+                        },
+                        {
+                          "id": "6b015236-520c-4d0d-828e-99dd72445aac",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-6b015236-520c-4d0d-828e-99dd72445aac"
+                        },
+                        {
+                          "id": "b258104c-9701-4114-9a9a-4f972cb9c84f",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/iterations/:iteration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "iterations",
+                                ":iteration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "iteration-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:20.000Z",
+                          "updatedAt": "2026-07-28T02:53:20.000Z",
+                          "uid": "35240-b258104c-9701-4114-9a9a-4f972cb9c84f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-158e43ea-7c2d-443e-827e-d273f2ea1437"
+                    }
+                  ],
+                  "id": "a7f58796-3996-448e-a06a-43d31bbe9a32",
+                  "createdAt": "2026-07-28T02:53:20.000Z",
+                  "updatedAt": "2026-07-28T02:53:20.000Z",
+                  "uid": "35240-a7f58796-3996-448e-a06a-43d31bbe9a32"
+                },
+                {
+                  "name": "List Iterations",
+                  "id": "104fd4d5-f0e7-41c4-9364-31e9fdef2640",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/iterations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "iterations"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "56e9ef66-654b-4dbf-80fa-c8e421b76d5c",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#31EF84\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\",\n        \"stats\": {\n          \"num_related_documents\": \"<long>\",\n          \"num_epics\": \"<long>\",\n          \"num_stories_unstarted\": \"<long>\",\n          \"num_stories_total\": \"<long>\",\n          \"num_epics_unstarted\": \"<long>\",\n          \"num_epics_in_progress\": \"<long>\",\n          \"num_points_unstarted\": \"<long>\",\n          \"num_stories_unestimated\": \"<long>\",\n          \"num_points_in_progress\": \"<long>\",\n          \"num_epics_total\": \"<long>\",\n          \"num_stories_completed\": \"<long>\",\n          \"num_points_completed\": \"<long>\",\n          \"num_stories_backlog\": \"<long>\",\n          \"num_points_total\": \"<long>\",\n          \"num_stories_in_progress\": \"<long>\",\n          \"num_points_backlog\": \"<long>\",\n          \"num_epics_completed\": \"<long>\"\n        }\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#C2b8B5\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\",\n        \"stats\": {\n          \"num_related_documents\": \"<long>\",\n          \"num_epics\": \"<long>\",\n          \"num_stories_unstarted\": \"<long>\",\n          \"num_stories_total\": \"<long>\",\n          \"num_epics_unstarted\": \"<long>\",\n          \"num_epics_in_progress\": \"<long>\",\n          \"num_points_unstarted\": \"<long>\",\n          \"num_stories_unestimated\": \"<long>\",\n          \"num_points_in_progress\": \"<long>\",\n          \"num_epics_total\": \"<long>\",\n          \"num_stories_completed\": \"<long>\",\n          \"num_points_completed\": \"<long>\",\n          \"num_stories_backlog\": \"<long>\",\n          \"num_points_total\": \"<long>\",\n          \"num_stories_in_progress\": \"<long>\",\n          \"num_points_backlog\": \"<long>\",\n          \"num_epics_completed\": \"<long>\"\n        }\n      }\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      },\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"start_date\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"stats\": {\n      \"num_points_done\": \"<long>\",\n      \"num_related_documents\": \"<long>\",\n      \"num_stories_unstarted\": \"<long>\",\n      \"num_points_started\": \"<long>\",\n      \"num_points_unstarted\": \"<long>\",\n      \"num_stories_started\": \"<long>\",\n      \"num_stories_unestimated\": \"<long>\",\n      \"num_stories_backlog\": \"<long>\",\n      \"num_points_backlog\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_stories_done\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#5FeFBA\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\",\n        \"stats\": {\n          \"num_related_documents\": \"<long>\",\n          \"num_epics\": \"<long>\",\n          \"num_stories_unstarted\": \"<long>\",\n          \"num_stories_total\": \"<long>\",\n          \"num_epics_unstarted\": \"<long>\",\n          \"num_epics_in_progress\": \"<long>\",\n          \"num_points_unstarted\": \"<long>\",\n          \"num_stories_unestimated\": \"<long>\",\n          \"num_points_in_progress\": \"<long>\",\n          \"num_epics_total\": \"<long>\",\n          \"num_stories_completed\": \"<long>\",\n          \"num_points_completed\": \"<long>\",\n          \"num_stories_backlog\": \"<long>\",\n          \"num_points_total\": \"<long>\",\n          \"num_stories_in_progress\": \"<long>\",\n          \"num_points_backlog\": \"<long>\",\n          \"num_epics_completed\": \"<long>\"\n        }\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#Dd91db\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\",\n        \"stats\": {\n          \"num_related_documents\": \"<long>\",\n          \"num_epics\": \"<long>\",\n          \"num_stories_unstarted\": \"<long>\",\n          \"num_stories_total\": \"<long>\",\n          \"num_epics_unstarted\": \"<long>\",\n          \"num_epics_in_progress\": \"<long>\",\n          \"num_points_unstarted\": \"<long>\",\n          \"num_stories_unestimated\": \"<long>\",\n          \"num_points_in_progress\": \"<long>\",\n          \"num_epics_total\": \"<long>\",\n          \"num_stories_completed\": \"<long>\",\n          \"num_points_completed\": \"<long>\",\n          \"num_stories_backlog\": \"<long>\",\n          \"num_points_total\": \"<long>\",\n          \"num_stories_in_progress\": \"<long>\",\n          \"num_points_backlog\": \"<long>\",\n          \"num_epics_completed\": \"<long>\"\n        }\n      }\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      },\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"start_date\": \"<dateTime>\",\n    \"status\": \"<string>\",\n    \"id\": \"<long>\",\n    \"stats\": {\n      \"num_points_done\": \"<long>\",\n      \"num_related_documents\": \"<long>\",\n      \"num_stories_unstarted\": \"<long>\",\n      \"num_points_started\": \"<long>\",\n      \"num_points_unstarted\": \"<long>\",\n      \"num_stories_started\": \"<long>\",\n      \"num_stories_unestimated\": \"<long>\",\n      \"num_stories_backlog\": \"<long>\",\n      \"num_points_backlog\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_stories_done\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-56e9ef66-654b-4dbf-80fa-c8e421b76d5c"
+                    },
+                    {
+                      "id": "071fa624-0489-4edf-9982-9fe4676250cf",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-071fa624-0489-4edf-9982-9fe4676250cf"
+                    },
+                    {
+                      "id": "77094d0a-9279-44df-8c3a-2886426a18fd",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-77094d0a-9279-44df-8c3a-2886426a18fd"
+                    },
+                    {
+                      "id": "6b7fae0c-6257-4fd0-bc92-d390c499862e",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-6b7fae0c-6257-4fd0-bc92-d390c499862e"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:20.000Z",
+                  "updatedAt": "2026-07-28T02:53:20.000Z",
+                  "uid": "35240-104fd4d5-f0e7-41c4-9364-31e9fdef2640"
+                },
+                {
+                  "name": "Create Iteration",
+                  "id": "df9f467a-2535-439a-9ee9-67eb4656b704",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#fFcFa4\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#F5CD46\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/iterations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "iterations"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "08776c3f-405e-4ae0-bd70-0a0722b68a20",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#fFcFa4\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#F5CD46\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"labels\": [\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#72aCBB\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    },\n    {\n      \"app_url\": \"<string>\",\n      \"description\": \"<string>\",\n      \"archived\": \"<boolean>\",\n      \"entity_type\": \"<string>\",\n      \"color\": \"#C926fd\",\n      \"name\": \"<string>\",\n      \"global_id\": \"<string>\",\n      \"updated_at\": \"<dateTime>\",\n      \"external_id\": \"<string>\",\n      \"id\": \"<long>\",\n      \"created_at\": \"<dateTime>\",\n      \"stats\": {\n        \"num_related_documents\": \"<long>\",\n        \"num_epics\": \"<long>\",\n        \"num_stories_unstarted\": \"<long>\",\n        \"num_stories_total\": \"<long>\",\n        \"num_epics_unstarted\": \"<long>\",\n        \"num_epics_in_progress\": \"<long>\",\n        \"num_points_unstarted\": \"<long>\",\n        \"num_stories_unestimated\": \"<long>\",\n        \"num_points_in_progress\": \"<long>\",\n        \"num_epics_total\": \"<long>\",\n        \"num_stories_completed\": \"<long>\",\n        \"num_points_completed\": \"<long>\",\n        \"num_stories_backlog\": \"<long>\",\n        \"num_points_total\": \"<long>\",\n        \"num_stories_in_progress\": \"<long>\",\n        \"num_points_backlog\": \"<long>\",\n        \"num_epics_completed\": \"<long>\"\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    },\n    {\n      \"group_id\": \"<uuid>\",\n      \"associated_stories_count\": \"<long>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"label_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"end_date\": \"<dateTime>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"start_date\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"id\": \"<long>\",\n  \"stats\": {\n    \"num_points_done\": \"<long>\",\n    \"num_related_documents\": \"<long>\",\n    \"num_stories_unstarted\": \"<long>\",\n    \"num_points_started\": \"<long>\",\n    \"num_points_unstarted\": \"<long>\",\n    \"num_stories_started\": \"<long>\",\n    \"num_stories_unestimated\": \"<long>\",\n    \"num_stories_backlog\": \"<long>\",\n    \"num_points_backlog\": \"<long>\",\n    \"num_points\": \"<long>\",\n    \"num_stories_done\": \"<long>\",\n    \"average_cycle_time\": \"<long>\",\n    \"average_lead_time\": \"<long>\"\n  },\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-08776c3f-405e-4ae0-bd70-0a0722b68a20"
+                    },
+                    {
+                      "id": "d31d2023-f214-4841-a146-7fff79323266",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#fFcFa4\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#F5CD46\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-d31d2023-f214-4841-a146-7fff79323266"
+                    },
+                    {
+                      "id": "f748f767-275b-461b-848e-a574bacbfcdb",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#fFcFa4\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#F5CD46\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-f748f767-275b-461b-848e-a574bacbfcdb"
+                    },
+                    {
+                      "id": "fdf74cf6-f959-46d0-8750-64b982b2d9ba",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#fFcFa4\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"#F5CD46\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/iterations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "iterations"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:20.000Z",
+                      "updatedAt": "2026-07-28T02:53:20.000Z",
+                      "uid": "35240-fdf74cf6-f959-46d0-8750-64b982b2d9ba"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:20.000Z",
+                  "updatedAt": "2026-07-28T02:53:20.000Z",
+                  "uid": "35240-df9f467a-2535-439a-9ee9-67eb4656b704"
+                }
+              ],
+              "id": "1180d342-4f3c-4a34-a3c8-fac06b8e0545",
+              "createdAt": "2026-07-28T02:53:20.000Z",
+              "updatedAt": "2026-07-28T02:53:20.000Z",
+              "uid": "35240-1180d342-4f3c-4a34-a3c8-fac06b8e0545"
+            }
+          ],
+          "id": "bc39ea95-72d2-4316-8ae0-37c6f39c639a",
+          "createdAt": "2026-07-28T02:53:20.000Z",
+          "updatedAt": "2026-07-28T02:53:20.000Z",
+          "uid": "35240-bc39ea95-72d2-4316-8ae0-37c6f39c639a"
+        }
+      ],
+      "id": "628e9f1f-b6aa-4c39-89e9-2e6754c2b154",
+      "createdAt": "2026-07-28T02:53:20.000Z",
+      "updatedAt": "2026-07-28T02:53:20.000Z",
+      "uid": "35240-628e9f1f-b6aa-4c39-89e9-2e6754c2b154"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

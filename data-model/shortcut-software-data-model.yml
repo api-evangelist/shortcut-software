@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/shortcut-software-openapi-original.json
+description: >-
+  Entity-relationship graph derived from the Shortcut REST API v3 resource paths and
+  id-reference fields. Shortcut models software delivery: Stories are the atomic unit of
+  work, grouped into Epics, scheduled into Iterations, owned by Teams (Groups), and
+  rolled up to Objectives.
+entities:
+- name: Story
+  description: The atomic unit of work (issue/ticket).
+  relationships:
+  - {type: belongs_to, target: Epic, via: epic_id}
+  - {type: belongs_to, target: Iteration, via: iteration_id}
+  - {type: belongs_to, target: Workflow State, via: workflow_state_id}
+  - {type: belongs_to, target: Group, via: group_id}
+  - {type: belongs_to, target: Project, via: project_id}
+  - {type: has_many, target: Task, via: story_public_id}
+  - {type: has_many, target: StoryComment, via: story_public_id}
+  - {type: has_many, target: StoryLink, via: story_public_id}
+  - {type: has_many, target: Label, via: labels}
+- name: Epic
+  description: A collection of Stories toward a larger goal.
+  relationships:
+  - {type: belongs_to, target: Objective, via: objective_ids}
+  - {type: belongs_to, target: Milestone, via: milestone_id}
+  - {type: has_many, target: Story, via: epic_id}
+  - {type: has_many, target: EpicComment, via: epic_public_id}
+  - {type: has_many, target: EpicHealth, via: epic_public_id}
+- name: Iteration
+  description: A time-boxed sprint of Stories.
+  relationships:
+  - {type: has_many, target: Story, via: iteration_id}
+- name: Objective
+  description: A high-level goal (formerly Milestone) Epics roll up to.
+  relationships:
+  - {type: has_many, target: Epic, via: objective_ids}
+  - {type: has_many, target: KeyResult, via: objective}
+- name: Milestone
+  description: Legacy grouping above Epics.
+  relationships:
+  - {type: has_many, target: Epic, via: milestone_id}
+- name: Group
+  description: A Team owning work.
+  relationships:
+  - {type: has_many, target: Story, via: group_id}
+- name: Project
+  description: Legacy grouping of Stories (superseded by Teams/Groups).
+  relationships:
+  - {type: has_many, target: Story, via: project_id}
+- name: Workflow
+  description: A set of Workflow States a Story moves through.
+  relationships:
+  - {type: has_many, target: Story, via: workflow_state_id}
+- name: Member
+  description: A user in the workspace.
+- name: Label
+  description: A tag applied across Stories and Epics.
+  relationships:
+  - {type: has_many, target: Story, via: labels}
+  - {type: has_many, target: Epic, via: labels}
+- name: Doc
+  description: A document, optionally linked to Epics.
+  relationships:
+  - {type: has_many, target: Epic, via: linkDocumentToEpic}
+- name: CustomField
+  description: Workspace-defined custom field applied to Stories.
+- name: Task
+  description: A checklist item within a Story.
+  relationships:
+  - {type: belongs_to, target: Story, via: story_public_id}

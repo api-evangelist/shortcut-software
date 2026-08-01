@@ -1,0 +1,1669 @@
+{
+  "info": {
+    "_postman_id": "470ebb9a-f970-4be8-8ef4-26a0ce57634e",
+    "name": "Shortcut Categories API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:03.000Z",
+    "updatedAt": "2026-07-28T02:53:03.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-470ebb9a-f970-4be8-8ef4-26a0ce57634e"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "categories",
+              "item": [
+                {
+                  "name": "{category-public-id}",
+                  "item": [
+                    {
+                      "name": "milestones",
+                      "item": [
+                        {
+                          "name": "List Category Milestones",
+                          "id": "a57945cc-1584-4050-b5b6-6f85e6948211",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/milestones",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id",
+                                "milestones"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d8f5ff38-3cda-441d-aff9-cbc8980c524c",
+                                  "key": "category-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) The unique ID of the Category."
+                                }
+                              ]
+                            },
+                            "description": "List Category Milestones returns a list of all Milestones with the Category."
+                          },
+                          "response": [
+                            {
+                              "id": "aa097540-cb2b-4fbb-b53b-8349d5d0da70",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/milestones",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "milestones"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"state\": \"<string>\",\n    \"started_at_override\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"categories\": [\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#2beA8C\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#0cBd2A\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"id\": \"<long>\",\n    \"key_result_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"position\": \"<long>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"state\": \"<string>\",\n    \"started_at_override\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"categories\": [\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#D6CfcC\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#279e0C\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"id\": \"<long>\",\n    \"key_result_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"position\": \"<long>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-aa097540-cb2b-4fbb-b53b-8349d5d0da70"
+                            },
+                            {
+                              "id": "fa90fc83-0f1b-4f1b-8c42-259d72b57c28",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/milestones",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "milestones"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-fa90fc83-0f1b-4f1b-8c42-259d72b57c28"
+                            },
+                            {
+                              "id": "c2d6a97b-4574-4b85-b423-9240fee84560",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/milestones",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "milestones"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-c2d6a97b-4574-4b85-b423-9240fee84560"
+                            },
+                            {
+                              "id": "ca5e185a-4215-4a48-a55c-010ad09af7dc",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/milestones",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "milestones"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-ca5e185a-4215-4a48-a55c-010ad09af7dc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-a57945cc-1584-4050-b5b6-6f85e6948211"
+                        }
+                      ],
+                      "id": "43a07c54-fecd-41fd-9b1e-eb09b2b53be5",
+                      "createdAt": "2026-07-28T02:53:03.000Z",
+                      "updatedAt": "2026-07-28T02:53:03.000Z",
+                      "uid": "35240-43a07c54-fecd-41fd-9b1e-eb09b2b53be5"
+                    },
+                    {
+                      "name": "objectives",
+                      "item": [
+                        {
+                          "name": "List Category Objectives",
+                          "id": "8dfb2e00-57c0-4f05-8698-9cb604c77d13",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/objectives",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id",
+                                "objectives"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "723cf937-9344-487f-8695-de51a815c743",
+                                  "key": "category-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) The unique ID of the Category."
+                                }
+                              ]
+                            },
+                            "description": "Returns a list of all Objectives with the Category."
+                          },
+                          "response": [
+                            {
+                              "id": "08efd6cf-2d26-4ab9-a448-965eddad90c2",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/objectives",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "objectives"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"state\": \"<string>\",\n    \"started_at_override\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"categories\": [\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#2beA8C\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#0cBd2A\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"id\": \"<long>\",\n    \"key_result_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"position\": \"<long>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"state\": \"<string>\",\n    \"started_at_override\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"categories\": [\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#D6CfcC\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#279e0C\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"id\": \"<long>\",\n    \"key_result_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"position\": \"<long>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\",\n      \"average_cycle_time\": \"<long>\",\n      \"average_lead_time\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-08efd6cf-2d26-4ab9-a448-965eddad90c2"
+                            },
+                            {
+                              "id": "c3382b8a-b591-4fcb-8669-cf4ed8e1237a",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/objectives",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "objectives"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-c3382b8a-b591-4fcb-8669-cf4ed8e1237a"
+                            },
+                            {
+                              "id": "680b799f-de51-4206-809d-cab00721c061",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/objectives",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "objectives"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-680b799f-de51-4206-809d-cab00721c061"
+                            },
+                            {
+                              "id": "3bbeae3d-2998-45fe-8aaf-4fd178af4a2f",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/categories/:category-public-id/objectives",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "categories",
+                                    ":category-public-id",
+                                    "objectives"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "category-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:04.000Z",
+                              "updatedAt": "2026-07-28T02:53:04.000Z",
+                              "uid": "35240-3bbeae3d-2998-45fe-8aaf-4fd178af4a2f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-8dfb2e00-57c0-4f05-8698-9cb604c77d13"
+                        }
+                      ],
+                      "id": "67b66a21-d112-429d-a1a2-6ebd214b5c0f",
+                      "createdAt": "2026-07-28T02:53:03.000Z",
+                      "updatedAt": "2026-07-28T02:53:03.000Z",
+                      "uid": "35240-67b66a21-d112-429d-a1a2-6ebd214b5c0f"
+                    },
+                    {
+                      "name": "Get Category",
+                      "id": "312cefbc-235f-4aeb-b37a-13bbd7e72c8e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories",
+                            ":category-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7d60b4bd-11b4-4a67-beb8-4d9b7859211a",
+                              "key": "category-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Category."
+                            }
+                          ]
+                        },
+                        "description": "Get Category returns information about the selected Category."
+                      },
+                      "response": [
+                        {
+                          "id": "797baf02-4c52-46e5-9e8c-55bfe2dd8195",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"color\": \"#C26320\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-797baf02-4c52-46e5-9e8c-55bfe2dd8195"
+                        },
+                        {
+                          "id": "eb1a39b0-8948-4b4f-aa06-e87dc1b21c10",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-eb1a39b0-8948-4b4f-aa06-e87dc1b21c10"
+                        },
+                        {
+                          "id": "ef407c35-a299-47b7-950d-1655aa86db92",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-ef407c35-a299-47b7-950d-1655aa86db92"
+                        },
+                        {
+                          "id": "f239e1c0-f651-4b2f-a57e-c055067844f7",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-f239e1c0-f651-4b2f-a57e-c055067844f7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-312cefbc-235f-4aeb-b37a-13bbd7e72c8e"
+                    },
+                    {
+                      "name": "Update Category",
+                      "id": "9dc552c9-6c9c-4c7b-af53-0b50952758e9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#304E4E\",\n  \"archived\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories",
+                            ":category-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "b10837dc-f71a-466c-9dbc-633f91cdd107",
+                              "key": "category-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Category you wish to update."
+                            }
+                          ]
+                        },
+                        "description": "Update Category allows you to replace a Category name with another name. If you try to name a Category something that already exists, you will receive a 422 response."
+                      },
+                      "response": [
+                        {
+                          "id": "64c57099-decc-4c39-ac64-3dc7c3391b76",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#304E4E\",\n  \"archived\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"color\": \"#C26320\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-64c57099-decc-4c39-ac64-3dc7c3391b76"
+                        },
+                        {
+                          "id": "ed47a3a9-7fa6-4837-8cf5-397551662404",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#304E4E\",\n  \"archived\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-ed47a3a9-7fa6-4837-8cf5-397551662404"
+                        },
+                        {
+                          "id": "48708609-ad11-4c50-83e6-bb5b0e966751",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#304E4E\",\n  \"archived\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-48708609-ad11-4c50-83e6-bb5b0e966751"
+                        },
+                        {
+                          "id": "f5d25185-e05f-4611-93fd-5376386511a7",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#304E4E\",\n  \"archived\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-f5d25185-e05f-4611-93fd-5376386511a7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-9dc552c9-6c9c-4c7b-af53-0b50952758e9"
+                    },
+                    {
+                      "name": "Delete Category",
+                      "id": "223c6f62-5d87-416c-a0b3-7c6d00c97ca4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories",
+                            ":category-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "dd204c84-e0d2-4828-b97c-cd034b23a4b9",
+                              "key": "category-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID of the Category."
+                            }
+                          ]
+                        },
+                        "description": "Delete Category can be used to delete any Category."
+                      },
+                      "response": [
+                        {
+                          "id": "249d886a-c04c-4f49-a926-487b5439c058",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-249d886a-c04c-4f49-a926-487b5439c058"
+                        },
+                        {
+                          "id": "c865b2dd-23a1-4b81-a43f-046e980a000a",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-c865b2dd-23a1-4b81-a43f-046e980a000a"
+                        },
+                        {
+                          "id": "875d47b7-206f-4f42-9922-613f9a5e2849",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-875d47b7-206f-4f42-9922-613f9a5e2849"
+                        },
+                        {
+                          "id": "77c25cfd-7a81-4264-ab9f-847044af6d15",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/categories/:category-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "categories",
+                                ":category-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "category-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:04.000Z",
+                          "updatedAt": "2026-07-28T02:53:04.000Z",
+                          "uid": "35240-77c25cfd-7a81-4264-ab9f-847044af6d15"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-223c6f62-5d87-416c-a0b3-7c6d00c97ca4"
+                    }
+                  ],
+                  "id": "207cd7c5-8126-48f9-b296-c8291c3837f6",
+                  "createdAt": "2026-07-28T02:53:03.000Z",
+                  "updatedAt": "2026-07-28T02:53:03.000Z",
+                  "uid": "35240-207cd7c5-8126-48f9-b296-c8291c3837f6"
+                },
+                {
+                  "name": "List Categories",
+                  "id": "84364b61-c3f8-4f3b-a54b-a969f581a7a9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "categories"
+                      ]
+                    },
+                    "description": "List Categories returns a list of all Categories and their attributes."
+                  },
+                  "response": [
+                    {
+                      "id": "0f9fae0d-c7f8-4591-b6b2-ae6042d7c242",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"color\": \"#9C99CC\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"color\": \"#95ecBA\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-0f9fae0d-c7f8-4591-b6b2-ae6042d7c242"
+                    },
+                    {
+                      "id": "caf43d76-c432-4134-a6ff-a62d12bf0aef",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-caf43d76-c432-4134-a6ff-a62d12bf0aef"
+                    },
+                    {
+                      "id": "be80049f-9e97-46e6-8f70-e36fd90bb92f",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-be80049f-9e97-46e6-8f70-e36fd90bb92f"
+                    },
+                    {
+                      "id": "8d6ecc48-e8a2-46a2-9216-6e6920b04cdd",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-8d6ecc48-e8a2-46a2-9216-6e6920b04cdd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:04.000Z",
+                  "updatedAt": "2026-07-28T02:53:04.000Z",
+                  "uid": "35240-84364b61-c3f8-4f3b-a54b-a969f581a7a9"
+                },
+                {
+                  "name": "Create Category",
+                  "id": "ea82d81f-2752-4e04-86ab-7bbaf4be02de",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#cf8757\",\n  \"external_id\": \"<string>\",\n  \"type\": {\n    \"description\": \"The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.\",\n    \"x-doc-skip\": true\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/categories",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "categories"
+                      ]
+                    },
+                    "description": "Create Category allows you to create a new Category in Shortcut."
+                  },
+                  "response": [
+                    {
+                      "id": "d4b2a23d-41ce-452a-a1df-71ec9c72cabc",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#cf8757\",\n  \"external_id\": \"<string>\",\n  \"type\": {\n    \"description\": \"The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.\",\n    \"x-doc-skip\": true\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"color\": \"#C26320\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-d4b2a23d-41ce-452a-a1df-71ec9c72cabc"
+                    },
+                    {
+                      "id": "8543ad37-88fb-45cc-b8b1-42f96362ece7",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#cf8757\",\n  \"external_id\": \"<string>\",\n  \"type\": {\n    \"description\": \"The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.\",\n    \"x-doc-skip\": true\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-8543ad37-88fb-45cc-b8b1-42f96362ece7"
+                    },
+                    {
+                      "id": "c12977dc-7389-4ff7-a39a-201d898f02d2",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#cf8757\",\n  \"external_id\": \"<string>\",\n  \"type\": {\n    \"description\": \"The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.\",\n    \"x-doc-skip\": true\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-c12977dc-7389-4ff7-a39a-201d898f02d2"
+                    },
+                    {
+                      "id": "13843d73-0131-44a1-affb-912458c5726a",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"color\": \"#cf8757\",\n  \"external_id\": \"<string>\",\n  \"type\": {\n    \"description\": \"The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.\",\n    \"x-doc-skip\": true\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/categories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:04.000Z",
+                      "updatedAt": "2026-07-28T02:53:04.000Z",
+                      "uid": "35240-13843d73-0131-44a1-affb-912458c5726a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:04.000Z",
+                  "updatedAt": "2026-07-28T02:53:04.000Z",
+                  "uid": "35240-ea82d81f-2752-4e04-86ab-7bbaf4be02de"
+                }
+              ],
+              "id": "0691325f-3c92-41f6-a127-9b7ebb7ebb64",
+              "createdAt": "2026-07-28T02:53:03.000Z",
+              "updatedAt": "2026-07-28T02:53:03.000Z",
+              "uid": "35240-0691325f-3c92-41f6-a127-9b7ebb7ebb64"
+            }
+          ],
+          "id": "fa0e96ea-9d1a-4829-988d-346ab7dc2025",
+          "createdAt": "2026-07-28T02:53:03.000Z",
+          "updatedAt": "2026-07-28T02:53:03.000Z",
+          "uid": "35240-fa0e96ea-9d1a-4829-988d-346ab7dc2025"
+        }
+      ],
+      "id": "3556274e-d72f-4d80-b3d3-71f737369c4f",
+      "createdAt": "2026-07-28T02:53:03.000Z",
+      "updatedAt": "2026-07-28T02:53:03.000Z",
+      "uid": "35240-3556274e-d72f-4d80-b3d3-71f737369c4f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

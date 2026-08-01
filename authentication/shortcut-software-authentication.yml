@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/shortcut-software-openapi-original.json
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: api_token
+  type: apiKey
+  in: header
+  parameter: Shortcut-Token
+  sources:
+  - openapi/shortcut-software-openapi-original.json

@@ -1,0 +1,2484 @@
+{
+  "info": {
+    "_postman_id": "6991be84-6c0e-4115-a70c-a51bdab8ad4c",
+    "name": "Shortcut Categories Documents API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:05.000Z",
+    "updatedAt": "2026-07-28T02:53:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6991be84-6c0e-4115-a70c-a51bdab8ad4c"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "documents",
+              "item": [
+                {
+                  "name": "{doc-public-id}",
+                  "item": [
+                    {
+                      "name": "epics",
+                      "item": [
+                        {
+                          "name": "{epic-public-id}",
+                          "item": [
+                            {
+                              "name": "Link Document to Epic",
+                              "id": "f1029223-a470-4501-a6db-289b15b94045",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics",
+                                    ":epic-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "f278c39b-bca0-4127-bc19-f72528bc4ac3",
+                                      "key": "doc-public-id",
+                                      "value": "<uuid>",
+                                      "description": "(Required) The public ID of the Document."
+                                    },
+                                    {
+                                      "id": "6b8b44b8-dc52-4e84-af6b-fbed14da68cc",
+                                      "key": "epic-public-id",
+                                      "value": "<long>",
+                                      "description": "(Required) The public ID of the Epic."
+                                    }
+                                  ]
+                                },
+                                "description": "Create a relationship between a Document and an Epic."
+                              },
+                              "response": [
+                                {
+                                  "id": "bed783c6-629b-4a41-be23-d40a698eacb8",
+                                  "name": "No Content",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-bed783c6-629b-4a41-be23-d40a698eacb8"
+                                },
+                                {
+                                  "id": "2df3f216-805c-4639-90cc-bc9d7a129294",
+                                  "name": "Schema mismatch",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-2df3f216-805c-4639-90cc-bc9d7a129294"
+                                },
+                                {
+                                  "id": "44b63347-570b-454c-949f-f33d79bd8a09",
+                                  "name": "New Response",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Forbidden",
+                                  "code": 403,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-44b63347-570b-454c-949f-f33d79bd8a09"
+                                },
+                                {
+                                  "id": "ce763005-1ad5-4ab2-9c4d-4316a97e1c13",
+                                  "name": "Resource does not exist",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-ce763005-1ad5-4ab2-9c4d-4316a97e1c13"
+                                },
+                                {
+                                  "id": "37fd5aa9-0041-4d22-9aab-40174979023b",
+                                  "name": "**Either:** (1) Unprocessable **or** (2)  ",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                                  "code": 422,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"message\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-37fd5aa9-0041-4d22-9aab-40174979023b"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-f1029223-a470-4501-a6db-289b15b94045"
+                            },
+                            {
+                              "name": "Unlink Document from Epic",
+                              "id": "149f3896-6fa8-4d52-9908-601d17e92272",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics",
+                                    ":epic-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "11d5c3ad-aecd-4b7e-9dd8-8213b832b9b0",
+                                      "key": "doc-public-id",
+                                      "value": "<uuid>",
+                                      "description": "(Required) The public ID of the Document."
+                                    },
+                                    {
+                                      "id": "ec524797-8d51-4953-b37e-b784990c4f37",
+                                      "key": "epic-public-id",
+                                      "value": "<long>",
+                                      "description": "(Required) The public ID of the Epic."
+                                    }
+                                  ]
+                                },
+                                "description": "Remove a relationship between a Document and an Epic."
+                              },
+                              "response": [
+                                {
+                                  "id": "16795d38-42be-4a05-a4d2-e0e317c99c35",
+                                  "name": "No Content",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-16795d38-42be-4a05-a4d2-e0e317c99c35"
+                                },
+                                {
+                                  "id": "b4a798ee-a4b9-4815-b017-51634f9350b9",
+                                  "name": "Schema mismatch",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-b4a798ee-a4b9-4815-b017-51634f9350b9"
+                                },
+                                {
+                                  "id": "24543c45-057f-47f4-aae4-1bfd0dd871f7",
+                                  "name": "New Response",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Forbidden",
+                                  "code": 403,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-24543c45-057f-47f4-aae4-1bfd0dd871f7"
+                                },
+                                {
+                                  "id": "fd48d520-7b83-4246-b424-4186274030e0",
+                                  "name": "Resource does not exist",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-fd48d520-7b83-4246-b424-4186274030e0"
+                                },
+                                {
+                                  "id": "ed1637eb-868f-4169-ba07-0be953c0dc7d",
+                                  "name": "Unprocessable",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: apikey",
+                                        "key": "Shortcut-Token",
+                                        "value": "<API Key>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "v3",
+                                        "documents",
+                                        ":doc-public-id",
+                                        "epics",
+                                        ":epic-public-id"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "doc-public-id"
+                                        },
+                                        {
+                                          "key": "epic-public-id"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                                  "code": 422,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:53:06.000Z",
+                                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                                  "uid": "35240-ed1637eb-868f-4169-ba07-0be953c0dc7d"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-149f3896-6fa8-4d52-9908-601d17e92272"
+                            }
+                          ],
+                          "id": "b5fc521b-c086-4b36-8d21-76cbe3356acc",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-b5fc521b-c086-4b36-8d21-76cbe3356acc"
+                        },
+                        {
+                          "name": "List Document Epics",
+                          "id": "c628079c-b96f-4055-9607-21b7e20ad39f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id",
+                                "epics"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9e56b571-e705-458f-a739-d40aef6b93be",
+                                  "key": "doc-public-id",
+                                  "value": "<uuid>",
+                                  "description": "(Required) The public ID of the Document."
+                                }
+                              ]
+                            },
+                            "description": "Get a list of all Epics related to this Document."
+                          },
+                          "response": [
+                            {
+                              "id": "9586c8e7-5551-4ddf-aa66-a560778e8cad",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "doc-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#43f4D9\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#B09E01\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      },\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      }\n    ],\n    \"project_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"stories_without_projects\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"productboard_plugin_id\": \"<uuid>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"objective_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"productboard_url\": \"<string>\",\n    \"planned_start_date\": \"<dateTime>\",\n    \"state\": \"<string>\",\n    \"milestone_id\": \"<long>\",\n    \"requested_by_id\": \"<uuid>\",\n    \"epic_state_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"productboard_id\": \"<uuid>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"position\": \"<long>\",\n    \"productboard_name\": \"<string>\",\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_points_done\": \"<long>\",\n      \"num_related_documents\": \"<long>\",\n      \"num_stories_unstarted\": \"<long>\",\n      \"num_stories_total\": \"<long>\",\n      \"last_story_update\": \"<dateTime>\",\n      \"num_points_started\": \"<long>\",\n      \"num_points_unstarted\": \"<long>\",\n      \"num_stories_started\": \"<long>\",\n      \"num_stories_unestimated\": \"<long>\",\n      \"num_stories_backlog\": \"<long>\",\n      \"num_points_backlog\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_stories_done\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\",\n    \"description\": \"<string>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#c75E7a\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#992df6\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      },\n      {\n        \"group_id\": \"<uuid>\",\n        \"associated_stories_count\": \"<long>\"\n      }\n    ],\n    \"project_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"stories_without_projects\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"productboard_plugin_id\": \"<uuid>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"objective_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"productboard_url\": \"<string>\",\n    \"planned_start_date\": \"<dateTime>\",\n    \"state\": \"<string>\",\n    \"milestone_id\": \"<long>\",\n    \"requested_by_id\": \"<uuid>\",\n    \"epic_state_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"productboard_id\": \"<uuid>\",\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"position\": \"<long>\",\n    \"productboard_name\": \"<string>\",\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_points_done\": \"<long>\",\n      \"num_related_documents\": \"<long>\",\n      \"num_stories_unstarted\": \"<long>\",\n      \"num_stories_total\": \"<long>\",\n      \"last_story_update\": \"<dateTime>\",\n      \"num_points_started\": \"<long>\",\n      \"num_points_unstarted\": \"<long>\",\n      \"num_stories_started\": \"<long>\",\n      \"num_stories_unestimated\": \"<long>\",\n      \"num_stories_backlog\": \"<long>\",\n      \"num_points_backlog\": \"<long>\",\n      \"num_points\": \"<long>\",\n      \"num_stories_done\": \"<long>\"\n    },\n    \"created_at\": \"<dateTime>\",\n    \"description\": \"<string>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-9586c8e7-5551-4ddf-aa66-a560778e8cad"
+                            },
+                            {
+                              "id": "abfeaa41-ccb9-40e1-ab59-de12e894f8c2",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "doc-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-abfeaa41-ccb9-40e1-ab59-de12e894f8c2"
+                            },
+                            {
+                              "id": "727ffe1d-707d-4ecf-89cc-ce0e562e1536",
+                              "name": "New Response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "doc-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Forbidden",
+                              "code": 403,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-727ffe1d-707d-4ecf-89cc-ce0e562e1536"
+                            },
+                            {
+                              "id": "3a6aad64-7308-4c0b-9149-71d27dd86104",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "doc-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-3a6aad64-7308-4c0b-9149-71d27dd86104"
+                            },
+                            {
+                              "id": "0dbf211f-1b0c-44df-aa69-0f4d4fbc0d88",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id/epics",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "documents",
+                                    ":doc-public-id",
+                                    "epics"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "doc-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:06.000Z",
+                              "updatedAt": "2026-07-28T02:53:06.000Z",
+                              "uid": "35240-0dbf211f-1b0c-44df-aa69-0f4d4fbc0d88"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-c628079c-b96f-4055-9607-21b7e20ad39f"
+                        }
+                      ],
+                      "id": "b42a431a-4bfa-4061-be58-72ca330f3275",
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-b42a431a-4bfa-4061-be58-72ca330f3275"
+                    },
+                    {
+                      "name": "Get Doc",
+                      "id": "5a024ee6-0ec5-4d20-a3b0-4dfd63d1177b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents",
+                            ":doc-public-id"
+                          ],
+                          "query": [
+                            {
+                              "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                              "key": "content_format",
+                              "value": "markdown"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "97a31e11-9778-4cf3-874b-ea88fb524e45",
+                              "key": "doc-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The Doc's public ID"
+                            }
+                          ]
+                        },
+                        "description": "Get a Doc by its public ID with content. Use content_format=html query parameter to include HTML content."
+                      },
+                      "response": [
+                        {
+                          "id": "a63a81b7-0cbb-4945-9757-d8fe92874240",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                                  "key": "content_format",
+                                  "value": "markdown"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"content_markdown\": \"<string>\",\n  \"app_url\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"archived\": \"<boolean>\",\n  \"content_html\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-a63a81b7-0cbb-4945-9757-d8fe92874240"
+                        },
+                        {
+                          "id": "0ab42efb-a5ae-4606-aa19-eeaca086f06e",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                                  "key": "content_format",
+                                  "value": "markdown"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-0ab42efb-a5ae-4606-aa19-eeaca086f06e"
+                        },
+                        {
+                          "id": "397b4f9f-93d7-4b1a-b9c7-76156ff1a263",
+                          "name": "New Response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                                  "key": "content_format",
+                                  "value": "markdown"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-397b4f9f-93d7-4b1a-b9c7-76156ff1a263"
+                        },
+                        {
+                          "id": "c66a9a98-d947-4749-bb2a-2716bed3d981",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                                  "key": "content_format",
+                                  "value": "markdown"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-c66a9a98-d947-4749-bb2a-2716bed3d981"
+                        },
+                        {
+                          "id": "762181a4-43ab-46f5-9542-5ab30baa8e14",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id?content_format=markdown",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response.",
+                                  "key": "content_format",
+                                  "value": "markdown"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-762181a4-43ab-46f5-9542-5ab30baa8e14"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-5a024ee6-0ec5-4d20-a3b0-4dfd63d1177b"
+                    },
+                    {
+                      "name": "Update Doc",
+                      "id": "5a5653a6-97db-4a62-b635-8882b6e84913",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents",
+                            ":doc-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e6773c2b-158f-49c9-bbbf-94c03dd80e3d",
+                              "key": "doc-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The Doc's public ID"
+                            }
+                          ]
+                        },
+                        "description": "Updates an existing Doc's title and/or content. Supports markdown or HTML input via content_format parameter. When a document is updated: (1) For Tiptap-migrated docs, SSE events notify connected Tiptap clients to refresh. (2) For non-migrated docs, CKEditor cache is flushed and SSE events notify connected CKEditor users."
+                      },
+                      "response": [
+                        {
+                          "id": "ec6d426e-13c1-48de-a1e7-4b072712be7e",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"content_markdown\": \"<string>\",\n  \"app_url\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"archived\": \"<boolean>\",\n  \"content_html\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-ec6d426e-13c1-48de-a1e7-4b072712be7e"
+                        },
+                        {
+                          "id": "5224a0f4-a938-4a39-b5a0-6bf132ad6303",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-5224a0f4-a938-4a39-b5a0-6bf132ad6303"
+                        },
+                        {
+                          "id": "3aefd1d0-6430-40d4-8f99-991e8aaab787",
+                          "name": "New Response",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-3aefd1d0-6430-40d4-8f99-991e8aaab787"
+                        },
+                        {
+                          "id": "b7d8d49f-d7b4-435c-bb6e-7034450fb264",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-b7d8d49f-d7b4-435c-bb6e-7034450fb264"
+                        },
+                        {
+                          "id": "32290657-0de4-4964-bbf3-54f6b4ce2569",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-32290657-0de4-4964-bbf3-54f6b4ce2569"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-5a5653a6-97db-4a62-b635-8882b6e84913"
+                    },
+                    {
+                      "name": "Delete Doc",
+                      "id": "4970e3fe-c934-4783-8c06-6da99df507ed",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents",
+                            ":doc-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "736fcbf5-4028-4a78-8ee8-c1d297a1c484",
+                              "key": "doc-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The Doc's public ID"
+                            }
+                          ]
+                        },
+                        "description": "Permanently deletes a Doc and its associated data. Requires admin access to the doc. When a document is deleted, connected clients will be notified via SSE events."
+                      },
+                      "response": [
+                        {
+                          "id": "aab1a59c-3c74-4256-8483-d9a09c35602a",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-aab1a59c-3c74-4256-8483-d9a09c35602a"
+                        },
+                        {
+                          "id": "866b13ff-8cdb-46b6-b2b3-2fa41d2fc3a4",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-866b13ff-8cdb-46b6-b2b3-2fa41d2fc3a4"
+                        },
+                        {
+                          "id": "c4cf32da-3bbd-46f9-82d8-80a44646db9f",
+                          "name": "New Response",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-c4cf32da-3bbd-46f9-82d8-80a44646db9f"
+                        },
+                        {
+                          "id": "25e0900f-d173-4b59-bcad-eb61a8a1a5d0",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-25e0900f-d173-4b59-bcad-eb61a8a1a5d0"
+                        },
+                        {
+                          "id": "c74a7d9f-4f59-4de4-a044-7fcfadb6b7aa",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"content_format\": \"markdown\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/documents/:doc-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "documents",
+                                ":doc-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "doc-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:06.000Z",
+                          "updatedAt": "2026-07-28T02:53:06.000Z",
+                          "uid": "35240-c74a7d9f-4f59-4de4-a044-7fcfadb6b7aa"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-4970e3fe-c934-4783-8c06-6da99df507ed"
+                    }
+                  ],
+                  "id": "fb98b2e9-3cae-4916-8636-ddab6dad99d8",
+                  "createdAt": "2026-07-28T02:53:06.000Z",
+                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                  "uid": "35240-fb98b2e9-3cae-4916-8636-ddab6dad99d8"
+                },
+                {
+                  "name": "List Docs",
+                  "id": "b042443b-b66c-4592-b99a-a12fd58f1fa7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/documents",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "documents"
+                      ]
+                    },
+                    "description": "List Docs returns a list of Doc that the current user can read."
+                  },
+                  "response": [
+                    {
+                      "id": "506719b9-e061-4980-a6f9-85c9a96ae5f2",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"title\": \"<string>\",\n    \"app_url\": \"<string>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"title\": \"<string>\",\n    \"app_url\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-506719b9-e061-4980-a6f9-85c9a96ae5f2"
+                    },
+                    {
+                      "id": "2bd550fb-b194-4a30-a482-b6065f9482a4",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-2bd550fb-b194-4a30-a482-b6065f9482a4"
+                    },
+                    {
+                      "id": "88248f42-4918-48c9-8ca5-4205dee9eeee",
+                      "name": "New Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-88248f42-4918-48c9-8ca5-4205dee9eeee"
+                    },
+                    {
+                      "id": "4ae96d7f-6606-465c-beb9-2bf3ebb49406",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-4ae96d7f-6606-465c-beb9-2bf3ebb49406"
+                    },
+                    {
+                      "id": "71c9c26a-8d53-47ce-b09b-da16787d0fb3",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-71c9c26a-8d53-47ce-b09b-da16787d0fb3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:06.000Z",
+                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                  "uid": "35240-b042443b-b66c-4592-b99a-a12fd58f1fa7"
+                },
+                {
+                  "name": "Create Doc",
+                  "id": "3cc50bb5-b89e-45ad-b9bb-d12270a552be",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/documents",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "documents"
+                      ]
+                    },
+                    "description": "Creates a new Doc. Supports markdown or HTML input via content_format parameter."
+                  },
+                  "response": [
+                    {
+                      "id": "a04d1953-4c33-4ef4-9cdb-7cd8a9655c2b",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<uuid>\",\n  \"title\": \"<string>\",\n  \"app_url\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-a04d1953-4c33-4ef4-9cdb-7cd8a9655c2b"
+                    },
+                    {
+                      "id": "f2aa52fe-5d84-4174-a9fa-327d9651df62",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-f2aa52fe-5d84-4174-a9fa-327d9651df62"
+                    },
+                    {
+                      "id": "52869369-7988-44c2-8ebd-18e47e445ad5",
+                      "name": "New Response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"feature_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-52869369-7988-44c2-8ebd-18e47e445ad5"
+                    },
+                    {
+                      "id": "a56c1f10-c327-4811-a3cc-0b0160d00e4b",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-a56c1f10-c327-4811-a3cc-0b0160d00e4b"
+                    },
+                    {
+                      "id": "c2ad6ba8-c044-4fa7-94d2-ddd0a571f26b",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"<string>\",\n  \"content\": \"<string>\",\n  \"content_format\": \"markdown\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/documents",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "documents"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:06.000Z",
+                      "updatedAt": "2026-07-28T02:53:06.000Z",
+                      "uid": "35240-c2ad6ba8-c044-4fa7-94d2-ddd0a571f26b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:06.000Z",
+                  "updatedAt": "2026-07-28T02:53:06.000Z",
+                  "uid": "35240-3cc50bb5-b89e-45ad-b9bb-d12270a552be"
+                }
+              ],
+              "id": "8eaa9f41-0390-4883-a9e9-9ae3b3c1437b",
+              "createdAt": "2026-07-28T02:53:06.000Z",
+              "updatedAt": "2026-07-28T02:53:06.000Z",
+              "uid": "35240-8eaa9f41-0390-4883-a9e9-9ae3b3c1437b"
+            }
+          ],
+          "id": "a73e1aa4-bcb7-4b5c-81e2-04bc932cd9cd",
+          "createdAt": "2026-07-28T02:53:06.000Z",
+          "updatedAt": "2026-07-28T02:53:06.000Z",
+          "uid": "35240-a73e1aa4-bcb7-4b5c-81e2-04bc932cd9cd"
+        }
+      ],
+      "id": "c69bb797-8450-417f-b004-50efc4b8b71a",
+      "createdAt": "2026-07-28T02:53:06.000Z",
+      "updatedAt": "2026-07-28T02:53:06.000Z",
+      "uid": "35240-c69bb797-8450-417f-b004-50efc4b8b71a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

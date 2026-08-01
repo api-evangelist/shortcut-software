@@ -1,0 +1,39 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Shortcut API
+  version: 1.0.0
+extends: openapi/shortcut-software-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: shortcut-software
+    x-apievangelist-rating-notes: >-
+      REST v3, apiKey (Shortcut-Token) + OAuth2/OIDC (hosted MCP), 200 req/min,
+      page/page_size pagination, outgoing webhooks (HMAC Shortcut-Signature),
+      SOC 2 Type 2 / HIPAA / GDPR.
+    x-agent-readiness:
+      mcp_server: https://mcp.shortcut.com/mcp
+      webhooks: https://developer.shortcut.com/api/webhook/v1
+      idempotency: false
+- target: $.servers
+  update:
+  - url: https://api.app.shortcut.com
+    description: Production
+- target: $.components.securitySchemes
+  update:
+    oauth2:
+      type: oauth2
+      description: >-
+        OAuth 2.0 authorization code + PKCE (advertised via RFC 8414 metadata),
+        backing the hosted MCP server at https://mcp.shortcut.com/mcp.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.app.shortcut.com/oauth-authorization-code-flow/code
+          tokenUrl: https://api.app.shortcut.com/oauth-authorization-code-flow/token
+          scopes:
+            openid: OpenID Connect authentication
+            read: Read-only access to workspace data
+            write: Read/write access to workspace data
+            story-write: Create and update Stories
+            comment-write: Create and update comments
+            admin: Administrative access

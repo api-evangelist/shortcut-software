@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+probe: false
+url: https://www.shortcut.com/security
+certifications:
+- SOC 2 Type 2
+- HIPAA (BAA on Business/Enterprise)
+- GDPR
+- PCI DSS (card handling via Stripe)
+controls:
+- AWS infrastructure (DynamoDB storage)
+- Encrypted backups every 10 minutes to S3
+- HTTPS for all communications
+- Two-factor authentication (2FA)
+- Passwords hashed with bcrypt
+- Google SSO on all plans
+evidence:
+- {source: https://www.shortcut.com/security, keywords: [soc 2 type 2, hipaa, gdpr, responsible disclosure]}
+notes: >-
+  Security/compliance posture published on shortcut.com/security (not a dedicated
+  trust.shortcut.com portal). SOC 2 Type 2 audited for security, availability, and
+  confidentiality; BAAs available; GDPR + subprocessors documentation published.

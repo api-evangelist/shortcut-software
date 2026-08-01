@@ -1,0 +1,738 @@
+{
+  "info": {
+    "_postman_id": "3a678d68-2ca3-4352-b212-57660a4a4ff7",
+    "name": "Shortcut Categories Integrations API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:18.000Z",
+    "updatedAt": "2026-07-28T02:53:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3a678d68-2ca3-4352-b212-57660a4a4ff7"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "integrations",
+              "item": [
+                {
+                  "name": "webhook",
+                  "item": [
+                    {
+                      "name": "{integration-public-id}",
+                      "item": [
+                        {
+                          "name": "Get Generic Integration",
+                          "id": "5c6f39fa-6461-4c32-a48c-51df01c23ca8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook",
+                                ":integration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1ecea68f-13a0-4c42-81e4-11e5e68199a8",
+                                  "key": "integration-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "940868e2-48e5-42a4-83e0-f845436f8aad",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-940868e2-48e5-42a4-83e0-f845436f8aad"
+                            },
+                            {
+                              "id": "0d4a2224-bd5d-4342-9a1b-c798a860c429",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-0d4a2224-bd5d-4342-9a1b-c798a860c429"
+                            },
+                            {
+                              "id": "537318b8-c0b9-413f-96ea-2248ee26a1ca",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-537318b8-c0b9-413f-96ea-2248ee26a1ca"
+                            },
+                            {
+                              "id": "33f1bcdf-3c4f-4da3-915d-0d42bb2a7c0d",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-33f1bcdf-3c4f-4da3-915d-0d42bb2a7c0d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-5c6f39fa-6461-4c32-a48c-51df01c23ca8"
+                        },
+                        {
+                          "name": "Delete Generic Integration",
+                          "id": "c495771a-f059-47eb-8c17-c8e1a5348906",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook",
+                                ":integration-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8d2e885f-23f5-48e3-8c15-415afdc01233",
+                                  "key": "integration-public-id",
+                                  "value": "<long>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "id": "2d11cb95-1291-430d-9859-349fa3e1872b",
+                              "name": "No Content",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-2d11cb95-1291-430d-9859-349fa3e1872b"
+                            },
+                            {
+                              "id": "915a24fd-ab91-440b-8701-844e7e3271a9",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-915a24fd-ab91-440b-8701-844e7e3271a9"
+                            },
+                            {
+                              "id": "e28f92d4-c790-4f1c-981c-2216963a7503",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-e28f92d4-c790-4f1c-981c-2216963a7503"
+                            },
+                            {
+                              "id": "c1130188-ed6a-4bad-acba-4b5fc86afb7b",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/integrations/webhook/:integration-public-id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "integrations",
+                                    "webhook",
+                                    ":integration-public-id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "integration-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:19.000Z",
+                              "updatedAt": "2026-07-28T02:53:19.000Z",
+                              "uid": "35240-c1130188-ed6a-4bad-acba-4b5fc86afb7b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-c495771a-f059-47eb-8c17-c8e1a5348906"
+                        }
+                      ],
+                      "id": "5c680fca-47a7-4ada-8af8-fe167fb7951a",
+                      "createdAt": "2026-07-28T02:53:19.000Z",
+                      "updatedAt": "2026-07-28T02:53:19.000Z",
+                      "uid": "35240-5c680fca-47a7-4ada-8af8-fe167fb7951a"
+                    },
+                    {
+                      "name": "Create Generic Integration",
+                      "id": "22ff44e6-baef-4a81-be88-00904d1f07e8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"webhook_url\": \"https://jPeGor\",\n  \"secret\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/integrations/webhook",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "integrations",
+                            "webhook"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "38d17ea1-bd61-4c42-9f8c-ea15abfb5602",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"webhook_url\": \"https://jPeGor\",\n  \"secret\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-38d17ea1-bd61-4c42-9f8c-ea15abfb5602"
+                        },
+                        {
+                          "id": "5ab9a36e-fdd3-4a16-8f82-443b002757ec",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"webhook_url\": \"https://jPeGor\",\n  \"secret\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-5ab9a36e-fdd3-4a16-8f82-443b002757ec"
+                        },
+                        {
+                          "id": "5b46885a-f248-4626-be60-aff313dbd814",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"webhook_url\": \"https://jPeGor\",\n  \"secret\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-5b46885a-f248-4626-be60-aff313dbd814"
+                        },
+                        {
+                          "id": "b9e46fec-73a5-45cf-9e99-f620d16b7b6c",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"webhook_url\": \"https://jPeGor\",\n  \"secret\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/integrations/webhook",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "integrations",
+                                "webhook"
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:19.000Z",
+                          "updatedAt": "2026-07-28T02:53:19.000Z",
+                          "uid": "35240-b9e46fec-73a5-45cf-9e99-f620d16b7b6c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:19.000Z",
+                      "updatedAt": "2026-07-28T02:53:19.000Z",
+                      "uid": "35240-22ff44e6-baef-4a81-be88-00904d1f07e8"
+                    }
+                  ],
+                  "id": "16ca73fc-f462-4eb6-b2e1-41ddd5d700b1",
+                  "createdAt": "2026-07-28T02:53:19.000Z",
+                  "updatedAt": "2026-07-28T02:53:19.000Z",
+                  "uid": "35240-16ca73fc-f462-4eb6-b2e1-41ddd5d700b1"
+                }
+              ],
+              "id": "86a54afa-649b-4021-8dce-839e05367913",
+              "createdAt": "2026-07-28T02:53:19.000Z",
+              "updatedAt": "2026-07-28T02:53:19.000Z",
+              "uid": "35240-86a54afa-649b-4021-8dce-839e05367913"
+            }
+          ],
+          "id": "66f93f56-9981-46cf-80eb-772023889cbe",
+          "createdAt": "2026-07-28T02:53:19.000Z",
+          "updatedAt": "2026-07-28T02:53:19.000Z",
+          "uid": "35240-66f93f56-9981-46cf-80eb-772023889cbe"
+        }
+      ],
+      "id": "e93f5b94-ef71-45ee-a1a6-9f2e53137cb3",
+      "createdAt": "2026-07-28T02:53:19.000Z",
+      "updatedAt": "2026-07-28T02:53:19.000Z",
+      "uid": "35240-e93f5b94-ef71-45ee-a1a6-9f2e53137cb3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

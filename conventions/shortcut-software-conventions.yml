@@ -1,0 +1,56 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.shortcut.com/api/rest/v3
+authentication:
+  style: api-key-header
+  header: Shortcut-Token
+  oauth2: true            # authorization-code + PKCE, backs the hosted MCP server
+  docs: https://developer.shortcut.com/api/rest/v3
+  cross_ref: authentication/shortcut-software-authentication.yml
+transport:
+  base_url: https://api.app.shortcut.com
+  path_prefix: /api/v3
+  content_type: application/json
+  https_required: true
+pagination:
+  style: page-number
+  params: [page, page_size]
+  page_default: 1
+  page_size_default: 10
+  page_size_max: 250
+  response_fields: [data, next, total]
+  notes: >-
+    Paginated collections (e.g. List Epics Paginated) return a `data` array plus
+    `next` and `total`. Cursor is expressed via the `next` field / page number.
+idempotency:
+  supported: false
+  notes: >-
+    Shortcut does not document an idempotency-key mechanism. Bulk write operations
+    (createMultipleStories, updateMultipleStories, deleteMultipleStories) are the
+    documented pattern for batching, not idempotent retries.
+versioning:
+  scheme: uri-path
+  current: v3
+  path: /api/v3
+  deprecated: [v2]
+  migration: change /v2/ to /v3/ in the URL path
+  next: v4 (alpha, announced 2026-05-12)
+  cross_ref: lifecycle/shortcut-software-lifecycle.yml
+rate_limiting:
+  limit: 200
+  window: per-minute
+  exceeded_status: 429
+  cross_ref: rate-limits/shortcut-software-rate-limits.yml
+error_envelope:
+  format: custom-json
+  shape: '{ "message": string, "tag": string }'
+  content_type: application/json
+  cross_ref: errors/shortcut-software-problem-types.yml
+webhooks:
+  supported: true
+  direction: outgoing
+  signature_header: Shortcut-Signature
+  signature_algorithm: HMAC (hex digest)
+  register_via_api: POST /api/v3/integrations/webhook
+  docs: https://developer.shortcut.com/api/webhook/v1
+  cross_ref: asyncapi/shortcut-software-webhooks.yml

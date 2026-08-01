@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: openapi + https://www.shortcut.com/security + well-known/oauth-authorization-server
+standards:
+- id: oauth2
+  conforms: true
+  evidence: RFC 8414 authorization-server metadata (authorization code + PKCE + dynamic client registration) at api.app.shortcut.com/.well-known/oauth-authorization-server
+- id: oidc
+  conforms: true
+  evidence: openid scope + id_token_signing_alg_values_supported [HS256] in the OAuth metadata
+- id: apikey-auth
+  conforms: true
+  evidence: openapi securityScheme api_token (apiKey, header Shortcut-Token)
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors returned as custom application/json {message, tag}, not application/problem+json
+- id: pagination
+  conforms: true
+  evidence: page/page_size params with data/next/total response envelope
+- id: idempotency
+  conforms: false
+  evidence: no idempotency-key mechanism documented
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type 2 audit for security, availability, and confidentiality (shortcut.com/security)
+- id: hipaa
+  conforms: true
+  evidence: Business Associate Agreements offered on Business/Enterprise plans
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliance framework + subprocessors notice (shortcut.com/security)
+compliance:
+  published: true
+  page: https://www.shortcut.com/security
+  certifications: [SOC 2 Type 2, HIPAA (BAA), GDPR, PCI DSS (via Stripe)]

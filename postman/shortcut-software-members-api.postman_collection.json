@@ -1,0 +1,568 @@
+{
+  "info": {
+    "_postman_id": "afe6c46e-cc76-4cc2-8c3e-33468568ac20",
+    "name": "Shortcut Categories Members API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:24.000Z",
+    "updatedAt": "2026-07-28T02:53:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-afe6c46e-cc76-4cc2-8c3e-33468568ac20"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "members",
+              "item": [
+                {
+                  "name": "{member-public-id}",
+                  "item": [
+                    {
+                      "name": "Get Member",
+                      "id": "a53cb478-bf57-440b-817c-f2f0843c56c9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/members/:member-public-id?org-public-id=<uuid>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "members",
+                            ":member-public-id"
+                          ],
+                          "query": [
+                            {
+                              "description": "The unique ID of the Organization to limit the lookup to.",
+                              "key": "org-public-id",
+                              "value": "<uuid>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "d187a658-e6c9-41a0-b817-567a7d93f446",
+                              "key": "member-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The Member's unique ID."
+                            }
+                          ]
+                        },
+                        "description": "Returns information about a Member."
+                      },
+                      "response": [
+                        {
+                          "id": "0f7efa4a-1397-45b9-a1c4-ed5a8d3ab93c",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/members/:member-public-id?org-public-id=<uuid>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "members",
+                                ":member-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The unique ID of the Organization to limit the lookup to.",
+                                  "key": "org-public-id",
+                                  "value": "<uuid>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "member-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"role\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"disabled\": \"<boolean>\",\n  \"global_id\": \"<string>\",\n  \"state\": \"full\",\n  \"updated_at\": \"<dateTime>\",\n  \"created_without_invite\": \"<boolean>\",\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"id\": \"<uuid>\",\n  \"profile\": {\n    \"entity_type\": \"<string>\",\n    \"deactivated\": \"<boolean>\",\n    \"mention_name\": \"<string>\",\n    \"name\": \"<string>\",\n    \"gravatar_hash\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"display_icon\": {\n      \"entity_type\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\",\n      \"url\": \"<string>\"\n    },\n    \"is_owner\": \"<boolean>\",\n    \"email_address\": \"<string>\",\n    \"two_factor_auth_activated\": \"<boolean>\",\n    \"is_agent\": \"<boolean>\"\n  },\n  \"created_at\": \"<dateTime>\",\n  \"installation_id\": \"<uuid>\",\n  \"replaced_by\": \"<uuid>\"\n}",
+                          "createdAt": "2026-07-28T02:53:25.000Z",
+                          "updatedAt": "2026-07-28T02:53:25.000Z",
+                          "uid": "35240-0f7efa4a-1397-45b9-a1c4-ed5a8d3ab93c"
+                        },
+                        {
+                          "id": "d29163ad-e844-46c0-854a-b0716b10c3eb",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/members/:member-public-id?org-public-id=<uuid>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "members",
+                                ":member-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The unique ID of the Organization to limit the lookup to.",
+                                  "key": "org-public-id",
+                                  "value": "<uuid>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "member-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:25.000Z",
+                          "updatedAt": "2026-07-28T02:53:25.000Z",
+                          "uid": "35240-d29163ad-e844-46c0-854a-b0716b10c3eb"
+                        },
+                        {
+                          "id": "e2458b50-0eac-4321-b1ea-e61e70980e5d",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/members/:member-public-id?org-public-id=<uuid>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "members",
+                                ":member-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The unique ID of the Organization to limit the lookup to.",
+                                  "key": "org-public-id",
+                                  "value": "<uuid>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "member-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:25.000Z",
+                          "updatedAt": "2026-07-28T02:53:25.000Z",
+                          "uid": "35240-e2458b50-0eac-4321-b1ea-e61e70980e5d"
+                        },
+                        {
+                          "id": "6a5ee5c1-c7d4-43c4-a607-6e877356bb2a",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/members/:member-public-id?org-public-id=<uuid>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "members",
+                                ":member-public-id"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The unique ID of the Organization to limit the lookup to.",
+                                  "key": "org-public-id",
+                                  "value": "<uuid>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "member-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:25.000Z",
+                          "updatedAt": "2026-07-28T02:53:25.000Z",
+                          "uid": "35240-6a5ee5c1-c7d4-43c4-a607-6e877356bb2a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:25.000Z",
+                      "updatedAt": "2026-07-28T02:53:25.000Z",
+                      "uid": "35240-a53cb478-bf57-440b-817c-f2f0843c56c9"
+                    }
+                  ],
+                  "id": "9111f689-cb10-4c65-b987-e80c697d3a32",
+                  "createdAt": "2026-07-28T02:53:25.000Z",
+                  "updatedAt": "2026-07-28T02:53:25.000Z",
+                  "uid": "35240-9111f689-cb10-4c65-b987-e80c697d3a32"
+                },
+                {
+                  "name": "List Members",
+                  "id": "2e66e01c-c8e0-4f34-9822-db6d6ec965f0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/members?org-public-id=<uuid>&disabled=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "members"
+                      ],
+                      "query": [
+                        {
+                          "description": "The unique ID of the Organization to limit the list to.",
+                          "key": "org-public-id",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.",
+                          "key": "disabled",
+                          "value": "<boolean>"
+                        }
+                      ]
+                    },
+                    "description": "Returns information about members of the Workspace."
+                  },
+                  "response": [
+                    {
+                      "id": "618bd9b0-76cd-4778-a13a-dc221ddc27ca",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/members?org-public-id=<uuid>&disabled=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "description": "The unique ID of the Organization to limit the list to.",
+                              "key": "org-public-id",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.",
+                              "key": "disabled",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"role\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"disabled\": \"<boolean>\",\n    \"global_id\": \"<string>\",\n    \"state\": \"full\",\n    \"updated_at\": \"<dateTime>\",\n    \"created_without_invite\": \"<boolean>\",\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"id\": \"<uuid>\",\n    \"profile\": {\n      \"entity_type\": \"<string>\",\n      \"deactivated\": \"<boolean>\",\n      \"mention_name\": \"<string>\",\n      \"name\": \"<string>\",\n      \"gravatar_hash\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"display_icon\": {\n        \"entity_type\": \"<string>\",\n        \"id\": \"<uuid>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"url\": \"<string>\"\n      },\n      \"is_owner\": \"<boolean>\",\n      \"email_address\": \"<string>\",\n      \"two_factor_auth_activated\": \"<boolean>\",\n      \"is_agent\": \"<boolean>\"\n    },\n    \"created_at\": \"<dateTime>\",\n    \"installation_id\": \"<uuid>\",\n    \"replaced_by\": \"<uuid>\"\n  },\n  {\n    \"role\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"disabled\": \"<boolean>\",\n    \"global_id\": \"<string>\",\n    \"state\": \"partial\",\n    \"updated_at\": \"<dateTime>\",\n    \"created_without_invite\": \"<boolean>\",\n    \"group_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"id\": \"<uuid>\",\n    \"profile\": {\n      \"entity_type\": \"<string>\",\n      \"deactivated\": \"<boolean>\",\n      \"mention_name\": \"<string>\",\n      \"name\": \"<string>\",\n      \"gravatar_hash\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"display_icon\": {\n        \"entity_type\": \"<string>\",\n        \"id\": \"<uuid>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"url\": \"<string>\"\n      },\n      \"is_owner\": \"<boolean>\",\n      \"email_address\": \"<string>\",\n      \"two_factor_auth_activated\": \"<boolean>\",\n      \"is_agent\": \"<boolean>\"\n    },\n    \"created_at\": \"<dateTime>\",\n    \"installation_id\": \"<uuid>\",\n    \"replaced_by\": \"<uuid>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:25.000Z",
+                      "updatedAt": "2026-07-28T02:53:25.000Z",
+                      "uid": "35240-618bd9b0-76cd-4778-a13a-dc221ddc27ca"
+                    },
+                    {
+                      "id": "88645716-3712-4751-805c-36b864c60377",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/members?org-public-id=<uuid>&disabled=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "description": "The unique ID of the Organization to limit the list to.",
+                              "key": "org-public-id",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.",
+                              "key": "disabled",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:25.000Z",
+                      "updatedAt": "2026-07-28T02:53:25.000Z",
+                      "uid": "35240-88645716-3712-4751-805c-36b864c60377"
+                    },
+                    {
+                      "id": "0ed9bbbb-5bad-4c04-9164-c2206b2a1f2b",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/members?org-public-id=<uuid>&disabled=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "description": "The unique ID of the Organization to limit the list to.",
+                              "key": "org-public-id",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.",
+                              "key": "disabled",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:25.000Z",
+                      "updatedAt": "2026-07-28T02:53:25.000Z",
+                      "uid": "35240-0ed9bbbb-5bad-4c04-9164-c2206b2a1f2b"
+                    },
+                    {
+                      "id": "c6c09f1d-6952-422e-8ded-67f8d0f2ac59",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/members?org-public-id=<uuid>&disabled=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "description": "The unique ID of the Organization to limit the list to.",
+                              "key": "org-public-id",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members.",
+                              "key": "disabled",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:25.000Z",
+                      "updatedAt": "2026-07-28T02:53:25.000Z",
+                      "uid": "35240-c6c09f1d-6952-422e-8ded-67f8d0f2ac59"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:25.000Z",
+                  "updatedAt": "2026-07-28T02:53:25.000Z",
+                  "uid": "35240-2e66e01c-c8e0-4f34-9822-db6d6ec965f0"
+                }
+              ],
+              "id": "c986f597-b884-4e6f-82e3-9d8c02a1b9f4",
+              "createdAt": "2026-07-28T02:53:25.000Z",
+              "updatedAt": "2026-07-28T02:53:25.000Z",
+              "uid": "35240-c986f597-b884-4e6f-82e3-9d8c02a1b9f4"
+            }
+          ],
+          "id": "d5fb0371-d127-470d-9b24-c5f932113417",
+          "createdAt": "2026-07-28T02:53:25.000Z",
+          "updatedAt": "2026-07-28T02:53:25.000Z",
+          "uid": "35240-d5fb0371-d127-470d-9b24-c5f932113417"
+        }
+      ],
+      "id": "d775fdc5-1dad-48ac-b661-5270e20251dd",
+      "createdAt": "2026-07-28T02:53:25.000Z",
+      "updatedAt": "2026-07-28T02:53:25.000Z",
+      "uid": "35240-d775fdc5-1dad-48ac-b661-5270e20251dd"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

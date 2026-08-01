@@ -1,0 +1,1211 @@
+{
+  "info": {
+    "_postman_id": "688658c3-9430-447b-a5fb-e518ef217f35",
+    "name": "Shortcut Categories Linked Files API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:22.000Z",
+    "updatedAt": "2026-07-28T02:53:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-688658c3-9430-447b-a5fb-e518ef217f35"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "linked-files",
+              "item": [
+                {
+                  "name": "{linked-file-public-id}",
+                  "item": [
+                    {
+                      "name": "Get Linked File",
+                      "id": "2bfe5b7b-fc83-4dc2-b60e-59c03d18f23f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files",
+                            ":linked-file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "aaf65168-85ba-4f35-937e-d4c68449338e",
+                              "key": "linked-file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique identifier of the linked file."
+                            }
+                          ]
+                        },
+                        "description": "Get File returns information about the selected Linked File."
+                      },
+                      "response": [
+                        {
+                          "id": "c599b9ef-c32c-42e0-8fec-d4685647e569",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"story_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-c599b9ef-c32c-42e0-8fec-d4685647e569"
+                        },
+                        {
+                          "id": "d476b80e-232b-452b-ad33-6f985ffa2918",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-d476b80e-232b-452b-ad33-6f985ffa2918"
+                        },
+                        {
+                          "id": "77621a82-03a1-42c3-8349-9a8e3871ab46",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-77621a82-03a1-42c3-8349-9a8e3871ab46"
+                        },
+                        {
+                          "id": "824673db-4b11-4584-858a-9d88ee8a355f",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-824673db-4b11-4584-858a-9d88ee8a355f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-2bfe5b7b-fc83-4dc2-b60e-59c03d18f23f"
+                    },
+                    {
+                      "name": "Update Linked File",
+                      "id": "2d63389c-e0c3-4404-b088-6f99b6a2e17d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"https://EMd+:j\",\n  \"type\": \"google\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"url\": \"https://omO`;uL}#\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files",
+                            ":linked-file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "15d5294b-5c60-4bd8-ba9a-4c65187857da",
+                              "key": "linked-file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique identifier of the linked file."
+                            }
+                          ]
+                        },
+                        "description": "Updated Linked File allows you to update properties of a previously attached Linked-File."
+                      },
+                      "response": [
+                        {
+                          "id": "f02ac375-460c-4dc4-acc9-80ad77ed4d68",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"https://EMd+:j\",\n  \"type\": \"google\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"url\": \"https://omO`;uL}#\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"story_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-f02ac375-460c-4dc4-acc9-80ad77ed4d68"
+                        },
+                        {
+                          "id": "8c8f34ac-4a87-4453-857a-a82fb8ed47a0",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"https://EMd+:j\",\n  \"type\": \"google\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"url\": \"https://omO`;uL}#\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-8c8f34ac-4a87-4453-857a-a82fb8ed47a0"
+                        },
+                        {
+                          "id": "015e8ff0-a967-4efd-ad72-21e8f8e6b3e4",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"https://EMd+:j\",\n  \"type\": \"google\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"url\": \"https://omO`;uL}#\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-015e8ff0-a967-4efd-ad72-21e8f8e6b3e4"
+                        },
+                        {
+                          "id": "472b0655-a6a6-4353-a90d-520442569893",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"https://EMd+:j\",\n  \"type\": \"google\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"url\": \"https://omO`;uL}#\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-472b0655-a6a6-4353-a90d-520442569893"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-2d63389c-e0c3-4404-b088-6f99b6a2e17d"
+                    },
+                    {
+                      "name": "Delete Linked File",
+                      "id": "4868beb0-d41d-472d-b4ba-8553fd3baab5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files",
+                            ":linked-file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1a1a47df-6cf8-4a8e-a0bb-ab86ecfef7a5",
+                              "key": "linked-file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique identifier of the linked file."
+                            }
+                          ]
+                        },
+                        "description": "Delete Linked File can be used to delete any previously attached Linked-File."
+                      },
+                      "response": [
+                        {
+                          "id": "6d8abf12-1f50-4117-b5ff-a7771089f25b",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-6d8abf12-1f50-4117-b5ff-a7771089f25b"
+                        },
+                        {
+                          "id": "0b940901-f9e3-4828-be40-1c63bd90deb9",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-0b940901-f9e3-4828-be40-1c63bd90deb9"
+                        },
+                        {
+                          "id": "1b59cd66-724a-4e0b-aaf1-bedc8a29057a",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-1b59cd66-724a-4e0b-aaf1-bedc8a29057a"
+                        },
+                        {
+                          "id": "c4bbaf26-d6bc-472f-869a-3c8e8a7e85a0",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/linked-files/:linked-file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "linked-files",
+                                ":linked-file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "linked-file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:23.000Z",
+                          "updatedAt": "2026-07-28T02:53:23.000Z",
+                          "uid": "35240-c4bbaf26-d6bc-472f-869a-3c8e8a7e85a0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-4868beb0-d41d-472d-b4ba-8553fd3baab5"
+                    }
+                  ],
+                  "id": "9e2b0475-57db-46e5-92db-37d49eb16c30",
+                  "createdAt": "2026-07-28T02:53:23.000Z",
+                  "updatedAt": "2026-07-28T02:53:23.000Z",
+                  "uid": "35240-9e2b0475-57db-46e5-92db-37d49eb16c30"
+                },
+                {
+                  "name": "List Linked Files",
+                  "id": "aafff5c8-8213-440e-9a06-1386bcbd9140",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/linked-files",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "linked-files"
+                      ]
+                    },
+                    "description": "List Linked Files returns a list of all Linked-Files and their attributes."
+                  },
+                  "response": [
+                    {
+                      "id": "54b88b14-3304-4e61-8f8b-e3f6f0a81270",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"type\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"type\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-54b88b14-3304-4e61-8f8b-e3f6f0a81270"
+                    },
+                    {
+                      "id": "f68cef1e-e183-44e5-a63c-684c1a18751c",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-f68cef1e-e183-44e5-a63c-684c1a18751c"
+                    },
+                    {
+                      "id": "1f804464-599c-43e8-867c-907f4385277f",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-1f804464-599c-43e8-867c-907f4385277f"
+                    },
+                    {
+                      "id": "52609a95-eafc-4d23-8a2d-5995d822b53a",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-52609a95-eafc-4d23-8a2d-5995d822b53a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:23.000Z",
+                  "updatedAt": "2026-07-28T02:53:23.000Z",
+                  "uid": "35240-aafff5c8-8213-440e-9a06-1386bcbd9140"
+                },
+                {
+                  "name": "Create Linked File",
+                  "id": "be41d604-2aae-4ae7-b050-33b10ccde9d5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"box\",\n  \"url\": \"https://zf\",\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"thumbnail_url\": \"https://b+=of(uQ\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/linked-files",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "linked-files"
+                      ]
+                    },
+                    "description": "Create Linked File allows you to create a new Linked File in Shortcut."
+                  },
+                  "response": [
+                    {
+                      "id": "bb0cc4af-b52e-4846-956b-e637aabbb2e7",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"box\",\n  \"url\": \"https://zf\",\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"thumbnail_url\": \"https://b+=of(uQ\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"story_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"type\": \"<string>\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-bb0cc4af-b52e-4846-956b-e637aabbb2e7"
+                    },
+                    {
+                      "id": "e2b9fb03-48e1-45e4-8571-6e7e3309ee6d",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"box\",\n  \"url\": \"https://zf\",\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"thumbnail_url\": \"https://b+=of(uQ\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-e2b9fb03-48e1-45e4-8571-6e7e3309ee6d"
+                    },
+                    {
+                      "id": "bd2c7e82-7fa7-422e-b182-b9754b82084e",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"box\",\n  \"url\": \"https://zf\",\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"thumbnail_url\": \"https://b+=of(uQ\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-bd2c7e82-7fa7-422e-b182-b9754b82084e"
+                    },
+                    {
+                      "id": "dec07294-1d03-423e-af03-3bf3639b2d27",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"box\",\n  \"url\": \"https://zf\",\n  \"description\": \"<string>\",\n  \"story_id\": \"<long>\",\n  \"thumbnail_url\": \"https://b+=of(uQ\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/linked-files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "linked-files"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:23.000Z",
+                      "updatedAt": "2026-07-28T02:53:23.000Z",
+                      "uid": "35240-dec07294-1d03-423e-af03-3bf3639b2d27"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:23.000Z",
+                  "updatedAt": "2026-07-28T02:53:23.000Z",
+                  "uid": "35240-be41d604-2aae-4ae7-b050-33b10ccde9d5"
+                }
+              ],
+              "id": "504b3120-5a97-4c28-b678-fa6cfc8abfba",
+              "createdAt": "2026-07-28T02:53:23.000Z",
+              "updatedAt": "2026-07-28T02:53:23.000Z",
+              "uid": "35240-504b3120-5a97-4c28-b678-fa6cfc8abfba"
+            }
+          ],
+          "id": "6373d57b-66f4-43c6-8eb4-a507fdc98484",
+          "createdAt": "2026-07-28T02:53:23.000Z",
+          "updatedAt": "2026-07-28T02:53:23.000Z",
+          "uid": "35240-6373d57b-66f4-43c6-8eb4-a507fdc98484"
+        }
+      ],
+      "id": "8f1d8314-d256-4b8d-930f-c485da796d30",
+      "createdAt": "2026-07-28T02:53:23.000Z",
+      "updatedAt": "2026-07-28T02:53:23.000Z",
+      "uid": "35240-8f1d8314-d256-4b8d-930f-c485da796d30"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

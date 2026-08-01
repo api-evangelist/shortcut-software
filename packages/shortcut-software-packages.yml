@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: npm registry + github.com/useshortcut
+packages:
+- language: javascript
+  registry: npm
+  name: "@shortcut/client"
+  url: https://www.npmjs.com/package/@shortcut/client
+  repo: https://github.com/useshortcut/shortcut-client-js
+  install: npm install @shortcut/client
+  official: true
+  description: The official TypeScript/JavaScript client library for the Shortcut REST API v3.
+notes: >-
+  Shortcut ships one first-party client library: @shortcut/client (JavaScript/TypeScript).
+  There is no official Python/Go/Ruby SDK — the useshortcut/api-cookbook repo provides
+  Python + JavaScript request recipes but is not a packaged SDK. The community
+  `shortcut-api` npm package is third-party (not official).

@@ -1,0 +1,1320 @@
+{
+  "info": {
+    "_postman_id": "43f5ebb5-0f21-43ef-86b2-8ed93c70737c",
+    "name": "Shortcut Categories Files API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:11.000Z",
+    "updatedAt": "2026-07-28T02:53:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-43f5ebb5-0f21-43ef-86b2-8ed93c70737c"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "files",
+              "item": [
+                {
+                  "name": "{file-public-id}",
+                  "item": [
+                    {
+                      "name": "Get File",
+                      "id": "36e4dd5e-b0ee-4486-b4db-2f921e1cc7eb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files",
+                            ":file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "33707585-def9-4e73-a0ee-1d23034cc10b",
+                              "key": "file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The File\u2019s unique ID."
+                            }
+                          ]
+                        },
+                        "description": "Get File returns information about the selected UploadedFile."
+                      },
+                      "response": [
+                        {
+                          "id": "b82b3da7-f68a-489e-a29e-8a29ded1f632",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"story_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"filename\": \"<string>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-b82b3da7-f68a-489e-a29e-8a29ded1f632"
+                        },
+                        {
+                          "id": "ab32da50-9a9d-40b9-8beb-94c065224ddd",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-ab32da50-9a9d-40b9-8beb-94c065224ddd"
+                        },
+                        {
+                          "id": "e317fdc2-6698-4c3e-bec9-b4e2c70c5432",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-e317fdc2-6698-4c3e-bec9-b4e2c70c5432"
+                        },
+                        {
+                          "id": "2c314251-91a0-474f-8e1d-fd2fb0f2b985",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-2c314251-91a0-474f-8e1d-fd2fb0f2b985"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-36e4dd5e-b0ee-4486-b4db-2f921e1cc7eb"
+                    },
+                    {
+                      "name": "Update File",
+                      "id": "a51baef0-add6-44a2-9dd8-a3d73c727004",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"uploader_id\": \"<uuid>\",\n  \"external_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files",
+                            ":file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "5d7a12b7-f2d1-4c7a-81e2-bdcdbe1333d1",
+                              "key": "file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The unique ID assigned to the file in Shortcut."
+                            }
+                          ]
+                        },
+                        "description": "Update File updates the properties of an UploadedFile (but not its content)."
+                      },
+                      "response": [
+                        {
+                          "id": "81454e86-2a9d-4d6e-9046-cf8dc728af58",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"uploader_id\": \"<uuid>\",\n  \"external_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"description\": \"<string>\",\n  \"entity_type\": \"<string>\",\n  \"story_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"member_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"name\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"size\": \"<long>\",\n  \"uploader_id\": \"<uuid>\",\n  \"content_type\": \"<string>\",\n  \"updated_at\": \"<dateTime>\",\n  \"filename\": \"<string>\",\n  \"group_mention_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"external_id\": \"<string>\",\n  \"id\": \"<long>\",\n  \"url\": \"<string>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-81454e86-2a9d-4d6e-9046-cf8dc728af58"
+                        },
+                        {
+                          "id": "a79af668-fef3-4be5-ab35-616549c8e212",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"uploader_id\": \"<uuid>\",\n  \"external_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-a79af668-fef3-4be5-ab35-616549c8e212"
+                        },
+                        {
+                          "id": "e6f9f6f0-f189-4581-9ea0-37484fa9567c",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"uploader_id\": \"<uuid>\",\n  \"external_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-e6f9f6f0-f189-4581-9ea0-37484fa9567c"
+                        },
+                        {
+                          "id": "8e46e900-77f6-48e3-ab15-bc4f723c6029",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"uploader_id\": \"<uuid>\",\n  \"external_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-8e46e900-77f6-48e3-ab15-bc4f723c6029"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-a51baef0-add6-44a2-9dd8-a3d73c727004"
+                    },
+                    {
+                      "name": "Delete File",
+                      "id": "1656c0f6-1aa5-4fec-8f07-c1f777c90b05",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files",
+                            ":file-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "20a7f8f8-5b8a-413d-96f0-cd193ab298f6",
+                              "key": "file-public-id",
+                              "value": "<long>",
+                              "description": "(Required) The File\u2019s unique ID."
+                            }
+                          ]
+                        },
+                        "description": "Delete File deletes a previously uploaded file."
+                      },
+                      "response": [
+                        {
+                          "id": "4b681885-5586-4a52-b590-52822bae6c30",
+                          "name": "No Content",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-4b681885-5586-4a52-b590-52822bae6c30"
+                        },
+                        {
+                          "id": "88e406cf-a272-4d86-bb96-377c619fab9e",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-88e406cf-a272-4d86-bb96-377c619fab9e"
+                        },
+                        {
+                          "id": "1f2eb4e0-fd49-4c0b-8d01-ec4c747ad6e7",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-1f2eb4e0-fd49-4c0b-8d01-ec4c747ad6e7"
+                        },
+                        {
+                          "id": "17b41b5f-1e9a-44c2-bbfc-79b17cd7894f",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/files/:file-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "files",
+                                ":file-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "file-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:12.000Z",
+                          "updatedAt": "2026-07-28T02:53:12.000Z",
+                          "uid": "35240-17b41b5f-1e9a-44c2-bbfc-79b17cd7894f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-1656c0f6-1aa5-4fec-8f07-c1f777c90b05"
+                    }
+                  ],
+                  "id": "2caab57c-8f68-423c-98fc-53c329629aa3",
+                  "createdAt": "2026-07-28T02:53:12.000Z",
+                  "updatedAt": "2026-07-28T02:53:12.000Z",
+                  "uid": "35240-2caab57c-8f68-423c-98fc-53c329629aa3"
+                },
+                {
+                  "name": "List Files",
+                  "id": "f217b983-0b70-4e1d-a23d-75477df4c178",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/files",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "files"
+                      ]
+                    },
+                    "description": "List Files returns a list of all UploadedFiles in the workspace."
+                  },
+                  "response": [
+                    {
+                      "id": "421a5db1-3c9b-4af1-88ad-ccbb46f8b704",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"filename\": \"<string>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"filename\": \"<string>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-421a5db1-3c9b-4af1-88ad-ccbb46f8b704"
+                    },
+                    {
+                      "id": "79e3d995-8033-407b-963b-d7ada78b4c98",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-79e3d995-8033-407b-963b-d7ada78b4c98"
+                    },
+                    {
+                      "id": "d6b7bca2-417a-4c88-82cf-8af06ac8586c",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-d6b7bca2-417a-4c88-82cf-8af06ac8586c"
+                    },
+                    {
+                      "id": "ad6bc646-420e-4270-aaec-ed4a75dade7f",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-ad6bc646-420e-4270-aaec-ed4a75dade7f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:12.000Z",
+                  "updatedAt": "2026-07-28T02:53:12.000Z",
+                  "uid": "35240-f217b983-0b70-4e1d-a23d-75477df4c178"
+                },
+                {
+                  "name": "Upload Files",
+                  "id": "f4079677-3fd3-40c4-9aaa-67752d9f4025",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "multipart/form-data"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "formdata",
+                      "formdata": [
+                        {
+                          "description": "(Required) A file upload. At least one is required.",
+                          "key": "file0",
+                          "type": "file",
+                          "value": null
+                        },
+                        {
+                          "description": "The story ID that these files will be associated with.",
+                          "key": "story_id",
+                          "value": "<long>",
+                          "type": "text"
+                        },
+                        {
+                          "description": "Optional additional files.",
+                          "key": "file1",
+                          "type": "file",
+                          "value": null
+                        },
+                        {
+                          "description": "Optional additional files.",
+                          "key": "file2",
+                          "type": "file",
+                          "value": null
+                        },
+                        {
+                          "description": "Optional additional files.",
+                          "key": "file3",
+                          "type": "file",
+                          "value": null
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/files",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "files"
+                      ]
+                    },
+                    "description": "Upload Files uploads one or many files and optionally associates them with a story.\n   Use the multipart/form-data content-type to upload.\n   Each `file` key should contain a separate file.\n   Each UploadedFile's name comes from the Content-Disposition header \"filename\" directive for that field."
+                  },
+                  "response": [
+                    {
+                      "id": "4c06ecfa-e855-48d1-acd2-963d3e67c23c",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "(Required) A file upload. At least one is required.",
+                              "key": "file0",
+                              "type": "file"
+                            },
+                            {
+                              "description": "The story ID that these files will be associated with.",
+                              "key": "story_id",
+                              "value": "<long>",
+                              "type": "text"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file1",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file2",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file3",
+                              "type": "file"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"filename\": \"<string>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  },\n  {\n    \"description\": \"<string>\",\n    \"entity_type\": \"<string>\",\n    \"story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"name\": \"<string>\",\n    \"thumbnail_url\": \"<string>\",\n    \"size\": \"<long>\",\n    \"uploader_id\": \"<uuid>\",\n    \"content_type\": \"<string>\",\n    \"updated_at\": \"<dateTime>\",\n    \"filename\": \"<string>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"url\": \"<string>\",\n    \"created_at\": \"<dateTime>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-4c06ecfa-e855-48d1-acd2-963d3e67c23c"
+                    },
+                    {
+                      "id": "94d5bb7f-0246-44f9-b6c0-6127ad3e5232",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "(Required) A file upload. At least one is required.",
+                              "key": "file0",
+                              "type": "file"
+                            },
+                            {
+                              "description": "The story ID that these files will be associated with.",
+                              "key": "story_id",
+                              "value": "<long>",
+                              "type": "text"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file1",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file2",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file3",
+                              "type": "file"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-94d5bb7f-0246-44f9-b6c0-6127ad3e5232"
+                    },
+                    {
+                      "id": "d1e1451f-bb83-4bd1-8078-a03112722d43",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "(Required) A file upload. At least one is required.",
+                              "key": "file0",
+                              "type": "file"
+                            },
+                            {
+                              "description": "The story ID that these files will be associated with.",
+                              "key": "story_id",
+                              "value": "<long>",
+                              "type": "text"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file1",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file2",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file3",
+                              "type": "file"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-d1e1451f-bb83-4bd1-8078-a03112722d43"
+                    },
+                    {
+                      "id": "beb8841a-8710-47bb-a957-d4d217da65d9",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "(Required) A file upload. At least one is required.",
+                              "key": "file0",
+                              "type": "file"
+                            },
+                            {
+                              "description": "The story ID that these files will be associated with.",
+                              "key": "story_id",
+                              "value": "<long>",
+                              "type": "text"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file1",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file2",
+                              "type": "file"
+                            },
+                            {
+                              "description": "Optional additional files.",
+                              "key": "file3",
+                              "type": "file"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "files"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:12.000Z",
+                      "updatedAt": "2026-07-28T02:53:12.000Z",
+                      "uid": "35240-beb8841a-8710-47bb-a957-d4d217da65d9"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:12.000Z",
+                  "updatedAt": "2026-07-28T02:53:12.000Z",
+                  "uid": "35240-f4079677-3fd3-40c4-9aaa-67752d9f4025"
+                }
+              ],
+              "id": "d49e7e30-94f2-4f2d-918f-be92f70ad9c2",
+              "createdAt": "2026-07-28T02:53:12.000Z",
+              "updatedAt": "2026-07-28T02:53:12.000Z",
+              "uid": "35240-d49e7e30-94f2-4f2d-918f-be92f70ad9c2"
+            }
+          ],
+          "id": "cd6bd777-9d75-4e11-9b52-f98041b32b93",
+          "createdAt": "2026-07-28T02:53:12.000Z",
+          "updatedAt": "2026-07-28T02:53:12.000Z",
+          "uid": "35240-cd6bd777-9d75-4e11-9b52-f98041b32b93"
+        }
+      ],
+      "id": "9d15956a-8267-4195-b6df-79dc18fdc4ab",
+      "createdAt": "2026-07-28T02:53:12.000Z",
+      "updatedAt": "2026-07-28T02:53:12.000Z",
+      "uid": "35240-9d15956a-8267-4195-b6df-79dc18fdc4ab"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

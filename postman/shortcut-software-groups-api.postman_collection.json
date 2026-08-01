@@ -1,0 +1,1453 @@
+{
+  "info": {
+    "_postman_id": "57b58778-54db-454b-b3a4-3681804a637b",
+    "name": "Shortcut Categories Groups API",
+    "description": "Shortcut API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:53:12.000Z",
+    "updatedAt": "2026-07-28T02:53:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-57b58778-54db-454b-b3a4-3681804a637b"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v3",
+          "item": [
+            {
+              "name": "groups",
+              "item": [
+                {
+                  "name": "{group-public-id}",
+                  "item": [
+                    {
+                      "name": "stories",
+                      "item": [
+                        {
+                          "name": "List Group Stories",
+                          "id": "996d5b35-28ae-4471-839c-656979c51522",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id/stories?limit=<long>&offset=<long>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id",
+                                "stories"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The maximum number of results to return. (Defaults to 1000, max 1000)",
+                                  "key": "limit",
+                                  "value": "<long>"
+                                },
+                                {
+                                  "description": "The offset at which to begin returning results. (Defaults to 0)",
+                                  "key": "offset",
+                                  "value": "<long>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "7c661312-b9ce-4dee-9937-e5a2d1b1fd70",
+                                  "key": "group-public-id",
+                                  "value": "<uuid>",
+                                  "description": "(Required) The unique ID of the Group."
+                                }
+                              ]
+                            },
+                            "description": "List the Stories assigned to the Group. (By default, limited to 1,000)."
+                          },
+                          "response": [
+                            {
+                              "id": "91ac43cd-6594-4687-a645-1d143e769181",
+                              "name": "Resource",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/groups/:group-public-id/stories?limit=<long>&offset=<long>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "groups",
+                                    ":group-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The maximum number of results to return. (Defaults to 1000, max 1000)",
+                                      "key": "limit",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "The offset at which to begin returning results. (Defaults to 0)",
+                                      "key": "offset",
+                                      "value": "<long>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "group-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#aD290a\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#fdbCFc\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"started\": \"<boolean>\",\n    \"story_links\": [\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"entity_type\": \"<string>\",\n        \"object_id\": \"<long>\",\n        \"verb\": \"<string>\",\n        \"type\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"id\": \"<long>\",\n        \"subject_id\": \"<long>\",\n        \"subject_workflow_state_id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"entity_type\": \"<string>\",\n    \"labels\": [\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#2aE55e\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      },\n      {\n        \"app_url\": \"<string>\",\n        \"description\": \"<string>\",\n        \"archived\": \"<boolean>\",\n        \"entity_type\": \"<string>\",\n        \"color\": \"#0DA8BE\",\n        \"name\": \"<string>\",\n        \"global_id\": \"<string>\",\n        \"updated_at\": \"<dateTime>\",\n        \"external_id\": \"<string>\",\n        \"id\": \"<long>\",\n        \"created_at\": \"<dateTime>\"\n      }\n    ],\n    \"task_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"member_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"story_type\": \"<string>\",\n    \"file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"num_tasks_completed\": \"<long>\",\n    \"workflow_id\": \"<long>\",\n    \"completed_at_override\": \"<dateTime>\",\n    \"started_at\": \"<dateTime>\",\n    \"completed_at\": \"<dateTime>\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"completed\": \"<boolean>\",\n    \"blocker\": \"<boolean>\",\n    \"epic_id\": \"<long>\",\n    \"story_template_id\": \"<uuid>\",\n    \"external_links\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"previous_iteration_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"requested_by_id\": \"<uuid>\",\n    \"iteration_id\": \"<long>\",\n    \"label_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"started_at_override\": \"<dateTime>\",\n    \"group_id\": \"<uuid>\",\n    \"workflow_state_id\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"group_mention_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"follower_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"owner_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"external_id\": \"<string>\",\n    \"id\": \"<long>\",\n    \"estimate\": \"<long>\",\n    \"position\": \"<long>\",\n    \"blocked\": \"<boolean>\",\n    \"project_id\": \"<long>\",\n    \"linked_file_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"deadline\": \"<dateTime>\",\n    \"stats\": {\n      \"num_related_documents\": \"<long>\"\n    },\n    \"comment_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"moved_at\": \"<dateTime>\",\n    \"description\": \"<string>\",\n    \"synced_item\": {\n      \"external_id\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"field_id\": \"<uuid>\",\n        \"value_id\": \"<uuid>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"formatted_vcs_branch_name\": \"<string>\",\n    \"lead_time\": \"<long>\",\n    \"parent_story_id\": \"<long>\",\n    \"cycle_time\": \"<long>\"\n  }\n]",
+                              "createdAt": "2026-07-28T02:53:13.000Z",
+                              "updatedAt": "2026-07-28T02:53:13.000Z",
+                              "uid": "35240-91ac43cd-6594-4687-a645-1d143e769181"
+                            },
+                            {
+                              "id": "0230de3b-b5db-4a37-90f3-c79a06f914f4",
+                              "name": "Schema mismatch",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/groups/:group-public-id/stories?limit=<long>&offset=<long>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "groups",
+                                    ":group-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The maximum number of results to return. (Defaults to 1000, max 1000)",
+                                      "key": "limit",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "The offset at which to begin returning results. (Defaults to 0)",
+                                      "key": "offset",
+                                      "value": "<long>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "group-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:13.000Z",
+                              "updatedAt": "2026-07-28T02:53:13.000Z",
+                              "uid": "35240-0230de3b-b5db-4a37-90f3-c79a06f914f4"
+                            },
+                            {
+                              "id": "39ffc6e6-b31e-4605-b728-5cb0ae87231e",
+                              "name": "Resource does not exist",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/groups/:group-public-id/stories?limit=<long>&offset=<long>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "groups",
+                                    ":group-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The maximum number of results to return. (Defaults to 1000, max 1000)",
+                                      "key": "limit",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "The offset at which to begin returning results. (Defaults to 0)",
+                                      "key": "offset",
+                                      "value": "<long>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "group-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:13.000Z",
+                              "updatedAt": "2026-07-28T02:53:13.000Z",
+                              "uid": "35240-39ffc6e6-b31e-4605-b728-5cb0ae87231e"
+                            },
+                            {
+                              "id": "211ea381-46db-4456-a000-7bc218b474f1",
+                              "name": "Unprocessable",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: apikey",
+                                    "key": "Shortcut-Token",
+                                    "value": "<API Key>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/api/v3/groups/:group-public-id/stories?limit=<long>&offset=<long>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "v3",
+                                    "groups",
+                                    ":group-public-id",
+                                    "stories"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The maximum number of results to return. (Defaults to 1000, max 1000)",
+                                      "key": "limit",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "The offset at which to begin returning results. (Defaults to 0)",
+                                      "key": "offset",
+                                      "value": "<long>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "group-public-id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                              "code": 422,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:53:13.000Z",
+                              "updatedAt": "2026-07-28T02:53:13.000Z",
+                              "uid": "35240-211ea381-46db-4456-a000-7bc218b474f1"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-996d5b35-28ae-4471-839c-656979c51522"
+                        }
+                      ],
+                      "id": "07aad792-3969-4124-8dec-c05ff9a3337a",
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-07aad792-3969-4124-8dec-c05ff9a3337a"
+                    },
+                    {
+                      "name": "Get Group",
+                      "id": "c96a64fc-21ad-4c46-88bb-a2238e1a8229",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups",
+                            ":group-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1908dffc-a381-4830-9009-f516930f0940",
+                              "key": "group-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the Group."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "c721ff97-f039-4ac7-9ae5-fe5ae7dd67a0",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"card_aging_mode\": \"off\",\n  \"color\": \"#b0fd19\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"num_stories_started\": \"<long>\",\n  \"mention_name\": \"ktmomo5m\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"color_key\": \"orange\",\n  \"num_stories\": \"<long>\",\n  \"num_epics_started\": \"<long>\",\n  \"updated_at\": \"<dateTime>\",\n  \"num_stories_backlog\": \"<long>\",\n  \"id\": \"<uuid>\",\n  \"display_icon\": {\n    \"entity_type\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"url\": \"<string>\"\n  },\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"created_at\": \"<dateTime>\",\n  \"default_workflow_id\": \"<long>\"\n}",
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-c721ff97-f039-4ac7-9ae5-fe5ae7dd67a0"
+                        },
+                        {
+                          "id": "d83a12e3-ea36-41a3-b956-0701dd94e70c",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-d83a12e3-ea36-41a3-b956-0701dd94e70c"
+                        },
+                        {
+                          "id": "998cd87a-5dff-4ce3-9df5-181ad8d335ac",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-998cd87a-5dff-4ce3-9df5-181ad8d335ac"
+                        },
+                        {
+                          "id": "fdbafa47-58c7-4eee-b2e5-5384a9eb12d3",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-fdbafa47-58c7-4eee-b2e5-5384a9eb12d3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-c96a64fc-21ad-4c46-88bb-a2238e1a8229"
+                    },
+                    {
+                      "name": "Update Group",
+                      "id": "406de65c-76ae-46a7-b9c1-64c97abd58d6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups",
+                            ":group-public-id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "56c75aed-e27f-47a1-b16d-2265b48de87d",
+                              "key": "group-public-id",
+                              "value": "<uuid>",
+                              "description": "(Required) The unique ID of the Group."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "db8303dc-6610-4c89-9229-92e45838dcda",
+                          "name": "Resource",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"card_aging_mode\": \"off\",\n  \"color\": \"#b0fd19\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"num_stories_started\": \"<long>\",\n  \"mention_name\": \"ktmomo5m\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"color_key\": \"orange\",\n  \"num_stories\": \"<long>\",\n  \"num_epics_started\": \"<long>\",\n  \"updated_at\": \"<dateTime>\",\n  \"num_stories_backlog\": \"<long>\",\n  \"id\": \"<uuid>\",\n  \"display_icon\": {\n    \"entity_type\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"url\": \"<string>\"\n  },\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"created_at\": \"<dateTime>\",\n  \"default_workflow_id\": \"<long>\"\n}",
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-db8303dc-6610-4c89-9229-92e45838dcda"
+                        },
+                        {
+                          "id": "0974ce21-d500-40cd-9521-b8a92cf699be",
+                          "name": "Schema mismatch",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-0974ce21-d500-40cd-9521-b8a92cf699be"
+                        },
+                        {
+                          "id": "f73490f0-b43c-449a-9cb8-7e9cf15a03ff",
+                          "name": "New Response",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-f73490f0-b43c-449a-9cb8-7e9cf15a03ff"
+                        },
+                        {
+                          "id": "34044306-0960-401e-bca3-5d643e42417f",
+                          "name": "Resource does not exist",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-34044306-0960-401e-bca3-5d643e42417f"
+                        },
+                        {
+                          "id": "3c4dd2ed-5c05-448d-95d9-5db7b6ccd5f5",
+                          "name": "Unprocessable",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Shortcut-Token",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#3176BE\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"yellow-green\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v3/groups/:group-public-id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v3",
+                                "groups",
+                                ":group-public-id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "group-public-id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                          "code": 422,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:53:13.000Z",
+                          "updatedAt": "2026-07-28T02:53:13.000Z",
+                          "uid": "35240-3c4dd2ed-5c05-448d-95d9-5db7b6ccd5f5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-406de65c-76ae-46a7-b9c1-64c97abd58d6"
+                    }
+                  ],
+                  "id": "339dd910-03e7-4395-b712-88c3444475c6",
+                  "createdAt": "2026-07-28T02:53:13.000Z",
+                  "updatedAt": "2026-07-28T02:53:13.000Z",
+                  "uid": "35240-339dd910-03e7-4395-b712-88c3444475c6"
+                },
+                {
+                  "name": "List Groups",
+                  "id": "c4df71b4-7338-4cd3-86e2-8d3adc1ee988",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/groups?archived=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "groups"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups",
+                          "key": "archived",
+                          "value": "<boolean>"
+                        }
+                      ]
+                    },
+                    "description": "A group in our API maps to a \"Team\" within the Shortcut Product. A Team is a collection of Users that can be associated to Stories, Epics, and Iterations within Shortcut."
+                  },
+                  "response": [
+                    {
+                      "id": "15397a31-6510-4431-bba6-eefe6f3d7571",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups?archived=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups",
+                              "key": "archived",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"card_aging_mode\": \"off\",\n    \"color\": \"#A203ce\",\n    \"card_aging_threshold_days\": \"<long>\",\n    \"num_stories_started\": \"<long>\",\n    \"mention_name\": \"j52x\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"color_key\": \"fuchsia\",\n    \"num_stories\": \"<long>\",\n    \"num_epics_started\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"num_stories_backlog\": \"<long>\",\n    \"id\": \"<uuid>\",\n    \"display_icon\": {\n      \"entity_type\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\",\n      \"url\": \"<string>\"\n    },\n    \"member_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"workflow_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"default_workflow_id\": \"<long>\"\n  },\n  {\n    \"app_url\": \"<string>\",\n    \"description\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"entity_type\": \"<string>\",\n    \"card_aging_mode\": \"gradual\",\n    \"color\": \"#eb7aBD\",\n    \"card_aging_threshold_days\": \"<long>\",\n    \"num_stories_started\": \"<long>\",\n    \"mention_name\": \"kyr46u\",\n    \"name\": \"<string>\",\n    \"global_id\": \"<string>\",\n    \"color_key\": \"gray\",\n    \"num_stories\": \"<long>\",\n    \"num_epics_started\": \"<long>\",\n    \"updated_at\": \"<dateTime>\",\n    \"num_stories_backlog\": \"<long>\",\n    \"id\": \"<uuid>\",\n    \"display_icon\": {\n      \"entity_type\": \"<string>\",\n      \"id\": \"<uuid>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_at\": \"<dateTime>\",\n      \"url\": \"<string>\"\n    },\n    \"member_ids\": [\n      \"<uuid>\",\n      \"<uuid>\"\n    ],\n    \"workflow_ids\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"created_at\": \"<dateTime>\",\n    \"default_workflow_id\": \"<long>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-15397a31-6510-4431-bba6-eefe6f3d7571"
+                    },
+                    {
+                      "id": "7dfcc97b-f671-46b2-a127-07644b9e5160",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups?archived=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups",
+                              "key": "archived",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-7dfcc97b-f671-46b2-a127-07644b9e5160"
+                    },
+                    {
+                      "id": "4b37d769-946b-42a2-b2e2-6867a6998067",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups?archived=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups",
+                              "key": "archived",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-4b37d769-946b-42a2-b2e2-6867a6998067"
+                    },
+                    {
+                      "id": "01dd86fc-6284-47dc-a39f-9deeacad2fd8",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups?archived=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups",
+                              "key": "archived",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-01dd86fc-6284-47dc-a39f-9deeacad2fd8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:13.000Z",
+                  "updatedAt": "2026-07-28T02:53:13.000Z",
+                  "uid": "35240-c4df71b4-7338-4cd3-86e2-8d3adc1ee988"
+                },
+                {
+                  "name": "Create Group",
+                  "id": "af010529-9f20-461a-95b1-cec25696793f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v3/groups",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v3",
+                        "groups"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "c035161b-9bf1-4f8b-939b-f0c70e553792",
+                      "name": "Resource",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"app_url\": \"<string>\",\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"entity_type\": \"<string>\",\n  \"card_aging_mode\": \"off\",\n  \"color\": \"#b0fd19\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"num_stories_started\": \"<long>\",\n  \"mention_name\": \"ktmomo5m\",\n  \"name\": \"<string>\",\n  \"global_id\": \"<string>\",\n  \"color_key\": \"orange\",\n  \"num_stories\": \"<long>\",\n  \"num_epics_started\": \"<long>\",\n  \"updated_at\": \"<dateTime>\",\n  \"num_stories_backlog\": \"<long>\",\n  \"id\": \"<uuid>\",\n  \"display_icon\": {\n    \"entity_type\": \"<string>\",\n    \"id\": \"<uuid>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_at\": \"<dateTime>\",\n    \"url\": \"<string>\"\n  },\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"created_at\": \"<dateTime>\",\n  \"default_workflow_id\": \"<long>\"\n}",
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-c035161b-9bf1-4f8b-939b-f0c70e553792"
+                    },
+                    {
+                      "id": "9fc35b13-f75b-4c76-b16f-0606c52e6d60",
+                      "name": "Schema mismatch",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-9fc35b13-f75b-4c76-b16f-0606c52e6d60"
+                    },
+                    {
+                      "id": "008dc674-69ed-41bc-8a4e-aa085529c027",
+                      "name": "New Response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-008dc674-69ed-41bc-8a4e-aa085529c027"
+                    },
+                    {
+                      "id": "df0cb572-cd48-4d79-bfef-fac32cb60401",
+                      "name": "Resource does not exist",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-df0cb572-cd48-4d79-bfef-fac32cb60401"
+                    },
+                    {
+                      "id": "43f58a26-8a5e-4354-b712-2e3d3cbd6bb6",
+                      "name": "Unprocessable",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Shortcut-Token",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"immediate\",\n  \"color\": \"#b13EA8\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"black\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v3/groups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v3",
+                            "groups"
+                          ]
+                        }
+                      },
+                      "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+                      "code": 422,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:53:13.000Z",
+                      "updatedAt": "2026-07-28T02:53:13.000Z",
+                      "uid": "35240-43f58a26-8a5e-4354-b712-2e3d3cbd6bb6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:53:13.000Z",
+                  "updatedAt": "2026-07-28T02:53:13.000Z",
+                  "uid": "35240-af010529-9f20-461a-95b1-cec25696793f"
+                }
+              ],
+              "id": "8d2c08fa-6dd5-4feb-95e1-1832cdb38a38",
+              "createdAt": "2026-07-28T02:53:13.000Z",
+              "updatedAt": "2026-07-28T02:53:13.000Z",
+              "uid": "35240-8d2c08fa-6dd5-4feb-95e1-1832cdb38a38"
+            }
+          ],
+          "id": "1861c35b-5ad2-4b92-a506-d12178fbc815",
+          "createdAt": "2026-07-28T02:53:13.000Z",
+          "updatedAt": "2026-07-28T02:53:13.000Z",
+          "uid": "35240-1861c35b-5ad2-4b92-a506-d12178fbc815"
+        }
+      ],
+      "id": "e8ccb334-a35a-4402-be0d-ae051c88e1a4",
+      "createdAt": "2026-07-28T02:53:13.000Z",
+      "updatedAt": "2026-07-28T02:53:13.000Z",
+      "uid": "35240-e8ccb334-a35a-4402-be0d-ae051c88e1a4"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.app.shortcut.com"
+    }
+  ]
+}

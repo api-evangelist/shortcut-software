@@ -1,8 +1,32 @@
 aid: shortcut-software
 name: Shortcut Software
-description: Shortcut Software is a company surfaced as a portfolio company of battery-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 22
+  pass: local-v1
+description: >-
+  Shortcut (formerly Clubhouse, renamed 2021) is a fast, lightweight project-management
+  platform where software teams and their AI agents plan, build, and ship together —
+  issue tracking, sprints, docs, and roadmaps in one tool. Founded in 2014 in New York
+  City by Kurt Schrader and Andrew Childs and backed by Battery Ventures and Greylock,
+  it is used by more than 10,000 companies. Shortcut exposes a full REST API v3
+  (api.app.shortcut.com) covering Stories, Epics, Iterations, Objectives, Docs,
+  Workflows, and more, secured by a Shortcut-Token API key or OAuth 2.0, plus outgoing
+  webhooks and an official hosted MCP server for agent coordination (Korey AI).
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.shortcut.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/shortcut-software/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +36,396 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Project Management
+- Issue Tracking
+- Agile
+- Developer Tools
+- Software Development
+- Sprints
+- Roadmaps
+apis:
+- aid: shortcut-software:shortcut-software-categories-api
+  name: Shortcut Software Categories API
+  description: The Categories API from Shortcut Software — 4 operation(s) for categories.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-categories-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-custom-fields-api
+  name: Shortcut Software Custom Fields API
+  description: The Custom Fields API from Shortcut Software — 2 operation(s) for custom fields.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Custom Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-custom-fields-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-documents-api
+  name: Shortcut Software Documents API
+  description: The Documents API from Shortcut Software — 4 operation(s) for documents.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-documents-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-entity-templates-api
+  name: Shortcut Software Entity Templates API
+  description: The Entity Templates API from Shortcut Software — 4 operation(s) for entity templates.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Entity Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-entity-templates-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-epic-workflow-api
+  name: Shortcut Software Epic Workflow API
+  description: The Epic Workflow API from Shortcut Software — 1 operation(s) for epic workflow.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Epic Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-epic-workflow-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-epics-api
+  name: Shortcut Software Epics API
+  description: The Epics API from Shortcut Software — 9 operation(s) for epics.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Epics
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-epics-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-external-link-api
+  name: Shortcut Software External Link API
+  description: The External Link API from Shortcut Software — 1 operation(s) for external link.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - External Link
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-external-link-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-files-api
+  name: Shortcut Software Files API
+  description: The Files API from Shortcut Software — 2 operation(s) for files.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-files-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-groups-api
+  name: Shortcut Software Groups API
+  description: The Groups API from Shortcut Software — 3 operation(s) for groups.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-groups-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-health-api
+  name: Shortcut Software Health API
+  description: The Health API from Shortcut Software — 1 operation(s) for health.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-health-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-integrations-api
+  name: Shortcut Software Integrations API
+  description: The Integrations API from Shortcut Software — 2 operation(s) for integrations.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-integrations-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-iterations-api
+  name: Shortcut Software Iterations API
+  description: The Iterations API from Shortcut Software — 5 operation(s) for iterations.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Iterations
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-iterations-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-key-results-api
+  name: Shortcut Software Key Results API
+  description: The Key Results API from Shortcut Software — 1 operation(s) for key results.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Key Results
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-key-results-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-labels-api
+  name: Shortcut Software Labels API
+  description: The Labels API from Shortcut Software — 4 operation(s) for labels.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Labels
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-labels-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-linked-files-api
+  name: Shortcut Software Linked Files API
+  description: The Linked Files API from Shortcut Software — 2 operation(s) for linked files.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Linked Files
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-linked-files-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-member-api
+  name: Shortcut Software Member API
+  description: The Member API from Shortcut Software — 1 operation(s) for member.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Member
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-member-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-members-api
+  name: Shortcut Software Members API
+  description: The Members API from Shortcut Software — 2 operation(s) for members.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-members-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-milestones-api
+  name: Shortcut Software Milestones API
+  description: The Milestones API from Shortcut Software — 3 operation(s) for milestones.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Milestones
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-milestones-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-objectives-api
+  name: Shortcut Software Objectives API
+  description: The Objectives API from Shortcut Software — 5 operation(s) for objectives.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Objectives
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-objectives-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-projects-api
+  name: Shortcut Software Projects API
+  description: The Projects API from Shortcut Software — 3 operation(s) for projects.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-projects-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-repositories-api
+  name: Shortcut Software Repositories API
+  description: The Repositories API from Shortcut Software — 2 operation(s) for repositories.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Repositories
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-repositories-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-search-api
+  name: Shortcut Software Search API
+  description: The Search API from Shortcut Software — 7 operation(s) for search.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-search-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-stories-api
+  name: Shortcut Software Stories API
+  description: The Stories API from Shortcut Software — 13 operation(s) for stories.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Stories
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-stories-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-story-links-api
+  name: Shortcut Software Story Links API
+  description: The Story Links API from Shortcut Software — 2 operation(s) for story links.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Story Links
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-story-links-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
+- aid: shortcut-software:shortcut-software-workflows-api
+  name: Shortcut Software Workflows API
+  description: The Workflows API from Shortcut Software — 2 operation(s) for workflows.
+  humanURL: https://developer.shortcut.com/api/rest/v3
+  baseURL: https://api.app.shortcut.com
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/shortcut-software-workflows-api-openapi.yml
+  - type: Swagger
+    url: https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/shortcut-software/overview
+# --- Discoverability / link properties ---
+- type: DeveloperPortal
+  url: https://developer.shortcut.com
+- type: Documentation
+  url: https://developer.shortcut.com/api/rest/v3
+- type: APIReference
+  url: https://developer.shortcut.com/api/rest/v3
+- type: GettingStarted
+  url: https://help.shortcut.com/hc/en-us/articles/207696406-Using-the-Shortcut-API
+- type: Support
+  url: https://help.shortcut.com
+- type: Blog
+  url: https://www.shortcut.com/blog
+- type: GitHubOrganization
+  url: https://github.com/useshortcut
+- type: Pricing
+  url: https://www.shortcut.com/pricing/
+- type: SignUp
+  url: https://app.shortcut.com/signup
+- type: TermsOfService
+  url: https://www.shortcut.com/terms
+- type: PrivacyPolicy
+  url: https://www.shortcut.com/privacy
+# --- Artifacts ---
+- type: Authentication
+  url: authentication/shortcut-software-authentication.yml
+- type: OAuthScopes
+  url: scopes/shortcut-software-scopes.yml
+- type: WellKnown
+  url: well-known/shortcut-software-well-known.yml
+- type: Packages
+  url: packages/shortcut-software-packages.yml
+- type: SDKs
+  url: packages/shortcut-software-packages.yml
+- type: MCPServer
+  url: mcp/shortcut-software-mcp.yml
+- type: LLMsTxt
+  url: llms/shortcut-software-llms.txt
+- type: Conventions
+  url: conventions/shortcut-software-conventions.yml
+- type: ErrorCatalog
+  url: errors/shortcut-software-problem-types.yml
+- type: RateLimits
+  url: rate-limits/shortcut-software-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/shortcut-software-lifecycle.yml
+- type: StatusPage
+  url: https://status.shortcut.com
+- type: Deprecation
+  url: lifecycle/shortcut-software-lifecycle.yml
+- type: ChangeLog
+  url: changelog/shortcut-software-changelog.yml
+- type: Conformance
+  url: conformance/shortcut-software-conformance.yml
+- type: Compliance
+  url: https://www.shortcut.com/security
+- type: VulnerabilityDisclosure
+  url: security/shortcut-software-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.shortcut.com/disclosure/
+- type: TrustCenter
+  url: https://www.shortcut.com/security
+- type: DomainSecurity
+  url: security/shortcut-software-domain-security.yml
+- type: Webhooks
+  url: asyncapi/shortcut-software-webhooks.yml
+- type: DataModel
+  url: data-model/shortcut-software-data-model.yml
+- type: Overlay
+  url: overlays/shortcut-software-openapi-overlay.yaml
+- type: AgenticAccess
+  url: agentic-access/shortcut-software-agentic-access.yml
+- type: AgentSkill
+  url: skills/_index.yml
