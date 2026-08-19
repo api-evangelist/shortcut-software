@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Projects API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/projects"
+          },
+          "docs": "List Projects returns a list of all Projects and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Project is used to create a new Shortcut Project."
+        },
+        {
+          "info": {
+            "name": "Get Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/projects/:project-public-id",
+            "params": [
+              {
+                "name": "project-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Project."
+              }
+            ]
+          },
+          "docs": "Get Project returns information about the selected Project."
+        },
+        {
+          "info": {
+            "name": "Update Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/projects/:project-public-id",
+            "params": [
+              {
+                "name": "project-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Project."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Project can be used to change properties of a Project."
+        },
+        {
+          "info": {
+            "name": "Delete Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/projects/:project-public-id",
+            "params": [
+              {
+                "name": "project-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Project."
+              }
+            ]
+          },
+          "docs": "Delete Project can be used to delete a Project. Projects can only be deleted if all associated Stories are moved or deleted. In the case that the Project cannot be deleted, you will receive a 422 response."
+        },
+        {
+          "info": {
+            "name": "List Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/projects/:project-public-id/stories",
+            "params": [
+              {
+                "name": "project-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Project."
+              },
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+              }
+            ]
+          },
+          "docs": "List Stories returns a list of all Stories in a selected Project and their attributes."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

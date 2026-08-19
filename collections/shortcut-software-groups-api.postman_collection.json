@@ -1,0 +1,1484 @@
+{
+  "item": [
+    {
+      "id": "c860484a-4820-458f-b904-afb55df0cb07",
+      "name": "Groups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a24cb326-3c3f-4e96-ba0d-b93490b47a8a",
+          "name": "List Groups",
+          "request": {
+            "name": "List Groups",
+            "description": {
+              "content": "A group in our API maps to a \"Team\" within the Shortcut Product. A Team is a collection of Users that can be associated to Stories, Epics, and Iterations within Shortcut.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "archived",
+                  "value": "<boolean>",
+                  "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbe5f077-b37b-4f36-953c-b777075e46d9",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": true,\n    \"entity_type\": \"string\",\n    \"card_aging_mode\": \"gradual\",\n    \"color\": \"#ECafD5\",\n    \"card_aging_threshold_days\": 158,\n    \"num_stories_started\": 928,\n    \"mention_name\": \"si\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"color_key\": \"turquoise\",\n    \"num_stories\": 9980,\n    \"num_epics_started\": 3377,\n    \"updated_at\": \"2022-07-08T04:49:02.458Z\",\n    \"num_stories_backlog\": 8570,\n    \"id\": \"f9dd8062-f249-a41e-a642-c9f40756b345\",\n    \"display_icon\": {\n      \"entity_type\": \"string\",\n      \"id\": \"0c74e5a3-c180-46ac-e098-7a5d46831a3c\",\n      \"created_at\": \"2013-01-09T21:26:38.509Z\",\n      \"updated_at\": \"1958-01-24T01:27:03.244Z\",\n      \"url\": \"string\"\n    },\n    \"member_ids\": [\n      \"9efac685-6f73-bfcd-7b8d-2c2028c00962\",\n      \"cca76b21-8422-6c58-5537-e488d0cb29d7\"\n    ],\n    \"workflow_ids\": [\n      7977,\n      9365\n    ],\n    \"created_at\": \"2026-04-23T06:03:16.715Z\",\n    \"default_workflow_id\": 2300\n  },\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"entity_type\": \"string\",\n    \"card_aging_mode\": \"immediate\",\n    \"color\": \"#2Bbda4\",\n    \"card_aging_threshold_days\": 1465,\n    \"num_stories_started\": 5834,\n    \"mention_name\": \"_w7\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"color_key\": \"slate\",\n    \"num_stories\": 921,\n    \"num_epics_started\": 1088,\n    \"updated_at\": \"1958-04-21T11:15:14.523Z\",\n    \"num_stories_backlog\": 9149,\n    \"id\": \"85af8a69-a2a6-bd0b-94a5-2fb7dff80804\",\n    \"display_icon\": {\n      \"entity_type\": \"string\",\n      \"id\": \"0d726643-59f0-5c4e-7bc4-d12f79f7600b\",\n      \"created_at\": \"1966-12-09T15:27:02.750Z\",\n      \"updated_at\": \"1993-09-23T00:48:13.141Z\",\n      \"url\": \"string\"\n    },\n    \"member_ids\": [\n      \"c95d7b7f-b1f6-e885-68ca-a3b5f4666d15\",\n      \"6aac9dd8-01ae-ee7b-1898-f61fe9b6385b\"\n    ],\n    \"workflow_ids\": [\n      7461,\n      775\n    ],\n    \"created_at\": \"1947-01-29T22:13:12.905Z\",\n    \"default_workflow_id\": 62\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "140174fa-5b63-4ed3-9f88-b9b759be3428",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2437bc27-bee5-4605-9ca5-865ae6c606b1",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bfa65899-db7e-4182-9046-90a180e133d6",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "archived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4b57355-7b22-42f3-80cc-daf9d26e6dfd",
+          "name": "Create Group",
+          "request": {
+            "name": "Create Group",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3f2abad-335b-409b-9f96-ed451959505a",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": true,\n  \"entity_type\": \"string\",\n  \"card_aging_mode\": \"gradual\",\n  \"color\": \"#f5d6F9\",\n  \"card_aging_threshold_days\": 2265,\n  \"num_stories_started\": 5138,\n  \"mention_name\": \"t\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"color_key\": \"fuchsia\",\n  \"num_stories\": 396,\n  \"num_epics_started\": 7204,\n  \"updated_at\": \"2003-02-01T09:37:38.323Z\",\n  \"num_stories_backlog\": 5720,\n  \"id\": \"4698b65c-2f7f-026b-fce0-5675022276e3\",\n  \"display_icon\": {\n    \"entity_type\": \"string\",\n    \"id\": \"55cf259c-ad4f-5302-7ec3-9e310b622f25\",\n    \"created_at\": \"1995-08-18T04:05:55.929Z\",\n    \"updated_at\": \"1972-02-01T03:25:32.517Z\",\n    \"url\": \"string\"\n  },\n  \"member_ids\": [\n    \"f8bded60-f8a8-a302-e516-e0a0475b5d30\",\n    \"fa46c1b2-2893-8555-3def-272c28dec668\"\n  ],\n  \"workflow_ids\": [\n    7398,\n    1152\n  ],\n  \"created_at\": \"2011-02-04T11:01:26.267Z\",\n  \"default_workflow_id\": 4618\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4b10883-34f9-4be8-9462-e650a01f9005",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6574cd2b-cb22-4f2a-8033-76849671de48",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cec60c27-f3c7-4ba6-bf49-a96321413076",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16e02d76-cc72-4a56-a36c-605a036aba6d",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"color_key\": \"<string>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a2382a1-3e09-455d-940f-eb7ebb5f7cac",
+          "name": "Get Group",
+          "request": {
+            "name": "Get Group",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "groups",
+                ":group-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "group-public-id",
+                  "description": "(Required) The unique ID of the Group."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "764f3d8a-e988-488c-8c99-2593fbe35c67",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": true,\n  \"entity_type\": \"string\",\n  \"card_aging_mode\": \"gradual\",\n  \"color\": \"#f5d6F9\",\n  \"card_aging_threshold_days\": 2265,\n  \"num_stories_started\": 5138,\n  \"mention_name\": \"t\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"color_key\": \"fuchsia\",\n  \"num_stories\": 396,\n  \"num_epics_started\": 7204,\n  \"updated_at\": \"2003-02-01T09:37:38.323Z\",\n  \"num_stories_backlog\": 5720,\n  \"id\": \"4698b65c-2f7f-026b-fce0-5675022276e3\",\n  \"display_icon\": {\n    \"entity_type\": \"string\",\n    \"id\": \"55cf259c-ad4f-5302-7ec3-9e310b622f25\",\n    \"created_at\": \"1995-08-18T04:05:55.929Z\",\n    \"updated_at\": \"1972-02-01T03:25:32.517Z\",\n    \"url\": \"string\"\n  },\n  \"member_ids\": [\n    \"f8bded60-f8a8-a302-e516-e0a0475b5d30\",\n    \"fa46c1b2-2893-8555-3def-272c28dec668\"\n  ],\n  \"workflow_ids\": [\n    7398,\n    1152\n  ],\n  \"created_at\": \"2011-02-04T11:01:26.267Z\",\n  \"default_workflow_id\": 4618\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4398f160-ece9-4664-8423-8aa163a78c84",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c3d34b4e-a69f-4dee-8e87-2cfa1b9624fb",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed80c6d8-890d-4c5a-b7b5-1c11774b1569",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20807a52-7648-4ac6-a3e7-115a592b1c23",
+          "name": "Update Group",
+          "request": {
+            "name": "Update Group",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "groups",
+                ":group-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "group-public-id",
+                  "description": "(Required) The unique ID of the Group."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dc361bb9-8da4-4716-ab73-00d0a9629f4b",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": true,\n  \"entity_type\": \"string\",\n  \"card_aging_mode\": \"gradual\",\n  \"color\": \"#f5d6F9\",\n  \"card_aging_threshold_days\": 2265,\n  \"num_stories_started\": 5138,\n  \"mention_name\": \"t\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"color_key\": \"fuchsia\",\n  \"num_stories\": 396,\n  \"num_epics_started\": 7204,\n  \"updated_at\": \"2003-02-01T09:37:38.323Z\",\n  \"num_stories_backlog\": 5720,\n  \"id\": \"4698b65c-2f7f-026b-fce0-5675022276e3\",\n  \"display_icon\": {\n    \"entity_type\": \"string\",\n    \"id\": \"55cf259c-ad4f-5302-7ec3-9e310b622f25\",\n    \"created_at\": \"1995-08-18T04:05:55.929Z\",\n    \"updated_at\": \"1972-02-01T03:25:32.517Z\",\n    \"url\": \"string\"\n  },\n  \"member_ids\": [\n    \"f8bded60-f8a8-a302-e516-e0a0475b5d30\",\n    \"fa46c1b2-2893-8555-3def-272c28dec668\"\n  ],\n  \"workflow_ids\": [\n    7398,\n    1152\n  ],\n  \"created_at\": \"2011-02-04T11:01:26.267Z\",\n  \"default_workflow_id\": 4618\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bda7ffbb-eb6c-4289-838a-cc5d44e5f405",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b9dee926-51f7-461d-887d-1bbfd745c119",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9b23bdc-34d3-4375-acc0-9fd759db4e0a",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd649f64-9e13-405b-93d1-cf2176d3a19e",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"card_aging_mode\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"card_aging_threshold_days\": \"<long>\",\n  \"display_icon_id\": \"<uuid>\",\n  \"mention_name\": \"<string>\",\n  \"name\": \"<string>\",\n  \"color_key\": \"<string>\",\n  \"default_workflow_id\": \"<long>\",\n  \"member_ids\": [\n    \"<uuid>\"\n  ],\n  \"workflow_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12646e6a-2d74-415e-96e7-580e0ea57130",
+          "name": "List Group Stories",
+          "request": {
+            "name": "List Group Stories",
+            "description": {
+              "content": "List the Stories assigned to the Group. (By default, limited to 1,000).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "groups",
+                ":group-public-id",
+                "stories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<long>",
+                  "description": "The maximum number of results to return. (Defaults to 1000, max 1000)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<long>",
+                  "description": "The offset at which to begin returning results. (Defaults to 0)"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "group-public-id",
+                  "description": "(Required) The unique ID of the Group."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad0c3f09-5a75-462e-9f96-b0e3704dbafa",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": false,\n    \"started\": true,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 4682,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1976-06-18T01:35:27.551Z\",\n        \"id\": 1247,\n        \"subject_id\": 6408,\n        \"subject_workflow_state_id\": 1028,\n        \"created_at\": \"2017-06-25T04:11:23.800Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 1453,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1962-11-13T18:41:37.084Z\",\n        \"id\": 8458,\n        \"subject_id\": 2405,\n        \"subject_workflow_state_id\": 8433,\n        \"created_at\": \"1996-08-22T21:09:38.871Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#CaBFA2\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1959-03-31T16:19:40.201Z\",\n        \"external_id\": \"string\",\n        \"id\": 3992,\n        \"created_at\": \"1998-06-23T06:52:38.243Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#4CaCC8\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1976-01-10T10:46:36.354Z\",\n        \"external_id\": \"string\",\n        \"id\": 2626,\n        \"created_at\": \"1963-06-03T06:43:40.832Z\"\n      }\n    ],\n    \"task_ids\": [\n      8862,\n      3392\n    ],\n    \"mention_ids\": [\n      \"d39e9faa-a12b-9073-f2b9-2077d3571d85\",\n      \"851d0ef4-7dce-311b-dcfa-5d10cacd3ec8\"\n    ],\n    \"member_mention_ids\": [\n      \"c1b2a569-fc12-f9fa-c9c9-4791343a3382\",\n      \"59cc4e7b-6d6c-1e0e-8330-c118cf2124f2\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      6858,\n      9807\n    ],\n    \"num_tasks_completed\": 8492,\n    \"workflow_id\": 1414,\n    \"completed_at_override\": \"2018-11-20T19:18:12.875Z\",\n    \"started_at\": \"1990-01-29T23:31:36.103Z\",\n    \"completed_at\": \"1982-04-21T20:30:15.071Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"blocker\": true,\n    \"epic_id\": 3751,\n    \"story_template_id\": \"f2485ed7-fb63-693e-6783-39df43f3e124\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      9459,\n      9730\n    ],\n    \"requested_by_id\": \"875686f1-7d9c-2057-af5d-d2250e97b397\",\n    \"iteration_id\": 3265,\n    \"label_ids\": [\n      2,\n      9061\n    ],\n    \"started_at_override\": \"1978-01-15T09:02:58.912Z\",\n    \"group_id\": \"3d672b88-5c82-c277-a38f-8e632d035a4f\",\n    \"workflow_state_id\": 637,\n    \"updated_at\": \"2016-05-04T22:59:03.599Z\",\n    \"group_mention_ids\": [\n      \"db8a9529-6102-3957-6cdd-a4db2b218805\",\n      \"82cf00b7-43be-f6d7-4ece-c8079ade2078\"\n    ],\n    \"follower_ids\": [\n      \"6d13f075-cd10-f783-cbd1-c795c00eeff2\",\n      \"cc8b41df-c279-28dd-c20e-0075088e8296\"\n    ],\n    \"owner_ids\": [\n      \"afe02654-673a-a9c7-5ef4-da62411c5cdb\",\n      \"3bd99025-8930-8756-78ee-76bc72ea9d61\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 4558,\n    \"estimate\": 9146,\n    \"position\": 5302,\n    \"blocked\": true,\n    \"project_id\": 2702,\n    \"linked_file_ids\": [\n      656,\n      2999\n    ],\n    \"deadline\": \"2010-05-03T06:16:32.979Z\",\n    \"stats\": {\n      \"num_related_documents\": 2722\n    },\n    \"comment_ids\": [\n      8839,\n      7671\n    ],\n    \"created_at\": \"2017-11-24T16:53:32.826Z\",\n    \"moved_at\": \"2004-11-18T12:16:12.737Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"6a682ff9-189b-37c0-d98d-e23386a9c119\",\n        \"value_id\": \"b10d0161-a668-9972-c826-fd48c9768410\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"0abacb62-d7ff-9efb-5644-b00809b4f07b\",\n        \"value_id\": \"8b141566-99db-f98a-19e9-75b0851583e4\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      8280,\n      295\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 5356,\n    \"parent_story_id\": 9503,\n    \"cycle_time\": 324\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": true,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 1831,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1973-07-02T11:29:14.866Z\",\n        \"id\": 3053,\n        \"subject_id\": 3091,\n        \"subject_workflow_state_id\": 3313,\n        \"created_at\": \"2021-12-26T02:33:26.104Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 6184,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1982-06-20T08:53:45.211Z\",\n        \"id\": 966,\n        \"subject_id\": 3639,\n        \"subject_workflow_state_id\": 3152,\n        \"created_at\": \"1953-03-02T00:09:28.032Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#1abe90\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1974-10-26T03:44:03.176Z\",\n        \"external_id\": \"string\",\n        \"id\": 8569,\n        \"created_at\": \"2010-05-29T16:27:13.528Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#E1ca7E\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1978-03-04T00:02:10.978Z\",\n        \"external_id\": \"string\",\n        \"id\": 3846,\n        \"created_at\": \"1958-08-23T00:22:39.303Z\"\n      }\n    ],\n    \"task_ids\": [\n      4613,\n      1729\n    ],\n    \"mention_ids\": [\n      \"99eebe35-7ac9-6551-e7b1-cd2b3742a3f9\",\n      \"d10f5330-feed-352a-8fcb-ee78e72f9043\"\n    ],\n    \"member_mention_ids\": [\n      \"73a0a653-7b08-9747-b511-0656b758548f\",\n      \"f561746c-04a1-8a65-761a-581811e18703\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      5628,\n      5002\n    ],\n    \"num_tasks_completed\": 260,\n    \"workflow_id\": 312,\n    \"completed_at_override\": \"2010-10-05T09:34:50.461Z\",\n    \"started_at\": \"1960-05-09T11:39:02.738Z\",\n    \"completed_at\": \"1985-05-29T08:17:26.245Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"blocker\": true,\n    \"epic_id\": 1945,\n    \"story_template_id\": \"1e36d70d-d962-e36c-eeea-be29839ea095\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      9097,\n      8853\n    ],\n    \"requested_by_id\": \"fdfa5256-4664-b4f5-726c-e5622eb844b0\",\n    \"iteration_id\": 5520,\n    \"label_ids\": [\n      6586,\n      5140\n    ],\n    \"started_at_override\": \"1971-03-10T22:37:12.948Z\",\n    \"group_id\": \"2a1fad61-051e-d320-6b0f-cd788b1dd9db\",\n    \"workflow_state_id\": 7742,\n    \"updated_at\": \"2013-11-14T19:19:35.181Z\",\n    \"group_mention_ids\": [\n      \"ed46f1fc-d6b3-2a66-c932-496a54b75ea8\",\n      \"074608b8-6ada-f825-22e4-c164e5d253d7\"\n    ],\n    \"follower_ids\": [\n      \"729ee458-99da-01d1-897c-3600b926db65\",\n      \"95a8cc8e-0ecc-f3e9-0343-058060fcbe11\"\n    ],\n    \"owner_ids\": [\n      \"5d86ad8b-a004-4b16-959a-96903d932bd2\",\n      \"187841b9-ff4f-fb6c-ebae-c800b4023a1f\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 5119,\n    \"estimate\": 5928,\n    \"position\": 1299,\n    \"blocked\": true,\n    \"project_id\": 849,\n    \"linked_file_ids\": [\n      2564,\n      1883\n    ],\n    \"deadline\": \"1952-08-28T18:18:01.822Z\",\n    \"stats\": {\n      \"num_related_documents\": 9504\n    },\n    \"comment_ids\": [\n      7151,\n      7608\n    ],\n    \"created_at\": \"1978-12-17T02:42:22.949Z\",\n    \"moved_at\": \"1948-04-03T13:46:20.382Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"1a6c4864-b863-e26d-06cc-9cc3a6424097\",\n        \"value_id\": \"c1928495-f2b8-e34c-943d-8c0307ca4d1e\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"6336b3d9-189b-c59f-a2bd-11463a1baede\",\n        \"value_id\": \"3d91a8d3-99e5-94de-944d-797534315761\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      8460,\n      7232\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 9807,\n    \"parent_story_id\": 533,\n    \"cycle_time\": 9501\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8854b152-6c68-44ab-a451-1c82f1be9031",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e4aa1088-0d37-4214-a108-5de81a05535c",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90fa51be-e82a-4a35-bc2d-93909baf11d5",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "groups",
+                    ":group-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "group-public-id",
+                      "description": "(Required) The unique ID of the Group."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d14ae46-aa6d-453f-85d2-17bc84562223",
+    "name": "Shortcut Categories Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

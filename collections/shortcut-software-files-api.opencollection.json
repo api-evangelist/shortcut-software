@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Files API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/files"
+          },
+          "docs": "List Files returns a list of all UploadedFiles in the workspace."
+        },
+        {
+          "info": {
+            "name": "Upload Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/files",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "story_id",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file0",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file1",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file2",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file3",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload Files uploads one or many files and optionally associates them with a story.\n   Use the multipart/form-data content-type to upload.\n   Each `file` key should contain a separate file.\n   Each UploadedFile's name comes from the Content-Disposition header \"filename\" directive for that field."
+        },
+        {
+          "info": {
+            "name": "Get File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/files/:file-public-id",
+            "params": [
+              {
+                "name": "file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The File’s unique ID."
+              }
+            ]
+          },
+          "docs": "Get File returns information about the selected UploadedFile."
+        },
+        {
+          "info": {
+            "name": "Update File",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/files/:file-public-id",
+            "params": [
+              {
+                "name": "file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID assigned to the file in Shortcut."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update File updates the properties of an UploadedFile (but not its content)."
+        },
+        {
+          "info": {
+            "name": "Delete File",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/files/:file-public-id",
+            "params": [
+              {
+                "name": "file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The File’s unique ID."
+              }
+            ]
+          },
+          "docs": "Delete File deletes a previously uploaded file."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

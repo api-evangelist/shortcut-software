@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Documents API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Docs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/documents"
+          },
+          "docs": "List Docs returns a list of Doc that the current user can read."
+        },
+        {
+          "info": {
+            "name": "Create Doc",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/documents",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Doc. Supports markdown or HTML input via content_format parameter."
+        },
+        {
+          "info": {
+            "name": "Get Doc",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The Doc's public ID"
+              },
+              {
+                "name": "content_format",
+                "value": "",
+                "type": "query",
+                "description": "Format of the content to return. Defaults to 'markdown'. If 'html', includes HTML content in response."
+              }
+            ]
+          },
+          "docs": "Get a Doc by its public ID with content. Use content_format=html query parameter to include HTML content."
+        },
+        {
+          "info": {
+            "name": "Update Doc",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The Doc's public ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing Doc's title and/or content. Supports markdown or HTML input via content_format parameter. When a document is updated: (1) For Tiptap-migrated docs, SSE events notify connected Tiptap clients to refresh. (2) For non-migrated docs, CKEditor cache is flushed and SSE events notify connected CKEditor users."
+        },
+        {
+          "info": {
+            "name": "Delete Doc",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The Doc's public ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Permanently deletes a Doc and its associated data. Requires admin access to the doc. When a document is deleted, connected clients will be notified via SSE events."
+        },
+        {
+          "info": {
+            "name": "List Document Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id/epics",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The public ID of the Document."
+              }
+            ]
+          },
+          "docs": "Get a list of all Epics related to this Document."
+        },
+        {
+          "info": {
+            "name": "Link Document to Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The public ID of the Document."
+              },
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The public ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Create a relationship between a Document and an Epic."
+        },
+        {
+          "info": {
+            "name": "Unlink Document from Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/documents/:doc-public-id/epics/:epic-public-id",
+            "params": [
+              {
+                "name": "doc-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The public ID of the Document."
+              },
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The public ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Remove a relationship between a Document and an Epic."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

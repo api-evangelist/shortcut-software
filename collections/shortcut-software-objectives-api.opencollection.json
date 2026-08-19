@@ -1,0 +1,193 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Objectives API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Objectives",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Objectives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/objectives"
+          },
+          "docs": "List Objectives returns a list of all Objectives and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Objective",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/objectives",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Objective allows you to create a new Objective in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Get Objective",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Objective."
+              }
+            ]
+          },
+          "docs": "Get Objective returns information about a chosen Objective."
+        },
+        {
+          "info": {
+            "name": "Update Objective",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Objective."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Objective can be used to update Objective properties."
+        },
+        {
+          "info": {
+            "name": "Delete Objective",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Objective."
+              }
+            ]
+          },
+          "docs": "Delete Objective can be used to delete any Objective."
+        },
+        {
+          "info": {
+            "name": "List Objective Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id/epics",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Objective."
+              }
+            ]
+          },
+          "docs": "List all of the Epics within the Objective."
+        },
+        {
+          "info": {
+            "name": "Get Objective Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id/health",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Objective."
+              }
+            ]
+          },
+          "docs": "Get the current health for the specified Objective."
+        },
+        {
+          "info": {
+            "name": "Create Objective Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id/health",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Objective."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new health status for the specified Objective."
+        },
+        {
+          "info": {
+            "name": "List Objective Healths",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/objectives/:objective-public-id/health-history",
+            "params": [
+              {
+                "name": "objective-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Objective."
+              }
+            ]
+          },
+          "docs": "List the history of health statuses for the specified Objective, most recent first."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

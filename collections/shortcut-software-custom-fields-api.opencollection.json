@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Custom Fields API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Custom Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/custom-fields"
+          },
+          "docs": "List Custom Fields"
+        },
+        {
+          "info": {
+            "name": "Get Custom Field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/custom-fields/:custom-field-public-id",
+            "params": [
+              {
+                "name": "custom-field-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the CustomField."
+              }
+            ]
+          },
+          "docs": "Get Custom Field"
+        },
+        {
+          "info": {
+            "name": "Update Custom Field",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/custom-fields/:custom-field-public-id",
+            "params": [
+              {
+                "name": "custom-field-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the CustomField."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Custom Field can be used to update the definition of a Custom Field. The order of items in the 'values' collection is interpreted to be their ascending sort order.To delete an existing enum value, simply omit it from the 'values' collection. New enum values may be created inline by including an object in the 'values' collection having a 'value' entry with no 'id' (eg. {'value': 'myNewValue', 'color_key': 'green'})."
+        },
+        {
+          "info": {
+            "name": "Delete Custom Field",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/custom-fields/:custom-field-public-id",
+            "params": [
+              {
+                "name": "custom-field-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the CustomField."
+              }
+            ]
+          },
+          "docs": "Delete Custom Field"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

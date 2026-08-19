@@ -1,0 +1,580 @@
+{
+  "item": [
+    {
+      "id": "e01ec319-bc6f-4c6f-8988-e8616182cc2a",
+      "name": "Members",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20509ba6-7aba-4cda-8275-423e780f2af5",
+          "name": "List Members",
+          "request": {
+            "name": "List Members",
+            "description": {
+              "content": "Returns information about members of the Workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "org-public-id",
+                  "value": "<uuid>",
+                  "description": "The unique ID of the Organization to limit the list to."
+                },
+                {
+                  "disabled": false,
+                  "key": "disabled",
+                  "value": "<boolean>",
+                  "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6079cd0b-e8af-4f91-8f8c-b2e215384955",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "disabled",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"role\": \"string\",\n    \"entity_type\": \"string\",\n    \"disabled\": false,\n    \"global_id\": \"string\",\n    \"state\": \"disabled\",\n    \"updated_at\": \"1955-06-14T04:47:01.096Z\",\n    \"created_without_invite\": true,\n    \"group_ids\": [\n      \"45da2574-ceb5-f163-bbc9-16b6030ef66c\",\n      \"c228027f-d462-0848-f525-4f12bb0df3f2\"\n    ],\n    \"id\": \"54c3728a-553c-1330-9ae3-ea97afe7f339\",\n    \"profile\": {\n      \"entity_type\": \"string\",\n      \"deactivated\": true,\n      \"mention_name\": \"string\",\n      \"name\": \"string\",\n      \"gravatar_hash\": \"string\",\n      \"id\": \"d6db9bf2-0470-7978-769f-e40634b1794a\",\n      \"display_icon\": {\n        \"entity_type\": \"string\",\n        \"id\": \"d95b59cc-5754-be0f-9fdc-c2ea4f9ef4dd\",\n        \"created_at\": \"2021-03-06T17:18:12.383Z\",\n        \"updated_at\": \"2019-06-12T14:43:31.731Z\",\n        \"url\": \"string\"\n      },\n      \"is_owner\": false,\n      \"email_address\": \"string\",\n      \"two_factor_auth_activated\": true,\n      \"is_agent\": true\n    },\n    \"created_at\": \"1992-07-30T13:08:30.307Z\",\n    \"installation_id\": \"61b9b9be-8977-5aa3-6dc1-63f4528a287d\",\n    \"replaced_by\": \"c91e1efb-659c-273b-fdfa-db7883033524\"\n  },\n  {\n    \"role\": \"string\",\n    \"entity_type\": \"string\",\n    \"disabled\": true,\n    \"global_id\": \"string\",\n    \"state\": \"imported\",\n    \"updated_at\": \"2000-07-29T08:25:36.237Z\",\n    \"created_without_invite\": false,\n    \"group_ids\": [\n      \"b6eac0f6-272d-9a5d-7118-65ec0bc41168\",\n      \"0437043b-2126-4e55-633a-10b74c29adc7\"\n    ],\n    \"id\": \"c5cea4c2-c2d6-2da7-1e2b-6523f1731c62\",\n    \"profile\": {\n      \"entity_type\": \"string\",\n      \"deactivated\": true,\n      \"mention_name\": \"string\",\n      \"name\": \"string\",\n      \"gravatar_hash\": \"string\",\n      \"id\": \"d58de819-1edc-4ac5-615a-5c02bbce3402\",\n      \"display_icon\": {\n        \"entity_type\": \"string\",\n        \"id\": \"d94ef80a-e92e-c0eb-dc92-82b2a81849e4\",\n        \"created_at\": \"1978-04-09T22:01:55.452Z\",\n        \"updated_at\": \"1997-03-18T06:40:02.581Z\",\n        \"url\": \"string\"\n      },\n      \"is_owner\": false,\n      \"email_address\": \"string\",\n      \"two_factor_auth_activated\": false,\n      \"is_agent\": false\n    },\n    \"created_at\": \"1963-04-11T09:13:06.331Z\",\n    \"installation_id\": \"21f85c64-70b2-b151-535e-c719415b1a83\",\n    \"replaced_by\": \"96d98911-d6e0-91ef-6234-2aec6e14c38e\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57b76d49-f794-42fc-b699-3bcd47b7ac43",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "disabled",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d88897d-6b3c-453c-9405-2ce6407b57fb",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "disabled",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab572208-79c6-427e-965d-164c2207bc42",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "disabled",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32818285-eb83-4899-a6c5-e9d8dc2cf7d5",
+          "name": "Get Member",
+          "request": {
+            "name": "Get Member",
+            "description": {
+              "content": "Returns information about a Member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "members",
+                ":member-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "org-public-id",
+                  "value": "<uuid>",
+                  "description": "The unique ID of the Organization to limit the lookup to."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "member-public-id",
+                  "description": "(Required) The Member's unique ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a793585-32b8-47ad-8530-8013f7d06320",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members",
+                    ":member-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "member-public-id",
+                      "description": "(Required) The Member's unique ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"role\": \"string\",\n  \"entity_type\": \"string\",\n  \"disabled\": false,\n  \"global_id\": \"string\",\n  \"state\": \"full\",\n  \"updated_at\": \"1993-11-03T21:14:41.581Z\",\n  \"created_without_invite\": false,\n  \"group_ids\": [\n    \"fa7f34ff-c0cb-5a0c-54be-281284bbd0aa\",\n    \"bebada5c-7d6d-9ea6-61ce-2f3d3165547a\"\n  ],\n  \"id\": \"8a4b4348-bd1a-409d-a867-323b45a24770\",\n  \"profile\": {\n    \"entity_type\": \"string\",\n    \"deactivated\": true,\n    \"mention_name\": \"string\",\n    \"name\": \"string\",\n    \"gravatar_hash\": \"string\",\n    \"id\": \"80d562e9-a0ee-656a-b14c-9d84d2271b0d\",\n    \"display_icon\": {\n      \"entity_type\": \"string\",\n      \"id\": \"e2f913c1-8a1f-7ba5-6da3-d65c6d618bfc\",\n      \"created_at\": \"1961-01-16T23:39:34.752Z\",\n      \"updated_at\": \"1950-12-25T17:09:51.828Z\",\n      \"url\": \"string\"\n    },\n    \"is_owner\": true,\n    \"email_address\": \"string\",\n    \"two_factor_auth_activated\": true,\n    \"is_agent\": false\n  },\n  \"created_at\": \"1973-05-13T16:05:54.791Z\",\n  \"installation_id\": \"8d44078c-c46f-5e98-fcf9-2c05c79d0143\",\n  \"replaced_by\": \"f4241e11-64d8-b8df-d4e3-3eef779355a2\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "258f3c89-63ed-42fc-a2bc-a1ebb1684568",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members",
+                    ":member-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "member-public-id",
+                      "description": "(Required) The Member's unique ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a6e37a2-367a-428b-8e49-6ba94c916a77",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members",
+                    ":member-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "member-public-id",
+                      "description": "(Required) The Member's unique ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1011d887-61ea-4dda-ace3-b33d273ab8a4",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "members",
+                    ":member-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "org-public-id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "member-public-id",
+                      "description": "(Required) The Member's unique ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "972a2223-e4f4-402e-ba6a-e4e6c3619152",
+    "name": "Shortcut Categories Members API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

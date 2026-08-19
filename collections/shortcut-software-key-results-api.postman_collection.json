@@ -1,0 +1,594 @@
+{
+  "item": [
+    {
+      "id": "62fbdfa7-34b2-4fc3-94cf-1b6f00040e36",
+      "name": "Key Results",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66fd7540-cadf-45c4-8a18-02c5e425c8b8",
+          "name": "Get Key Result",
+          "request": {
+            "name": "Get Key Result",
+            "description": {
+              "content": "Get Key Result returns information about a chosen Key Result.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "key-results",
+                ":key-result-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "key-result-public-id",
+                  "description": "(Required) The ID of the Key Result."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f4be472-0fde-44f7-baad-feb4f9fbe024",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"e5102a28-e04e-950a-228c-47d17d3cb8b7\",\n  \"name\": \"string\",\n  \"objective_id\": 8844,\n  \"type\": \"percent\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"string\",\n    \"boolean_value\": false\n  },\n  \"current_observed_value\": {\n    \"numeric_value\": \"string\",\n    \"boolean_value\": false\n  },\n  \"current_target_value\": {\n    \"numeric_value\": \"string\",\n    \"boolean_value\": true\n  },\n  \"progress\": 3080\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91439585-95df-4d6e-8feb-2f2ab66e9117",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "afd7a8e0-f1f6-4e95-91ef-ab3fa3e55d10",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "85c6f854-733b-4783-bf14-cca7ed449352",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90eecc19-4449-4473-9ab7-1d0f7d5aeaa4",
+          "name": "Update Key Result",
+          "request": {
+            "name": "Update Key Result",
+            "description": {
+              "content": "Update Key Result allows updating a Key Result's name or initial, observed, or target values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "key-results",
+                ":key-result-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "key-result-public-id",
+                  "description": "(Required) The ID of the Key Result."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aec7f705-ef41-4d4d-a707-6e90ccda7b33",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"52c3fc6a-6fd2-a7bb-d0a4-c828a5501e42\",\n  \"name\": \"string\",\n  \"objective_id\": 1164,\n  \"type\": \"boolean\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"current_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"current_target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"progress\": 3740\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ecccde3-5b91-4fe1-b942-6d0f4853ff4a",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aae0dbea-d379-4aad-b159-2a192063e8a3",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45009fdb-2445-4e73-a966-73e223dcc133",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "key-results",
+                    ":key-result-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "key-result-public-id",
+                      "description": "(Required) The ID of the Key Result."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"initial_observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"observed_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  },\n  \"target_value\": {\n    \"numeric_value\": \"<string>\",\n    \"boolean_value\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3ad345f8-f6e1-4bb9-9e68-815f5c78a470",
+    "name": "Shortcut Categories Key Results API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

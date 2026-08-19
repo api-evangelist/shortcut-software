@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Integrations API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Generic Integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/integrations/webhook",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Generic Integration"
+        },
+        {
+          "info": {
+            "name": "Get Generic Integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/integrations/webhook/:integration-public-id",
+            "params": [
+              {
+                "name": "integration-public-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Generic Integration"
+        },
+        {
+          "info": {
+            "name": "Delete Generic Integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/integrations/webhook/:integration-public-id",
+            "params": [
+              {
+                "name": "integration-public-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Generic Integration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

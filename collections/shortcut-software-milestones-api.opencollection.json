@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Milestones API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Milestones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Milestones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/milestones"
+          },
+          "docs": "(Deprecated: Use 'List Objectives') List Milestones returns a list of all Milestones and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/milestones",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "(Deprecated: Use 'Create Objective') Create Milestone allows you to create a new Milestone in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Get Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/milestones/:milestone-public-id",
+            "params": [
+              {
+                "name": "milestone-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Milestone."
+              }
+            ]
+          },
+          "docs": "(Deprecated: Use 'Get Objective') Get Milestone returns information about a chosen Milestone."
+        },
+        {
+          "info": {
+            "name": "Update Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/milestones/:milestone-public-id",
+            "params": [
+              {
+                "name": "milestone-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Milestone."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "(Deprecated: Use 'Update Objective') Update Milestone can be used to update Milestone properties."
+        },
+        {
+          "info": {
+            "name": "Delete Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/milestones/:milestone-public-id",
+            "params": [
+              {
+                "name": "milestone-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Milestone."
+              }
+            ]
+          },
+          "docs": "(Deprecated: Use 'Delete Objective') Delete Milestone can be used to delete any Milestone."
+        },
+        {
+          "info": {
+            "name": "List Milestone Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/milestones/:milestone-public-id/epics",
+            "params": [
+              {
+                "name": "milestone-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Milestone."
+              }
+            ]
+          },
+          "docs": "(Deprecated: Use 'List Objective Epics') List all of the Epics within the Milestone."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

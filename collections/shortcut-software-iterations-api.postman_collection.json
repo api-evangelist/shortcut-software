@@ -1,0 +1,1956 @@
+{
+  "item": [
+    {
+      "id": "5490fae1-c42b-4f95-9417-a5dc8dab63ef",
+      "name": "Iterations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1296d6a4-08c3-489f-ac04-46495a05a4fa",
+          "name": "List Iterations",
+          "request": {
+            "name": "List Iterations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3cd346e1-527e-4eb9-bce4-5ff591687ea2",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#c8e55c\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2012-11-27T00:15:43.394Z\",\n        \"external_id\": \"string\",\n        \"id\": 7691,\n        \"created_at\": \"1966-12-22T02:21:22.097Z\",\n        \"stats\": {\n          \"num_related_documents\": 4325,\n          \"num_epics\": 3322,\n          \"num_stories_unstarted\": 5935,\n          \"num_stories_total\": 2230,\n          \"num_epics_unstarted\": 7429,\n          \"num_epics_in_progress\": 1345,\n          \"num_points_unstarted\": 3186,\n          \"num_stories_unestimated\": 3396,\n          \"num_points_in_progress\": 6198,\n          \"num_epics_total\": 5578,\n          \"num_stories_completed\": 9703,\n          \"num_points_completed\": 3074,\n          \"num_stories_backlog\": 6548,\n          \"num_points_total\": 5363,\n          \"num_stories_in_progress\": 6965,\n          \"num_points_backlog\": 7368,\n          \"num_epics_completed\": 4615\n        }\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#A15a3D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2005-01-03T15:07:45.966Z\",\n        \"external_id\": \"string\",\n        \"id\": 8635,\n        \"created_at\": \"1954-11-03T14:26:18.314Z\",\n        \"stats\": {\n          \"num_related_documents\": 9158,\n          \"num_epics\": 7739,\n          \"num_stories_unstarted\": 1600,\n          \"num_stories_total\": 7958,\n          \"num_epics_unstarted\": 4949,\n          \"num_epics_in_progress\": 4814,\n          \"num_points_unstarted\": 9255,\n          \"num_stories_unestimated\": 2780,\n          \"num_points_in_progress\": 8904,\n          \"num_epics_total\": 5527,\n          \"num_stories_completed\": 1215,\n          \"num_points_completed\": 7680,\n          \"num_stories_backlog\": 3,\n          \"num_points_total\": 9987,\n          \"num_stories_in_progress\": 2095,\n          \"num_points_backlog\": 6257,\n          \"num_epics_completed\": 1300\n        }\n      }\n    ],\n    \"mention_ids\": [\n      \"cf13d1ef-4bbd-e3ae-da07-dbd44b69702d\",\n      \"8dda4e45-a102-7188-faa2-7b4b0048494e\"\n    ],\n    \"member_mention_ids\": [\n      \"cf106e42-ec7a-85dd-dfb2-a59c273a70b5\",\n      \"a9508335-8d4b-18d5-5a8b-58b8525b5e33\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"deb7e265-d819-116c-838b-f8e82a620686\",\n        \"associated_stories_count\": 5440\n      },\n      {\n        \"group_id\": \"c39c83a0-d0ee-8287-45e9-83eb3903a402\",\n        \"associated_stories_count\": 2811\n      }\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"label_ids\": [\n      9518,\n      3379\n    ],\n    \"updated_at\": \"2006-05-12T09:19:20.339Z\",\n    \"group_mention_ids\": [\n      \"87502c0f-87a6-1331-4b00-c8a637558c18\",\n      \"c091423f-40e3-5b39-8287-fb13d2344d15\"\n    ],\n    \"end_date\": \"1997-10-11T20:20:42.338Z\",\n    \"follower_ids\": [\n      \"8d71bca9-d383-8613-6629-0beabe33c1fa\",\n      \"21b754c0-c58b-fb05-55e7-a36941eb3fbe\"\n    ],\n    \"group_ids\": [\n      \"013c2f89-e1df-b282-b786-789de3beff42\",\n      \"d528b4df-a1fd-f4a7-5286-9b6163f7b6a4\"\n    ],\n    \"start_date\": \"1963-04-18T04:24:21.109Z\",\n    \"status\": \"string\",\n    \"id\": 7135,\n    \"stats\": {\n      \"num_points_done\": 5047,\n      \"num_related_documents\": 9871,\n      \"num_stories_unstarted\": 2035,\n      \"num_points_started\": 9865,\n      \"num_points_unstarted\": 6313,\n      \"num_stories_started\": 2726,\n      \"num_stories_unestimated\": 2963,\n      \"num_stories_backlog\": 6297,\n      \"num_points_backlog\": 4834,\n      \"num_points\": 7855,\n      \"num_stories_done\": 8738,\n      \"average_cycle_time\": 8655,\n      \"average_lead_time\": 2829\n    },\n    \"created_at\": \"1988-07-04T06:21:20.528Z\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#664b20\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2006-11-04T19:36:12.401Z\",\n        \"external_id\": \"string\",\n        \"id\": 4114,\n        \"created_at\": \"2000-10-11T22:35:30.542Z\",\n        \"stats\": {\n          \"num_related_documents\": 7182,\n          \"num_epics\": 2464,\n          \"num_stories_unstarted\": 4078,\n          \"num_stories_total\": 2868,\n          \"num_epics_unstarted\": 3246,\n          \"num_epics_in_progress\": 3390,\n          \"num_points_unstarted\": 8180,\n          \"num_stories_unestimated\": 1693,\n          \"num_points_in_progress\": 14,\n          \"num_epics_total\": 27,\n          \"num_stories_completed\": 357,\n          \"num_points_completed\": 4023,\n          \"num_stories_backlog\": 9751,\n          \"num_points_total\": 3744,\n          \"num_stories_in_progress\": 7466,\n          \"num_points_backlog\": 2961,\n          \"num_epics_completed\": 7923\n        }\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#d5E8D3\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1950-11-09T18:23:38.184Z\",\n        \"external_id\": \"string\",\n        \"id\": 5591,\n        \"created_at\": \"2006-08-08T03:33:24.675Z\",\n        \"stats\": {\n          \"num_related_documents\": 18,\n          \"num_epics\": 2212,\n          \"num_stories_unstarted\": 1076,\n          \"num_stories_total\": 3877,\n          \"num_epics_unstarted\": 3733,\n          \"num_epics_in_progress\": 8082,\n          \"num_points_unstarted\": 8301,\n          \"num_stories_unestimated\": 4914,\n          \"num_points_in_progress\": 2750,\n          \"num_epics_total\": 275,\n          \"num_stories_completed\": 5730,\n          \"num_points_completed\": 2659,\n          \"num_stories_backlog\": 1796,\n          \"num_points_total\": 8844,\n          \"num_stories_in_progress\": 1138,\n          \"num_points_backlog\": 6561,\n          \"num_epics_completed\": 3806\n        }\n      }\n    ],\n    \"mention_ids\": [\n      \"ca4cc2c1-825c-166f-0c23-3157c4e2f29d\",\n      \"72c7f0ec-4f47-f509-d1e4-a50d989351cb\"\n    ],\n    \"member_mention_ids\": [\n      \"414b87c7-e2ce-2fd3-6183-9e9f869d12d1\",\n      \"c26d4847-d5eb-1700-1015-44ff637b7271\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"e7908e6d-e211-56fa-0caf-7e7faec82f0f\",\n        \"associated_stories_count\": 528\n      },\n      {\n        \"group_id\": \"e0db642a-1cb0-d0b4-7c19-8a6f31c94b5e\",\n        \"associated_stories_count\": 7344\n      }\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"label_ids\": [\n      3691,\n      1311\n    ],\n    \"updated_at\": \"1979-03-05T22:36:52.515Z\",\n    \"group_mention_ids\": [\n      \"a60c4b63-ede9-9863-2e97-96394dbdff1a\",\n      \"f4abe3da-8c31-2768-30a0-94585c646201\"\n    ],\n    \"end_date\": \"1988-02-29T09:08:00.935Z\",\n    \"follower_ids\": [\n      \"7f5c76a0-c9e3-b0bc-0db5-ef2a2749a87a\",\n      \"7d5c441b-ddee-6f1a-cf80-d9f3bea05768\"\n    ],\n    \"group_ids\": [\n      \"8dbaf4e9-5798-8f85-6ba1-b4b9430cdee6\",\n      \"20657e15-b574-bfdd-818a-2ebb44f07099\"\n    ],\n    \"start_date\": \"1980-11-05T17:44:41.229Z\",\n    \"status\": \"string\",\n    \"id\": 6733,\n    \"stats\": {\n      \"num_points_done\": 2042,\n      \"num_related_documents\": 8575,\n      \"num_stories_unstarted\": 636,\n      \"num_points_started\": 3814,\n      \"num_points_unstarted\": 8030,\n      \"num_stories_started\": 3717,\n      \"num_stories_unestimated\": 2985,\n      \"num_stories_backlog\": 7026,\n      \"num_points_backlog\": 4584,\n      \"num_points\": 4191,\n      \"num_stories_done\": 1679,\n      \"average_cycle_time\": 2595,\n      \"average_lead_time\": 2877\n    },\n    \"created_at\": \"1955-12-16T23:22:04.377Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4daed6a-5c43-49f4-834a-ee70038a0aed",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2621deb6-42bb-493e-a164-641207426cf1",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86893c48-cfbf-45d1-a62a-70a0d021bb7c",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "173eb42b-141d-45b9-9d99-4a1958efde2e",
+          "name": "Create Iteration",
+          "request": {
+            "name": "Create Iteration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b57d794-c436-4955-9faf-61f21bd3e323",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"entity_type\": \"string\",\n  \"labels\": [\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": true,\n      \"entity_type\": \"string\",\n      \"color\": \"#1559DF\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"2008-05-07T20:52:15.799Z\",\n      \"external_id\": \"string\",\n      \"id\": 3673,\n      \"created_at\": \"1948-12-13T07:55:35.799Z\",\n      \"stats\": {\n        \"num_related_documents\": 2044,\n        \"num_epics\": 1943,\n        \"num_stories_unstarted\": 7407,\n        \"num_stories_total\": 2939,\n        \"num_epics_unstarted\": 5120,\n        \"num_epics_in_progress\": 1685,\n        \"num_points_unstarted\": 7543,\n        \"num_stories_unestimated\": 5990,\n        \"num_points_in_progress\": 4918,\n        \"num_epics_total\": 8375,\n        \"num_stories_completed\": 2564,\n        \"num_points_completed\": 6979,\n        \"num_stories_backlog\": 4642,\n        \"num_points_total\": 2759,\n        \"num_stories_in_progress\": 4872,\n        \"num_points_backlog\": 5720,\n        \"num_epics_completed\": 915\n      }\n    },\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#88e8Bf\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"2021-10-10T23:21:39.560Z\",\n      \"external_id\": \"string\",\n      \"id\": 4985,\n      \"created_at\": \"2005-08-07T11:53:50.762Z\",\n      \"stats\": {\n        \"num_related_documents\": 8363,\n        \"num_epics\": 2082,\n        \"num_stories_unstarted\": 7978,\n        \"num_stories_total\": 2393,\n        \"num_epics_unstarted\": 4808,\n        \"num_epics_in_progress\": 9359,\n        \"num_points_unstarted\": 5166,\n        \"num_stories_unestimated\": 744,\n        \"num_points_in_progress\": 9706,\n        \"num_epics_total\": 7086,\n        \"num_stories_completed\": 4830,\n        \"num_points_completed\": 9408,\n        \"num_stories_backlog\": 7001,\n        \"num_points_total\": 9346,\n        \"num_stories_in_progress\": 1929,\n        \"num_points_backlog\": 835,\n        \"num_epics_completed\": 9096\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"c378670f-c4a4-0e77-ab46-2b60f8de26fd\",\n    \"bb931743-f0dd-b31a-addc-0ebde4676461\"\n  ],\n  \"member_mention_ids\": [\n    \"b35921c0-bade-ac28-ea3f-81973daf3aba\",\n    \"bb1711f1-1760-15a0-468f-b25021ac610f\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"2e95d1db-e15b-bb42-9085-9c55c56935c4\",\n      \"associated_stories_count\": 3607\n    },\n    {\n      \"group_id\": \"5f132ef9-6421-83c4-9b90-0ec1bcd2af77\",\n      \"associated_stories_count\": 2730\n    }\n  ],\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"label_ids\": [\n    3215,\n    5181\n  ],\n  \"updated_at\": \"2023-02-24T09:55:20.214Z\",\n  \"group_mention_ids\": [\n    \"0bee8ca6-f305-ee09-fb4f-789830b65f55\",\n    \"3f7ff4c7-2910-2dc4-ff6c-7166f76473e1\"\n  ],\n  \"end_date\": \"2024-12-04T06:52:27.388Z\",\n  \"follower_ids\": [\n    \"758aa788-f7e6-67b7-ff46-515513fc8b04\",\n    \"8e8e0062-545f-872f-4776-db4f4b26c46d\"\n  ],\n  \"group_ids\": [\n    \"22f0d912-2bfb-8238-ba2c-c7d9ece50f5e\",\n    \"91877e6d-55d5-6ebc-961e-be141e529927\"\n  ],\n  \"start_date\": \"1969-07-06T15:53:48.565Z\",\n  \"status\": \"string\",\n  \"id\": 8861,\n  \"stats\": {\n    \"num_points_done\": 4999,\n    \"num_related_documents\": 9796,\n    \"num_stories_unstarted\": 3934,\n    \"num_points_started\": 8137,\n    \"num_points_unstarted\": 7782,\n    \"num_stories_started\": 7900,\n    \"num_stories_unestimated\": 6679,\n    \"num_stories_backlog\": 3074,\n    \"num_points_backlog\": 8337,\n    \"num_points\": 417,\n    \"num_stories_done\": 4145,\n    \"average_cycle_time\": 7617,\n    \"average_lead_time\": 7866\n  },\n  \"created_at\": \"1960-09-29T16:16:57.917Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3628607-380b-4fbe-8ebc-8e47a5bbc71c",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1cf75cfe-698b-4326-ae68-1fdcc97ed213",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "56005f61-7ffc-4f0c-acc9-b030afd3d473",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\",\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd8acc1a-80ff-464a-badd-897cfd8ae437",
+          "name": "Disable Iterations",
+          "request": {
+            "name": "Disable Iterations",
+            "description": {
+              "content": "Disables Iterations for the current workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                "disable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1db84382-7815-41b1-8f52-586b5c529573",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6a4ce9d-615d-426a-8ff9-6e0b529728e4",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2b9de7ac-5b6b-419a-b35e-27d251c2dc6c",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1c17ca8b-7ba0-49fd-899d-89aa4f321e83",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "disable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5dce3c92-7c1f-4a6c-9bc2-f523f5b64bc8",
+          "name": "Enable Iterations",
+          "request": {
+            "name": "Enable Iterations",
+            "description": {
+              "content": "Enables Iterations for the current workspace",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                "enable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "047c7971-18f0-42ba-8601-353f0d469a84",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54f04c96-52ed-4653-a5ad-6b90f91386bb",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8bc4caf2-a631-41c7-b0ec-b7c99d1a2088",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1102263d-a99c-4917-ae31-b6142d396867",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    "enable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff3f8e57-3bd6-4fef-8d45-9053e014a367",
+          "name": "Get Iteration",
+          "request": {
+            "name": "Get Iteration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                ":iteration-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "iteration-public-id",
+                  "description": "(Required) The unique ID of the Iteration."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb6d54df-1229-45b5-81da-fb7eb204f3e2",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"entity_type\": \"string\",\n  \"labels\": [\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#F7db4a\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"1990-10-01T20:19:22.538Z\",\n      \"external_id\": \"string\",\n      \"id\": 6121,\n      \"created_at\": \"1994-12-18T19:34:08.930Z\",\n      \"stats\": {\n        \"num_related_documents\": 5142,\n        \"num_epics\": 6729,\n        \"num_stories_unstarted\": 9144,\n        \"num_stories_total\": 9860,\n        \"num_epics_unstarted\": 1610,\n        \"num_epics_in_progress\": 2943,\n        \"num_points_unstarted\": 4932,\n        \"num_stories_unestimated\": 9183,\n        \"num_points_in_progress\": 7288,\n        \"num_epics_total\": 2553,\n        \"num_stories_completed\": 8756,\n        \"num_points_completed\": 3302,\n        \"num_stories_backlog\": 33,\n        \"num_points_total\": 982,\n        \"num_stories_in_progress\": 3043,\n        \"num_points_backlog\": 7723,\n        \"num_epics_completed\": 7566\n      }\n    },\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#73DA9b\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"1953-01-02T00:26:37.316Z\",\n      \"external_id\": \"string\",\n      \"id\": 9411,\n      \"created_at\": \"1982-11-27T05:11:41.507Z\",\n      \"stats\": {\n        \"num_related_documents\": 6316,\n        \"num_epics\": 1921,\n        \"num_stories_unstarted\": 1131,\n        \"num_stories_total\": 9542,\n        \"num_epics_unstarted\": 2685,\n        \"num_epics_in_progress\": 2910,\n        \"num_points_unstarted\": 5780,\n        \"num_stories_unestimated\": 5809,\n        \"num_points_in_progress\": 6630,\n        \"num_epics_total\": 14,\n        \"num_stories_completed\": 2601,\n        \"num_points_completed\": 7177,\n        \"num_stories_backlog\": 4420,\n        \"num_points_total\": 7774,\n        \"num_stories_in_progress\": 3952,\n        \"num_points_backlog\": 3176,\n        \"num_epics_completed\": 7371\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"a88a5c58-fe15-708a-9c49-03ba149e07f8\",\n    \"f8943315-d03c-cfd6-3e21-89e805dae28d\"\n  ],\n  \"member_mention_ids\": [\n    \"35e2b76e-3d3b-86fe-69d4-5705c3c555cf\",\n    \"a8c4dc11-7c1b-1629-c8fd-3b9bd5b8a0cd\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"1d173f09-c38a-a6f9-76a2-d810bac5d397\",\n      \"associated_stories_count\": 251\n    },\n    {\n      \"group_id\": \"2271162b-7cf3-55f7-5c6e-979258345cd1\",\n      \"associated_stories_count\": 2837\n    }\n  ],\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"label_ids\": [\n    5421,\n    2346\n  ],\n  \"updated_at\": \"2022-09-18T05:59:59.461Z\",\n  \"group_mention_ids\": [\n    \"71da18f0-57b7-8db9-c7c3-fd26672d917d\",\n    \"cd6b4722-691c-91c5-9db0-bbb8d0f6bc5e\"\n  ],\n  \"end_date\": \"2007-02-27T12:27:30.095Z\",\n  \"follower_ids\": [\n    \"1520873f-1353-ec2a-ffc2-2d677f804a78\",\n    \"d44c772d-5fbf-b0d0-2a7e-add5e5bd82b1\"\n  ],\n  \"group_ids\": [\n    \"bb6b07ba-1c76-0bb4-8b74-6a42c2c21002\",\n    \"af7f8e49-74da-2282-d816-53e1cc748b78\"\n  ],\n  \"start_date\": \"1997-11-24T13:41:47.251Z\",\n  \"status\": \"string\",\n  \"id\": 3392,\n  \"stats\": {\n    \"num_points_done\": 8500,\n    \"num_related_documents\": 4505,\n    \"num_stories_unstarted\": 6900,\n    \"num_points_started\": 2259,\n    \"num_points_unstarted\": 8255,\n    \"num_stories_started\": 322,\n    \"num_stories_unestimated\": 2032,\n    \"num_stories_backlog\": 6860,\n    \"num_points_backlog\": 2981,\n    \"num_points\": 1459,\n    \"num_stories_done\": 6305,\n    \"average_cycle_time\": 408,\n    \"average_lead_time\": 3967\n  },\n  \"created_at\": \"1978-03-10T10:38:42.882Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fea50a66-d8c5-4df8-9207-e25afc09277f",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f47d1957-a3f4-4cd1-99c8-d9429bf66b22",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f84ced46-12ac-4691-9c18-a8c5c2cea665",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58f4a01a-8566-4319-956b-71a8c697341d",
+          "name": "Update Iteration",
+          "request": {
+            "name": "Update Iteration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                ":iteration-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "iteration-public-id",
+                  "description": "(Required) The unique ID of the Iteration."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b0dcb39-9114-4f8f-a90f-4ac7af8a8b9b",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"entity_type\": \"string\",\n  \"labels\": [\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#F7db4a\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"1990-10-01T20:19:22.538Z\",\n      \"external_id\": \"string\",\n      \"id\": 6121,\n      \"created_at\": \"1994-12-18T19:34:08.930Z\",\n      \"stats\": {\n        \"num_related_documents\": 5142,\n        \"num_epics\": 6729,\n        \"num_stories_unstarted\": 9144,\n        \"num_stories_total\": 9860,\n        \"num_epics_unstarted\": 1610,\n        \"num_epics_in_progress\": 2943,\n        \"num_points_unstarted\": 4932,\n        \"num_stories_unestimated\": 9183,\n        \"num_points_in_progress\": 7288,\n        \"num_epics_total\": 2553,\n        \"num_stories_completed\": 8756,\n        \"num_points_completed\": 3302,\n        \"num_stories_backlog\": 33,\n        \"num_points_total\": 982,\n        \"num_stories_in_progress\": 3043,\n        \"num_points_backlog\": 7723,\n        \"num_epics_completed\": 7566\n      }\n    },\n    {\n      \"app_url\": \"string\",\n      \"description\": \"string\",\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#73DA9b\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"updated_at\": \"1953-01-02T00:26:37.316Z\",\n      \"external_id\": \"string\",\n      \"id\": 9411,\n      \"created_at\": \"1982-11-27T05:11:41.507Z\",\n      \"stats\": {\n        \"num_related_documents\": 6316,\n        \"num_epics\": 1921,\n        \"num_stories_unstarted\": 1131,\n        \"num_stories_total\": 9542,\n        \"num_epics_unstarted\": 2685,\n        \"num_epics_in_progress\": 2910,\n        \"num_points_unstarted\": 5780,\n        \"num_stories_unestimated\": 5809,\n        \"num_points_in_progress\": 6630,\n        \"num_epics_total\": 14,\n        \"num_stories_completed\": 2601,\n        \"num_points_completed\": 7177,\n        \"num_stories_backlog\": 4420,\n        \"num_points_total\": 7774,\n        \"num_stories_in_progress\": 3952,\n        \"num_points_backlog\": 3176,\n        \"num_epics_completed\": 7371\n      }\n    }\n  ],\n  \"mention_ids\": [\n    \"a88a5c58-fe15-708a-9c49-03ba149e07f8\",\n    \"f8943315-d03c-cfd6-3e21-89e805dae28d\"\n  ],\n  \"member_mention_ids\": [\n    \"35e2b76e-3d3b-86fe-69d4-5705c3c555cf\",\n    \"a8c4dc11-7c1b-1629-c8fd-3b9bd5b8a0cd\"\n  ],\n  \"associated_groups\": [\n    {\n      \"group_id\": \"1d173f09-c38a-a6f9-76a2-d810bac5d397\",\n      \"associated_stories_count\": 251\n    },\n    {\n      \"group_id\": \"2271162b-7cf3-55f7-5c6e-979258345cd1\",\n      \"associated_stories_count\": 2837\n    }\n  ],\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"label_ids\": [\n    5421,\n    2346\n  ],\n  \"updated_at\": \"2022-09-18T05:59:59.461Z\",\n  \"group_mention_ids\": [\n    \"71da18f0-57b7-8db9-c7c3-fd26672d917d\",\n    \"cd6b4722-691c-91c5-9db0-bbb8d0f6bc5e\"\n  ],\n  \"end_date\": \"2007-02-27T12:27:30.095Z\",\n  \"follower_ids\": [\n    \"1520873f-1353-ec2a-ffc2-2d677f804a78\",\n    \"d44c772d-5fbf-b0d0-2a7e-add5e5bd82b1\"\n  ],\n  \"group_ids\": [\n    \"bb6b07ba-1c76-0bb4-8b74-6a42c2c21002\",\n    \"af7f8e49-74da-2282-d816-53e1cc748b78\"\n  ],\n  \"start_date\": \"1997-11-24T13:41:47.251Z\",\n  \"status\": \"string\",\n  \"id\": 3392,\n  \"stats\": {\n    \"num_points_done\": 8500,\n    \"num_related_documents\": 4505,\n    \"num_stories_unstarted\": 6900,\n    \"num_points_started\": 2259,\n    \"num_points_unstarted\": 8255,\n    \"num_stories_started\": 322,\n    \"num_stories_unestimated\": 2032,\n    \"num_stories_backlog\": 6860,\n    \"num_points_backlog\": 2981,\n    \"num_points\": 1459,\n    \"num_stories_done\": 6305,\n    \"average_cycle_time\": 408,\n    \"average_lead_time\": 3967\n  },\n  \"created_at\": \"1978-03-10T10:38:42.882Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea682f59-cda7-45b6-9c44-68e509d7b00f",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2c80d361-f5f7-4329-83c8-6422b4a91775",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "155e5284-d61d-4278-a716-4ff14347ddcd",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"follower_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"group_ids\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"labels\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"start_date\": \"<string>\",\n  \"end_date\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6eb7867d-c31a-4fb0-b2c9-f84efa783ad1",
+          "name": "Delete Iteration",
+          "request": {
+            "name": "Delete Iteration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                ":iteration-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "iteration-public-id",
+                  "description": "(Required) The unique ID of the Iteration."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2b816bf-d6b4-4f86-8f4f-c2abcd12a1c9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f60433c6-ad39-4eef-a1cd-76191a0c5a84",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a123b3d4-7c3e-4954-9bc1-24f0d9b47d4d",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2b82d712-1f74-4f42-b13c-2a8f882c1bc1",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a7bf51c-505e-4106-86ba-8e90ab26da2e",
+          "name": "List Iteration Stories",
+          "request": {
+            "name": "List Iteration Stories",
+            "description": {
+              "content": "Get a list of all Stories in an Iteration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "iterations",
+                ":iteration-public-id",
+                "stories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includes_description",
+                  "value": "<boolean>",
+                  "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "iteration-public-id",
+                  "description": "(Required) The unique ID of the Iteration."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dec8d63c-9b9a-45a8-b08e-357aaf15c215",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": false,\n    \"started\": false,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 9248,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1958-06-08T04:27:03.811Z\",\n        \"id\": 1784,\n        \"subject_id\": 922,\n        \"subject_workflow_state_id\": 9955,\n        \"created_at\": \"1979-04-04T02:43:08.006Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 1059,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2019-10-19T09:16:43.800Z\",\n        \"id\": 2785,\n        \"subject_id\": 2936,\n        \"subject_workflow_state_id\": 7223,\n        \"created_at\": \"1946-09-05T23:47:18.703Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#DAE75d\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1994-07-08T19:58:36.936Z\",\n        \"external_id\": \"string\",\n        \"id\": 6191,\n        \"created_at\": \"1974-07-15T18:26:01.914Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#6dB810\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2018-02-22T17:11:52.770Z\",\n        \"external_id\": \"string\",\n        \"id\": 5378,\n        \"created_at\": \"2006-10-07T11:54:19.484Z\"\n      }\n    ],\n    \"task_ids\": [\n      6955,\n      1290\n    ],\n    \"mention_ids\": [\n      \"87d72cbd-1e27-a6ab-83f8-b437617b657f\",\n      \"1293555c-f069-2cda-9002-820b918134fa\"\n    ],\n    \"member_mention_ids\": [\n      \"097a2286-9fce-611f-a6b6-397c1704899f\",\n      \"649cdc33-fad0-a2f0-bf04-1d0fb1be6780\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      5421,\n      4010\n    ],\n    \"num_tasks_completed\": 6722,\n    \"workflow_id\": 719,\n    \"completed_at_override\": \"1961-01-16T10:13:02.181Z\",\n    \"started_at\": \"2012-03-28T21:07:15.632Z\",\n    \"completed_at\": \"2007-12-01T08:09:54.774Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"blocker\": true,\n    \"epic_id\": 5355,\n    \"story_template_id\": \"4c4dfe49-a18e-2ae7-7e3b-efd68642b18c\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      9415,\n      67\n    ],\n    \"requested_by_id\": \"5f5cce1d-555d-983a-d168-0191237bfe4b\",\n    \"iteration_id\": 8896,\n    \"label_ids\": [\n      4250,\n      6775\n    ],\n    \"started_at_override\": \"1977-04-10T10:15:39.219Z\",\n    \"group_id\": \"a12d7b71-7ec2-6cc1-17fd-cb21beb4050e\",\n    \"workflow_state_id\": 8572,\n    \"updated_at\": \"1990-11-05T08:08:51.845Z\",\n    \"group_mention_ids\": [\n      \"093026ef-d33d-4f6f-038c-4f114c98fd67\",\n      \"2dae9663-fdee-3437-6a40-e3a1b6ed5b20\"\n    ],\n    \"follower_ids\": [\n      \"7f9cce30-73b1-b780-aff7-9f0b8cc04d09\",\n      \"4f0f30dc-4484-3d88-33b5-38b56256117f\"\n    ],\n    \"owner_ids\": [\n      \"c4251e2f-e729-b70e-a6a4-166d484e8e33\",\n      \"b7a899f0-f4f1-00b4-3f02-3c0d771e2ed6\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 3077,\n    \"estimate\": 418,\n    \"position\": 7323,\n    \"blocked\": false,\n    \"project_id\": 6110,\n    \"linked_file_ids\": [\n      3346,\n      7756\n    ],\n    \"deadline\": \"2026-06-27T01:00:27.826Z\",\n    \"stats\": {\n      \"num_related_documents\": 8810\n    },\n    \"comment_ids\": [\n      648,\n      3864\n    ],\n    \"created_at\": \"1955-05-07T20:18:39.093Z\",\n    \"moved_at\": \"1976-01-11T08:19:40.436Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"83fb6706-718e-a50b-4f79-dbd1281c13de\",\n        \"value_id\": \"1b624ad3-b3fd-96bc-1ced-215ae66322b7\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"ed3e57a0-300f-f2f9-653b-f8cdbb381b43\",\n        \"value_id\": \"dc4ea848-77a9-59df-c623-e8d53552ed2f\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      2928,\n      924\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 8345,\n    \"parent_story_id\": 7852,\n    \"cycle_time\": 2555\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": false,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 9732,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1957-05-16T07:43:11.452Z\",\n        \"id\": 6105,\n        \"subject_id\": 4860,\n        \"subject_workflow_state_id\": 6794,\n        \"created_at\": \"2021-12-15T15:10:25.330Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 2493,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2022-12-01T05:26:11.929Z\",\n        \"id\": 8097,\n        \"subject_id\": 1596,\n        \"subject_workflow_state_id\": 8038,\n        \"created_at\": \"1946-12-18T19:07:22.192Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#CBE30f\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1973-04-28T15:54:08.027Z\",\n        \"external_id\": \"string\",\n        \"id\": 1897,\n        \"created_at\": \"2020-11-10T13:27:04.035Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#B9C902\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2012-05-01T13:14:30.301Z\",\n        \"external_id\": \"string\",\n        \"id\": 2947,\n        \"created_at\": \"1987-03-07T06:57:42.106Z\"\n      }\n    ],\n    \"task_ids\": [\n      7964,\n      2840\n    ],\n    \"mention_ids\": [\n      \"b8972701-ba99-6eab-9b5c-1666f7ba0f4e\",\n      \"f012b00a-37bb-1756-10b3-91bf4bdca319\"\n    ],\n    \"member_mention_ids\": [\n      \"f8c599be-2dfd-31e9-291f-046d7674ce9d\",\n      \"efc20e6c-8508-deee-1441-2dc04ae3eae0\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      9634,\n      6629\n    ],\n    \"num_tasks_completed\": 2117,\n    \"workflow_id\": 8593,\n    \"completed_at_override\": \"2026-04-12T03:56:33.937Z\",\n    \"started_at\": \"1998-10-16T03:07:16.488Z\",\n    \"completed_at\": \"1988-04-12T19:48:47.931Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"blocker\": true,\n    \"epic_id\": 2370,\n    \"story_template_id\": \"9d8ce3af-a2a9-d638-891e-897562eaa7e7\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      1759,\n      582\n    ],\n    \"requested_by_id\": \"b31aca65-6e57-ba4a-4277-2387e867dd81\",\n    \"iteration_id\": 8900,\n    \"label_ids\": [\n      232,\n      4280\n    ],\n    \"started_at_override\": \"1955-08-21T00:32:15.139Z\",\n    \"group_id\": \"a642fbda-7b07-2426-b5df-5cc66f43c54f\",\n    \"workflow_state_id\": 8076,\n    \"updated_at\": \"1980-07-04T11:47:27.356Z\",\n    \"group_mention_ids\": [\n      \"73eef628-a89e-9439-9b9f-3d2624f0e6fe\",\n      \"af973c51-ebde-86ad-fc06-461a5cb4c021\"\n    ],\n    \"follower_ids\": [\n      \"c2679679-616d-4b01-eebc-5c933d125dfd\",\n      \"07a31b7d-c133-5884-df88-089063bb55cb\"\n    ],\n    \"owner_ids\": [\n      \"134951a7-d73e-c186-90e5-68aba28294ee\",\n      \"d41dfb9f-9ff1-4996-d0ac-c9ab0a5600ac\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 2901,\n    \"estimate\": 4741,\n    \"position\": 199,\n    \"blocked\": false,\n    \"project_id\": 6822,\n    \"linked_file_ids\": [\n      3483,\n      1214\n    ],\n    \"deadline\": \"1963-11-23T18:38:30.742Z\",\n    \"stats\": {\n      \"num_related_documents\": 66\n    },\n    \"comment_ids\": [\n      9257,\n      277\n    ],\n    \"created_at\": \"1987-11-01T20:10:17.535Z\",\n    \"moved_at\": \"1986-07-20T12:32:30.698Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"e6a7c7b7-440c-c077-1b32-f2116b857606\",\n        \"value_id\": \"5863e98c-21ae-89e5-49e0-f181f89601f4\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"1b66046e-2bbd-3a59-38ce-fd6e48c0e661\",\n        \"value_id\": \"2db49c1a-4927-cdcf-d367-09d9191ed0d2\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      190,\n      7372\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 6386,\n    \"parent_story_id\": 5578,\n    \"cycle_time\": 9771\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b96dbc9e-1d51-4a49-91da-585841193052",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "01255d88-3440-4f48-abe2-2f23c9441fa3",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4e6b2be0-96c1-4c65-a67e-c95a927861db",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "iterations",
+                    ":iteration-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "iteration-public-id",
+                      "description": "(Required) The unique ID of the Iteration."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1950a19b-dc23-4ca3-b705-b4c44b03c258",
+    "name": "Shortcut Categories Iterations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

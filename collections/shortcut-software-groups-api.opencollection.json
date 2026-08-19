@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Groups API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/groups",
+            "params": [
+              {
+                "name": "archived",
+                "value": "",
+                "type": "query",
+                "description": "Filter groups by their archived state. If true, returns only archived groups. If false, returns only unarchived groups. If not provided, returns all groups"
+              }
+            ]
+          },
+          "docs": "A group in our API maps to a \"Team\" within the Shortcut Product. A Team is a collection of Users that can be associated to Stories, Epics, and Iterations within Shortcut."
+        },
+        {
+          "info": {
+            "name": "Create Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Group"
+        },
+        {
+          "info": {
+            "name": "Get Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/groups/:group-public-id",
+            "params": [
+              {
+                "name": "group-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Group."
+              }
+            ]
+          },
+          "docs": "Get Group"
+        },
+        {
+          "info": {
+            "name": "Update Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/groups/:group-public-id",
+            "params": [
+              {
+                "name": "group-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Group"
+        },
+        {
+          "info": {
+            "name": "List Group Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/groups/:group-public-id/stories",
+            "params": [
+              {
+                "name": "group-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Group."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return. (Defaults to 1000, max 1000)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset at which to begin returning results. (Defaults to 0)"
+              }
+            ]
+          },
+          "docs": "List the Stories assigned to the Group. (By default, limited to 1,000)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

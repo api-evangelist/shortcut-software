@@ -1,0 +1,165 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Labels API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Labels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Labels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/labels",
+            "params": [
+              {
+                "name": "slim",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating if the slim versions of the Label should be returned."
+              }
+            ]
+          },
+          "docs": "List Labels returns a list of all Labels and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Label",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/labels",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Label allows you to create a new Label in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Get Label",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/labels/:label-public-id",
+            "params": [
+              {
+                "name": "label-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Label."
+              }
+            ]
+          },
+          "docs": "Get Label returns information about the selected Label."
+        },
+        {
+          "info": {
+            "name": "Update Label",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/labels/:label-public-id",
+            "params": [
+              {
+                "name": "label-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Label you wish to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Label allows you to replace a Label name with another name. If you try to name a Label something that already exists, you will receive a 422 response."
+        },
+        {
+          "info": {
+            "name": "Delete Label",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/labels/:label-public-id",
+            "params": [
+              {
+                "name": "label-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Label."
+              }
+            ]
+          },
+          "docs": "Delete Label can be used to delete any Label."
+        },
+        {
+          "info": {
+            "name": "List Label Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/labels/:label-public-id/epics",
+            "params": [
+              {
+                "name": "label-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Label."
+              }
+            ]
+          },
+          "docs": "List all of the Epics with the Label."
+        },
+        {
+          "info": {
+            "name": "List Label Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/labels/:label-public-id/stories",
+            "params": [
+              {
+                "name": "label-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Label."
+              },
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+              }
+            ]
+          },
+          "docs": "List all of the Stories with the Label."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

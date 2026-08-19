@@ -1,0 +1,333 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Search API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search lets you search Epics and Stories based on desired parameters. Since ordering of the results can change over time (due to search ranking decay, new Epics and Stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        },
+        {
+          "info": {
+            "name": "Search Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/documents",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Search text to match against document titles. Supports fuzzy matching. Required."
+              },
+              {
+                "name": "archived",
+                "value": "",
+                "type": "query",
+                "description": "When true, find archived documents. When false, find non-archived documents."
+              },
+              {
+                "name": "created_by_me",
+                "value": "",
+                "type": "query",
+                "description": "When true, find documents created by the current user. When false, find documents NOT created by current user."
+              },
+              {
+                "name": "followed_by_me",
+                "value": "",
+                "type": "query",
+                "description": "When true, find documents that the current user is following. When false, find documents NOT followed."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              }
+            ]
+          },
+          "docs": "Search Documents lets you search Documents based on desired parameters.\n                          Supports structured filters: title, archived, created_by_me, followed_by_me."
+        },
+        {
+          "info": {
+            "name": "Search Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/epics",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search Epics lets you search Epics based on desired parameters. Since ordering of stories can change over time (due to search ranking decay, new Epics being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        },
+        {
+          "info": {
+            "name": "Search Iterations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/iterations",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search Iterations lets you search Iterations based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Iterations being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        },
+        {
+          "info": {
+            "name": "Search Milestones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/milestones",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search Milestones lets you search Milestones based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Milestones being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        },
+        {
+          "info": {
+            "name": "Search Objectives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/objectives",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search Objectives lets you search Objectives based on desired parameters. Since ordering of results can change over time (due to search ranking decay, new Objectives being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        },
+        {
+          "info": {
+            "name": "Search Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/search/stories",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "See our help center article on [search operators](https://help.shortcut.com/hc/en-us/articles/360000046646-Search-Operators)"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of search results to include in a page. Minimum of 1 and maximum of 250."
+              },
+              {
+                "name": "detail",
+                "value": "",
+                "type": "query",
+                "description": "The amount of detail included in each result item.\n   \"full\" will include all descriptions and comments and more fields on\n   related items such as pull requests, branches and tasks.\n   \"slim\" omits larger fulltext fields such as descriptions and comments\n   and only references related items by id.\n   The default is \"full\"."
+              },
+              {
+                "name": "next",
+                "value": "",
+                "type": "query",
+                "description": "The next page token."
+              },
+              {
+                "name": "entity_types",
+                "value": "",
+                "type": "query",
+                "description": "A collection of entity_types to search. Defaults to story and epic. Supports: epic, iteration, objective, story."
+              }
+            ]
+          },
+          "docs": "Search Stories lets you search Stories based on desired parameters. Since ordering of stories can change over time (due to search ranking decay, new stories being created), the `next` value from the previous response can be used as the path and query string for the next page to ensure stable ordering."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

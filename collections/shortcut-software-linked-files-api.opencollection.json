@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Linked Files API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Linked Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Linked Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/linked-files"
+          },
+          "docs": "List Linked Files returns a list of all Linked-Files and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Linked File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/linked-files",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Linked File allows you to create a new Linked File in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Get Linked File",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/linked-files/:linked-file-public-id",
+            "params": [
+              {
+                "name": "linked-file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the linked file."
+              }
+            ]
+          },
+          "docs": "Get File returns information about the selected Linked File."
+        },
+        {
+          "info": {
+            "name": "Update Linked File",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/linked-files/:linked-file-public-id",
+            "params": [
+              {
+                "name": "linked-file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the linked file."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updated Linked File allows you to update properties of a previously attached Linked-File."
+        },
+        {
+          "info": {
+            "name": "Delete Linked File",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/linked-files/:linked-file-public-id",
+            "params": [
+              {
+                "name": "linked-file-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the linked file."
+              }
+            ]
+          },
+          "docs": "Delete Linked File can be used to delete any previously attached Linked-File."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

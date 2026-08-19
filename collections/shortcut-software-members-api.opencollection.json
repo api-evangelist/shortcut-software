@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Members API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/members",
+            "params": [
+              {
+                "name": "org-public-id",
+                "value": "",
+                "type": "query",
+                "description": "The unique ID of the Organization to limit the list to."
+              },
+              {
+                "name": "disabled",
+                "value": "",
+                "type": "query",
+                "description": "Filter members by their disabled state. If true, return only disabled members. If false, return only enabled members."
+              }
+            ]
+          },
+          "docs": "Returns information about members of the Workspace."
+        },
+        {
+          "info": {
+            "name": "Get Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/members/:member-public-id",
+            "params": [
+              {
+                "name": "member-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The Member's unique ID."
+              },
+              {
+                "name": "org-public-id",
+                "value": "",
+                "type": "query",
+                "description": "The unique ID of the Organization to limit the lookup to."
+              }
+            ]
+          },
+          "docs": "Returns information about a Member."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

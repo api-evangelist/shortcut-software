@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Story Links API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Story Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Story Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/story-links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Story Links (called Story Relationships in the UI) allow you create semantic relationships between two stories. The parameters read like an active voice grammatical sentence:  subject -> verb -> object.\n\nThe subject story acts on the object Story; the object story is the direct object of the sentence.\n\nThe subject story \"blocks\", \"duplicates\", or \"relates to\" the object story.  Examples:\n- \"story 5 blocks story 6” -- story 6 is now \"blocked\" until story 5 is moved to a Done workflow state.\n- \"st"
+        },
+        {
+          "info": {
+            "name": "Get Story Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/story-links/:story-link-public-id",
+            "params": [
+              {
+                "name": "story-link-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Story Link."
+              }
+            ]
+          },
+          "docs": "Returns the stories and their relationship for the given Story Link."
+        },
+        {
+          "info": {
+            "name": "Update Story Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/story-links/:story-link-public-id",
+            "params": [
+              {
+                "name": "story-link-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Story Link."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the stories and/or the relationship for the given Story Link."
+        },
+        {
+          "info": {
+            "name": "Delete Story Link",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/story-links/:story-link-public-id",
+            "params": [
+              {
+                "name": "story-link-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Story Link."
+              }
+            ]
+          },
+          "docs": "Removes the relationship between the stories for the given Story Link."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

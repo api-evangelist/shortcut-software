@@ -1,0 +1,1091 @@
+{
+  "item": [
+    {
+      "id": "bf98defa-2c8a-4624-a40e-6196db16fc6c",
+      "name": "Custom Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4cc0ed99-1e62-4291-9f14-b5a9e73802f0",
+          "name": "List Custom Fields",
+          "request": {
+            "name": "List Custom Fields",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "custom-fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9dd87d43-72c3-4029-8beb-1062e60c1617",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"entity_type\": \"custom-field\",\n    \"name\": \"string\",\n    \"updated_at\": \"2008-12-13T03:57:18.721Z\",\n    \"id\": \"042afd09-3254-ecab-ea5b-2aac38842ed3\",\n    \"field_type\": \"enum\",\n    \"position\": 8290,\n    \"enabled\": false,\n    \"created_at\": \"2025-11-04T00:45:15.785Z\",\n    \"description\": \"string\",\n    \"icon_set_identifier\": \"string\",\n    \"story_types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fixed_position\": false,\n    \"values\": [\n      {\n        \"id\": \"109093a9-854e-f8e0-3906-66d5628124b8\",\n        \"value\": \"string\",\n        \"position\": 3091,\n        \"color_key\": \"string\",\n        \"entity_type\": \"custom-field-enum-value\",\n        \"enabled\": true\n      },\n      {\n        \"id\": \"fc4b6dba-1fd3-fa97-b150-6931f1d5beeb\",\n        \"value\": \"string\",\n        \"position\": 2968,\n        \"color_key\": \"string\",\n        \"entity_type\": \"custom-field-enum-value\",\n        \"enabled\": false\n      }\n    ],\n    \"canonical_name\": \"string\"\n  },\n  {\n    \"entity_type\": \"custom-field\",\n    \"name\": \"string\",\n    \"updated_at\": \"1991-07-29T08:14:24.558Z\",\n    \"id\": \"1ca96f33-2b91-5c07-fe91-f0827096e4d3\",\n    \"field_type\": \"enum\",\n    \"position\": 2912,\n    \"enabled\": true,\n    \"created_at\": \"1973-01-14T04:47:55.816Z\",\n    \"description\": \"string\",\n    \"icon_set_identifier\": \"string\",\n    \"story_types\": [\n      \"string\",\n      \"string\"\n    ],\n    \"fixed_position\": true,\n    \"values\": [\n      {\n        \"id\": \"c07eb37f-d599-7762-47ae-5cf4c97c7a43\",\n        \"value\": \"str\",\n        \"position\": 1703,\n        \"color_key\": \"string\",\n        \"entity_type\": \"custom-field-enum-value\",\n        \"enabled\": false\n      },\n      {\n        \"id\": \"66ec9f6e-13a9-065e-ae78-8eb607126e32\",\n        \"value\": \"string\",\n        \"position\": 1585,\n        \"color_key\": \"string\",\n        \"entity_type\": \"custom-field-enum-value\",\n        \"enabled\": false\n      }\n    ],\n    \"canonical_name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c95f4d54-c5c5-4a42-ac11-50d6a7940486",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "478a7090-58c2-44f7-9d6b-e981d1e80428",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a34c672d-e18e-4eef-8559-ecdac63c12d4",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1796c6a-7360-4c40-9a84-f0046fed17e2",
+          "name": "Get Custom Field",
+          "request": {
+            "name": "Get Custom Field",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "custom-fields",
+                ":custom-field-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom-field-public-id",
+                  "description": "(Required) The unique ID of the CustomField."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e723466a-235d-44c0-8183-ff7174cc3668",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity_type\": \"custom-field\",\n  \"name\": \"string\",\n  \"updated_at\": \"1999-09-29T14:32:04.005Z\",\n  \"id\": \"a89099b3-a560-e48a-b3d1-ea2c4b39de5b\",\n  \"field_type\": \"enum\",\n  \"position\": 6102,\n  \"enabled\": true,\n  \"created_at\": \"1987-10-25T03:37:27.220Z\",\n  \"description\": \"string\",\n  \"icon_set_identifier\": \"string\",\n  \"story_types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"fixed_position\": false,\n  \"values\": [\n    {\n      \"id\": \"bf277e69-68f4-cfd8-d828-3212044f0ae3\",\n      \"value\": \"string\",\n      \"position\": 4619,\n      \"color_key\": \"string\",\n      \"entity_type\": \"custom-field-enum-value\",\n      \"enabled\": false\n    },\n    {\n      \"id\": \"08c5afb5-ec56-b5f6-b842-71f1672494c4\",\n      \"value\": \"string\",\n      \"position\": 1396,\n      \"color_key\": \"string\",\n      \"entity_type\": \"custom-field-enum-value\",\n      \"enabled\": false\n    }\n  ],\n  \"canonical_name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "defc9ed9-76d4-4ef0-aa03-4c98b5ff51d5",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bb9e2189-9b65-4ae2-8363-5949ea6f79d2",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f5854bd-5082-46f2-9cd5-99f0631f64ec",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5cb8d88-a940-48a7-8ecb-5cdc3870232b",
+          "name": "Update Custom Field",
+          "request": {
+            "name": "Update Custom Field",
+            "description": {
+              "content": "Update Custom Field can be used to update the definition of a Custom Field. The order of items in the 'values' collection is interpreted to be their ascending sort order.To delete an existing enum value, simply omit it from the 'values' collection. New enum values may be created inline by including an object in the 'values' collection having a 'value' entry with no 'id' (eg. {'value': 'myNewValue', 'color_key': 'green'}).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "custom-fields",
+                ":custom-field-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom-field-public-id",
+                  "description": "(Required) The unique ID of the CustomField."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18d134eb-ce1e-42bc-b4a9-98add4e97d98",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity_type\": \"custom-field\",\n  \"name\": \"string\",\n  \"updated_at\": \"1999-09-29T14:32:04.005Z\",\n  \"id\": \"a89099b3-a560-e48a-b3d1-ea2c4b39de5b\",\n  \"field_type\": \"enum\",\n  \"position\": 6102,\n  \"enabled\": true,\n  \"created_at\": \"1987-10-25T03:37:27.220Z\",\n  \"description\": \"string\",\n  \"icon_set_identifier\": \"string\",\n  \"story_types\": [\n    \"string\",\n    \"string\"\n  ],\n  \"fixed_position\": false,\n  \"values\": [\n    {\n      \"id\": \"bf277e69-68f4-cfd8-d828-3212044f0ae3\",\n      \"value\": \"string\",\n      \"position\": 4619,\n      \"color_key\": \"string\",\n      \"entity_type\": \"custom-field-enum-value\",\n      \"enabled\": false\n    },\n    {\n      \"id\": \"08c5afb5-ec56-b5f6-b842-71f1672494c4\",\n      \"value\": \"string\",\n      \"position\": 1396,\n      \"color_key\": \"string\",\n      \"entity_type\": \"custom-field-enum-value\",\n      \"enabled\": false\n    }\n  ],\n  \"canonical_name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9e16832-fe33-452b-abb2-2992268dfe23",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e74f2a62-b733-439e-9be2-8a9c3db902a6",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bac9f5bd-9863-477b-b390-379e08d0a234",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"data-conflict-error\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "773d2244-3502-418f-861a-074312fb5e69",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"values\": [\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"value\": \"<string>\",\n      \"color_key\": \"<string>\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"icon_set_identifier\": \"<string>\",\n  \"description\": \"<string>\",\n  \"before_id\": \"<uuid>\",\n  \"after_id\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c0527e-d2cb-45e3-bc8b-82b51938e7bd",
+          "name": "Delete Custom Field",
+          "request": {
+            "name": "Delete Custom Field",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "custom-fields",
+                ":custom-field-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom-field-public-id",
+                  "description": "(Required) The unique ID of the CustomField."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4080cb7-b932-414e-9b0c-9dbec4e5442f",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ee78852d-dd4a-4153-b01a-048670262116",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a6b6327e-c49c-4e4e-b6fc-1227aef8c277",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7837daf0-5594-41e2-b174-b1d39f81991e",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "custom-fields",
+                    ":custom-field-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom-field-public-id",
+                      "description": "(Required) The unique ID of the CustomField."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "31844658-d9e6-47b4-ad0f-f0becbfa1bea",
+    "name": "Shortcut Categories Custom Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Epics API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Epics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Epics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics",
+            "params": [
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Epics with their descriptions."
+              }
+            ]
+          },
+          "docs": "List Epics returns a list of all Epics and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/epics",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Epic allows you to create a new Epic in Shortcut."
+        },
+        {
+          "info": {
+            "name": "List Epics Paginated",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/paginated",
+            "params": [
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Epics with their descriptions."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number to return, starting with 1. Defaults to 1."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of Epics to return per page. Minimum 1, maximum 250, default 10."
+              }
+            ]
+          },
+          "docs": "List Epics with pagination returns a paginated list of Epics and their attributes."
+        },
+        {
+          "info": {
+            "name": "Get Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Get Epic returns information about the selected Epic."
+        },
+        {
+          "info": {
+            "name": "Update Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Epic can be used to update numerous fields in the Epic. The only required parameter is Epic ID, which can be found in the Shortcut UI."
+        },
+        {
+          "info": {
+            "name": "Delete Epic",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Delete Epic can be used to delete the Epic. The only required parameter is Epic ID."
+        },
+        {
+          "info": {
+            "name": "List Epic Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Get a list of all Comments on an Epic."
+        },
+        {
+          "info": {
+            "name": "Create Epic Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the associated Epic."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows you to create a threaded Comment on an Epic."
+        },
+        {
+          "info": {
+            "name": "Get Epic Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the associated Epic."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ]
+          },
+          "docs": "This endpoint returns information about the selected Epic Comment."
+        },
+        {
+          "info": {
+            "name": "Create Epic Comment Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the associated Epic."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the parent Epic Comment."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows you to create a nested Comment reply to an existing Epic Comment."
+        },
+        {
+          "info": {
+            "name": "Update Epic Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the associated Epic."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint allows you to update a threaded Comment on an Epic."
+        },
+        {
+          "info": {
+            "name": "Delete Epic Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the associated Epic."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ]
+          },
+          "docs": "This endpoint allows you to delete a Comment from an Epic."
+        },
+        {
+          "info": {
+            "name": "List Epic Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/documents",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Get a list of all Documents related to this Epic."
+        },
+        {
+          "info": {
+            "name": "Get Epic Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/health",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "Get the current health for the specified Epic."
+        },
+        {
+          "info": {
+            "name": "Create Epic Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/health",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new health status for the specified Epic."
+        },
+        {
+          "info": {
+            "name": "List Epic Healths",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/health-history",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              }
+            ]
+          },
+          "docs": "List the history of health statuses for the specified Epic, most recent first."
+        },
+        {
+          "info": {
+            "name": "List Epic Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/epics/:epic-public-id/stories",
+            "params": [
+              {
+                "name": "epic-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Epic."
+              },
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+              }
+            ]
+          },
+          "docs": "Get a list of all Stories in an Epic."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

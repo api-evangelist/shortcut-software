@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Key Results API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Key Results",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Key Result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/key-results/:key-result-public-id",
+            "params": [
+              {
+                "name": "key-result-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Key Result."
+              }
+            ]
+          },
+          "docs": "Get Key Result returns information about a chosen Key Result."
+        },
+        {
+          "info": {
+            "name": "Update Key Result",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/key-results/:key-result-public-id",
+            "params": [
+              {
+                "name": "key-result-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Key Result."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Key Result allows updating a Key Result's name or initial, observed, or target values."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

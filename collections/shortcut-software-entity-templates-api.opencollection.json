@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Entity Templates API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entity Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Entity Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates"
+          },
+          "docs": "List all the entity templates for the Workspace."
+        },
+        {
+          "info": {
+            "name": "Create Entity Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new entity template for the Workspace."
+        },
+        {
+          "info": {
+            "name": "Disable Story Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates/disable"
+          },
+          "docs": "Disables the Story Template feature for the Workspace."
+        },
+        {
+          "info": {
+            "name": "Enable Story Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates/enable"
+          },
+          "docs": "Enables the Story Template feature for the Workspace."
+        },
+        {
+          "info": {
+            "name": "Get Entity Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates/:entity-template-public-id",
+            "params": [
+              {
+                "name": "entity-template-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the entity template."
+              }
+            ]
+          },
+          "docs": "Get Entity Template returns information about a given entity template."
+        },
+        {
+          "info": {
+            "name": "Update Entity Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates/:entity-template-public-id",
+            "params": [
+              {
+                "name": "entity-template-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the template to be updated."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an entity template's name or its contents."
+        },
+        {
+          "info": {
+            "name": "Delete Entity Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/entity-templates/:entity-template-public-id",
+            "params": [
+              {
+                "name": "entity-template-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the entity template."
+              }
+            ]
+          },
+          "docs": "Delete Entity Template"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

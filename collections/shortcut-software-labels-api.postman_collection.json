@@ -1,0 +1,1853 @@
+{
+  "item": [
+    {
+      "id": "a511ef25-38c9-47ea-92fb-ae21106c7ab6",
+      "name": "Labels",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9fd65f69-f8ad-47bc-9267-4d40b4424c99",
+          "name": "List Labels",
+          "request": {
+            "name": "List Labels",
+            "description": {
+              "content": "List Labels returns a list of all Labels and their attributes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "slim",
+                  "value": "<boolean>",
+                  "description": "A true/false boolean indicating if the slim versions of the Label should be returned."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8817646f-c125-446e-b321-2e9c5e453c0e",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "slim",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": true,\n    \"entity_type\": \"string\",\n    \"color\": \"#8aAA92\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"updated_at\": \"1965-10-08T16:05:30.662Z\",\n    \"external_id\": \"string\",\n    \"id\": 2032,\n    \"created_at\": \"1983-10-11T01:21:10.122Z\",\n    \"stats\": {\n      \"num_related_documents\": 4228,\n      \"num_epics\": 2631,\n      \"num_stories_unstarted\": 2895,\n      \"num_stories_total\": 7531,\n      \"num_epics_unstarted\": 3260,\n      \"num_epics_in_progress\": 9224,\n      \"num_points_unstarted\": 2993,\n      \"num_stories_unestimated\": 8857,\n      \"num_points_in_progress\": 3512,\n      \"num_epics_total\": 4917,\n      \"num_stories_completed\": 4346,\n      \"num_points_completed\": 7898,\n      \"num_stories_backlog\": 4211,\n      \"num_points_total\": 6048,\n      \"num_stories_in_progress\": 5652,\n      \"num_points_backlog\": 1152,\n      \"num_epics_completed\": 2815\n    }\n  },\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"entity_type\": \"string\",\n    \"color\": \"#DCfe2D\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"updated_at\": \"1994-11-01T04:46:55.066Z\",\n    \"external_id\": \"string\",\n    \"id\": 8559,\n    \"created_at\": \"1959-08-22T05:01:16.868Z\",\n    \"stats\": {\n      \"num_related_documents\": 2576,\n      \"num_epics\": 4896,\n      \"num_stories_unstarted\": 5443,\n      \"num_stories_total\": 6470,\n      \"num_epics_unstarted\": 1194,\n      \"num_epics_in_progress\": 9649,\n      \"num_points_unstarted\": 8753,\n      \"num_stories_unestimated\": 2095,\n      \"num_points_in_progress\": 7957,\n      \"num_epics_total\": 6965,\n      \"num_stories_completed\": 5131,\n      \"num_points_completed\": 2605,\n      \"num_stories_backlog\": 1547,\n      \"num_points_total\": 8967,\n      \"num_stories_in_progress\": 2618,\n      \"num_points_backlog\": 8886,\n      \"num_epics_completed\": 5142\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c488ba10-6a8f-4971-8d8a-0e455c636847",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "slim",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88f68dd7-05bd-4f76-9110-30c7f9a3d013",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "slim",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bd8ab16c-6bf8-4512-9af4-d1edab480776",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "slim",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b6311f9-5e12-4d9b-87cb-2493a9100e99",
+          "name": "Create Label",
+          "request": {
+            "name": "Create Label",
+            "description": {
+              "content": "Create Label allows you to create a new Label in Shortcut.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"external_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de46b4ae-b55c-43c9-8dba-c59948c7622e",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"entity_type\": \"string\",\n  \"color\": \"#CAB71F\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"updated_at\": \"1989-02-15T19:03:31.117Z\",\n  \"external_id\": \"string\",\n  \"id\": 9323,\n  \"created_at\": \"2008-08-29T09:06:18.307Z\",\n  \"stats\": {\n    \"num_related_documents\": 1687,\n    \"num_epics\": 1544,\n    \"num_stories_unstarted\": 7500,\n    \"num_stories_total\": 4462,\n    \"num_epics_unstarted\": 6040,\n    \"num_epics_in_progress\": 7734,\n    \"num_points_unstarted\": 1791,\n    \"num_stories_unestimated\": 2172,\n    \"num_points_in_progress\": 6414,\n    \"num_epics_total\": 6318,\n    \"num_stories_completed\": 972,\n    \"num_points_completed\": 9367,\n    \"num_stories_backlog\": 8067,\n    \"num_points_total\": 871,\n    \"num_stories_in_progress\": 4018,\n    \"num_points_backlog\": 8554,\n    \"num_epics_completed\": 6323\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6789cdfa-fee6-4484-9855-92a103959c2f",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e9f960ed-a639-4d5c-8ded-1d050757084a",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c10122b5-4bcb-446b-8e33-a5516894cefb",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"external_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c68d05e8-9220-475e-b43c-1a4347d1c96d",
+          "name": "Get Label",
+          "request": {
+            "name": "Get Label",
+            "description": {
+              "content": "Get Label returns information about the selected Label.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels",
+                ":label-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "label-public-id",
+                  "description": "(Required) The unique ID of the Label."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3408aee7-99b4-4e46-8a45-02e4558814bb",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"entity_type\": \"string\",\n  \"color\": \"#CAB71F\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"updated_at\": \"1989-02-15T19:03:31.117Z\",\n  \"external_id\": \"string\",\n  \"id\": 9323,\n  \"created_at\": \"2008-08-29T09:06:18.307Z\",\n  \"stats\": {\n    \"num_related_documents\": 1687,\n    \"num_epics\": 1544,\n    \"num_stories_unstarted\": 7500,\n    \"num_stories_total\": 4462,\n    \"num_epics_unstarted\": 6040,\n    \"num_epics_in_progress\": 7734,\n    \"num_points_unstarted\": 1791,\n    \"num_stories_unestimated\": 2172,\n    \"num_points_in_progress\": 6414,\n    \"num_epics_total\": 6318,\n    \"num_stories_completed\": 972,\n    \"num_points_completed\": 9367,\n    \"num_stories_backlog\": 8067,\n    \"num_points_total\": 871,\n    \"num_stories_in_progress\": 4018,\n    \"num_points_backlog\": 8554,\n    \"num_epics_completed\": 6323\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d9e841b-6abb-4d1b-ad0c-2bddbce80592",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1c4fffb5-589a-4161-8285-7995b5bb15f9",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43268d60-b34d-4b0c-8cb6-ba5da153ef16",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7418af1c-bf9c-41ce-a95c-128487c1adfe",
+          "name": "Update Label",
+          "request": {
+            "name": "Update Label",
+            "description": {
+              "content": "Update Label allows you to replace a Label name with another name. If you try to name a Label something that already exists, you will receive a 422 response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels",
+                ":label-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "label-public-id",
+                  "description": "(Required) The unique ID of the Label you wish to update."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"archived\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d83d064-149c-459a-9a77-c4c44c057bfd",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label you wish to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"archived\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"entity_type\": \"string\",\n  \"color\": \"#CAB71F\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"updated_at\": \"1989-02-15T19:03:31.117Z\",\n  \"external_id\": \"string\",\n  \"id\": 9323,\n  \"created_at\": \"2008-08-29T09:06:18.307Z\",\n  \"stats\": {\n    \"num_related_documents\": 1687,\n    \"num_epics\": 1544,\n    \"num_stories_unstarted\": 7500,\n    \"num_stories_total\": 4462,\n    \"num_epics_unstarted\": 6040,\n    \"num_epics_in_progress\": 7734,\n    \"num_points_unstarted\": 1791,\n    \"num_stories_unestimated\": 2172,\n    \"num_points_in_progress\": 6414,\n    \"num_epics_total\": 6318,\n    \"num_stories_completed\": 972,\n    \"num_points_completed\": 9367,\n    \"num_stories_backlog\": 8067,\n    \"num_points_total\": 871,\n    \"num_stories_in_progress\": 4018,\n    \"num_points_backlog\": 8554,\n    \"num_epics_completed\": 6323\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b89c863-707f-4bc1-989c-bace9e900c52",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label you wish to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"archived\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1187863d-78de-4ac3-8a47-cff8cb4787e4",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label you wish to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"archived\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6b0ca445-5117-4d0a-a1d5-7ba902bd62b7",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label you wish to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"color\": \"<css-color>\",\n  \"archived\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "733e5038-7ac9-49e5-aca2-9567764807e6",
+          "name": "Delete Label",
+          "request": {
+            "name": "Delete Label",
+            "description": {
+              "content": "Delete Label can be used to delete any Label.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels",
+                ":label-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "label-public-id",
+                  "description": "(Required) The unique ID of the Label."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71b76fe6-37c1-4415-97c6-e5028a8d06a6",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6116814c-fa5a-4463-9acb-2da4aecab1db",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e19a0263-a6c7-4226-8132-c9737a38a08c",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c72d1ef7-f513-4125-bd9d-d6b2ff64cf0d",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8127c7de-829e-42f2-a506-0901a8b9e524",
+          "name": "List Label Epics",
+          "request": {
+            "name": "List Label Epics",
+            "description": {
+              "content": "List all of the Epics with the Label.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels",
+                ":label-public-id",
+                "epics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "label-public-id",
+                  "description": "(Required) The unique ID of the Label."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d4c062f-fb5d-4215-b0cf-ed35ade464d8",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": false,\n    \"started\": false,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#EdA4e1\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2013-12-28T15:13:30.713Z\",\n        \"external_id\": \"string\",\n        \"id\": 5591,\n        \"created_at\": \"1947-09-09T16:08:10.109Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#A6Cc5c\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2020-08-11T19:18:07.610Z\",\n        \"external_id\": \"string\",\n        \"id\": 142,\n        \"created_at\": \"1988-08-09T00:29:30.848Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"db757a66-6d2a-1fea-f1e5-58944fcb6455\",\n      \"2ffd164f-b123-198c-5f6b-983e8da336b8\"\n    ],\n    \"member_mention_ids\": [\n      \"d1e851ee-bb42-3ad6-0138-ac63f6c752fc\",\n      \"db407e3f-b4e6-a0d8-3bfd-38cfa11965d1\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"07566243-81af-8ffc-2e18-d71332ac32b4\",\n        \"associated_stories_count\": 2950\n      },\n      {\n        \"group_id\": \"7391a46d-4cac-4571-66fd-52d29c36ac3a\",\n        \"associated_stories_count\": 6871\n      }\n    ],\n    \"project_ids\": [\n      4950,\n      7942\n    ],\n    \"stories_without_projects\": 1519,\n    \"completed_at_override\": \"1957-01-21T23:30:52.070Z\",\n    \"productboard_plugin_id\": \"b2e1da2b-0cb4-eab5-1926-da8ba34f2966\",\n    \"started_at\": \"1982-01-25T22:11:45.630Z\",\n    \"completed_at\": \"1992-08-06T14:07:57.474Z\",\n    \"objective_ids\": [\n      601,\n      3032\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"1983-08-17T06:03:55.271Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 3,\n    \"requested_by_id\": \"8fd091dc-49f4-9832-7817-711534aee061\",\n    \"epic_state_id\": 443,\n    \"label_ids\": [\n      1799,\n      9782\n    ],\n    \"started_at_override\": \"2009-04-07T04:51:12.956Z\",\n    \"group_id\": \"f4732b72-09ff-269d-6d69-0f482676bd32\",\n    \"updated_at\": \"2009-01-15T13:31:24.841Z\",\n    \"group_mention_ids\": [\n      \"726bbb3c-ec1b-b199-054c-830c83270d87\",\n      \"61b54e8b-19ad-58b9-b9dd-225224f73993\"\n    ],\n    \"productboard_id\": \"db191d9c-e9c7-0dbb-d2a0-248260bd382c\",\n    \"follower_ids\": [\n      \"88ead048-07f7-9f5d-9aad-f5073d009fcf\",\n      \"501c5cef-d35e-add1-63a8-73a87f2d6904\"\n    ],\n    \"group_ids\": [\n      \"31dc1999-6455-3c83-7cc8-03b94dbd2e75\",\n      \"6c09d8d9-afa7-d078-856b-e6738957a520\"\n    ],\n    \"owner_ids\": [\n      \"155b06a8-0960-d7f5-6517-2ed8b17d785d\",\n      \"70a7491e-b3b3-0fa9-1454-bcc99402f633\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 3971,\n    \"position\": 3927,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"2012-11-29T15:54:41.430Z\",\n    \"stats\": {\n      \"num_points_done\": 1932,\n      \"num_related_documents\": 7511,\n      \"num_stories_unstarted\": 6946,\n      \"num_stories_total\": 7225,\n      \"last_story_update\": \"2006-02-19T05:12:58.544Z\",\n      \"num_points_started\": 895,\n      \"num_points_unstarted\": 1008,\n      \"num_stories_started\": 6749,\n      \"num_stories_unestimated\": 1160,\n      \"num_stories_backlog\": 9674,\n      \"num_points_backlog\": 3308,\n      \"num_points\": 5236,\n      \"num_stories_done\": 8812\n    },\n    \"created_at\": \"1949-05-19T12:28:10.518Z\",\n    \"description\": \"string\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": true,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#BfEDcD\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1955-01-05T07:38:18.232Z\",\n        \"external_id\": \"string\",\n        \"id\": 9292,\n        \"created_at\": \"1969-03-27T22:46:31.201Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#69dcAA\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1983-06-23T00:10:54.633Z\",\n        \"external_id\": \"string\",\n        \"id\": 5905,\n        \"created_at\": \"1971-12-14T12:40:42.424Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"b1f753af-0c07-0348-233d-856e5ed1971d\",\n      \"8c30a7b8-99b9-b330-1314-47a05f882d7f\"\n    ],\n    \"member_mention_ids\": [\n      \"8e21f2e0-7827-ab17-24e1-1f3d70e0857f\",\n      \"845a5b0f-a1b1-9c7f-07ea-808ed3607c4a\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"1445f468-9973-694a-42f5-b5424ab13d59\",\n        \"associated_stories_count\": 8613\n      },\n      {\n        \"group_id\": \"bb94f7fd-41af-12ec-3bfa-3bc3e079af23\",\n        \"associated_stories_count\": 1934\n      }\n    ],\n    \"project_ids\": [\n      9250,\n      4113\n    ],\n    \"stories_without_projects\": 6165,\n    \"completed_at_override\": \"1997-12-20T21:08:40.047Z\",\n    \"productboard_plugin_id\": \"961722c9-a50f-21d4-dd88-6c544546a519\",\n    \"started_at\": \"1986-07-23T13:29:52.236Z\",\n    \"completed_at\": \"1958-09-16T22:36:04.367Z\",\n    \"objective_ids\": [\n      4732,\n      9167\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"1974-11-14T10:17:30.259Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 99,\n    \"requested_by_id\": \"7186a385-e997-4092-8cdf-8b6b7be4c8a7\",\n    \"epic_state_id\": 9783,\n    \"label_ids\": [\n      5522,\n      538\n    ],\n    \"started_at_override\": \"1992-02-15T04:55:11.712Z\",\n    \"group_id\": \"e086e80e-a61a-46cd-a71f-d5b3f22b9789\",\n    \"updated_at\": \"2001-05-11T18:37:52.075Z\",\n    \"group_mention_ids\": [\n      \"adf51f1a-bec2-c0c6-0144-cf0c9f850417\",\n      \"bdd4692b-4813-0fe0-94ed-f85f51a57e41\"\n    ],\n    \"productboard_id\": \"0fd20d74-cd9e-d73b-abfe-1603bb39719f\",\n    \"follower_ids\": [\n      \"3437c357-02f2-1e9c-9981-3d9a59df6ed2\",\n      \"9f92d7d7-23dc-5390-4b0a-d4e19a64c2a4\"\n    ],\n    \"group_ids\": [\n      \"921bd8a7-12d4-aad6-7085-236433ac2d86\",\n      \"1ee069cc-086b-bec7-5749-226a12586552\"\n    ],\n    \"owner_ids\": [\n      \"4c51a1fa-72ac-7626-b766-5b813e074e09\",\n      \"b0a9f364-da83-9704-b757-b6429ff389a9\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 5628,\n    \"position\": 8000,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"1970-01-10T03:44:03.026Z\",\n    \"stats\": {\n      \"num_points_done\": 3741,\n      \"num_related_documents\": 8601,\n      \"num_stories_unstarted\": 9575,\n      \"num_stories_total\": 9751,\n      \"last_story_update\": \"2003-07-12T00:43:07.243Z\",\n      \"num_points_started\": 8007,\n      \"num_points_unstarted\": 457,\n      \"num_stories_started\": 7055,\n      \"num_stories_unestimated\": 1382,\n      \"num_stories_backlog\": 813,\n      \"num_points_backlog\": 3550,\n      \"num_points\": 9000,\n      \"num_stories_done\": 5080\n    },\n    \"created_at\": \"1993-04-09T19:56:54.031Z\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "498a2162-9449-40b6-b47c-c7010a056514",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e288202-b1a0-4d1b-9904-51789aa3f613",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1a88c421-e0a0-40fe-891a-4dd2b8258313",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4da04916-e6ac-43fd-8d7d-4ba543425b34",
+          "name": "List Label Stories",
+          "request": {
+            "name": "List Label Stories",
+            "description": {
+              "content": "List all of the Stories with the Label.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "labels",
+                ":label-public-id",
+                "stories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includes_description",
+                  "value": "<boolean>",
+                  "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "label-public-id",
+                  "description": "(Required) The unique ID of the Label."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5848233-8a1d-4819-a8b0-892f4fdda4f4",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": false,\n    \"started\": true,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 8154,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1994-03-23T18:24:24.069Z\",\n        \"id\": 2329,\n        \"subject_id\": 1342,\n        \"subject_workflow_state_id\": 996,\n        \"created_at\": \"1971-08-04T02:53:42.569Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 4316,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1975-11-15T05:13:49.672Z\",\n        \"id\": 4719,\n        \"subject_id\": 7636,\n        \"subject_workflow_state_id\": 6286,\n        \"created_at\": \"1950-11-12T08:47:43.400Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#2AFEA3\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1981-03-25T18:20:38.848Z\",\n        \"external_id\": \"string\",\n        \"id\": 6916,\n        \"created_at\": \"1963-09-03T08:55:37.854Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#CFeb9f\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2001-02-23T19:34:00.084Z\",\n        \"external_id\": \"string\",\n        \"id\": 3563,\n        \"created_at\": \"2011-03-30T03:30:07.976Z\"\n      }\n    ],\n    \"task_ids\": [\n      3694,\n      4153\n    ],\n    \"mention_ids\": [\n      \"513e090a-08c7-f361-7938-1f9ceeb7fa48\",\n      \"d71c423a-3165-a87a-c1e2-e697ace099c4\"\n    ],\n    \"member_mention_ids\": [\n      \"815a613e-bbbb-f9bb-16d7-5d062799f021\",\n      \"12f143ec-afb1-f20d-eca0-1d3b6cad303d\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      2058,\n      8468\n    ],\n    \"num_tasks_completed\": 1743,\n    \"workflow_id\": 1717,\n    \"completed_at_override\": \"1999-04-14T05:22:41.250Z\",\n    \"started_at\": \"2004-01-22T22:22:26.701Z\",\n    \"completed_at\": \"1973-08-03T06:23:32.126Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"blocker\": true,\n    \"epic_id\": 9498,\n    \"story_template_id\": \"61bf1ca1-a66d-f460-7cfb-f5385c58629a\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      3845,\n      6571\n    ],\n    \"requested_by_id\": \"a7235708-123d-e253-5967-0e3d5251423e\",\n    \"iteration_id\": 5320,\n    \"label_ids\": [\n      9347,\n      3552\n    ],\n    \"started_at_override\": \"1948-11-29T09:14:49.979Z\",\n    \"group_id\": \"5cd8fdb7-f72e-bc13-4a9c-5f632def7390\",\n    \"workflow_state_id\": 59,\n    \"updated_at\": \"1954-06-14T23:01:32.403Z\",\n    \"group_mention_ids\": [\n      \"9368eaf3-6650-ef1d-657a-8fb48299490b\",\n      \"50487314-bcac-763b-29b8-d0fd1fb0b118\"\n    ],\n    \"follower_ids\": [\n      \"5528f6e1-3b1a-ff71-58d0-c82380b6ead3\",\n      \"57a5e70a-7147-d3bd-6060-831db6c4b899\"\n    ],\n    \"owner_ids\": [\n      \"1533a18b-8d11-0ccd-fecf-224145f8b405\",\n      \"e1820dc6-33d5-972e-3198-1b4dbb4f63e6\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 124,\n    \"estimate\": 6420,\n    \"position\": 6967,\n    \"blocked\": true,\n    \"project_id\": 4612,\n    \"linked_file_ids\": [\n      8801,\n      6565\n    ],\n    \"deadline\": \"1953-10-01T06:01:48.072Z\",\n    \"stats\": {\n      \"num_related_documents\": 7725\n    },\n    \"comment_ids\": [\n      7131,\n      3982\n    ],\n    \"created_at\": \"1995-05-16T09:17:04.649Z\",\n    \"moved_at\": \"1951-06-09T04:12:51.462Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"30cbf269-c3c4-c731-ffe3-66d3c1a54917\",\n        \"value_id\": \"3dc7f642-f641-c358-6c76-75a31385afff\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"3f92f0c6-618f-21f4-97c7-8f46ba53b625\",\n        \"value_id\": \"948d59cc-0918-75f2-26e9-6ca8ebd90d7b\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      565,\n      8295\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 4020,\n    \"parent_story_id\": 9314,\n    \"cycle_time\": 3895\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": false,\n    \"started\": false,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 9620,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1963-11-14T18:29:11.708Z\",\n        \"id\": 6815,\n        \"subject_id\": 9143,\n        \"subject_workflow_state_id\": 7959,\n        \"created_at\": \"1953-02-12T13:25:58.404Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 2720,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1994-08-19T14:42:00.855Z\",\n        \"id\": 3501,\n        \"subject_id\": 4841,\n        \"subject_workflow_state_id\": 4678,\n        \"created_at\": \"1958-04-16T17:50:13.628Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#14ce3A\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1974-04-11T06:43:38.579Z\",\n        \"external_id\": \"string\",\n        \"id\": 9305,\n        \"created_at\": \"1981-06-19T18:08:57.418Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#c9b74D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1957-06-26T07:55:54.189Z\",\n        \"external_id\": \"string\",\n        \"id\": 7743,\n        \"created_at\": \"2016-08-25T02:32:01.041Z\"\n      }\n    ],\n    \"task_ids\": [\n      2195,\n      4422\n    ],\n    \"mention_ids\": [\n      \"1a675bc3-f230-7d54-377f-934c277924c8\",\n      \"bd87c214-3fe8-6d3c-113a-a8fc7f6e4654\"\n    ],\n    \"member_mention_ids\": [\n      \"0c15264e-0d23-aa22-6594-bdb58cb5be8f\",\n      \"5d413b21-f772-f7d7-d961-d3223d73c194\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      8899,\n      984\n    ],\n    \"num_tasks_completed\": 4746,\n    \"workflow_id\": 6682,\n    \"completed_at_override\": \"1999-09-14T04:44:04.175Z\",\n    \"started_at\": \"1995-04-24T09:22:03.657Z\",\n    \"completed_at\": \"2018-07-14T23:12:34.110Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"blocker\": false,\n    \"epic_id\": 6648,\n    \"story_template_id\": \"42b522ed-dcc1-d318-7604-431878ad5b8a\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      3625,\n      2709\n    ],\n    \"requested_by_id\": \"1ea0fc46-1317-cf51-f09a-dfb42d395c14\",\n    \"iteration_id\": 2586,\n    \"label_ids\": [\n      1764,\n      8405\n    ],\n    \"started_at_override\": \"2014-11-10T13:13:39.664Z\",\n    \"group_id\": \"ab8cc0b9-8910-0fb7-bb6a-452d09214fdf\",\n    \"workflow_state_id\": 6726,\n    \"updated_at\": \"1968-02-20T22:12:27.118Z\",\n    \"group_mention_ids\": [\n      \"ca2d2e41-3e27-4923-6821-7156bf18afab\",\n      \"c4fbe3cf-2690-dd2c-5619-6cbc9d1612c9\"\n    ],\n    \"follower_ids\": [\n      \"35d61781-b5f4-58ce-1c73-09c6ef64942f\",\n      \"133634bf-ac4d-a1a3-ca01-5aa2847f4dfa\"\n    ],\n    \"owner_ids\": [\n      \"6808a64a-bc6e-4b76-de0a-3014e3e23178\",\n      \"7038e11d-77c5-73a5-8c97-f16bc5367b65\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 7761,\n    \"estimate\": 861,\n    \"position\": 2285,\n    \"blocked\": false,\n    \"project_id\": 2791,\n    \"linked_file_ids\": [\n      1991,\n      8721\n    ],\n    \"deadline\": \"2008-11-25T00:34:16.725Z\",\n    \"stats\": {\n      \"num_related_documents\": 767\n    },\n    \"comment_ids\": [\n      8508,\n      7676\n    ],\n    \"created_at\": \"1954-01-29T07:17:50.083Z\",\n    \"moved_at\": \"1983-06-30T13:08:21.026Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"28a95fdb-8955-d46b-01cd-12225c320bb2\",\n        \"value_id\": \"175a72fa-ca68-d55c-c458-c8418adf1464\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"5decc05e-64f4-0341-575f-c36eb1393f6f\",\n        \"value_id\": \"bc2bba54-3403-49d9-5bfc-084adc0fe1e7\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      6313,\n      3986\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 4362,\n    \"parent_story_id\": 2991,\n    \"cycle_time\": 1041\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e9efebe-38fd-4707-8ea1-597c3cd60fba",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "440a4376-074c-4d71-809b-40bce5ab55bb",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "93de0515-281d-4618-935b-5f39ec8f19af",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "labels",
+                    ":label-public-id",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includes_description",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "label-public-id",
+                      "description": "(Required) The unique ID of the Label."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4fb6c2d9-3bad-4083-a575-59099a8649d1",
+    "name": "Shortcut Categories Labels API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "item": [
+    {
+      "id": "c6583407-e28c-4504-a919-00bff4e2655a",
+      "name": "Workflows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eeb7cc7d-e153-4a4a-9665-d2a921e978aa",
+          "name": "List Workflows",
+          "request": {
+            "name": "List Workflows",
+            "description": {
+              "content": "Returns a list of all Workflows in the Workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "workflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c1850b7-1bde-4c62-9d05-6fb3b894f514",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"string\",\n    \"entity_type\": \"string\",\n    \"project_ids\": [\n      2940.02613366557,\n      4716.250980875097\n    ],\n    \"states\": [\n      {\n        \"description\": \"string\",\n        \"entity_type\": \"string\",\n        \"verb\": \"string\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"num_stories\": 1470,\n        \"type\": \"string\",\n        \"updated_at\": \"1958-08-20T13:25:18.385Z\",\n        \"id\": 2749,\n        \"num_story_templates\": 5208,\n        \"position\": 6330,\n        \"created_at\": \"1947-08-04T01:29:29.763Z\",\n        \"color\": \"#F3De74\"\n      },\n      {\n        \"description\": \"string\",\n        \"entity_type\": \"string\",\n        \"verb\": \"string\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"num_stories\": 2156,\n        \"type\": \"string\",\n        \"updated_at\": \"1948-11-11T05:54:19.722Z\",\n        \"id\": 50,\n        \"num_story_templates\": 6126,\n        \"position\": 4507,\n        \"created_at\": \"2025-02-28T06:42:08.194Z\",\n        \"color\": \"#efEa07\"\n      }\n    ],\n    \"name\": \"string\",\n    \"updated_at\": \"1984-05-30T13:43:39.163Z\",\n    \"auto_assign_owner\": false,\n    \"id\": 5866,\n    \"team_id\": 2899,\n    \"created_at\": \"1985-07-01T15:56:07.168Z\",\n    \"default_state_id\": 3812\n  },\n  {\n    \"description\": \"string\",\n    \"entity_type\": \"string\",\n    \"project_ids\": [\n      2367.4802914138672,\n      9914.267155605039\n    ],\n    \"states\": [\n      {\n        \"description\": \"string\",\n        \"entity_type\": \"string\",\n        \"verb\": \"string\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"num_stories\": 8483,\n        \"type\": \"string\",\n        \"updated_at\": \"1964-09-24T07:10:49.739Z\",\n        \"id\": 2132,\n        \"num_story_templates\": 9553,\n        \"position\": 9128,\n        \"created_at\": \"1981-01-08T22:44:05.705Z\",\n        \"color\": \"#9e7dce\"\n      },\n      {\n        \"description\": \"string\",\n        \"entity_type\": \"string\",\n        \"verb\": \"string\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"num_stories\": 7531,\n        \"type\": \"string\",\n        \"updated_at\": \"1947-08-19T11:35:29.627Z\",\n        \"id\": 5888,\n        \"num_story_templates\": 1308,\n        \"position\": 4911,\n        \"created_at\": \"1979-08-22T08:19:23.077Z\",\n        \"color\": \"#Aaaf90\"\n      }\n    ],\n    \"name\": \"string\",\n    \"updated_at\": \"1963-09-06T14:05:17.950Z\",\n    \"auto_assign_owner\": false,\n    \"id\": 5489,\n    \"team_id\": 8497,\n    \"created_at\": \"1997-05-15T15:05:34.137Z\",\n    \"default_state_id\": 298\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc2dbfee-358d-4cda-8834-28d1352c9e78",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57143f12-c5bc-4e0e-9bd6-a809e09561a6",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6447a6e6-37fd-4c94-b1e6-7c86301007f8",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0722384e-45c7-4a61-9749-fb0dceb0b800",
+          "name": "Get Workflow",
+          "request": {
+            "name": "Get Workflow",
+            "description": {
+              "content": "Get Workflow returns information about a chosen Workflow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "workflows",
+                ":workflow-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "workflow-public-id",
+                  "description": "(Required) The ID of the Workflow."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "679a3c52-23c1-4a2e-97b8-c59b5dc0572b",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows",
+                    ":workflow-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "workflow-public-id",
+                      "description": "(Required) The ID of the Workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"entity_type\": \"string\",\n  \"project_ids\": [\n    8383.280321509976,\n    3691.921920470024\n  ],\n  \"states\": [\n    {\n      \"description\": \"string\",\n      \"entity_type\": \"string\",\n      \"verb\": \"string\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"num_stories\": 6095,\n      \"type\": \"string\",\n      \"updated_at\": \"2003-12-10T23:14:02.966Z\",\n      \"id\": 5178,\n      \"num_story_templates\": 3494,\n      \"position\": 2037,\n      \"created_at\": \"1969-06-19T19:36:31.296Z\",\n      \"color\": \"#483AF1\"\n    },\n    {\n      \"description\": \"string\",\n      \"entity_type\": \"string\",\n      \"verb\": \"string\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"num_stories\": 7423,\n      \"type\": \"string\",\n      \"updated_at\": \"1998-04-13T16:36:05.503Z\",\n      \"id\": 6808,\n      \"num_story_templates\": 4203,\n      \"position\": 6537,\n      \"created_at\": \"1947-04-19T21:49:18.788Z\",\n      \"color\": \"#84C8a9\"\n    }\n  ],\n  \"name\": \"string\",\n  \"updated_at\": \"1952-01-02T21:50:40.181Z\",\n  \"auto_assign_owner\": false,\n  \"id\": 4938,\n  \"team_id\": 9061,\n  \"created_at\": \"1976-10-02T04:55:09.518Z\",\n  \"default_state_id\": 9540\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a830191-5b75-46d0-8d47-5629d514bd23",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows",
+                    ":workflow-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "workflow-public-id",
+                      "description": "(Required) The ID of the Workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e2b2776-10fd-491d-95dc-acc9b5ab0c1d",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows",
+                    ":workflow-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "workflow-public-id",
+                      "description": "(Required) The ID of the Workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c68c8e8-df80-49a2-8a81-ff684caf6451",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "workflows",
+                    ":workflow-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "workflow-public-id",
+                      "description": "(Required) The ID of the Workflow."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "22bdc87f-fd1e-4b01-a415-f9a650d3159a",
+    "name": "Shortcut Categories Workflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

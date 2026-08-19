@@ -1,0 +1,286 @@
+{
+  "item": [
+    {
+      "id": "e4c1eeda-283e-4f43-8f5f-d5b046ced571",
+      "name": "External Link",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3adeee5-32a2-4874-ae58-e87eb323bf24",
+          "name": "Get External Link Stories",
+          "request": {
+            "name": "Get External Link Stories",
+            "description": {
+              "content": "Get Stories which have a given External Link associated with them.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "external-link",
+                "stories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "external_link",
+                  "value": "<string>",
+                  "description": "(Required) The external link associated with one or more stories."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d77c181-4917-46e4-9aab-abca0ba08d66",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "external-link",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_link",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": false,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 5730,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2006-03-31T19:41:54.376Z\",\n        \"id\": 5999,\n        \"subject_id\": 2346,\n        \"subject_workflow_state_id\": 2375,\n        \"created_at\": \"2003-01-21T07:08:26.437Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 9625,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2001-11-08T18:50:17.783Z\",\n        \"id\": 9066,\n        \"subject_id\": 5576,\n        \"subject_workflow_state_id\": 3312,\n        \"created_at\": \"2024-10-25T12:55:50.865Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#80eF98\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2011-07-25T13:18:24.721Z\",\n        \"external_id\": \"string\",\n        \"id\": 2216,\n        \"created_at\": \"1950-03-25T12:04:21.056Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#061A9D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1986-01-30T21:03:15.047Z\",\n        \"external_id\": \"string\",\n        \"id\": 5823,\n        \"created_at\": \"1963-10-22T23:49:48.770Z\"\n      }\n    ],\n    \"task_ids\": [\n      7055,\n      9480\n    ],\n    \"mention_ids\": [\n      \"f69e29c6-a3e5-e22f-ff41-5afde256bd80\",\n      \"3423a830-7698-38ed-171e-7717b829d4ad\"\n    ],\n    \"member_mention_ids\": [\n      \"035939a4-0e36-e0e2-9f20-abaeb8face8e\",\n      \"f3c56fab-fb47-b200-3efa-d751b65b9738\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      9078,\n      4613\n    ],\n    \"num_tasks_completed\": 3089,\n    \"workflow_id\": 2170,\n    \"completed_at_override\": \"1979-05-15T08:29:11.396Z\",\n    \"started_at\": \"1971-02-15T16:09:38.055Z\",\n    \"completed_at\": \"1999-10-26T22:32:59.380Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"blocker\": true,\n    \"epic_id\": 4815,\n    \"story_template_id\": \"8b00bf80-4aa6-8816-0b69-9082d0d352fe\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      5621,\n      8311\n    ],\n    \"requested_by_id\": \"895b95b4-8b47-fb1b-6562-81cc2a61504a\",\n    \"iteration_id\": 1010,\n    \"label_ids\": [\n      9748,\n      7261\n    ],\n    \"started_at_override\": \"1982-07-17T17:39:38.371Z\",\n    \"group_id\": \"180836aa-92aa-5455-d342-2f553ddf7814\",\n    \"workflow_state_id\": 1257,\n    \"updated_at\": \"1969-12-14T00:08:43.425Z\",\n    \"group_mention_ids\": [\n      \"e99798b5-3f08-6315-1f0c-e7c17e3cf847\",\n      \"f9b94bf9-e9c8-0d22-c1e1-8bbe2c4a522c\"\n    ],\n    \"follower_ids\": [\n      \"d2d388c3-cdc4-91f4-d1e9-f76432b213b1\",\n      \"c929b7a7-82a3-8de3-1298-357d39c130a0\"\n    ],\n    \"owner_ids\": [\n      \"4b699c12-b0a2-7f8e-b8bd-205a917af7a9\",\n      \"53b0466f-7080-0e62-d132-383f33fa0d64\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 6128,\n    \"estimate\": 6566,\n    \"position\": 4374,\n    \"blocked\": false,\n    \"project_id\": 7458,\n    \"linked_file_ids\": [\n      2335,\n      5080\n    ],\n    \"deadline\": \"1994-08-31T09:39:28.489Z\",\n    \"stats\": {\n      \"num_related_documents\": 7103\n    },\n    \"comment_ids\": [\n      936,\n      9455\n    ],\n    \"created_at\": \"1991-05-27T00:35:28.084Z\",\n    \"moved_at\": \"1978-10-22T09:50:11.953Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"9ee98273-f85c-8574-1e16-c5c3d529e86e\",\n        \"value_id\": \"94858760-bda1-792e-8b03-836f005fa82f\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"a26cd8f8-60f1-a245-ff38-2a8e1614f7ac\",\n        \"value_id\": \"e2d6dd26-242c-f0e3-7d17-4f6c1ecd53d6\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      4779,\n      4989\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 2191,\n    \"parent_story_id\": 2693,\n    \"cycle_time\": 6137\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": true,\n    \"story_links\": [\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 3300,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1972-07-19T07:39:32.184Z\",\n        \"id\": 9218,\n        \"subject_id\": 6637,\n        \"subject_workflow_state_id\": 4674,\n        \"created_at\": \"1967-01-02T14:40:35.153Z\"\n      },\n      {\n        \"entity_type\": \"string\",\n        \"object_id\": 4705,\n        \"verb\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2020-01-05T09:56:40.943Z\",\n        \"id\": 469,\n        \"subject_id\": 1200,\n        \"subject_workflow_state_id\": 2908,\n        \"created_at\": \"2026-03-17T04:29:01.051Z\"\n      }\n    ],\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#3E8DAC\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1965-07-11T10:43:15.947Z\",\n        \"external_id\": \"string\",\n        \"id\": 5451,\n        \"created_at\": \"1985-09-04T00:45:13.264Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#DC2E90\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1996-12-04T13:27:26.568Z\",\n        \"external_id\": \"string\",\n        \"id\": 9444,\n        \"created_at\": \"1994-11-21T00:32:08.638Z\"\n      }\n    ],\n    \"task_ids\": [\n      4923,\n      2512\n    ],\n    \"mention_ids\": [\n      \"c0b53ee7-3768-0e25-babe-a0eca3a8b37c\",\n      \"810e866b-6ca1-6301-95c2-6bfd0ba46acf\"\n    ],\n    \"member_mention_ids\": [\n      \"6d8839e4-a7fb-9779-2903-f70cd5227cc8\",\n      \"57c66956-39a2-fd11-1461-a580dc93430f\"\n    ],\n    \"story_type\": \"string\",\n    \"file_ids\": [\n      6352,\n      8913\n    ],\n    \"num_tasks_completed\": 3312,\n    \"workflow_id\": 4814,\n    \"completed_at_override\": \"2020-06-23T19:21:53.202Z\",\n    \"started_at\": \"2007-09-16T14:41:54.252Z\",\n    \"completed_at\": \"1963-08-03T12:06:18.581Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"blocker\": true,\n    \"epic_id\": 7513,\n    \"story_template_id\": \"c4f53e18-996a-eb38-6593-32b7fab5d025\",\n    \"external_links\": [\n      \"string\",\n      \"string\"\n    ],\n    \"previous_iteration_ids\": [\n      9753,\n      9779\n    ],\n    \"requested_by_id\": \"3124b824-2e06-50e2-0ba5-ab13cf0b88b1\",\n    \"iteration_id\": 5732,\n    \"label_ids\": [\n      7085,\n      7396\n    ],\n    \"started_at_override\": \"2006-04-05T03:47:46.822Z\",\n    \"group_id\": \"50a89cb1-bbd8-fa42-2888-4f4ea2ec4e1d\",\n    \"workflow_state_id\": 7231,\n    \"updated_at\": \"1973-01-04T08:05:24.350Z\",\n    \"group_mention_ids\": [\n      \"be4f6476-5c91-804a-6d27-e9fea0602d28\",\n      \"82553ba9-b9e6-8133-35c3-6437f20ceb86\"\n    ],\n    \"follower_ids\": [\n      \"6b31e583-8571-a004-8e4c-8d42ae8c50f9\",\n      \"83ec073e-9dcd-d8da-b315-06fefc1e8365\"\n    ],\n    \"owner_ids\": [\n      \"f111cca3-b554-06f8-b030-c389b9cd76e3\",\n      \"011139ec-9258-c4c1-dbba-5933148c2c66\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 9353,\n    \"estimate\": 3265,\n    \"position\": 8804,\n    \"blocked\": false,\n    \"project_id\": 1580,\n    \"linked_file_ids\": [\n      7498,\n      552\n    ],\n    \"deadline\": \"2005-02-16T13:28:06.964Z\",\n    \"stats\": {\n      \"num_related_documents\": 9267\n    },\n    \"comment_ids\": [\n      9425,\n      5569\n    ],\n    \"created_at\": \"1967-12-26T00:44:16.633Z\",\n    \"moved_at\": \"2017-02-15T16:40:18.838Z\",\n    \"description\": \"string\",\n    \"synced_item\": {\n      \"external_id\": \"string\",\n      \"url\": \"string\"\n    },\n    \"custom_fields\": [\n      {\n        \"field_id\": \"35363aa2-c713-8fb3-7835-537f5381150b\",\n        \"value_id\": \"b356488d-c30b-7163-d88e-9ed83c9238e0\",\n        \"value\": \"string\"\n      },\n      {\n        \"field_id\": \"014a74ba-1365-b9e5-5ce5-d9fdf214f6d6\",\n        \"value_id\": \"3316d7c3-d7ba-bb27-4b4d-060bfc840275\",\n        \"value\": \"string\"\n      }\n    ],\n    \"sub_task_story_ids\": [\n      3426,\n      235\n    ],\n    \"formatted_vcs_branch_name\": \"string\",\n    \"lead_time\": 2110,\n    \"parent_story_id\": 7213,\n    \"cycle_time\": 5787\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20016ff1-a644-4755-9e73-201bcc686cff",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "external-link",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_link",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3850ff9f-dacf-4b9b-8c8f-45a731b1d519",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "external-link",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_link",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "611e118f-ae4c-4d40-82fa-08d70e45db5f",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "external-link",
+                    "stories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_link",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3ec453b2-166e-426f-bf59-c0c9add06516",
+    "name": "Shortcut Categories External Link API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

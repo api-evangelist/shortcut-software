@@ -1,0 +1,1596 @@
+{
+  "item": [
+    {
+      "id": "36378419-1b86-41f3-9b36-a2acb220a38b",
+      "name": "Milestones",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "65c8fc6e-a402-4473-8d6f-6ae726a78e15",
+          "name": "List Milestones",
+          "request": {
+            "name": "List Milestones",
+            "description": {
+              "content": "(Deprecated: Use 'List Objectives') List Milestones returns a list of all Milestones and their attributes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d360521c-253f-494b-b289-9c51e556f07a",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"started\": false,\n    \"entity_type\": \"string\",\n    \"completed_at_override\": \"1996-01-04T15:54:40.258Z\",\n    \"started_at\": \"1961-05-28T11:02:20.180Z\",\n    \"completed_at\": \"1977-07-12T09:39:05.280Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"state\": \"string\",\n    \"started_at_override\": \"1996-03-07T02:46:30.821Z\",\n    \"updated_at\": \"1999-08-27T02:05:58.297Z\",\n    \"categories\": [\n      {\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#AEDDBe\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1987-07-03T17:25:10.534Z\",\n        \"external_id\": \"string\",\n        \"id\": 2311,\n        \"created_at\": \"1991-06-17T15:32:13.186Z\"\n      },\n      {\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#b38d3b\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1981-10-29T00:28:49.782Z\",\n        \"external_id\": \"string\",\n        \"id\": 3161,\n        \"created_at\": \"1950-02-21T11:10:42.784Z\"\n      }\n    ],\n    \"id\": 5393,\n    \"key_result_ids\": [\n      \"b3ef6145-4ce1-59a6-8a18-b0f7cc2b18a2\",\n      \"52ea1bbd-71cc-84bd-0819-8596c439aed3\"\n    ],\n    \"position\": 8439,\n    \"stats\": {\n      \"num_related_documents\": 1268,\n      \"average_cycle_time\": 4014,\n      \"average_lead_time\": 1103\n    },\n    \"created_at\": \"1990-06-26T04:54:19.842Z\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"started\": true,\n    \"entity_type\": \"string\",\n    \"completed_at_override\": \"1997-09-19T05:42:48.302Z\",\n    \"started_at\": \"1953-09-10T14:02:02.711Z\",\n    \"completed_at\": \"1957-04-21T23:12:25.068Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"state\": \"string\",\n    \"started_at_override\": \"1949-04-29T14:00:55.832Z\",\n    \"updated_at\": \"2007-08-13T19:41:20.578Z\",\n    \"categories\": [\n      {\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#b2Fc0d\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1949-06-11T04:54:28.122Z\",\n        \"external_id\": \"string\",\n        \"id\": 1056,\n        \"created_at\": \"1980-01-09T14:51:16.666Z\"\n      },\n      {\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#b866AF\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2000-12-11T02:19:59.531Z\",\n        \"external_id\": \"string\",\n        \"id\": 9745,\n        \"created_at\": \"1991-03-19T17:24:18.687Z\"\n      }\n    ],\n    \"id\": 2330,\n    \"key_result_ids\": [\n      \"be76e994-0ed5-8ad9-5114-972d48048a4b\",\n      \"0144460d-9aa8-3e86-e300-4d768df7e7ac\"\n    ],\n    \"position\": 8563,\n    \"stats\": {\n      \"num_related_documents\": 3530,\n      \"average_cycle_time\": 8413,\n      \"average_lead_time\": 7743\n    },\n    \"created_at\": \"1955-03-29T23:49:24.027Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75c4bdaa-c525-44ce-9157-f0ea03178377",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7d0dfed-658d-41fb-84dc-6aef70bd1963",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5719bb53-a1ce-437c-b50c-d33f9ee70808",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b09e307-041d-483c-9986-0c21ed4f9a74",
+          "name": "Create Milestone",
+          "request": {
+            "name": "Create Milestone",
+            "description": {
+              "content": "(Deprecated: Use 'Create Objective') Create Milestone allows you to create a new Milestone in Shortcut.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d93f4b4-b27f-4c59-9c48-646322c80e1d",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"2006-08-30T22:56:04.482Z\",\n  \"started_at\": \"1956-01-04T11:27:15.303Z\",\n  \"completed_at\": \"1960-03-17T04:16:44.059Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": true,\n  \"state\": \"string\",\n  \"started_at_override\": \"2001-10-09T13:46:32.355Z\",\n  \"updated_at\": \"1975-11-23T23:57:07.590Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#28Af5d\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1955-12-28T22:38:12.467Z\",\n      \"external_id\": \"string\",\n      \"id\": 1307,\n      \"created_at\": \"1989-08-02T03:54:24.193Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#B7c0eB\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-09-24T18:14:04.891Z\",\n      \"external_id\": \"string\",\n      \"id\": 4656,\n      \"created_at\": \"1979-10-02T16:44:08.507Z\"\n    }\n  ],\n  \"id\": 5621,\n  \"key_result_ids\": [\n    \"f1faa271-5b63-4b50-d68d-65d32f206f48\",\n    \"e6388f6b-ca8e-d6aa-da14-021d4350d500\"\n  ],\n  \"position\": 1886,\n  \"stats\": {\n    \"num_related_documents\": 1953,\n    \"average_cycle_time\": 7641,\n    \"average_lead_time\": 9749\n  },\n  \"created_at\": \"2019-02-24T06:15:34.616Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0352ee38-db38-45c9-9164-9c145299fff8",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "caa5ea5c-3722-4dc5-8022-468a9663126f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97b79b40-65e1-47fd-b921-5a6d42b6954d",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ef6dfdc4-95e8-4026-b51e-65d3dbd6e213",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daa0b6e9-ad73-4fee-88a6-e19ff24a060f",
+          "name": "Get Milestone",
+          "request": {
+            "name": "Get Milestone",
+            "description": {
+              "content": "(Deprecated: Use 'Get Objective') Get Milestone returns information about a chosen Milestone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones",
+                ":milestone-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "milestone-public-id",
+                  "description": "(Required) The ID of the Milestone."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f59aa6f-9de2-475d-80e4-d94a68e2c5b4",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"2006-08-30T22:56:04.482Z\",\n  \"started_at\": \"1956-01-04T11:27:15.303Z\",\n  \"completed_at\": \"1960-03-17T04:16:44.059Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": true,\n  \"state\": \"string\",\n  \"started_at_override\": \"2001-10-09T13:46:32.355Z\",\n  \"updated_at\": \"1975-11-23T23:57:07.590Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#28Af5d\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1955-12-28T22:38:12.467Z\",\n      \"external_id\": \"string\",\n      \"id\": 1307,\n      \"created_at\": \"1989-08-02T03:54:24.193Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#B7c0eB\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-09-24T18:14:04.891Z\",\n      \"external_id\": \"string\",\n      \"id\": 4656,\n      \"created_at\": \"1979-10-02T16:44:08.507Z\"\n    }\n  ],\n  \"id\": 5621,\n  \"key_result_ids\": [\n    \"f1faa271-5b63-4b50-d68d-65d32f206f48\",\n    \"e6388f6b-ca8e-d6aa-da14-021d4350d500\"\n  ],\n  \"position\": 1886,\n  \"stats\": {\n    \"num_related_documents\": 1953,\n    \"average_cycle_time\": 7641,\n    \"average_lead_time\": 9749\n  },\n  \"created_at\": \"2019-02-24T06:15:34.616Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f556f566-32d1-4d12-a86d-5db033e22c29",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f8a54bd9-3959-47df-9362-6729642d49a9",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "be4403ef-7f36-4ddf-b810-8fd7e3068719",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a2806e7-e95f-4291-92d1-c2805f47352b",
+          "name": "Update Milestone",
+          "request": {
+            "name": "Update Milestone",
+            "description": {
+              "content": "(Deprecated: Use 'Update Objective') Update Milestone can be used to update Milestone properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones",
+                ":milestone-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "milestone-public-id",
+                  "description": "(Required) The ID of the Milestone."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79e21049-618a-4862-98ed-511209923bfc",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"2006-08-30T22:56:04.482Z\",\n  \"started_at\": \"1956-01-04T11:27:15.303Z\",\n  \"completed_at\": \"1960-03-17T04:16:44.059Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": true,\n  \"state\": \"string\",\n  \"started_at_override\": \"2001-10-09T13:46:32.355Z\",\n  \"updated_at\": \"1975-11-23T23:57:07.590Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#28Af5d\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1955-12-28T22:38:12.467Z\",\n      \"external_id\": \"string\",\n      \"id\": 1307,\n      \"created_at\": \"1989-08-02T03:54:24.193Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#B7c0eB\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-09-24T18:14:04.891Z\",\n      \"external_id\": \"string\",\n      \"id\": 4656,\n      \"created_at\": \"1979-10-02T16:44:08.507Z\"\n    }\n  ],\n  \"id\": 5621,\n  \"key_result_ids\": [\n    \"f1faa271-5b63-4b50-d68d-65d32f206f48\",\n    \"e6388f6b-ca8e-d6aa-da14-021d4350d500\"\n  ],\n  \"position\": 1886,\n  \"stats\": {\n    \"num_related_documents\": 1953,\n    \"average_cycle_time\": 7641,\n    \"average_lead_time\": 9749\n  },\n  \"created_at\": \"2019-02-24T06:15:34.616Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f1bf7c6-17cd-4e68-be43-d5b00ed230cb",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c304a4c-339b-45cf-acd5-32130743c792",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c0f2c809-d804-4642-8324-8e2af363c5dd",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19a6e19d-63c4-49b0-92ec-6af8c26de1e2",
+          "name": "Delete Milestone",
+          "request": {
+            "name": "Delete Milestone",
+            "description": {
+              "content": "(Deprecated: Use 'Delete Objective') Delete Milestone can be used to delete any Milestone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones",
+                ":milestone-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "milestone-public-id",
+                  "description": "(Required) The ID of the Milestone."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "005badd1-efa5-486e-ae0a-831285aee3c4",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e73c3f8-7786-4052-9ba8-49fefd97a03f",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7074915c-c41d-431b-9928-a186380a76dd",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90ed66c4-7470-4c2c-84ae-998ad9f4cdd4",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb9c6f33-4720-4d42-94df-c8efbdaebf94",
+          "name": "List Milestone Epics",
+          "request": {
+            "name": "List Milestone Epics",
+            "description": {
+              "content": "(Deprecated: Use 'List Objective Epics') List all of the Epics within the Milestone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "milestones",
+                ":milestone-public-id",
+                "epics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "milestone-public-id",
+                  "description": "(Required) The ID of the Milestone."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2186979-2e0b-47aa-af57-27ae8d67e47e",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": false,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#4DCf0a\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1984-09-25T09:57:53.948Z\",\n        \"external_id\": \"string\",\n        \"id\": 820,\n        \"created_at\": \"1953-09-17T23:39:54.376Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#9BAbE2\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2006-11-29T14:00:54.659Z\",\n        \"external_id\": \"string\",\n        \"id\": 5070,\n        \"created_at\": \"2025-06-03T03:29:31.186Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"9ad8642f-837c-2d9f-f514-8317a3769044\",\n      \"30325265-9dbf-4715-6a9b-3fb83d15b2e9\"\n    ],\n    \"member_mention_ids\": [\n      \"4b87a9c5-2407-a375-0594-b6ae8bca897e\",\n      \"9f4b92e8-c6a3-051c-122a-180bfcfcfca1\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"e9c3b156-6b40-27f9-e4ca-109be8c0cf07\",\n        \"associated_stories_count\": 2362\n      },\n      {\n        \"group_id\": \"aeafb7ec-a4b5-2c7f-75cd-30760fc52447\",\n        \"associated_stories_count\": 3252\n      }\n    ],\n    \"project_ids\": [\n      4417,\n      5671\n    ],\n    \"stories_without_projects\": 4197,\n    \"completed_at_override\": \"2008-05-30T21:30:29.286Z\",\n    \"productboard_plugin_id\": \"396abdbf-69d7-eb77-60ea-048c565253cb\",\n    \"started_at\": \"1959-01-15T22:39:40.669Z\",\n    \"completed_at\": \"2000-02-20T02:03:47.907Z\",\n    \"objective_ids\": [\n      8228,\n      7266\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"2005-07-20T20:34:35.446Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 3923,\n    \"requested_by_id\": \"d75cb84f-0ee0-0324-908e-8f0e6f384630\",\n    \"epic_state_id\": 3205,\n    \"label_ids\": [\n      6325,\n      280\n    ],\n    \"started_at_override\": \"2026-06-11T02:36:58.198Z\",\n    \"group_id\": \"b9fa9a5f-7366-03f6-3fcf-d0cb01b81994\",\n    \"updated_at\": \"1969-04-26T11:52:05.063Z\",\n    \"group_mention_ids\": [\n      \"a6fc9f47-036f-4602-bfc1-50dd951255e0\",\n      \"3f01209b-a709-0f04-b3f9-7b7fc0830198\"\n    ],\n    \"productboard_id\": \"76863c75-cbd9-cddd-e0ef-5982a926840b\",\n    \"follower_ids\": [\n      \"bcf2a5bf-180d-7a1b-ea4b-62d84b38416a\",\n      \"8478d423-a496-445f-7786-b6023871d680\"\n    ],\n    \"group_ids\": [\n      \"7c6de2ef-1785-a95b-3b51-01cefd55f743\",\n      \"5e916ff2-04a7-a5f5-3fff-b542fcff746b\"\n    ],\n    \"owner_ids\": [\n      \"7b6591fa-fc3f-489a-4f53-108a25fe32a2\",\n      \"697fb88f-23d6-8d2b-2973-d9a6ebbabaf9\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 3234,\n    \"position\": 987,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"2023-09-07T15:15:55.646Z\",\n    \"stats\": {\n      \"num_points_done\": 5967,\n      \"num_related_documents\": 6642,\n      \"num_stories_unstarted\": 6669,\n      \"num_stories_total\": 4042,\n      \"last_story_update\": \"1950-03-02T05:33:04.586Z\",\n      \"num_points_started\": 3028,\n      \"num_points_unstarted\": 7201,\n      \"num_stories_started\": 9365,\n      \"num_stories_unestimated\": 6892,\n      \"num_stories_backlog\": 2274,\n      \"num_points_backlog\": 2572,\n      \"num_points\": 5275,\n      \"num_stories_done\": 9772\n    },\n    \"created_at\": \"1963-08-11T04:01:17.938Z\",\n    \"description\": \"string\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": true,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#c3D4d4\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2025-04-16T03:10:07.998Z\",\n        \"external_id\": \"string\",\n        \"id\": 6765,\n        \"created_at\": \"1955-09-07T06:11:10.983Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#F1552D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2024-02-09T22:38:04.628Z\",\n        \"external_id\": \"string\",\n        \"id\": 624,\n        \"created_at\": \"1952-07-07T12:24:56.781Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"a8c5f953-da05-f41d-5a96-db93a73d0401\",\n      \"0fe27c29-ad86-70d0-0b3f-457395db6de2\"\n    ],\n    \"member_mention_ids\": [\n      \"ca718a23-2ac6-67fc-ca41-2917f368bd40\",\n      \"120a0a53-01d0-a3b3-aaee-d20e6a8cf04f\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"a0711dac-53fb-6537-bac9-78535ebb4122\",\n        \"associated_stories_count\": 2401\n      },\n      {\n        \"group_id\": \"1f63074d-5804-d812-baeb-64a0177ecf0b\",\n        \"associated_stories_count\": 3324\n      }\n    ],\n    \"project_ids\": [\n      1393,\n      3185\n    ],\n    \"stories_without_projects\": 4234,\n    \"completed_at_override\": \"1997-09-13T17:38:39.140Z\",\n    \"productboard_plugin_id\": \"a1e28533-bfee-f4e4-8bea-306f9a796aa2\",\n    \"started_at\": \"1954-01-18T09:37:34.412Z\",\n    \"completed_at\": \"1970-08-05T11:55:45.245Z\",\n    \"objective_ids\": [\n      1738,\n      5097\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"1964-07-05T02:12:25.489Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 2312,\n    \"requested_by_id\": \"c3c75ca4-d0f5-20c2-b3b4-ea39c2abc3e2\",\n    \"epic_state_id\": 9634,\n    \"label_ids\": [\n      5063,\n      8453\n    ],\n    \"started_at_override\": \"1989-06-18T18:55:08.477Z\",\n    \"group_id\": \"cb26f0a3-f10c-7adf-dece-90277cafe499\",\n    \"updated_at\": \"1971-12-29T18:39:41.664Z\",\n    \"group_mention_ids\": [\n      \"a700885b-3a76-4d33-ab41-6dc919c30f30\",\n      \"48b68cdc-ec5b-49a7-3909-bdef0ade01ba\"\n    ],\n    \"productboard_id\": \"8b726cfc-b856-0a19-abf4-09e93beaf754\",\n    \"follower_ids\": [\n      \"88ff5f2a-72c8-e6f4-8d6c-470c0a5089f7\",\n      \"c785627b-d98c-a91e-98c9-8bdb6fa72173\"\n    ],\n    \"group_ids\": [\n      \"d4c33914-532a-e143-8eff-5838ffe3edf9\",\n      \"5db52e71-aeb1-2ad0-8462-e0487f62e646\"\n    ],\n    \"owner_ids\": [\n      \"7fb0f9c3-b21c-b267-c2db-c5a3f73d972f\",\n      \"a7b50531-97d6-0078-944d-179b3fa8afed\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 9385,\n    \"position\": 7357,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"1962-09-03T21:24:31.262Z\",\n    \"stats\": {\n      \"num_points_done\": 6159,\n      \"num_related_documents\": 3376,\n      \"num_stories_unstarted\": 8197,\n      \"num_stories_total\": 5991,\n      \"last_story_update\": \"2020-07-10T09:36:03.974Z\",\n      \"num_points_started\": 5900,\n      \"num_points_unstarted\": 2834,\n      \"num_stories_started\": 3261,\n      \"num_stories_unestimated\": 7207,\n      \"num_stories_backlog\": 4957,\n      \"num_points_backlog\": 7898,\n      \"num_points\": 9763,\n      \"num_stories_done\": 8196\n    },\n    \"created_at\": \"1948-08-09T23:48:09.782Z\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd2c0686-1a82-42d6-8484-4d09b82fd244",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cf153b35-af39-4772-ba7b-1d5a3b81eb08",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "172edbe2-b1cd-4dc4-bd7c-d17d0738119d",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "milestones",
+                    ":milestone-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "milestone-public-id",
+                      "description": "(Required) The ID of the Milestone."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d566d57-641b-4369-afd7-864948f9f1e0",
+    "name": "Shortcut Categories Milestones API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

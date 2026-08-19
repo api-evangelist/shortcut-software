@@ -1,0 +1,151 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/categories"
+          },
+          "docs": "List Categories returns a list of all Categories and their attributes."
+        },
+        {
+          "info": {
+            "name": "Create Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/categories",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Category allows you to create a new Category in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Get Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/categories/:category-public-id",
+            "params": [
+              {
+                "name": "category-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Category."
+              }
+            ]
+          },
+          "docs": "Get Category returns information about the selected Category."
+        },
+        {
+          "info": {
+            "name": "Update Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/categories/:category-public-id",
+            "params": [
+              {
+                "name": "category-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Category you wish to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Category allows you to replace a Category name with another name. If you try to name a Category something that already exists, you will receive a 422 response."
+        },
+        {
+          "info": {
+            "name": "Delete Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/categories/:category-public-id",
+            "params": [
+              {
+                "name": "category-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Category."
+              }
+            ]
+          },
+          "docs": "Delete Category can be used to delete any Category."
+        },
+        {
+          "info": {
+            "name": "List Category Milestones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/categories/:category-public-id/milestones",
+            "params": [
+              {
+                "name": "category-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Category."
+              }
+            ]
+          },
+          "docs": "List Category Milestones returns a list of all Milestones with the Category."
+        },
+        {
+          "info": {
+            "name": "List Category Objectives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/categories/:category-public-id/objectives",
+            "params": [
+              {
+                "name": "category-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Category."
+              }
+            ]
+          },
+          "docs": "Returns a list of all Objectives with the Category."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

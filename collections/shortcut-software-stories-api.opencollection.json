@@ -1,0 +1,521 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Stories API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Story",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Story is used to add a new story to your Shortcut Workspace.\n    This endpoint requires that either **workflow_state_id** or **project_id** be provided, but will reject the request if both or neither are specified. The workflow_state_id has been marked as required and is the recommended field to specify because we are in the process of sunsetting Projects in Shortcut."
+        },
+        {
+          "info": {
+            "name": "Create Multiple Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Multiple Stories allows you to create multiple stories in a single request using the same syntax as [Create Story](https://developer.shortcut.com/api/rest/v3#create-story)."
+        },
+        {
+          "info": {
+            "name": "Update Multiple Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/stories/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Multiple Stories allows you to make changes to numerous stories at once."
+        },
+        {
+          "info": {
+            "name": "Delete Multiple Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/stories/bulk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete Multiple Stories allows you to delete multiple archived stories at once."
+        },
+        {
+          "info": {
+            "name": "Create Story From Template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/from-template",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Story From Template is used to add a new story derived from a template to your Shortcut Workspace."
+        },
+        {
+          "info": {
+            "name": "Query Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search Stories lets you search Stories based on desired parameters."
+        },
+        {
+          "info": {
+            "name": "Get Story",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story."
+              }
+            ]
+          },
+          "docs": "Get Story returns information about a chosen Story."
+        },
+        {
+          "info": {
+            "name": "Update Story",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of this story."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Story can be used to update Story properties."
+        },
+        {
+          "info": {
+            "name": "Delete Story",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story."
+              }
+            ]
+          },
+          "docs": "Delete Story can be used to delete any Story."
+        },
+        {
+          "info": {
+            "name": "List Story Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              }
+            ]
+          },
+          "docs": "Lists Comments associated with a Story"
+        },
+        {
+          "info": {
+            "name": "Create Story Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Comment allows you to create a Comment on any Story."
+        },
+        {
+          "info": {
+            "name": "Get Story Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ]
+          },
+          "docs": "Get Comment is used to get Comment information."
+        },
+        {
+          "info": {
+            "name": "Update Story Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Comment replaces the text of the existing Comment."
+        },
+        {
+          "info": {
+            "name": "Delete Story Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ]
+          },
+          "docs": "Delete a Comment from any story."
+        },
+        {
+          "info": {
+            "name": "Create Story Reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id/reactions",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a reaction to a story comment."
+        },
+        {
+          "info": {
+            "name": "Delete Story Reaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id/reactions",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Comment is in."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete a reaction from any story comment."
+        },
+        {
+          "info": {
+            "name": "Unlink Comment thread from Slack",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/comments/:comment-public-id/unlink-from-slack",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story to unlink."
+              },
+              {
+                "name": "comment-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Comment to unlink."
+              }
+            ]
+          },
+          "docs": "Unlinks a Comment from its linked Slack thread (Comment replies and Slack replies will no longer be synced)"
+        },
+        {
+          "info": {
+            "name": "Story History",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/history",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story."
+              }
+            ]
+          },
+          "docs": "Story History"
+        },
+        {
+          "info": {
+            "name": "List Story Sub tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/sub-tasks",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story."
+              }
+            ]
+          },
+          "docs": "List Story Sub tasks returns a list of all Sub-task Stories for a given parent Story."
+        },
+        {
+          "info": {
+            "name": "Create Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/tasks",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Story that the Task will be in."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Task is used to create a new task in a Story."
+        },
+        {
+          "info": {
+            "name": "Get Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/tasks/:task-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Story this Task is associated with."
+              },
+              {
+                "name": "task-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Task."
+              }
+            ]
+          },
+          "docs": "Returns information about a chosen Task."
+        },
+        {
+          "info": {
+            "name": "Update Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/tasks/:task-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the parent Story."
+              },
+              {
+                "name": "task-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the Task you wish to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Task can be used to update Task properties."
+        },
+        {
+          "info": {
+            "name": "Delete Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/stories/:story-public-id/tasks/:task-public-id",
+            "params": [
+              {
+                "name": "story-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Story this Task is associated with."
+              },
+              {
+                "name": "task-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Task."
+              }
+            ]
+          },
+          "docs": "Delete Task can be used to delete any previously created Task on a Story."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories External Link API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "External Link",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get External Link Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/external-link/stories",
+            "params": [
+              {
+                "name": "external_link",
+                "value": "",
+                "type": "query",
+                "description": "The external link associated with one or more stories."
+              }
+            ]
+          },
+          "docs": "Get Stories which have a given External Link associated with them."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

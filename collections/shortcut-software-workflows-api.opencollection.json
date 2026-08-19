@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Workflows API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Workflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/workflows"
+          },
+          "docs": "Returns a list of all Workflows in the Workspace."
+        },
+        {
+          "info": {
+            "name": "Get Workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/workflows/:workflow-public-id",
+            "params": [
+              {
+                "name": "workflow-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the Workflow."
+              }
+            ]
+          },
+          "docs": "Get Workflow returns information about a chosen Workflow."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

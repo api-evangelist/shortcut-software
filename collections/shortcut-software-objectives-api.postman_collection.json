@@ -1,0 +1,2406 @@
+{
+  "item": [
+    {
+      "id": "7ab90b2c-3886-4133-9dd7-0ec23da38dad",
+      "name": "Objectives",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b6f06053-3631-4881-b0bd-b11d89c838d8",
+          "name": "List Objectives",
+          "request": {
+            "name": "List Objectives",
+            "description": {
+              "content": "List Objectives returns a list of all Objectives and their attributes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d18fa80e-3426-4a96-a82d-ed042fdbb6e3",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"started\": true,\n    \"entity_type\": \"string\",\n    \"completed_at_override\": \"1993-07-26T14:52:12.804Z\",\n    \"started_at\": \"1950-06-28T21:08:46.420Z\",\n    \"completed_at\": \"1970-04-06T06:25:25.834Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"state\": \"string\",\n    \"started_at_override\": \"1988-11-28T09:22:25.838Z\",\n    \"updated_at\": \"1980-02-17T23:32:17.909Z\",\n    \"categories\": [\n      {\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#92c05A\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1992-04-17T21:47:11.407Z\",\n        \"external_id\": \"string\",\n        \"id\": 4837,\n        \"created_at\": \"1975-03-29T01:23:05.285Z\"\n      },\n      {\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#44d3d5\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1947-06-27T15:57:43.084Z\",\n        \"external_id\": \"string\",\n        \"id\": 2308,\n        \"created_at\": \"1997-08-13T13:06:05.125Z\"\n      }\n    ],\n    \"id\": 1731,\n    \"key_result_ids\": [\n      \"eeb53b98-d8fd-d71c-6ada-af17f2b90ae2\",\n      \"0a8b3d27-5a31-2aeb-3839-bceccc106b9b\"\n    ],\n    \"position\": 735,\n    \"stats\": {\n      \"num_related_documents\": 2084,\n      \"average_cycle_time\": 5042,\n      \"average_lead_time\": 7795\n    },\n    \"created_at\": \"1949-12-25T16:48:18.926Z\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"description\": \"string\",\n    \"archived\": false,\n    \"started\": true,\n    \"entity_type\": \"string\",\n    \"completed_at_override\": \"1963-02-06T13:33:37.727Z\",\n    \"started_at\": \"1980-06-12T18:42:16.986Z\",\n    \"completed_at\": \"1963-06-28T17:41:19.233Z\",\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"state\": \"string\",\n    \"started_at_override\": \"1967-04-02T00:22:29.553Z\",\n    \"updated_at\": \"2014-08-11T08:12:03.643Z\",\n    \"categories\": [\n      {\n        \"archived\": false,\n        \"entity_type\": \"string\",\n        \"color\": \"#Fe6EBA\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"2002-08-03T18:21:42.524Z\",\n        \"external_id\": \"string\",\n        \"id\": 9183,\n        \"created_at\": \"1947-09-10T10:03:54.227Z\"\n      },\n      {\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#EcE9F2\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"type\": \"string\",\n        \"updated_at\": \"1950-02-20T19:06:09.855Z\",\n        \"external_id\": \"string\",\n        \"id\": 6258,\n        \"created_at\": \"1994-10-16T19:18:10.484Z\"\n      }\n    ],\n    \"id\": 749,\n    \"key_result_ids\": [\n      \"6e0c724f-e489-78f9-fa93-2ebcbdd81960\",\n      \"3ec4ae80-1b24-e018-3071-7d4b2799fc09\"\n    ],\n    \"position\": 7751,\n    \"stats\": {\n      \"num_related_documents\": 7206,\n      \"average_cycle_time\": 3257,\n      \"average_lead_time\": 5389\n    },\n    \"created_at\": \"1984-12-21T18:22:50.819Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae76cb14-7d17-402f-ab19-fb35a61443c7",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43dcb5c5-b0d8-4965-b04a-56494f4ceba3",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dc843713-7119-45e4-b79a-44e4000cdae3",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36b5b0bf-6e90-4de4-8b5d-54e992159a98",
+          "name": "Create Objective",
+          "request": {
+            "name": "Create Objective",
+            "description": {
+              "content": "Create Objective allows you to create a new Objective in Shortcut.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "abb87768-89e8-4185-bc68-8d7b21419f63",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"1976-07-04T09:40:07.608Z\",\n  \"started_at\": \"1986-01-29T14:11:19.337Z\",\n  \"completed_at\": \"1995-04-04T23:26:25.950Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": false,\n  \"state\": \"string\",\n  \"started_at_override\": \"2005-03-19T06:17:24.568Z\",\n  \"updated_at\": \"1971-07-31T05:34:41.361Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#69e3D5\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"2018-01-22T06:07:40.830Z\",\n      \"external_id\": \"string\",\n      \"id\": 8949,\n      \"created_at\": \"1963-04-03T00:20:07.322Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#E4fBC2\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-02-08T15:03:43.899Z\",\n      \"external_id\": \"string\",\n      \"id\": 3453,\n      \"created_at\": \"2015-07-30T05:10:04.148Z\"\n    }\n  ],\n  \"id\": 2637,\n  \"key_result_ids\": [\n    \"3917fce6-e92c-7d2c-61a7-721836c61986\",\n    \"5328fe37-47af-c17d-1697-2ed1bba943a7\"\n  ],\n  \"position\": 44,\n  \"stats\": {\n    \"num_related_documents\": 8044,\n    \"average_cycle_time\": 6429,\n    \"average_lead_time\": 7882\n  },\n  \"created_at\": \"1998-11-13T09:10:07.169Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "882c4dd5-3d54-4f05-8fdd-58aca168de14",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff22fb9d-35a7-4efc-9157-7e351e98f59e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reason_tag\": \"entitlement-violation\",\n  \"entitlement_tag\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0379557e-1fbe-412f-ad7b-a3549459cc49",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf61273a-cbb8-46b6-9feb-914d1fd64256",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5458a89e-731a-4888-b8a5-7e0001662330",
+          "name": "Get Objective",
+          "request": {
+            "name": "Get Objective",
+            "description": {
+              "content": "Get Objective returns information about a chosen Objective.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b934846-e269-4b7f-9c2a-8f5b513bbddd",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"1976-07-04T09:40:07.608Z\",\n  \"started_at\": \"1986-01-29T14:11:19.337Z\",\n  \"completed_at\": \"1995-04-04T23:26:25.950Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": false,\n  \"state\": \"string\",\n  \"started_at_override\": \"2005-03-19T06:17:24.568Z\",\n  \"updated_at\": \"1971-07-31T05:34:41.361Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#69e3D5\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"2018-01-22T06:07:40.830Z\",\n      \"external_id\": \"string\",\n      \"id\": 8949,\n      \"created_at\": \"1963-04-03T00:20:07.322Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#E4fBC2\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-02-08T15:03:43.899Z\",\n      \"external_id\": \"string\",\n      \"id\": 3453,\n      \"created_at\": \"2015-07-30T05:10:04.148Z\"\n    }\n  ],\n  \"id\": 2637,\n  \"key_result_ids\": [\n    \"3917fce6-e92c-7d2c-61a7-721836c61986\",\n    \"5328fe37-47af-c17d-1697-2ed1bba943a7\"\n  ],\n  \"position\": 44,\n  \"stats\": {\n    \"num_related_documents\": 8044,\n    \"average_cycle_time\": 6429,\n    \"average_lead_time\": 7882\n  },\n  \"created_at\": \"1998-11-13T09:10:07.169Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2668043-72b9-469c-b9d9-6343faf32241",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f19077b-e18e-43d4-9125-d26b1b3af95b",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ead47269-42e8-4706-8d51-05e57ef7b1c0",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4699e32a-79ba-471a-a96d-98dc4670dfb0",
+          "name": "Update Objective",
+          "request": {
+            "name": "Update Objective",
+            "description": {
+              "content": "Update Objective can be used to update Objective properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e94274de-fd53-4011-8237-c7ad50987fef",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"app_url\": \"string\",\n  \"description\": \"string\",\n  \"archived\": false,\n  \"started\": false,\n  \"entity_type\": \"string\",\n  \"completed_at_override\": \"1976-07-04T09:40:07.608Z\",\n  \"started_at\": \"1986-01-29T14:11:19.337Z\",\n  \"completed_at\": \"1995-04-04T23:26:25.950Z\",\n  \"name\": \"string\",\n  \"global_id\": \"string\",\n  \"completed\": false,\n  \"state\": \"string\",\n  \"started_at_override\": \"2005-03-19T06:17:24.568Z\",\n  \"updated_at\": \"1971-07-31T05:34:41.361Z\",\n  \"categories\": [\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#69e3D5\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"2018-01-22T06:07:40.830Z\",\n      \"external_id\": \"string\",\n      \"id\": 8949,\n      \"created_at\": \"1963-04-03T00:20:07.322Z\"\n    },\n    {\n      \"archived\": false,\n      \"entity_type\": \"string\",\n      \"color\": \"#E4fBC2\",\n      \"name\": \"string\",\n      \"global_id\": \"string\",\n      \"type\": \"string\",\n      \"updated_at\": \"1972-02-08T15:03:43.899Z\",\n      \"external_id\": \"string\",\n      \"id\": 3453,\n      \"created_at\": \"2015-07-30T05:10:04.148Z\"\n    }\n  ],\n  \"id\": 2637,\n  \"key_result_ids\": [\n    \"3917fce6-e92c-7d2c-61a7-721836c61986\",\n    \"5328fe37-47af-c17d-1697-2ed1bba943a7\"\n  ],\n  \"position\": 44,\n  \"stats\": {\n    \"num_related_documents\": 8044,\n    \"average_cycle_time\": 6429,\n    \"average_lead_time\": 7882\n  },\n  \"created_at\": \"1998-11-13T09:10:07.169Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82e6c95d-9f7e-4a23-9868-a144047faeca",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "702e2fca-e81c-4101-9c65-12d6436a5d99",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25c2182a-7d67-4dee-9473-aa05e4363131",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"completed_at_override\": \"<dateTime>\",\n  \"name\": \"<string>\",\n  \"state\": \"<string>\",\n  \"started_at_override\": \"<dateTime>\",\n  \"categories\": [\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"color\": \"<css-color>\",\n      \"external_id\": \"<string>\"\n    }\n  ],\n  \"before_id\": \"<long>\",\n  \"after_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6565f04-11d6-40eb-a343-ed5021198af2",
+          "name": "Delete Objective",
+          "request": {
+            "name": "Delete Objective",
+            "description": {
+              "content": "Delete Objective can be used to delete any Objective.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The ID of the Objective."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1600e27d-3101-4df1-8526-22a43f972a79",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1f61f658-ebad-4072-974a-f4a5de1f297e",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7a989b15-013d-4d50-9f7f-2a12d538b1c0",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d01e8af3-5a2c-479b-b861-e49fa896735e",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b93209b-c23f-4a1f-84c1-8c1eb3b461c6",
+          "name": "List Objective Epics",
+          "request": {
+            "name": "List Objective Epics",
+            "description": {
+              "content": "List all of the Epics within the Objective.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id",
+                "epics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c48800a8-10f3-4e7f-b820-a61761b3496e",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": false,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#5fc00D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1973-07-13T06:50:12.989Z\",\n        \"external_id\": \"string\",\n        \"id\": 2188,\n        \"created_at\": \"2020-05-21T10:57:22.407Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#B98b53\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1970-03-16T08:59:24.367Z\",\n        \"external_id\": \"string\",\n        \"id\": 4405,\n        \"created_at\": \"2016-10-23T06:39:31.674Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"d43c6ad1-5cbf-4976-7a11-c92ceb4efc2f\",\n      \"150aa4d4-3c51-4a7f-9924-09500949ae76\"\n    ],\n    \"member_mention_ids\": [\n      \"61a0bcef-a6ae-2f7e-4b1d-16661ee69a82\",\n      \"36e0937e-cf23-5aad-f842-cb0175f146d8\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"51250df9-afd7-c8a2-af7a-47ad50809782\",\n        \"associated_stories_count\": 5072\n      },\n      {\n        \"group_id\": \"f7b7194e-67bd-0579-11ef-2af2c45e3ca7\",\n        \"associated_stories_count\": 1478\n      }\n    ],\n    \"project_ids\": [\n      3441,\n      6507\n    ],\n    \"stories_without_projects\": 1184,\n    \"completed_at_override\": \"2013-12-31T03:53:05.257Z\",\n    \"productboard_plugin_id\": \"23731c4e-957c-1492-cd17-6a28b087eb19\",\n    \"started_at\": \"1956-12-17T16:07:14.586Z\",\n    \"completed_at\": \"1991-05-03T17:52:53.885Z\",\n    \"objective_ids\": [\n      6258,\n      4914\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": true,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"2007-11-19T20:35:55.031Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 6624,\n    \"requested_by_id\": \"4d692e01-86c7-95be-ca65-1b817a533a70\",\n    \"epic_state_id\": 4773,\n    \"label_ids\": [\n      1125,\n      1344\n    ],\n    \"started_at_override\": \"2010-08-25T02:46:34.720Z\",\n    \"group_id\": \"72254d95-07af-591d-fb34-e2c3bf36f3cd\",\n    \"updated_at\": \"1955-09-28T20:36:59.092Z\",\n    \"group_mention_ids\": [\n      \"c98479e3-dda2-75d9-8bc2-d3f4e0505ed1\",\n      \"6b26c2a4-fda1-d7c5-a011-518fe1377ff8\"\n    ],\n    \"productboard_id\": \"b5d765db-40c4-9963-2311-c5c7ace81a8c\",\n    \"follower_ids\": [\n      \"7353a694-0522-7f56-29b0-6e2bcf4b6b0c\",\n      \"93179cfb-7cd2-6d5d-1210-b32d9c6ddd6a\"\n    ],\n    \"group_ids\": [\n      \"515f55be-c226-42a4-b64f-f30565b46d69\",\n      \"d073574e-0e04-c166-75d0-41e32e671ae5\"\n    ],\n    \"owner_ids\": [\n      \"1fb1fbca-a7c7-4d42-ac4c-99685f5f890d\",\n      \"c6a09c22-29dd-8004-e45c-4d027fb94cb8\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 6372,\n    \"position\": 7004,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"2009-01-19T15:47:19.672Z\",\n    \"stats\": {\n      \"num_points_done\": 6963,\n      \"num_related_documents\": 9082,\n      \"num_stories_unstarted\": 2347,\n      \"num_stories_total\": 7035,\n      \"last_story_update\": \"1960-04-06T00:12:05.508Z\",\n      \"num_points_started\": 5433,\n      \"num_points_unstarted\": 6988,\n      \"num_stories_started\": 2069,\n      \"num_stories_unestimated\": 8994,\n      \"num_stories_backlog\": 3063,\n      \"num_points_backlog\": 7604,\n      \"num_points\": 7265,\n      \"num_stories_done\": 4220\n    },\n    \"created_at\": \"1968-12-13T06:49:21.299Z\",\n    \"description\": \"string\"\n  },\n  {\n    \"app_url\": \"string\",\n    \"archived\": true,\n    \"started\": false,\n    \"entity_type\": \"string\",\n    \"labels\": [\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#fAcA7D\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"1980-02-01T12:14:59.942Z\",\n        \"external_id\": \"string\",\n        \"id\": 8737,\n        \"created_at\": \"2023-05-15T09:27:42.799Z\"\n      },\n      {\n        \"app_url\": \"string\",\n        \"description\": \"string\",\n        \"archived\": true,\n        \"entity_type\": \"string\",\n        \"color\": \"#66AaA2\",\n        \"name\": \"string\",\n        \"global_id\": \"string\",\n        \"updated_at\": \"2017-02-24T17:03:43.788Z\",\n        \"external_id\": \"string\",\n        \"id\": 1515,\n        \"created_at\": \"1993-12-18T21:08:23.305Z\"\n      }\n    ],\n    \"mention_ids\": [\n      \"3497a1c8-fb14-967b-7f1e-dc5140ecfd7c\",\n      \"8a4ff5b0-e57d-10ff-c869-ee4112167ac9\"\n    ],\n    \"member_mention_ids\": [\n      \"19e2e4b5-c024-4bd6-39fa-e6fbe322f602\",\n      \"6c3aa4db-b744-24a4-75f6-ee3469ca8b99\"\n    ],\n    \"associated_groups\": [\n      {\n        \"group_id\": \"5c0314a1-6914-0e5f-6239-cd91d1bcf598\",\n        \"associated_stories_count\": 7699\n      },\n      {\n        \"group_id\": \"030ba678-42ac-8742-369b-e7d16140b0c1\",\n        \"associated_stories_count\": 5257\n      }\n    ],\n    \"project_ids\": [\n      4572,\n      1828\n    ],\n    \"stories_without_projects\": 6616,\n    \"completed_at_override\": \"2007-02-18T00:46:57.050Z\",\n    \"productboard_plugin_id\": \"aad39171-9248-dcf1-f321-77528385144f\",\n    \"started_at\": \"2017-04-23T18:33:51.637Z\",\n    \"completed_at\": \"2023-02-24T11:30:22.745Z\",\n    \"objective_ids\": [\n      8071,\n      6766\n    ],\n    \"name\": \"string\",\n    \"global_id\": \"string\",\n    \"completed\": false,\n    \"productboard_url\": \"string\",\n    \"planned_start_date\": \"2011-09-06T23:42:02.205Z\",\n    \"state\": \"string\",\n    \"milestone_id\": 2872,\n    \"requested_by_id\": \"144f02f6-e0b0-d747-fead-85a36f267557\",\n    \"epic_state_id\": 464,\n    \"label_ids\": [\n      4059,\n      6856\n    ],\n    \"started_at_override\": \"2003-04-17T10:54:16.680Z\",\n    \"group_id\": \"732e6ee3-a370-704c-286f-cf709cdab08e\",\n    \"updated_at\": \"2026-05-08T13:37:25.682Z\",\n    \"group_mention_ids\": [\n      \"2301fba5-ea4b-bda4-c2e5-8e62492543d3\",\n      \"8f933090-3be3-0930-204a-ac7c5bd6247d\"\n    ],\n    \"productboard_id\": \"5ff2c569-2d43-77ba-83b4-f901bbb2cc08\",\n    \"follower_ids\": [\n      \"741ec20a-f0ee-92f3-8718-db47d3bc6edf\",\n      \"dc1b9923-54b7-558d-f9d5-57fca2b9c128\"\n    ],\n    \"group_ids\": [\n      \"beb9dfb1-3e5b-eed9-580b-033d4e80df0a\",\n      \"b387428e-cd20-f68c-10a7-e607ac777aca\"\n    ],\n    \"owner_ids\": [\n      \"0f5a4204-41d7-07f3-b51b-e5dad9aae61b\",\n      \"1ac96818-18c0-3e06-6c79-7fd1f6d744a4\"\n    ],\n    \"external_id\": \"string\",\n    \"id\": 9460,\n    \"position\": 5219,\n    \"productboard_name\": \"string\",\n    \"deadline\": \"1964-05-03T01:14:47.491Z\",\n    \"stats\": {\n      \"num_points_done\": 8868,\n      \"num_related_documents\": 4932,\n      \"num_stories_unstarted\": 6235,\n      \"num_stories_total\": 457,\n      \"last_story_update\": \"1971-01-20T18:50:54.694Z\",\n      \"num_points_started\": 7929,\n      \"num_points_unstarted\": 747,\n      \"num_stories_started\": 105,\n      \"num_stories_unestimated\": 7116,\n      \"num_stories_backlog\": 3430,\n      \"num_points_backlog\": 1672,\n      \"num_points\": 2040,\n      \"num_stories_done\": 3520\n    },\n    \"created_at\": \"1957-11-15T16:50:02.005Z\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a36b451-735a-4fb3-bfc1-186adbdda0ac",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7afa8a25-9533-4dab-8bd9-1ee0b9b4d98e",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c2c09635-f6ec-4c85-b796-c4f47b316b22",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "epics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "332d1bef-a9ab-44fb-90a2-1e7b15908c4e",
+          "name": "Get Objective Health",
+          "request": {
+            "name": "Get Objective Health",
+            "description": {
+              "content": "Get the current health for the specified Objective.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id",
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The unique ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8708e060-f638-4e99-b273-b4874a9cf627",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity_type\": \"string\",\n  \"status\": \"No Health\",\n  \"id\": \"750b3955-4c0e-a1a4-60cc-a637f377a804\",\n  \"author_id\": \"431bafbe-d102-aa1c-7d65-981a9fd480b7\",\n  \"epic_id\": 7759,\n  \"objective_id\": 6203,\n  \"updated_at\": \"1963-04-24T00:59:20.990Z\",\n  \"created_at\": \"2017-03-29T18:49:04.632Z\",\n  \"text\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "49a874ca-cd6d-4885-a6ac-074b41cab964",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5922fb8d-e2bb-445c-b6fc-11438a16cf8d",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7384cf96-babf-4f35-91c4-1794915512e6",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04f7e657-786b-4794-8331-906e9cd08bd4",
+          "name": "Create Objective Health",
+          "request": {
+            "name": "Create Objective Health",
+            "description": {
+              "content": "Create a new health status for the specified Objective.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id",
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The unique ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\",\n  \"text\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4c07f8ad-274a-41fb-9ec7-a45a6496f314",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entity_type\": \"string\",\n  \"status\": \"No Health\",\n  \"id\": \"750b3955-4c0e-a1a4-60cc-a637f377a804\",\n  \"author_id\": \"431bafbe-d102-aa1c-7d65-981a9fd480b7\",\n  \"epic_id\": 7759,\n  \"objective_id\": 6203,\n  \"updated_at\": \"1963-04-24T00:59:20.990Z\",\n  \"created_at\": \"2017-03-29T18:49:04.632Z\",\n  \"text\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fcbe6c47-fc94-4d54-8c99-b1c50470a005",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63fb46f4-8ac4-4c24-ba64-b753b67fc3f7",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f609d9b2-ad82-41a1-acbb-e2ba49fb32f1",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"text\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e571c4ec-20d2-40ba-9ba4-d113650c3103",
+          "name": "List Objective Healths",
+          "request": {
+            "name": "List Objective Healths",
+            "description": {
+              "content": "List the history of health statuses for the specified Objective, most recent first.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v3",
+                "objectives",
+                ":objective-public-id",
+                "health-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "objective-public-id",
+                  "description": "(Required) The unique ID of the Objective."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "207b75e8-1ae6-48db-83ad-871d16c0d9b7",
+              "name": "Resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"entity_type\": \"string\",\n    \"status\": \"No Health\",\n    \"id\": \"e3456626-fa76-1e75-05cf-d2eae1a88234\",\n    \"author_id\": \"e0ad3ea9-d8c9-49af-0695-1c9f462e279c\",\n    \"epic_id\": 4698,\n    \"objective_id\": 7336,\n    \"updated_at\": \"1972-02-11T11:35:35.476Z\",\n    \"created_at\": \"1962-06-04T21:39:07.901Z\",\n    \"text\": \"string\"\n  },\n  {\n    \"entity_type\": \"string\",\n    \"status\": \"On Track\",\n    \"id\": \"53e5811e-6d75-9d4f-604e-92f62d3b426d\",\n    \"author_id\": \"ac57696a-4048-a08d-8fd0-050e6b6872e9\",\n    \"epic_id\": 8885,\n    \"objective_id\": 5663,\n    \"updated_at\": \"1987-10-06T05:32:39.019Z\",\n    \"created_at\": \"2024-08-20T02:35:47.408Z\",\n    \"text\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "730d6368-951b-4d61-a1cf-951affb9d834",
+              "name": "Schema mismatch",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c66358d5-020c-4482-9a27-dc9e6f7fb466",
+              "name": "Resource does not exist",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "227acf80-8da4-4979-b1c1-0fd06938d2b2",
+              "name": "Unprocessable",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v3",
+                    "objectives",
+                    ":objective-public-id",
+                    "health-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "objective-public-id",
+                      "description": "(Required) The unique ID of the Objective."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Shortcut-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.app.shortcut.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Shortcut-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6bc0294c-aa11-4b86-b8b2-3cb63d0c87ce",
+    "name": "Shortcut Categories Objectives API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Shortcut API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Shortcut Categories Iterations API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Shortcut-Token",
+      "value": "{{Shortcut-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Iterations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Iterations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/iterations"
+          },
+          "docs": "List Iterations"
+        },
+        {
+          "info": {
+            "name": "Create Iteration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.app.shortcut.com/api/v3/iterations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Iteration"
+        },
+        {
+          "info": {
+            "name": "Disable Iterations",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/disable"
+          },
+          "docs": "Disables Iterations for the current workspace"
+        },
+        {
+          "info": {
+            "name": "Enable Iterations",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/enable"
+          },
+          "docs": "Enables Iterations for the current workspace"
+        },
+        {
+          "info": {
+            "name": "Get Iteration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/:iteration-public-id",
+            "params": [
+              {
+                "name": "iteration-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Iteration."
+              }
+            ]
+          },
+          "docs": "Get Iteration"
+        },
+        {
+          "info": {
+            "name": "Update Iteration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/:iteration-public-id",
+            "params": [
+              {
+                "name": "iteration-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Iteration."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Iteration"
+        },
+        {
+          "info": {
+            "name": "Delete Iteration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/:iteration-public-id",
+            "params": [
+              {
+                "name": "iteration-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Iteration."
+              }
+            ]
+          },
+          "docs": "Delete Iteration"
+        },
+        {
+          "info": {
+            "name": "List Iteration Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.app.shortcut.com/api/v3/iterations/:iteration-public-id/stories",
+            "params": [
+              {
+                "name": "iteration-public-id",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of the Iteration."
+              },
+              {
+                "name": "includes_description",
+                "value": "",
+                "type": "query",
+                "description": "A true/false boolean indicating whether to return Stories with their descriptions."
+              }
+            ]
+          },
+          "docs": "Get a list of all Stories in an Iteration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
