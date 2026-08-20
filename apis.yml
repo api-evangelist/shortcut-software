@@ -137,6 +137,8 @@ apis:
   humanURL: https://developer.shortcut.com/api/rest/v3
   baseURL: https://api.app.shortcut.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -149,6 +151,8 @@ apis:
   humanURL: https://developer.shortcut.com/api/rest/v3
   baseURL: https://api.app.shortcut.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -173,6 +177,8 @@ apis:
   humanURL: https://developer.shortcut.com/api/rest/v3
   baseURL: https://api.app.shortcut.com
   tags:
+  - Integration
+  tags_raw:
   - Integrations
   properties:
   - type: OpenAPI
@@ -281,6 +287,8 @@ apis:
   humanURL: https://developer.shortcut.com/api/rest/v3
   baseURL: https://api.app.shortcut.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
