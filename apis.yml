@@ -376,6 +376,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://www.shortcut.com/
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/shortcut-software/overview
 # --- Discoverability / link properties ---
