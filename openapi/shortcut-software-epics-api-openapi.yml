@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Shortcut Categories Epics API
+  title: Shortcut Epics API
   version: '3.0'
   description: Shortcut API
 servers:
@@ -556,197 +556,88 @@ paths:
       - Epics
 components:
   schemas:
-    CreateCommentComment:
+    UpdateComment:
       x-doc-skip: true
       type: object
       properties:
         text:
-          maxLength: 100000
-          description: The comment text.
-          minLength: 1
-          type: string
-        author_id:
-          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
-          type: string
-          format: uuid
-        created_at:
-          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
-          type: string
-          format: date-time
-        updated_at:
-          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
-          type: string
-          format: date-time
-        external_id:
-          maxLength: 128
-          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
+          description: The updated comment text.
           type: string
       additionalProperties: false
       required:
       - text
-    SyncedItem:
+    UpdateEpic:
       x-doc-skip: true
-      description: The synced item for the story.
       type: object
       properties:
-        external_id:
-          description: The id used to reference an external entity.
-          type: string
-        url:
-          description: The url to the external entity.
-          type: string
-      additionalProperties: false
-      required:
-      - external_id
-      - url
-    Epic:
-      description: An Epic is a collection of stories that together might make up a release, a objective, or some other large initiative that you are working on.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Epic.
-          type: string
         description:
+          maxLength: 100000
           description: The Epic's description.
           type: string
         archived:
-          description: True/false boolean that indicates whether the Epic is archived or not.
+          description: A true/false boolean indicating whether the Epic is in archived state.
           type: boolean
-        started:
-          description: A true/false boolean indicating if the Epic has been started.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
         labels:
           description: An array of Labels attached to the Epic.
           type: array
           items:
-            $ref: '#/components/schemas/LabelSlim'
-        mention_ids:
-          description: '`Deprecated:` use `member_mention_ids`.'
-          type: array
-          items:
-            type: string
-            format: uuid
-        member_mention_ids:
-          description: An array of Member IDs that have been mentioned in the Epic description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        associated_groups:
-          description: An array containing Group IDs and Group-owned story counts for the Epic's associated groups.
-          type: array
-          items:
-            $ref: '#/components/schemas/EpicAssociatedGroup'
-        project_ids:
-          description: The IDs of Projects related to this Epic.
-          type: array
-          items:
-            type: integer
-            format: int64
-        stories_without_projects:
-          description: The number of stories in this epic which are not associated with a project.
-          type: integer
-          format: int64
+            $ref: '#/components/schemas/CreateLabelParams'
         completed_at_override:
           description: A manual override for the time/date the Epic was completed.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        productboard_plugin_id:
-          description: The ID of the associated productboard integration.
-          type: string
-          format: uuid
-          nullable: true
-        started_at:
-          description: The time/date the Epic was started.
-          type: string
-          format: date-time
-          nullable: true
-        completed_at:
-          description: The time/date the Epic was completed.
-          type: string
-          format: date-time
-          nullable: true
         objective_ids:
-          description: An array of IDs for Objectives to which this epic is related.
+          description: An array of IDs for Objectives to which this Epic is related.
           type: array
           items:
             type: integer
             format: int64
         name:
-          description: The name of the Epic.
+          maxLength: 256
+          minLength: 1
+          description: The Epic's name.
           type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        completed:
-          description: A true/false boolean indicating if the Epic has been completed.
-          type: boolean
-        comments:
-          description: A nested array of threaded comments.
-          type: array
-          items:
-            $ref: '#/components/schemas/ThreadedComment'
-        productboard_url:
-          description: The URL of the associated productboard feature.
-          type: string
-          nullable: true
         planned_start_date:
           description: The Epic's planned start date.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         state:
-          description: '`Deprecated` The workflow state that the Epic is in.'
+          description: '`Deprecated` The Epic''s state (to do, in progress, or done); will be ignored when `epic_state_id` is set.'
           type: string
+          enum:
+          - in progress
+          - to do
+          - done
         milestone_id:
-          description: '`Deprecated` The ID of the Objective this Epic is related to. Use `objective_ids`.'
-          type: integer
+          description: '`Deprecated` The ID of the Milestone this Epic is related to. Use `objective_ids`.'
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         requested_by_id:
-          description: The ID of the Member that requested the epic.
+          description: The ID of the member that requested the epic.
           type: string
           format: uuid
         epic_state_id:
           description: The ID of the Epic State.
           type: integer
           format: int64
-        label_ids:
-          description: An array of Label ids attached to the Epic.
-          type: array
-          items:
-            type: integer
-            format: int64
         started_at_override:
           description: A manual override for the time/date the Epic was started.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         group_id:
           description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
-        updated_at:
-          description: The time/date the Epic was updated.
-          type: string
-          format: date-time
-          nullable: true
-        group_mention_ids:
-          description: An array of Group IDs that have been mentioned in the Epic description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        productboard_id:
-          description: The ID of the associated productboard feature.
-          type: string
-          format: uuid
-          nullable: true
         follower_ids:
           description: An array of UUIDs for any Members you want to add as Followers on this Epic.
           type: array
@@ -760,85 +651,30 @@ components:
             type: string
             format: uuid
         owner_ids:
-          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
+          description: An array of UUIDs for any members you want to add as Owners on this Epic.
           type: array
           items:
             type: string
             format: uuid
         external_id:
+          maxLength: 128
           description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
           type: string
-          nullable: true
-        id:
-          description: The unique ID of the Epic.
+        before_id:
+          description: The ID of the Epic we want to move this Epic before.
           type: integer
           format: int64
-        health:
-          $ref: '#/components/schemas/Health'
-        position:
-          description: The Epic's relative position in the Epic workflow state.
+        after_id:
+          description: The ID of the Epic we want to move this Epic after.
           type: integer
           format: int64
-        productboard_name:
-          description: The name of the associated productboard feature.
-          type: string
-          nullable: true
         deadline:
           description: The Epic's deadline.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        stats:
-          $ref: '#/components/schemas/EpicStats'
-        created_at:
-          description: The time/date the Epic was created.
-          type: string
-          format: date-time
-          nullable: true
       additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - started
-      - entity_type
-      - labels
-      - mention_ids
-      - member_mention_ids
-      - associated_groups
-      - project_ids
-      - stories_without_projects
-      - completed_at_override
-      - productboard_plugin_id
-      - started_at
-      - completed_at
-      - objective_ids
-      - name
-      - global_id
-      - completed
-      - comments
-      - productboard_url
-      - planned_start_date
-      - state
-      - milestone_id
-      - requested_by_id
-      - epic_state_id
-      - label_ids
-      - started_at_override
-      - group_id
-      - updated_at
-      - group_mention_ids
-      - productboard_id
-      - follower_ids
-      - group_ids
-      - owner_ids
-      - external_id
-      - id
-      - position
-      - productboard_name
-      - deadline
-      - stats
-      - created_at
     StoryCustomField:
       type: object
       properties:
@@ -858,581 +694,6 @@ components:
       - field_id
       - value_id
       - value
-    CreateEpicComment:
-      x-doc-skip: true
-      type: object
-      properties:
-        text:
-          maxLength: 100000
-          description: The comment text.
-          minLength: 1
-          type: string
-        author_id:
-          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
-          type: string
-          format: uuid
-        created_at:
-          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
-          type: string
-          format: date-time
-        updated_at:
-          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
-          type: string
-          format: date-time
-        external_id:
-          maxLength: 128
-          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-      additionalProperties: false
-      required:
-      - text
-    CreateEpic:
-      x-doc-skip: true
-      type: object
-      properties:
-        description:
-          maxLength: 100000
-          description: The Epic's description.
-          type: string
-        labels:
-          description: An array of Labels attached to the Epic.
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateLabelParams'
-        completed_at_override:
-          description: A manual override for the time/date the Epic was completed.
-          type: string
-          format: date-time
-        objective_ids:
-          description: An array of IDs for Objectives to which this Epic is related.
-          type: array
-          items:
-            type: integer
-            format: int64
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The Epic's name.
-          type: string
-        planned_start_date:
-          description: The Epic's planned start date.
-          type: string
-          format: date-time
-          nullable: true
-        state:
-          description: '`Deprecated` The Epic''s state (to do, in progress, or done); will be ignored when `epic_state_id` is set.'
-          type: string
-          enum:
-          - in progress
-          - to do
-          - done
-        milestone_id:
-          description: '`Deprecated` The ID of the Milestone this Epic is related to. Use `objective_ids`.'
-          type: integer
-          format: int64
-          nullable: true
-        requested_by_id:
-          description: The ID of the member that requested the epic.
-          type: string
-          format: uuid
-        epic_state_id:
-          description: The ID of the Epic State.
-          type: integer
-          format: int64
-        started_at_override:
-          description: A manual override for the time/date the Epic was started.
-          type: string
-          format: date-time
-        group_id:
-          description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
-          type: string
-          format: uuid
-          nullable: true
-        updated_at:
-          description: Defaults to the time/date it is created but can be set to reflect another date.
-          type: string
-          format: date-time
-        follower_ids:
-          description: An array of UUIDs for any Members you want to add as Followers on this new Epic.
-          type: array
-          items:
-            type: string
-            format: uuid
-        group_ids:
-          description: An array of UUIDS for Groups to which this Epic is related.
-          type: array
-          items:
-            type: string
-            format: uuid
-        converted_from_story_id:
-          description: The ID of the Story that was converted to an Epic.
-          type: integer
-          format: int64
-          nullable: true
-        owner_ids:
-          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
-          type: array
-          items:
-            type: string
-            format: uuid
-        external_id:
-          maxLength: 128
-          description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-        deadline:
-          description: The Epic's deadline.
-          type: string
-          format: date-time
-          nullable: true
-        created_at:
-          description: Defaults to the time/date it is created but can be set to reflect another date.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - name
-    EpicAssociatedGroup:
-      type: object
-      properties:
-        group_id:
-          description: The Group ID of the associated group.
-          type: string
-          format: uuid
-        associated_stories_count:
-          description: The number of stories this Group owns in the Epic.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - group_id
-    UpdateComment:
-      x-doc-skip: true
-      type: object
-      properties:
-        text:
-          description: The updated comment text.
-          type: string
-      additionalProperties: false
-      required:
-      - text
-    EpicStats:
-      description: A group of calculated values for this Epic.
-      type: object
-      properties:
-        num_points_done:
-          description: The total number of completed points in this Epic.
-          type: integer
-          format: int64
-        num_related_documents:
-          description: The total number of documents associated with this Epic.
-          type: integer
-          format: int64
-        num_stories_unstarted:
-          description: The total number of unstarted Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_total:
-          description: The total number of Stories in this Epic.
-          type: integer
-          format: int64
-        last_story_update:
-          description: The date of the last update of a Story in this Epic.
-          type: string
-          format: date-time
-          nullable: true
-        num_points_started:
-          description: The total number of started points in this Epic.
-          type: integer
-          format: int64
-        num_points_unstarted:
-          description: The total number of unstarted points in this Epic.
-          type: integer
-          format: int64
-        num_stories_started:
-          description: The total number of started Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_unestimated:
-          description: The total number of Stories with no point estimate.
-          type: integer
-          format: int64
-        num_stories_backlog:
-          description: The total number of backlog Stories in this Epic.
-          type: integer
-          format: int64
-        num_points_backlog:
-          description: The total number of backlog points in this Epic.
-          type: integer
-          format: int64
-        num_points:
-          description: The total number of points in this Epic.
-          type: integer
-          format: int64
-        num_stories_done:
-          description: The total number of done Stories in this Epic.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - num_points_done
-      - num_related_documents
-      - num_stories_unstarted
-      - num_stories_total
-      - last_story_update
-      - num_points_started
-      - num_points_unstarted
-      - num_stories_started
-      - num_stories_unestimated
-      - num_stories_backlog
-      - num_points_backlog
-      - num_points
-      - num_stories_done
-    EpicSlim:
-      description: EpicSlim represents the same resource as an Epic but is more light-weight, including all Epic fields except the comments array. The description string can be optionally included. Use the [Get Epic](#Get-Epic) endpoint to fetch the unabridged payload for an Epic.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Epic.
-          type: string
-        description:
-          description: The Epic's description.
-          type: string
-        archived:
-          description: True/false boolean that indicates whether the Epic is archived or not.
-          type: boolean
-        started:
-          description: A true/false boolean indicating if the Epic has been started.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        labels:
-          description: An array of Labels attached to the Epic.
-          type: array
-          items:
-            $ref: '#/components/schemas/LabelSlim'
-        mention_ids:
-          description: '`Deprecated:` use `member_mention_ids`.'
-          type: array
-          items:
-            type: string
-            format: uuid
-        member_mention_ids:
-          description: An array of Member IDs that have been mentioned in the Epic description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        associated_groups:
-          description: An array containing Group IDs and Group-owned story counts for the Epic's associated groups.
-          type: array
-          items:
-            $ref: '#/components/schemas/EpicAssociatedGroup'
-        project_ids:
-          description: The IDs of Projects related to this Epic.
-          type: array
-          items:
-            type: integer
-            format: int64
-        stories_without_projects:
-          description: The number of stories in this epic which are not associated with a project.
-          type: integer
-          format: int64
-        completed_at_override:
-          description: A manual override for the time/date the Epic was completed.
-          type: string
-          format: date-time
-          nullable: true
-        productboard_plugin_id:
-          description: The ID of the associated productboard integration.
-          type: string
-          format: uuid
-          nullable: true
-        started_at:
-          description: The time/date the Epic was started.
-          type: string
-          format: date-time
-          nullable: true
-        completed_at:
-          description: The time/date the Epic was completed.
-          type: string
-          format: date-time
-          nullable: true
-        objective_ids:
-          description: An array of IDs for Objectives to which this epic is related.
-          type: array
-          items:
-            type: integer
-            format: int64
-        name:
-          description: The name of the Epic.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        completed:
-          description: A true/false boolean indicating if the Epic has been completed.
-          type: boolean
-        productboard_url:
-          description: The URL of the associated productboard feature.
-          type: string
-          nullable: true
-        planned_start_date:
-          description: The Epic's planned start date.
-          type: string
-          format: date-time
-          nullable: true
-        state:
-          description: '`Deprecated` The workflow state that the Epic is in.'
-          type: string
-        milestone_id:
-          description: '`Deprecated` The ID of the Objective this Epic is related to. Use `objective_ids`.'
-          type: integer
-          format: int64
-          nullable: true
-        requested_by_id:
-          description: The ID of the Member that requested the epic.
-          type: string
-          format: uuid
-        epic_state_id:
-          description: The ID of the Epic State.
-          type: integer
-          format: int64
-        label_ids:
-          description: An array of Label ids attached to the Epic.
-          type: array
-          items:
-            type: integer
-            format: int64
-        started_at_override:
-          description: A manual override for the time/date the Epic was started.
-          type: string
-          format: date-time
-          nullable: true
-        group_id:
-          description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
-          type: string
-          format: uuid
-          nullable: true
-        updated_at:
-          description: The time/date the Epic was updated.
-          type: string
-          format: date-time
-          nullable: true
-        group_mention_ids:
-          description: An array of Group IDs that have been mentioned in the Epic description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        productboard_id:
-          description: The ID of the associated productboard feature.
-          type: string
-          format: uuid
-          nullable: true
-        follower_ids:
-          description: An array of UUIDs for any Members you want to add as Followers on this Epic.
-          type: array
-          items:
-            type: string
-            format: uuid
-        group_ids:
-          description: An array of UUIDS for Groups to which this Epic is related.
-          type: array
-          items:
-            type: string
-            format: uuid
-        owner_ids:
-          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
-          type: array
-          items:
-            type: string
-            format: uuid
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-          nullable: true
-        id:
-          description: The unique ID of the Epic.
-          type: integer
-          format: int64
-        position:
-          description: The Epic's relative position in the Epic workflow state.
-          type: integer
-          format: int64
-        productboard_name:
-          description: The name of the associated productboard feature.
-          type: string
-          nullable: true
-        deadline:
-          description: The Epic's deadline.
-          type: string
-          format: date-time
-          nullable: true
-        stats:
-          $ref: '#/components/schemas/EpicStats'
-        created_at:
-          description: The time/date the Epic was created.
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
-      required:
-      - app_url
-      - archived
-      - started
-      - entity_type
-      - labels
-      - mention_ids
-      - member_mention_ids
-      - associated_groups
-      - project_ids
-      - stories_without_projects
-      - completed_at_override
-      - productboard_plugin_id
-      - started_at
-      - completed_at
-      - objective_ids
-      - name
-      - global_id
-      - completed
-      - productboard_url
-      - planned_start_date
-      - state
-      - milestone_id
-      - requested_by_id
-      - epic_state_id
-      - label_ids
-      - started_at_override
-      - group_id
-      - updated_at
-      - group_mention_ids
-      - productboard_id
-      - follower_ids
-      - group_ids
-      - owner_ids
-      - external_id
-      - id
-      - position
-      - productboard_name
-      - deadline
-      - stats
-      - created_at
-    CreateEpicHealth:
-      x-doc-skip: true
-      type: object
-      properties:
-        status:
-          description: The health status of the Epic.
-          type: string
-          enum:
-          - At Risk
-          - On Track
-          - Off Track
-          - No Health
-        text:
-          description: The description of the Health status.
-          type: string
-      additionalProperties: false
-      required:
-      - status
-    EpicPaginatedResults:
-      description: Results schema for paginated Epic listing.
-      type: object
-      properties:
-        data:
-          description: Array of Epic objects on the current page
-          type: array
-          items:
-            $ref: '#/components/schemas/EpicSlim'
-        next:
-          description: The next page number if there are more results, or null for the last page
-          type: integer
-          format: int64
-          nullable: true
-        total:
-          description: The total number of Epics matching the query over all pages
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - data
-      - next
-      - total
-    ThreadedComment:
-      description: Comments associated with Epic Discussions.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Comment.
-          type: string
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        deleted:
-          description: True/false boolean indicating whether the Comment is deleted.
-          type: boolean
-        mention_ids:
-          description: '`Deprecated:` use `member_mention_ids`.'
-          type: array
-          items:
-            type: string
-            format: uuid
-        author_id:
-          description: The unique ID of the Member that authored the Comment.
-          type: string
-          format: uuid
-        member_mention_ids:
-          description: An array of Member IDs that have been mentioned in this Comment.
-          type: array
-          items:
-            type: string
-            format: uuid
-        comments:
-          description: A nested array of threaded comments.
-          type: array
-          items:
-            $ref: '#/components/schemas/ThreadedComment'
-        updated_at:
-          description: The time/date the Comment was updated.
-          type: string
-          format: date-time
-        group_mention_ids:
-          description: An array of Group IDs that have been mentioned in this Comment.
-          type: array
-          items:
-            type: string
-            format: uuid
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Comment has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-          nullable: true
-        id:
-          description: The unique ID of the Comment.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date the Comment was created.
-          type: string
-          format: date-time
-        text:
-          description: The text of the Comment.
-          type: string
-      additionalProperties: false
-      required:
-      - app_url
-      - entity_type
-      - deleted
-      - mention_ids
-      - author_id
-      - member_mention_ids
-      - comments
-      - updated_at
-      - group_mention_ids
-      - external_id
-      - id
-      - created_at
-      - text
     TypedStoryLink:
       description: 'The type of Story Link. The string can be subject or object. '
       type: object
@@ -1481,6 +742,147 @@ components:
       - id
       - subject_id
       - subject_workflow_state_id
+      - created_at
+    ThreadedComment:
+      description: Comments associated with Epic Discussions.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Comment.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deleted:
+          description: True/false boolean indicating whether the Comment is deleted.
+          type: boolean
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        author_id:
+          description: The unique ID of the Member that authored the Comment.
+          type: string
+          format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in this Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        comments:
+          description: A nested array of threaded comments.
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadedComment'
+        updated_at:
+          description: The time/date the Comment was updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in this Comment.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Comment.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Comment was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Comment.
+          type: string
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - deleted
+      - mention_ids
+      - author_id
+      - member_mention_ids
+      - comments
+      - updated_at
+      - group_mention_ids
+      - external_id
+      - id
+      - created_at
+      - text
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
       - created_at
     StorySlim:
       description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
@@ -1555,19 +957,22 @@ components:
           format: int64
         completed_at_override:
           description: A manual override for the time/date the Story was completed.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         started_at:
           description: The time/date the Story was started.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         completed_at:
           description: The time/date the Story was completed.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         name:
           description: The name of the story.
           type: string
@@ -1582,14 +987,16 @@ components:
           type: boolean
         epic_id:
           description: The ID of the epic the story belongs to.
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         story_template_id:
           description: The ID of the story template used to create this story, or null if not created using a template.
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         external_links:
           description: An array of external links (strings) associated with a Story
           type: array
@@ -1607,9 +1014,10 @@ components:
           format: uuid
         iteration_id:
           description: The ID of the iteration the story belongs to.
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         sub_task_story_ids:
           description: 'The Story IDs of Sub-tasks attached to the Story
 
@@ -1621,8 +1029,9 @@ components:
         formatted_vcs_branch_name:
           description: The formatted branch name for this story.
           x-doc-skip: true
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         label_ids:
           description: An array of label ids attached to the story.
           type: array
@@ -1631,23 +1040,26 @@ components:
             format: int64
         started_at_override:
           description: A manual override for the time/date the Story was started.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         group_id:
           description: The ID of the group associated with the story.
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         workflow_state_id:
           description: The ID of the workflow state the story is currently in.
           type: integer
           format: int64
         updated_at:
           description: The time/date the Story was updated.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         group_mention_ids:
           description: An array of Group IDs that have been mentioned in the Story description.
           type: array
@@ -1668,8 +1080,9 @@ components:
             format: uuid
         external_id:
           description: This field can be set to another unique ID. In the case that the Story has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         id:
           description: The unique ID of the Story.
           type: integer
@@ -1682,14 +1095,16 @@ components:
           description: 'The ID of the parent story to this story (making this story a sub-task).
 
             Field only applicable when Sub-task feature is enabled.'
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         estimate:
           description: The numeric point estimate of the story. Can also be null, which means unestimated.
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         position:
           description: A number representing the position of the story in relation to every other story in the current project.
           type: integer
@@ -1699,9 +1114,10 @@ components:
           type: boolean
         project_id:
           description: The ID of the project the story belongs to.
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         linked_file_ids:
           description: An array of IDs of LinkedFiles attached to the story.
           type: array
@@ -1710,9 +1126,10 @@ components:
             format: int64
         deadline:
           description: The due date of the story.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         stats:
           $ref: '#/components/schemas/StoryStats'
         comment_ids:
@@ -1731,9 +1148,10 @@ components:
           format: date-time
         moved_at:
           description: The time/date the Story was last changed workflow-state.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
       additionalProperties: false
       required:
       - app_url
@@ -1782,86 +1200,567 @@ components:
       - comment_ids
       - created_at
       - moved_at
-    DocSlim:
+    CreateEpicComment:
       x-doc-skip: true
       type: object
       properties:
-        id:
-          description: The public id of the Doc
+        text:
+          maxLength: 100000
+          description: The comment text.
+          minLength: 1
+          type: string
+        author_id:
+          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
           type: string
           format: uuid
-        title:
-          description: The Docs Title
+        created_at:
+          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
           type: string
-          nullable: true
-        app_url:
-          description: The Shortcut application url for the Doc.
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
+          type: string
+          format: date-time
+        external_id:
+          maxLength: 128
+          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
           type: string
       additionalProperties: false
       required:
-      - id
-      - title
-      - app_url
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      - text
+    EpicSlim:
+      description: EpicSlim represents the same resource as an Epic but is more light-weight, including all Epic fields except the comments array. The description string can be optionally included. Use the [Get Epic](#Get-Epic) endpoint to fetch the unabridged payload for an Epic.
       type: object
       properties:
         app_url:
-          description: The Shortcut application url for the Label.
+          description: The Shortcut application url for the Epic.
           type: string
         description:
-          description: The description of the Label.
+          description: The Epic's description.
           type: string
-          nullable: true
         archived:
-          description: A true/false boolean indicating if the Label has been archived.
+          description: True/false boolean that indicates whether the Epic is archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Epic has been started.
           type: boolean
         entity_type:
           description: A string description of this resource.
           type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type: string
-          nullable: true
+        labels:
+          description: An array of Labels attached to the Epic.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        associated_groups:
+          description: An array containing Group IDs and Group-owned story counts for the Epic's associated groups.
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicAssociatedGroup'
+        project_ids:
+          description: The IDs of Projects related to this Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        stories_without_projects:
+          description: The number of stories in this epic which are not associated with a project.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Epic was completed.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        productboard_plugin_id:
+          description: The ID of the associated productboard integration.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        started_at:
+          description: The time/date the Epic was started.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completed_at:
+          description: The time/date the Epic was completed.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        objective_ids:
+          description: An array of IDs for Objectives to which this epic is related.
+          type: array
+          items:
+            type: integer
+            format: int64
         name:
-          description: The name of the Label.
+          description: The name of the Epic.
           type: string
         global_id:
           x-doc-skip: true
           type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type: string
+        completed:
+          description: A true/false boolean indicating if the Epic has been completed.
+          type: boolean
+        productboard_url:
+          description: The URL of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+        planned_start_date:
+          description: The Epic's planned start date.
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+        state:
+          description: '`Deprecated` The workflow state that the Epic is in.'
           type: string
-          nullable: true
-        id:
-          description: The unique ID of the Label.
+        milestone_id:
+          description: '`Deprecated` The ID of the Objective this Epic is related to. Use `objective_ids`.'
+          type:
+          - integer
+          - 'null'
+          format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the epic.
+          type: string
+          format: uuid
+        epic_state_id:
+          description: The ID of the Epic State.
           type: integer
           format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type: string
+        label_ids:
+          description: An array of Label ids attached to the Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Epic was started.
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
+        group_id:
+          description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
+          type:
+          - string
+          - 'null'
+          format: uuid
+        updated_at:
+          description: The time/date the Epic was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        productboard_id:
+          description: The ID of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members you want to add as Followers on this Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDS for Groups to which this Epic is related.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Epic.
+          type: integer
+          format: int64
+        position:
+          description: The Epic's relative position in the Epic workflow state.
+          type: integer
+          format: int64
+        productboard_name:
+          description: The name of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+        deadline:
+          description: The Epic's deadline.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        stats:
+          $ref: '#/components/schemas/EpicStats'
+        created_at:
+          description: The time/date the Epic was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - archived
+      - started
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - associated_groups
+      - project_ids
+      - stories_without_projects
+      - completed_at_override
+      - productboard_plugin_id
+      - started_at
+      - completed_at
+      - objective_ids
+      - name
+      - global_id
+      - completed
+      - productboard_url
+      - planned_start_date
+      - state
+      - milestone_id
+      - requested_by_id
+      - epic_state_id
+      - label_ids
+      - started_at_override
+      - group_id
+      - updated_at
+      - group_mention_ids
+      - productboard_id
+      - follower_ids
+      - group_ids
+      - owner_ids
+      - external_id
+      - id
+      - position
+      - productboard_name
+      - deadline
+      - stats
+      - created_at
+    CreateEpicHealth:
+      x-doc-skip: true
+      type: object
+      properties:
+        status:
+          description: The health status of the Epic.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        text:
+          description: The description of the Health status.
+          type: string
+      additionalProperties: false
+      required:
+      - status
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
+    Epic:
+      description: An Epic is a collection of stories that together might make up a release, a objective, or some other large initiative that you are working on.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Epic.
+          type: string
+        description:
+          description: The Epic's description.
+          type: string
+        archived:
+          description: True/false boolean that indicates whether the Epic is archived or not.
+          type: boolean
+        started:
+          description: A true/false boolean indicating if the Epic has been started.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        labels:
+          description: An array of Labels attached to the Epic.
+          type: array
+          items:
+            $ref: '#/components/schemas/LabelSlim'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        associated_groups:
+          description: An array containing Group IDs and Group-owned story counts for the Epic's associated groups.
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicAssociatedGroup'
+        project_ids:
+          description: The IDs of Projects related to this Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        stories_without_projects:
+          description: The number of stories in this epic which are not associated with a project.
+          type: integer
+          format: int64
+        completed_at_override:
+          description: A manual override for the time/date the Epic was completed.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        productboard_plugin_id:
+          description: The ID of the associated productboard integration.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        started_at:
+          description: The time/date the Epic was started.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        completed_at:
+          description: The time/date the Epic was completed.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        objective_ids:
+          description: An array of IDs for Objectives to which this epic is related.
+          type: array
+          items:
+            type: integer
+            format: int64
+        name:
+          description: The name of the Epic.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        completed:
+          description: A true/false boolean indicating if the Epic has been completed.
+          type: boolean
+        comments:
+          description: A nested array of threaded comments.
+          type: array
+          items:
+            $ref: '#/components/schemas/ThreadedComment'
+        productboard_url:
+          description: The URL of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+        planned_start_date:
+          description: The Epic's planned start date.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        state:
+          description: '`Deprecated` The workflow state that the Epic is in.'
+          type: string
+        milestone_id:
+          description: '`Deprecated` The ID of the Objective this Epic is related to. Use `objective_ids`.'
+          type:
+          - integer
+          - 'null'
+          format: int64
+        requested_by_id:
+          description: The ID of the Member that requested the epic.
+          type: string
+          format: uuid
+        epic_state_id:
+          description: The ID of the Epic State.
+          type: integer
+          format: int64
+        label_ids:
+          description: An array of Label ids attached to the Epic.
+          type: array
+          items:
+            type: integer
+            format: int64
+        started_at_override:
+          description: A manual override for the time/date the Epic was started.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        group_id:
+          description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
+          type:
+          - string
+          - 'null'
+          format: uuid
+        updated_at:
+          description: The time/date the Epic was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Epic description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        productboard_id:
+          description: The ID of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        follower_ids:
+          description: An array of UUIDs for any Members you want to add as Followers on this Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDS for Groups to which this Epic is related.
+          type: array
+          items:
+            type: string
+            format: uuid
+        owner_ids:
+          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
+          type: array
+          items:
+            type: string
+            format: uuid
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Epic.
+          type: integer
+          format: int64
+        health:
+          $ref: '#/components/schemas/Health'
+        position:
+          description: The Epic's relative position in the Epic workflow state.
+          type: integer
+          format: int64
+        productboard_name:
+          description: The name of the associated productboard feature.
+          type:
+          - string
+          - 'null'
+        deadline:
+          description: The Epic's deadline.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        stats:
+          $ref: '#/components/schemas/EpicStats'
+        created_at:
+          description: The time/date the Epic was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
       required:
       - app_url
       - description
       - archived
+      - started
       - entity_type
-      - color
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - associated_groups
+      - project_ids
+      - stories_without_projects
+      - completed_at_override
+      - productboard_plugin_id
+      - started_at
+      - completed_at
+      - objective_ids
       - name
       - global_id
+      - completed
+      - comments
+      - productboard_url
+      - planned_start_date
+      - state
+      - milestone_id
+      - requested_by_id
+      - epic_state_id
+      - label_ids
+      - started_at_override
+      - group_id
       - updated_at
+      - group_mention_ids
+      - productboard_id
+      - follower_ids
+      - group_ids
+      - owner_ids
       - external_id
       - id
+      - position
+      - productboard_name
+      - deadline
+      - stats
       - created_at
     Health:
       description: The current health status of the Epic.
@@ -1896,9 +1795,10 @@ components:
           - No Health
         id:
           description: The unique ID of the Health record.
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         created_at:
           description: The time that the Health record was created.
           type: string
@@ -1911,6 +1811,58 @@ components:
       - entity_type
       - status
       - id
+    EpicPaginatedResults:
+      description: Results schema for paginated Epic listing.
+      type: object
+      properties:
+        data:
+          description: Array of Epic objects on the current page
+          type: array
+          items:
+            $ref: '#/components/schemas/EpicSlim'
+        next:
+          description: The next page number if there are more results, or null for the last page
+          type:
+          - integer
+          - 'null'
+          format: int64
+        total:
+          description: The total number of Epics matching the query over all pages
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - data
+      - next
+      - total
+    CreateCommentComment:
+      x-doc-skip: true
+      type: object
+      properties:
+        text:
+          maxLength: 100000
+          description: The comment text.
+          minLength: 1
+          type: string
+        author_id:
+          description: The Member ID of the Comment's author. Defaults to the user identified by the API token.
+          type: string
+          format: uuid
+        created_at:
+          description: Defaults to the time/date the comment is created, but can be set to reflect another date.
+          type: string
+          format: date-time
+        updated_at:
+          description: Defaults to the time/date the comment is last updated, but can be set to reflect another date.
+          type: string
+          format: date-time
+        external_id:
+          maxLength: 128
+          description: This field can be set to another unique ID. In the case that the comment has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - text
     CreateLabelParams:
       description: Request parameters for creating a Label on a Shortcut Story.
       type: object
@@ -1938,7 +1890,7 @@ components:
       additionalProperties: false
       required:
       - name
-    UpdateEpic:
+    CreateEpic:
       x-doc-skip: true
       type: object
       properties:
@@ -1946,9 +1898,6 @@ components:
           maxLength: 100000
           description: The Epic's description.
           type: string
-        archived:
-          description: A true/false boolean indicating whether the Epic is in archived state.
-          type: boolean
         labels:
           description: An array of Labels attached to the Epic.
           type: array
@@ -1958,7 +1907,6 @@ components:
           description: A manual override for the time/date the Epic was completed.
           type: string
           format: date-time
-          nullable: true
         objective_ids:
           description: An array of IDs for Objectives to which this Epic is related.
           type: array
@@ -1972,9 +1920,10 @@ components:
           type: string
         planned_start_date:
           description: The Epic's planned start date.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         state:
           description: '`Deprecated` The Epic''s state (to do, in progress, or done); will be ignored when `epic_state_id` is set.'
           type: string
@@ -1984,9 +1933,10 @@ components:
           - done
         milestone_id:
           description: '`Deprecated` The ID of the Milestone this Epic is related to. Use `objective_ids`.'
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         requested_by_id:
           description: The ID of the member that requested the epic.
           type: string
@@ -1999,14 +1949,18 @@ components:
           description: A manual override for the time/date the Epic was started.
           type: string
           format: date-time
-          nullable: true
         group_id:
           description: '`Deprecated` The ID of the group to associate with the epic. Use `group_ids`.'
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
+        updated_at:
+          description: Defaults to the time/date it is created but can be set to reflect another date.
+          type: string
+          format: date-time
         follower_ids:
-          description: An array of UUIDs for any Members you want to add as Followers on this Epic.
+          description: An array of UUIDs for any Members you want to add as Followers on this new Epic.
           type: array
           items:
             type: string
@@ -2017,8 +1971,14 @@ components:
           items:
             type: string
             format: uuid
+        converted_from_story_id:
+          description: The ID of the Story that was converted to an Epic.
+          type:
+          - integer
+          - 'null'
+          format: int64
         owner_ids:
-          description: An array of UUIDs for any members you want to add as Owners on this Epic.
+          description: An array of UUIDs for any members you want to add as Owners on this new Epic.
           type: array
           items:
             type: string
@@ -2027,20 +1987,113 @@ components:
           maxLength: 128
           description: This field can be set to another unique ID. In the case that the Epic has been imported from another tool, the ID in the other tool can be indicated here.
           type: string
-        before_id:
-          description: The ID of the Epic we want to move this Epic before.
-          type: integer
-          format: int64
-        after_id:
-          description: The ID of the Epic we want to move this Epic after.
-          type: integer
-          format: int64
         deadline:
           description: The Epic's deadline.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          description: Defaults to the time/date it is created but can be set to reflect another date.
           type: string
           format: date-time
-          nullable: true
       additionalProperties: false
+      required:
+      - name
+    DocSlim:
+      x-doc-skip: true
+      type: object
+      properties:
+        id:
+          description: The public id of the Doc
+          type: string
+          format: uuid
+        title:
+          description: The Docs Title
+          type:
+          - string
+          - 'null'
+        app_url:
+          description: The Shortcut application url for the Doc.
+          type: string
+      additionalProperties: false
+      required:
+      - id
+      - title
+      - app_url
+    EpicStats:
+      description: A group of calculated values for this Epic.
+      type: object
+      properties:
+        num_points_done:
+          description: The total number of completed points in this Epic.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The total number of documents associated with this Epic.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of unstarted Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories in this Epic.
+          type: integer
+          format: int64
+        last_story_update:
+          description: The date of the last update of a Story in this Epic.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        num_points_started:
+          description: The total number of started points in this Epic.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points in this Epic.
+          type: integer
+          format: int64
+        num_stories_started:
+          description: The total number of started Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of backlog Stories in this Epic.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points in this Epic.
+          type: integer
+          format: int64
+        num_points:
+          description: The total number of points in this Epic.
+          type: integer
+          format: int64
+        num_stories_done:
+          description: The total number of done Stories in this Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_points_done
+      - num_related_documents
+      - num_stories_unstarted
+      - num_stories_total
+      - last_story_update
+      - num_points_started
+      - num_points_unstarted
+      - num_stories_started
+      - num_stories_unestimated
+      - num_stories_backlog
+      - num_points_backlog
+      - num_points
+      - num_stories_done
     StoryStats:
       description: The stats object for Stories
       type: object
@@ -2052,6 +2105,20 @@ components:
       additionalProperties: false
       required:
       - num_related_documents
+    EpicAssociatedGroup:
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
   securitySchemes:
     api_token:
       type: apiKey

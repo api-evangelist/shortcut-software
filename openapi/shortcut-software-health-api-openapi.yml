@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Shortcut Categories Health API
+  title: Shortcut Health API
   version: '3.0'
   description: Shortcut API
 servers:
@@ -95,9 +95,10 @@ components:
           - No Health
         id:
           description: The unique ID of the Health record.
-          type: string
+          type:
+          - string
+          - 'null'
           format: uuid
-          nullable: true
         created_at:
           description: The time that the Health record was created.
           type: string

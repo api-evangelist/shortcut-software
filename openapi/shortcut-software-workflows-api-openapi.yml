@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Shortcut Categories Workflows API
+  title: Shortcut Workflows API
   version: '3.0'
   description: Shortcut API
 servers:
@@ -62,6 +62,74 @@ paths:
       - Workflows
 components:
   schemas:
+    WorkflowState:
+      description: 'Workflow State is any of the at least 3 columns. Workflow States correspond to one of 3 types: Unstarted, Started, or Done.'
+      type: object
+      properties:
+        description:
+          description: The description of what sort of Stories belong in that Workflow state.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color for this Workflow State.
+          minLength: 1
+          type: string
+        verb:
+          description: The verb that triggers a move to that Workflow State when making VCS commits.
+          type:
+          - string
+          - 'null'
+        name:
+          description: The Workflow State's name.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        num_stories:
+          description: The number of Stories currently in that Workflow State.
+          type: integer
+          format: int64
+        type:
+          description: The type of Workflow State (Unstarted, Started, or Finished)
+          type: string
+        updated_at:
+          description: When the Workflow State was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique ID of the Workflow State.
+          type: integer
+          format: int64
+        num_story_templates:
+          description: The number of Story Templates associated with that Workflow State.
+          type: integer
+          format: int64
+        position:
+          description: The position that the Workflow State is in, starting with 0 at the left.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date the Workflow State was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - verb
+      - name
+      - global_id
+      - num_stories
+      - type
+      - updated_at
+      - id
+      - num_story_templates
+      - position
+      - created_at
     Workflow:
       description: 'Workflow is the array of defined Workflow States. Workflow can be queried using the API but must be updated in the Shortcut UI. '
       type: object
@@ -122,73 +190,6 @@ components:
       - team_id
       - created_at
       - default_state_id
-    WorkflowState:
-      description: 'Workflow State is any of the at least 3 columns. Workflow States correspond to one of 3 types: Unstarted, Started, or Done.'
-      type: object
-      properties:
-        description:
-          description: The description of what sort of Stories belong in that Workflow state.
-          type: string
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          description: The hex color for this Workflow State.
-          minLength: 1
-          type: string
-        verb:
-          description: The verb that triggers a move to that Workflow State when making VCS commits.
-          type: string
-          nullable: true
-        name:
-          description: The Workflow State's name.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        num_stories:
-          description: The number of Stories currently in that Workflow State.
-          type: integer
-          format: int64
-        type:
-          description: The type of Workflow State (Unstarted, Started, or Finished)
-          type: string
-        updated_at:
-          description: When the Workflow State was last updated.
-          type: string
-          format: date-time
-        id:
-          description: The unique ID of the Workflow State.
-          type: integer
-          format: int64
-        num_story_templates:
-          description: The number of Story Templates associated with that Workflow State.
-          type: integer
-          format: int64
-        position:
-          description: The position that the Workflow State is in, starting with 0 at the left.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date the Workflow State was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - description
-      - entity_type
-      - verb
-      - name
-      - global_id
-      - num_stories
-      - type
-      - updated_at
-      - id
-      - num_story_templates
-      - position
-      - created_at
   securitySchemes:
     api_token:
       type: apiKey

@@ -1,13 +1,13 @@
-generated: '2026-07-21'
+generated: '2026-09-19'
 method: searched
 source: live probe of /.well-known/ on API + docs + marketing hosts
 hosts:
 - host: https://api.app.shortcut.com
   documents:
-  - path: /.well-known/oauth-authorization-server   # RFC 8414
+  - path: /.well-known/oauth-authorization-server
     status: 200
     file: shortcut-software-oauth-authorization-server.json
-  - path: /.well-known/security.txt                  # returns 401 org-context error, not a real security.txt
+  - path: /.well-known/security.txt
     status: 401
   - path: /.well-known/openid-configuration
     status: 401
@@ -27,9 +27,27 @@ hosts:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
-notes: >-
-  The API host publishes RFC 8414 OAuth Authorization Server Metadata at
-  /.well-known/oauth-authorization-server (issuer https://api.app.shortcut.com),
-  which backs the hosted MCP server's OAuth flow. No security.txt / OIDC discovery
-  is exposed publicly (the API host returns a 401 organization-context error for
-  those paths rather than a document).
+- host: https://mcp.shortcut.com
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: shortcut-software-mcp-oauth-protected-resource.json
+    bytes: 130
+  path_echo_control: passed
+notes: The API host publishes RFC 8414 OAuth Authorization Server Metadata at /.well-known/oauth-authorization-server
+  (issuer https://api.app.shortcut.com), which backs the hosted MCP server's OAuth flow. No security.txt
+  / OIDC discovery is exposed publicly (the API host returns a 401 organization-context error for those
+  paths rather than a document).
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://mcp.shortcut.com
+    path: /.well-known/oauth-protected-resource
+    file: shortcut-software-mcp-oauth-protected-resource.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'

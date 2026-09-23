@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Shortcut Categories Repositories API
+  title: Shortcut Repositories API
   version: '3.0'
   description: Shortcut API
 servers:
@@ -71,8 +71,9 @@ components:
           type: string
         name:
           description: The shorthand name of the VCS repository.
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         type:
           description: The VCS provider for the Repository.
           type: string
@@ -82,31 +83,37 @@ components:
           - bitbucket
         updated_at:
           description: The time/date the Repository was updated.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         external_id:
           description: The VCS unique identifier for the Repository.
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         id:
           description: The ID associated to the VCS repository in Shortcut.
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         url:
           description: The URL of the Repository.
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         full_name:
           description: The full name of the VCS repository.
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         created_at:
           description: The time/date the Repository was created.
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
       additionalProperties: false
       required:
       - entity_type
