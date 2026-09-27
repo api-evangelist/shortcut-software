@@ -121,81 +121,6 @@ paths:
       - Custom Fields
 components:
   schemas:
-    CustomField:
-      type: object
-      properties:
-        description:
-          maxLength: 512
-          minLength: 1
-          description: A string description of the CustomField
-          type: string
-        icon_set_identifier:
-          maxLength: 63
-          minLength: 1
-          description: A string that represents the icon that corresponds to this custom field.
-          type: string
-        entity_type:
-          description: A string description of this resource.
-          type: string
-          enum:
-          - custom-field
-        story_types:
-          description: The types of stories this CustomField is scoped to.
-          x-doc-skip: true
-          type: array
-          items:
-            type: string
-        name:
-          maxLength: 63
-          minLength: 1
-          description: The name of the Custom Field.
-          type: string
-        fixed_position:
-          description: When true, the CustomFieldEnumValues may not be reordered.
-          x-doc-skip: true
-          type: boolean
-        updated_at:
-          description: The instant when this CustomField was last updated.
-          type: string
-          format: date-time
-        id:
-          description: The unique public ID for the CustomField.
-          type: string
-          format: uuid
-        values:
-          description: A collection of legal values for a CustomField.
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomFieldEnumValue'
-        field_type:
-          description: The type of Custom Field, eg. 'enum'.
-          type: string
-          enum:
-          - enum
-        position:
-          description: An integer indicating the position of this Custom Field with respect to the other CustomField
-          type: integer
-          format: int64
-        canonical_name:
-          description: The canonical name for a Shortcut-defined field.
-          type: string
-        enabled:
-          description: When true, the CustomField can be applied to entities in the Workspace.
-          type: boolean
-        created_at:
-          description: The instant when this CustomField was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - entity_type
-      - name
-      - updated_at
-      - id
-      - field_type
-      - position
-      - enabled
-      - created_at
     CustomFieldEnumValue:
       type: object
       properties:
@@ -320,6 +245,81 @@ components:
           type: string
           format: uuid
       additionalProperties: false
+    CustomField:
+      type: object
+      properties:
+        description:
+          maxLength: 512
+          minLength: 1
+          description: A string description of the CustomField
+          type: string
+        icon_set_identifier:
+          maxLength: 63
+          minLength: 1
+          description: A string that represents the icon that corresponds to this custom field.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+          enum:
+          - custom-field
+        story_types:
+          description: The types of stories this CustomField is scoped to.
+          x-doc-skip: true
+          type: array
+          items:
+            type: string
+        name:
+          maxLength: 63
+          minLength: 1
+          description: The name of the Custom Field.
+          type: string
+        fixed_position:
+          description: When true, the CustomFieldEnumValues may not be reordered.
+          x-doc-skip: true
+          type: boolean
+        updated_at:
+          description: The instant when this CustomField was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique public ID for the CustomField.
+          type: string
+          format: uuid
+        values:
+          description: A collection of legal values for a CustomField.
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldEnumValue'
+        field_type:
+          description: The type of Custom Field, eg. 'enum'.
+          type: string
+          enum:
+          - enum
+        position:
+          description: An integer indicating the position of this Custom Field with respect to the other CustomField
+          type: integer
+          format: int64
+        canonical_name:
+          description: The canonical name for a Shortcut-defined field.
+          type: string
+        enabled:
+          description: When true, the CustomField can be applied to entities in the Workspace.
+          type: boolean
+        created_at:
+          description: The instant when this CustomField was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - name
+      - updated_at
+      - id
+      - field_type
+      - position
+      - enabled
+      - created_at
   securitySchemes:
     api_token:
       type: apiKey

@@ -206,6 +206,82 @@ paths:
       - Iterations
 components:
   schemas:
+    CreateLabelParams:
+      description: Request parameters for creating a Label on a Shortcut Story.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Label.
+          type: string
+        description:
+          maxLength: 1024
+          description: The description of the new Label.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
+          type: string
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
     Label:
       description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces.
       type: object
@@ -274,6 +350,287 @@ components:
       - external_id
       - id
       - created_at
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    CreateIteration:
+      type: object
+      properties:
+        follower_ids:
+          description: An array of UUIDs for any Members you want to add as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
+          type: array
+          items:
+            type: string
+            format: uuid
+        labels:
+          description: An array of Labels attached to the Iteration.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        description:
+          maxLength: 100000
+          description: The description of the Iteration.
+          type: string
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of this Iteration.
+          type: string
+        start_date:
+          minLength: 1
+          description: The date this Iteration begins, e.g. 2019-07-01.
+          type: string
+        end_date:
+          minLength: 1
+          description: The date this Iteration ends, e.g. 2019-07-01.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+      - start_date
+      - end_date
+    StoryStats:
+      description: The stats object for Stories
+      type: object
+      properties:
+        num_related_documents:
+          description: The number of documents related to this Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+    UpdateIteration:
+      type: object
+      properties:
+        follower_ids:
+          description: An array of UUIDs for any Members you want to add as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
+          type: array
+          items:
+            type: string
+            format: uuid
+        labels:
+          description: An array of Labels attached to the Iteration.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateLabelParams'
+        description:
+          maxLength: 100000
+          description: The description of the Iteration.
+          type: string
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of this Iteration
+          type: string
+        start_date:
+          minLength: 1
+          description: The date this Iteration begins, e.g. 2019-07-01
+          type: string
+        end_date:
+          minLength: 1
+          description: The date this Iteration ends, e.g. 2019-07-05.
+          type: string
+      additionalProperties: false
+    IterationSlim:
+      description: 'IterationSlim represents the same resource as an Iteration, but is more light-weight. Use the [Get Iteration](#Get-Iteration) endpoint to fetch the unabridged payload for an Iteration. '
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Iteration.
+          type: string
+        entity_type:
+          description: A string description of this resource
+          type: string
+        labels:
+          description: An array of labels attached to the iteration.
+          type: array
+          items:
+            $ref: '#/components/schemas/Label'
+        mention_ids:
+          description: '`Deprecated:` use `member_mention_ids`.'
+          type: array
+          items:
+            type: string
+            format: uuid
+        member_mention_ids:
+          description: An array of Member IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        associated_groups:
+          description: An array containing Group IDs and Group-owned story counts for the Iteration's associated groups.
+          x-doc-skip: true
+          type: array
+          items:
+            $ref: '#/components/schemas/IterationAssociatedGroup'
+        name:
+          description: The name of the iteration.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        label_ids:
+          description: An array of label ids attached to the iteration.
+          type: array
+          items:
+            type: integer
+            format: int64
+        updated_at:
+          description: The instant when this iteration was last updated.
+          type: string
+          format: date-time
+        group_mention_ids:
+          description: An array of Group IDs that have been mentioned in the Story description.
+          type: array
+          items:
+            type: string
+            format: uuid
+        end_date:
+          description: The date this iteration ends.
+          type: string
+          format: date-time
+        follower_ids:
+          description: An array of UUIDs for any Members listed as Followers.
+          type: array
+          items:
+            type: string
+            format: uuid
+        group_ids:
+          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
+          type: array
+          items:
+            type: string
+            format: uuid
+        start_date:
+          description: The date this iteration begins.
+          type: string
+          format: date-time
+        status:
+          description: The status of the iteration. Values are either "unstarted", "started", or "done".
+          type: string
+        id:
+          description: The ID of the iteration.
+          type: integer
+          format: int64
+        stats:
+          $ref: '#/components/schemas/IterationStats'
+        created_at:
+          description: The instant when this iteration was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - entity_type
+      - labels
+      - mention_ids
+      - member_mention_ids
+      - associated_groups
+      - name
+      - global_id
+      - label_ids
+      - updated_at
+      - group_mention_ids
+      - end_date
+      - follower_ids
+      - group_ids
+      - start_date
+      - status
+      - id
+      - stats
+      - created_at
+    IterationAssociatedGroup:
+      x-doc-skip: true
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Iteration.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
     StorySlim:
       description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
       type: object
@@ -590,44 +947,21 @@ components:
       - comment_ids
       - created_at
       - moved_at
-    UpdateIteration:
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
       type: object
       properties:
-        follower_ids:
-          description: An array of UUIDs for any Members you want to add as Followers.
-          type: array
-          items:
-            type: string
-            format: uuid
-        group_ids:
-          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
-          type: array
-          items:
-            type: string
-            format: uuid
-        labels:
-          description: An array of Labels attached to the Iteration.
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateLabelParams'
-        description:
-          maxLength: 100000
-          description: The description of the Iteration.
+        external_id:
+          description: The id used to reference an external entity.
           type: string
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The name of this Iteration
-          type: string
-        start_date:
-          minLength: 1
-          description: The date this Iteration begins, e.g. 2019-07-01
-          type: string
-        end_date:
-          minLength: 1
-          description: The date this Iteration ends, e.g. 2019-07-05.
+        url:
+          description: The url to the external entity.
           type: string
       additionalProperties: false
+      required:
+      - external_id
+      - url
     StoryCustomField:
       type: object
       properties:
@@ -647,48 +981,97 @@ components:
       - field_id
       - value_id
       - value
-    IterationAssociatedGroup:
-      x-doc-skip: true
+    LabelStats:
+      description: A group of calculated values for this Label. This is not included if the slim? flag is set to true for the List Labels endpoint.
       type: object
       properties:
-        group_id:
-          description: The Group ID of the associated group.
-          type: string
-          format: uuid
-        associated_stories_count:
-          description: The number of stories this Group owns in the Iteration.
+        num_related_documents:
+          description: The total number of Documents associated this Label.
+          type: integer
+          format: int64
+        num_epics:
+          description: The total number of Epics with this Label.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of stories unstarted Stories with this Label.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories with this Label.
+          type: integer
+          format: int64
+        num_epics_unstarted:
+          description: The number of unstarted epics associated with this label.
+          type: integer
+          format: int64
+        num_epics_in_progress:
+          description: The number of in progress epics associated with this label.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points with this Label.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate with this Label.
+          type: integer
+          format: int64
+        num_points_in_progress:
+          description: The total number of in-progress points with this Label.
+          type: integer
+          format: int64
+        num_epics_total:
+          description: The total number of Epics associated with this Label.
+          type: integer
+          format: int64
+        num_stories_completed:
+          description: The total number of completed Stories with this Label.
+          type: integer
+          format: int64
+        num_points_completed:
+          description: The total number of completed points with this Label.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of stories backlog Stories with this Label.
+          type: integer
+          format: int64
+        num_points_total:
+          description: The total number of points with this Label.
+          type: integer
+          format: int64
+        num_stories_in_progress:
+          description: The total number of in-progress Stories with this Label.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points with this Label.
+          type: integer
+          format: int64
+        num_epics_completed:
+          description: The number of completed Epics associated with this Label.
           type: integer
           format: int64
       additionalProperties: false
       required:
-      - group_id
-    CreateLabelParams:
-      description: Request parameters for creating a Label on a Shortcut Story.
-      type: object
-      properties:
-        name:
-          maxLength: 128
-          minLength: 1
-          description: The name of the new Label.
-          type: string
-        description:
-          maxLength: 1024
-          description: The description of the new Label.
-          type: string
-        color:
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          minLength: 1
-          type: string
-        external_id:
-          maxLength: 128
-          minLength: 1
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-      additionalProperties: false
-      required:
-      - name
+      - num_related_documents
+      - num_epics
+      - num_stories_unstarted
+      - num_stories_total
+      - num_epics_unstarted
+      - num_epics_in_progress
+      - num_points_unstarted
+      - num_stories_unestimated
+      - num_points_in_progress
+      - num_epics_total
+      - num_stories_completed
+      - num_points_completed
+      - num_stories_backlog
+      - num_points_total
+      - num_stories_in_progress
+      - num_points_backlog
+      - num_epics_completed
     Iteration:
       description: An Iteration is a defined, time-boxed period of development for a collection of Stories. See https://help.shortcut.com/hc/en-us/articles/360028953452-Iterations-Overview for more information.
       type: object
@@ -802,108 +1185,6 @@ components:
       - id
       - stats
       - created_at
-    CreateIteration:
-      type: object
-      properties:
-        follower_ids:
-          description: An array of UUIDs for any Members you want to add as Followers.
-          type: array
-          items:
-            type: string
-            format: uuid
-        group_ids:
-          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
-          type: array
-          items:
-            type: string
-            format: uuid
-        labels:
-          description: An array of Labels attached to the Iteration.
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateLabelParams'
-        description:
-          maxLength: 100000
-          description: The description of the Iteration.
-          type: string
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The name of this Iteration.
-          type: string
-        start_date:
-          minLength: 1
-          description: The date this Iteration begins, e.g. 2019-07-01.
-          type: string
-        end_date:
-          minLength: 1
-          description: The date this Iteration ends, e.g. 2019-07-01.
-          type: string
-      additionalProperties: false
-      required:
-      - name
-      - start_date
-      - end_date
-    TypedStoryLink:
-      description: 'The type of Story Link. The string can be subject or object. '
-      type: object
-      properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        object_id:
-          description: The ID of the object Story.
-          type: integer
-          format: int64
-        verb:
-          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
-          type: string
-        type:
-          description: This indicates whether the Story is the subject or object in the Story Link.
-          type: string
-        updated_at:
-          description: The time/date when the Story Link was last updated.
-          type: string
-          format: date-time
-        id:
-          description: The unique identifier of the Story Link.
-          type: integer
-          format: int64
-        subject_id:
-          description: The ID of the subject Story.
-          type: integer
-          format: int64
-        subject_workflow_state_id:
-          description: The workflow state of the "subject" story.
-          x-doc-skip: true
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date when the Story Link was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - entity_type
-      - object_id
-      - verb
-      - type
-      - updated_at
-      - id
-      - subject_id
-      - subject_workflow_state_id
-      - created_at
-    StoryStats:
-      description: The stats object for Stories
-      type: object
-      properties:
-        num_related_documents:
-          description: The number of documents related to this Story.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - num_related_documents
     IterationStats:
       description: A group of calculated values for this Iteration.
       type: object
@@ -973,287 +1254,6 @@ components:
       - num_points_backlog
       - num_points
       - num_stories_done
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Label.
-          type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
-    IterationSlim:
-      description: 'IterationSlim represents the same resource as an Iteration, but is more light-weight. Use the [Get Iteration](#Get-Iteration) endpoint to fetch the unabridged payload for an Iteration. '
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Iteration.
-          type: string
-        entity_type:
-          description: A string description of this resource
-          type: string
-        labels:
-          description: An array of labels attached to the iteration.
-          type: array
-          items:
-            $ref: '#/components/schemas/Label'
-        mention_ids:
-          description: '`Deprecated:` use `member_mention_ids`.'
-          type: array
-          items:
-            type: string
-            format: uuid
-        member_mention_ids:
-          description: An array of Member IDs that have been mentioned in the Story description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        associated_groups:
-          description: An array containing Group IDs and Group-owned story counts for the Iteration's associated groups.
-          x-doc-skip: true
-          type: array
-          items:
-            $ref: '#/components/schemas/IterationAssociatedGroup'
-        name:
-          description: The name of the iteration.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        label_ids:
-          description: An array of label ids attached to the iteration.
-          type: array
-          items:
-            type: integer
-            format: int64
-        updated_at:
-          description: The instant when this iteration was last updated.
-          type: string
-          format: date-time
-        group_mention_ids:
-          description: An array of Group IDs that have been mentioned in the Story description.
-          type: array
-          items:
-            type: string
-            format: uuid
-        end_date:
-          description: The date this iteration ends.
-          type: string
-          format: date-time
-        follower_ids:
-          description: An array of UUIDs for any Members listed as Followers.
-          type: array
-          items:
-            type: string
-            format: uuid
-        group_ids:
-          description: An array of UUIDs for any Groups you want to add as Followers. Currently, only one Group association is presented in our web UI.
-          type: array
-          items:
-            type: string
-            format: uuid
-        start_date:
-          description: The date this iteration begins.
-          type: string
-          format: date-time
-        status:
-          description: The status of the iteration. Values are either "unstarted", "started", or "done".
-          type: string
-        id:
-          description: The ID of the iteration.
-          type: integer
-          format: int64
-        stats:
-          $ref: '#/components/schemas/IterationStats'
-        created_at:
-          description: The instant when this iteration was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - entity_type
-      - labels
-      - mention_ids
-      - member_mention_ids
-      - associated_groups
-      - name
-      - global_id
-      - label_ids
-      - updated_at
-      - group_mention_ids
-      - end_date
-      - follower_ids
-      - group_ids
-      - start_date
-      - status
-      - id
-      - stats
-      - created_at
-    LabelStats:
-      description: A group of calculated values for this Label. This is not included if the slim? flag is set to true for the List Labels endpoint.
-      type: object
-      properties:
-        num_related_documents:
-          description: The total number of Documents associated this Label.
-          type: integer
-          format: int64
-        num_epics:
-          description: The total number of Epics with this Label.
-          type: integer
-          format: int64
-        num_stories_unstarted:
-          description: The total number of stories unstarted Stories with this Label.
-          type: integer
-          format: int64
-        num_stories_total:
-          description: The total number of Stories with this Label.
-          type: integer
-          format: int64
-        num_epics_unstarted:
-          description: The number of unstarted epics associated with this label.
-          type: integer
-          format: int64
-        num_epics_in_progress:
-          description: The number of in progress epics associated with this label.
-          type: integer
-          format: int64
-        num_points_unstarted:
-          description: The total number of unstarted points with this Label.
-          type: integer
-          format: int64
-        num_stories_unestimated:
-          description: The total number of Stories with no point estimate with this Label.
-          type: integer
-          format: int64
-        num_points_in_progress:
-          description: The total number of in-progress points with this Label.
-          type: integer
-          format: int64
-        num_epics_total:
-          description: The total number of Epics associated with this Label.
-          type: integer
-          format: int64
-        num_stories_completed:
-          description: The total number of completed Stories with this Label.
-          type: integer
-          format: int64
-        num_points_completed:
-          description: The total number of completed points with this Label.
-          type: integer
-          format: int64
-        num_stories_backlog:
-          description: The total number of stories backlog Stories with this Label.
-          type: integer
-          format: int64
-        num_points_total:
-          description: The total number of points with this Label.
-          type: integer
-          format: int64
-        num_stories_in_progress:
-          description: The total number of in-progress Stories with this Label.
-          type: integer
-          format: int64
-        num_points_backlog:
-          description: The total number of backlog points with this Label.
-          type: integer
-          format: int64
-        num_epics_completed:
-          description: The number of completed Epics associated with this Label.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - num_related_documents
-      - num_epics
-      - num_stories_unstarted
-      - num_stories_total
-      - num_epics_unstarted
-      - num_epics_in_progress
-      - num_points_unstarted
-      - num_stories_unestimated
-      - num_points_in_progress
-      - num_epics_total
-      - num_stories_completed
-      - num_points_completed
-      - num_stories_backlog
-      - num_points_total
-      - num_stories_in_progress
-      - num_points_backlog
-      - num_epics_completed
-    SyncedItem:
-      x-doc-skip: true
-      description: The synced item for the story.
-      type: object
-      properties:
-        external_id:
-          description: The id used to reference an external entity.
-          type: string
-        url:
-          description: The url to the external entity.
-          type: string
-      additionalProperties: false
-      required:
-      - external_id
-      - url
   securitySchemes:
     api_token:
       type: apiKey

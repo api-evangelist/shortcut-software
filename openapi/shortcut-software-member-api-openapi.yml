@@ -32,15 +32,6 @@ paths:
       - Member
 components:
   schemas:
-    MemberInfoOrganization2:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-      additionalProperties: false
-      required:
-      - id
     BasicWorkspaceInfo:
       type: object
       properties:
@@ -75,6 +66,15 @@ components:
       - name
       - url_slug
       - utc_offset
+    MemberInfoOrganization2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - id
     MemberInfo:
       type: object
       properties:

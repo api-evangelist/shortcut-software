@@ -73,31 +73,6 @@ paths:
       - Key Results
 components:
   schemas:
-    KeyResultValue:
-      description: The starting value of the Key Result.
-      type: object
-      properties:
-        numeric_value:
-          description: The numeric value, as a decimal string. No more than two decimal places are allowed.
-          type: string
-        boolean_value:
-          description: The boolean value.
-          type: boolean
-      additionalProperties: false
-    UpdateKeyResult:
-      type: object
-      properties:
-        name:
-          maxLength: 1024
-          description: The name of the Key Result.
-          type: string
-        initial_observed_value:
-          $ref: '#/components/schemas/KeyResultValue'
-        observed_value:
-          $ref: '#/components/schemas/KeyResultValue'
-        target_value:
-          $ref: '#/components/schemas/KeyResultValue'
-      additionalProperties: false
     KeyResult:
       type: object
       properties:
@@ -139,6 +114,31 @@ components:
       - current_observed_value
       - current_target_value
       - progress
+    UpdateKeyResult:
+      type: object
+      properties:
+        name:
+          maxLength: 1024
+          description: The name of the Key Result.
+          type: string
+        initial_observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        target_value:
+          $ref: '#/components/schemas/KeyResultValue'
+      additionalProperties: false
+    KeyResultValue:
+      description: The starting value of the Key Result.
+      type: object
+      properties:
+        numeric_value:
+          description: The numeric value, as a decimal string. No more than two decimal places are allowed.
+          type: string
+        boolean_value:
+          description: The boolean value.
+          type: boolean
+      additionalProperties: false
   securitySchemes:
     api_token:
       type: apiKey

@@ -114,6 +114,61 @@ components:
       - created_at
       - updated_at
       - url
+    Profile:
+      description: A group of Member profile details.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        deactivated:
+          description: A true/false boolean indicating whether the Member has been deactivated within Shortcut.
+          type: boolean
+        two_factor_auth_activated:
+          description: If Two Factor Authentication is activated for this User.
+          type: boolean
+        mention_name:
+          description: The Member's username within the Organization.
+          type: string
+        name:
+          description: The Member's name within the Organization.
+          type:
+          - string
+          - 'null'
+        is_agent:
+          description: Whether this profile is an Agent/Bot user.
+          x-doc-skip: true
+          type: boolean
+        gravatar_hash:
+          description: This is the gravatar hash associated with email_address.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique identifier of the profile.
+          type: string
+          format: uuid
+        display_icon:
+          $ref: '#/components/schemas/Icon'
+        is_owner:
+          description: A boolean indicating whether this profile is an owner at their associated organization.
+          type: boolean
+        email_address:
+          description: The primary email address of the Member with the Organization.
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+      required:
+      - entity_type
+      - deactivated
+      - mention_name
+      - name
+      - gravatar_hash
+      - id
+      - display_icon
+      - is_owner
+      - email_address
     Member:
       description: Details about an individual user within the Workspace.
       type: object
@@ -189,61 +244,6 @@ components:
       - id
       - profile
       - created_at
-    Profile:
-      description: A group of Member profile details.
-      type: object
-      properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        deactivated:
-          description: A true/false boolean indicating whether the Member has been deactivated within Shortcut.
-          type: boolean
-        two_factor_auth_activated:
-          description: If Two Factor Authentication is activated for this User.
-          type: boolean
-        mention_name:
-          description: The Member's username within the Organization.
-          type: string
-        name:
-          description: The Member's name within the Organization.
-          type:
-          - string
-          - 'null'
-        is_agent:
-          description: Whether this profile is an Agent/Bot user.
-          x-doc-skip: true
-          type: boolean
-        gravatar_hash:
-          description: This is the gravatar hash associated with email_address.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique identifier of the profile.
-          type: string
-          format: uuid
-        display_icon:
-          $ref: '#/components/schemas/Icon'
-        is_owner:
-          description: A boolean indicating whether this profile is an owner at their associated organization.
-          type: boolean
-        email_address:
-          description: The primary email address of the Member with the Organization.
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-      required:
-      - entity_type
-      - deactivated
-      - mention_name
-      - name
-      - gravatar_hash
-      - id
-      - display_icon
-      - is_owner
-      - email_address
   securitySchemes:
     api_token:
       type: apiKey

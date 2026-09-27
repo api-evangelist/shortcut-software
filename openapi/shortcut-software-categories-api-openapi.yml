@@ -203,46 +203,6 @@ paths:
       - Categories
 components:
   schemas:
-    UpdateCategory:
-      x-doc-skip: true
-      type: object
-      properties:
-        name:
-          maxLength: 128
-          minLength: 1
-          description: The new name of the Category.
-          type: string
-        color:
-          description: The hex color to be displayed with the Category (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Category has been archived.
-          type: boolean
-      additionalProperties: false
-    MilestoneStats:
-      description: A group of calculated values for this Milestone.
-      type: object
-      properties:
-        average_cycle_time:
-          description: The average cycle time (in seconds) of completed stories in this Milestone.
-          type: integer
-          format: int64
-        average_lead_time:
-          description: The average lead time (in seconds) of completed stories in this Milestone.
-          type: integer
-          format: int64
-        num_related_documents:
-          description: The number of related documents to this Milestone.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - num_related_documents
     Milestone:
       description: (Deprecated) A Milestone is a collection of Epics that represent a release or some other large initiative that you are working on. Milestones have become Objectives, so you should use Objective-related API resources instead of Milestone ones.
       type: object
@@ -349,6 +309,27 @@ components:
       - position
       - stats
       - created_at
+    UpdateCategory:
+      x-doc-skip: true
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The new name of the Category.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+      additionalProperties: false
     CreateCategory:
       x-doc-skip: true
       type: object
@@ -433,6 +414,25 @@ components:
       - external_id
       - id
       - created_at
+    MilestoneStats:
+      description: A group of calculated values for this Milestone.
+      type: object
+      properties:
+        average_cycle_time:
+          description: The average cycle time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        average_lead_time:
+          description: The average lead time (in seconds) of completed stories in this Milestone.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The number of related documents to this Milestone.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
   securitySchemes:
     api_token:
       type: apiKey

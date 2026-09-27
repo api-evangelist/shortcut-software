@@ -270,24 +270,6 @@ paths:
       - Objectives
 components:
   schemas:
-    CreateObjectiveHealth:
-      x-doc-skip: true
-      type: object
-      properties:
-        status:
-          description: The health status of the Objective.
-          type: string
-          enum:
-          - At Risk
-          - On Track
-          - Off Track
-          - No Health
-        text:
-          description: The description of the Health status.
-          type: string
-      additionalProperties: false
-      required:
-      - status
     EpicStats:
       description: A group of calculated values for this Epic.
       type: object
@@ -361,6 +343,20 @@ components:
       - num_points_backlog
       - num_points
       - num_stories_done
+    EpicAssociatedGroup:
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
     Objective:
       description: An Objective is a collection of Epics that represent a release or some other large initiative that you are working on.
       type: object
@@ -467,6 +463,72 @@ components:
       - position
       - stats
       - created_at
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
     ObjectiveStats:
       description: A group of calculated values for this Objective.
       type: object
@@ -486,6 +548,113 @@ components:
       additionalProperties: false
       required:
       - num_related_documents
+    Health:
+      description: The current health status of the Epic.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        author_id:
+          description: The ID of the permission who created or updated the Health record.
+          type: string
+          format: uuid
+        epic_id:
+          description: The ID of the Epic associated with this Health record.
+          type: integer
+          format: int64
+        objective_id:
+          description: The ID of the Objective associated with this Health record.
+          type: integer
+          format: int64
+        updated_at:
+          description: The time that the Health record was updated.
+          type: string
+          format: date-time
+        status:
+          description: The health status of the Epic or Objective.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        id:
+          description: The unique ID of the Health record.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        created_at:
+          description: The time that the Health record was created.
+          type: string
+          format: date-time
+        text:
+          description: The text of the Health record.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - status
+      - id
+    Category:
+      description: A Category can be used to associate Objectives.
+      type: object
+      properties:
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Category.
+          type: string
+        global_id:
+          description: The Global ID of the Category.
+          x-doc-skip: true
+          type: string
+        type:
+          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Category was updated.
+          type: string
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Category.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Category was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - type
+      - updated_at
+      - external_id
+      - id
+      - created_at
     UnusableEntitlementError:
       type: object
       properties:
@@ -755,150 +924,24 @@ components:
       - deadline
       - stats
       - created_at
-    Health:
-      description: The current health status of the Epic.
+    CreateObjectiveHealth:
+      x-doc-skip: true
       type: object
       properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        author_id:
-          description: The ID of the permission who created or updated the Health record.
-          type: string
-          format: uuid
-        epic_id:
-          description: The ID of the Epic associated with this Health record.
-          type: integer
-          format: int64
-        objective_id:
-          description: The ID of the Objective associated with this Health record.
-          type: integer
-          format: int64
-        updated_at:
-          description: The time that the Health record was updated.
-          type: string
-          format: date-time
         status:
-          description: The health status of the Epic or Objective.
+          description: The health status of the Objective.
           type: string
           enum:
           - At Risk
           - On Track
           - Off Track
           - No Health
-        id:
-          description: The unique ID of the Health record.
-          type:
-          - string
-          - 'null'
-          format: uuid
-        created_at:
-          description: The time that the Health record was created.
-          type: string
-          format: date-time
         text:
-          description: The text of the Health record.
+          description: The description of the Health status.
           type: string
       additionalProperties: false
       required:
-      - entity_type
       - status
-      - id
-    CreateCategoryParams:
-      description: Request parameters for creating a Category with a Objective.
-      type: object
-      properties:
-        name:
-          maxLength: 128
-          minLength: 1
-          description: The name of the new Category.
-          type: string
-        color:
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          description: The hex color to be displayed with the Category (for example, "#ff0000").
-          minLength: 1
-          type: string
-        external_id:
-          maxLength: 128
-          minLength: 1
-          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-      additionalProperties: false
-      required:
-      - name
-    EpicAssociatedGroup:
-      type: object
-      properties:
-        group_id:
-          description: The Group ID of the associated group.
-          type: string
-          format: uuid
-        associated_stories_count:
-          description: The number of stories this Group owns in the Epic.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - group_id
-    Category:
-      description: A Category can be used to associate Objectives.
-      type: object
-      properties:
-        archived:
-          description: A true/false boolean indicating if the Category has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Category (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Category.
-          type: string
-        global_id:
-          description: The Global ID of the Category.
-          x-doc-skip: true
-          type: string
-        type:
-          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Category was updated.
-          type: string
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Category.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Category was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - type
-      - updated_at
-      - external_id
-      - id
-      - created_at
     CreateObjective:
       x-doc-skip: true
       type: object
@@ -935,72 +978,6 @@ components:
       additionalProperties: false
       required:
       - name
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Label.
-          type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
     UpdateObjective:
       x-doc-skip: true
       type: object
@@ -1050,6 +1027,29 @@ components:
           type: integer
           format: int64
       additionalProperties: false
+    CreateCategoryParams:
+      description: Request parameters for creating a Category with a Objective.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Category.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - name
   securitySchemes:
     api_token:
       type: apiKey

@@ -134,6 +134,50 @@ paths:
       - Story Links
 components:
   schemas:
+    CreateStoryLink:
+      x-doc-skip: true
+      type: object
+      properties:
+        verb:
+          description: The type of link.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - verb
+      - subject_id
+      - object_id
+    UpdateStoryLink:
+      x-doc-skip: true
+      type: object
+      properties:
+        verb:
+          description: The type of link.
+          type: string
+          enum:
+          - blocks
+          - duplicates
+          - relates to
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+      additionalProperties: false
     StoryLink:
       description: Story links allow you create semantic relationships between two stories. Relationship types are relates to, blocks / blocked by, and duplicates / is duplicated by. The format is `subject -> link -> object`, or for example "story 5 blocks story 6".
       type: object
@@ -179,50 +223,6 @@ components:
       - object_id
       - created_at
       - updated_at
-    CreateStoryLink:
-      x-doc-skip: true
-      type: object
-      properties:
-        verb:
-          description: The type of link.
-          type: string
-          enum:
-          - blocks
-          - duplicates
-          - relates to
-        subject_id:
-          description: The ID of the subject Story.
-          type: integer
-          format: int64
-        object_id:
-          description: The ID of the object Story.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - verb
-      - subject_id
-      - object_id
-    UpdateStoryLink:
-      x-doc-skip: true
-      type: object
-      properties:
-        verb:
-          description: The type of link.
-          type: string
-          enum:
-          - blocks
-          - duplicates
-          - relates to
-        subject_id:
-          description: The ID of the subject Story.
-          type: integer
-          format: int64
-        object_id:
-          description: The ID of the object Story.
-          type: integer
-          format: int64
-      additionalProperties: false
   securitySchemes:
     api_token:
       type: apiKey
