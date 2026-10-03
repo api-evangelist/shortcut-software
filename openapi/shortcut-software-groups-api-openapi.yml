@@ -180,6 +180,237 @@ paths:
       - Groups
 components:
   schemas:
+    StoryStats:
+      description: The stats object for Stories
+      type: object
+      properties:
+        num_related_documents:
+          description: The number of documents related to this Story.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_related_documents
+    Icon:
+      description: Icons are used to attach images to Groups, Workspaces, Members, and Loading screens in the Shortcut web application.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the Icon.
+          type: string
+          format: uuid
+        created_at:
+          description: The time/date that the Icon was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date that the Icon was updated.
+          type: string
+          format: date-time
+        url:
+          description: The URL of the Icon.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - created_at
+      - updated_at
+      - url
+    StoryCustomField:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    UpdateGroup:
+      type: object
+      properties:
+        description:
+          maxLength: 4096
+          description: The description of this Group.
+          type: string
+        archived:
+          description: Whether or not this Group is archived.
+          type:
+          - boolean
+          - 'null'
+        card_aging_mode:
+          description: 'The card aging mode for stories in this Group: "gradual" (fixed fade steps at 1, 2, and 4 weeks), "immediate", or "off" (explicitly disabled for this Group). Set to null to inherit the Workspace default.'
+          type:
+          - string
+          - 'null'
+          enum:
+          - 'off'
+          - gradual
+          - immediate
+        color:
+          description: The color you wish to use for the Group in the system.
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        card_aging_threshold_days:
+          description: The number of days an in-progress Story can go without activity before it is considered stale. Required when card_aging_mode is "immediate"; not allowed otherwise.
+          type:
+          - integer
+          - 'null'
+          format: int64
+        display_icon_id:
+          description: The Icon id for the avatar of this Group.
+          type:
+          - string
+          - 'null'
+          format: uuid
+        mention_name:
+          maxLength: 63
+          minLength: 1
+          description: The mention name of this Group.
+          type: string
+        name:
+          maxLength: 63
+          minLength: 1
+          description: The name of this Group.
+          type: string
+        color_key:
+          description: The color key you wish to use for the Group in the system.
+          type: string
+          enum:
+          - blue
+          - purple
+          - midnight-blue
+          - orange
+          - yellow-green
+          - brass
+          - gray
+          - fuchsia
+          - yellow
+          - pink
+          - sky-blue
+          - green
+          - red
+          - black
+          - slate
+          - turquoise
+        default_workflow_id:
+          description: The ID of the default workflow for stories created in this group.
+          type:
+          - integer
+          - 'null'
+          format: int64
+        member_ids:
+          description: The Member ids to add to this Group.
+          type: array
+          items:
+            type: string
+            format: uuid
+          uniqueItems: true
+        workflow_ids:
+          description: The Workflow ids to add to the Group.
+          type: array
+          items:
+            type: integer
+            format: int64
+      additionalProperties: false
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
     Group:
       description: A Group.
       type: object
@@ -323,144 +554,13 @@ components:
       - member_ids
       - workflow_ids
       - created_at
-    TypedStoryLink:
-      description: 'The type of Story Link. The string can be subject or object. '
-      type: object
-      properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        object_id:
-          description: The ID of the object Story.
-          type: integer
-          format: int64
-        verb:
-          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
-          type: string
-        type:
-          description: This indicates whether the Story is the subject or object in the Story Link.
-          type: string
-        updated_at:
-          description: The time/date when the Story Link was last updated.
-          type: string
-          format: date-time
-        id:
-          description: The unique identifier of the Story Link.
-          type: integer
-          format: int64
-        subject_id:
-          description: The ID of the subject Story.
-          type: integer
-          format: int64
-        subject_workflow_state_id:
-          description: The workflow state of the "subject" story.
-          x-doc-skip: true
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date when the Story Link was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - entity_type
-      - object_id
-      - verb
-      - type
-      - updated_at
-      - id
-      - subject_id
-      - subject_workflow_state_id
-      - created_at
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Label.
-          type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
-    StoryStats:
-      description: The stats object for Stories
-      type: object
-      properties:
-        num_related_documents:
-          description: The number of documents related to this Story.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - num_related_documents
-    UpdateGroup:
+    CreateGroup:
       type: object
       properties:
         description:
           maxLength: 4096
-          description: The description of this Group.
+          description: The description of the Group.
           type: string
-        archived:
-          description: Whether or not this Group is archived.
-          type:
-          - boolean
-          - 'null'
         card_aging_mode:
           description: 'The card aging mode for stories in this Group: "gradual" (fixed fade steps at 1, 2, and 4 weeks), "immediate", or "off" (explicitly disabled for this Group). Set to null to inherit the Workspace default.'
           type:
@@ -471,13 +571,11 @@ components:
           - gradual
           - immediate
         color:
-          description: The color you wish to use for the Group in the system.
           pattern: ^#[a-fA-F0-9]{6}$
           format: css-color
+          description: The color you wish to use for the Group in the system.
           minLength: 1
-          type:
-          - string
-          - 'null'
+          type: string
         card_aging_threshold_days:
           description: The number of days an in-progress Story can go without activity before it is considered stale. Required when card_aging_mode is "immediate"; not allowed otherwise.
           type:
@@ -486,9 +584,7 @@ components:
           format: int64
         display_icon_id:
           description: The Icon id for the avatar of this Group.
-          type:
-          - string
-          - 'null'
+          type: string
           format: uuid
         mention_name:
           maxLength: 63
@@ -520,12 +616,6 @@ components:
           - black
           - slate
           - turquoise
-        default_workflow_id:
-          description: The ID of the default workflow for stories created in this group.
-          type:
-          - integer
-          - 'null'
-          format: int64
         member_ids:
           description: The Member ids to add to this Group.
           type: array
@@ -540,58 +630,9 @@ components:
             type: integer
             format: int64
       additionalProperties: false
-    Icon:
-      description: Icons are used to attach images to Groups, Workspaces, Members, and Loading screens in the Shortcut web application.
-      type: object
-      properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        id:
-          description: The unique ID of the Icon.
-          type: string
-          format: uuid
-        created_at:
-          description: The time/date that the Icon was created.
-          type: string
-          format: date-time
-        updated_at:
-          description: The time/date that the Icon was updated.
-          type: string
-          format: date-time
-        url:
-          description: The URL of the Icon.
-          type: string
-      additionalProperties: false
       required:
-      - entity_type
-      - id
-      - created_at
-      - updated_at
-      - url
-    UnusableEntitlementError:
-      type: object
-      properties:
-        reason_tag:
-          description: The tag for violating an entitlement action.
-          type: string
-          enum:
-          - entitlement-violation
-        entitlement_tag:
-          maxLength: 63
-          minLength: 1
-          description: Short tag describing the unusable entitlement action taken by the user.
-          type: string
-        message:
-          maxLength: 256
-          minLength: 1
-          description: Message displayed to the user on why their action failed.
-          type: string
-      additionalProperties: false
-      required:
-      - reason_tag
-      - entitlement_tag
-      - message
+      - mention_name
+      - name
     StorySlim:
       description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
       type: object
@@ -908,119 +949,78 @@ components:
       - comment_ids
       - created_at
       - moved_at
-    CreateGroup:
+    UnusableEntitlementError:
       type: object
       properties:
-        description:
-          maxLength: 4096
-          description: The description of the Group.
+        reason_tag:
+          description: The tag for violating an entitlement action.
           type: string
-        card_aging_mode:
-          description: 'The card aging mode for stories in this Group: "gradual" (fixed fade steps at 1, 2, and 4 weeks), "immediate", or "off" (explicitly disabled for this Group). Set to null to inherit the Workspace default.'
-          type:
-          - string
-          - 'null'
           enum:
-          - 'off'
-          - gradual
-          - immediate
-        color:
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          description: The color you wish to use for the Group in the system.
+          - entitlement-violation
+        entitlement_tag:
+          maxLength: 63
           minLength: 1
+          description: Short tag describing the unusable entitlement action taken by the user.
           type: string
-        card_aging_threshold_days:
-          description: The number of days an in-progress Story can go without activity before it is considered stale. Required when card_aging_mode is "immediate"; not allowed otherwise.
-          type:
-          - integer
-          - 'null'
+        message:
+          maxLength: 256
+          minLength: 1
+          description: Message displayed to the user on why their action failed.
+          type: string
+      additionalProperties: false
+      required:
+      - reason_tag
+      - entitlement_tag
+      - message
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
           format: int64
-        display_icon_id:
-          description: The Icon id for the avatar of this Group.
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
           type: string
-          format: uuid
-        mention_name:
-          maxLength: 63
-          minLength: 1
-          description: The mention name of this Group.
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
           type: string
-        name:
-          maxLength: 63
-          minLength: 1
-          description: The name of this Group.
+        updated_at:
+          description: The time/date when the Story Link was last updated.
           type: string
-        color_key:
-          description: The color key you wish to use for the Group in the system.
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
           type: string
-          enum:
-          - blue
-          - purple
-          - midnight-blue
-          - orange
-          - yellow-green
-          - brass
-          - gray
-          - fuchsia
-          - yellow
-          - pink
-          - sky-blue
-          - green
-          - red
-          - black
-          - slate
-          - turquoise
-        member_ids:
-          description: The Member ids to add to this Group.
-          type: array
-          items:
-            type: string
-            format: uuid
-          uniqueItems: true
-        workflow_ids:
-          description: The Workflow ids to add to the Group.
-          type: array
-          items:
-            type: integer
-            format: int64
+          format: date-time
       additionalProperties: false
       required:
-      - mention_name
-      - name
-    SyncedItem:
-      x-doc-skip: true
-      description: The synced item for the story.
-      type: object
-      properties:
-        external_id:
-          description: The id used to reference an external entity.
-          type: string
-        url:
-          description: The url to the external entity.
-          type: string
-      additionalProperties: false
-      required:
-      - external_id
-      - url
-    StoryCustomField:
-      type: object
-      properties:
-        field_id:
-          description: The unique public ID for a CustomField.
-          type: string
-          format: uuid
-        value_id:
-          description: The unique public ID for a CustomFieldEnumValue.
-          type: string
-          format: uuid
-        value:
-          description: A string representation of the value, if applicable.
-          type: string
-      additionalProperties: false
-      required:
-      - field_id
-      - value_id
-      - value
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
   securitySchemes:
     api_token:
       type: apiKey

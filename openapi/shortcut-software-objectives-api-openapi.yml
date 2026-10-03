@@ -270,93 +270,238 @@ paths:
       - Objectives
 components:
   schemas:
-    EpicStats:
-      description: A group of calculated values for this Epic.
+    UpdateObjective:
+      x-doc-skip: true
       type: object
       properties:
-        num_points_done:
-          description: The total number of completed points in this Epic.
-          type: integer
-          format: int64
-        num_related_documents:
-          description: The total number of documents associated with this Epic.
-          type: integer
-          format: int64
-        num_stories_unstarted:
-          description: The total number of unstarted Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_total:
-          description: The total number of Stories in this Epic.
-          type: integer
-          format: int64
-        last_story_update:
-          description: The date of the last update of a Story in this Epic.
+        description:
+          maxLength: 100000
+          description: The Objective's description.
+          type: string
+        archived:
+          description: A boolean indicating whether the Objective is archived or not
+          type: boolean
+        completed_at_override:
+          description: A manual override for the time/date the Objective was completed.
           type:
           - string
           - 'null'
           format: date-time
-        num_points_started:
-          description: The total number of started points in this Epic.
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of the Objective.
+          type: string
+        state:
+          description: The workflow state that the Objective is in.
+          type: string
+          enum:
+          - in progress
+          - to do
+          - done
+        started_at_override:
+          description: A manual override for the time/date the Objective was started.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        categories:
+          description: An array of IDs of Categories attached to the Objective.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateCategoryParams'
+        before_id:
+          description: The ID of the Objective we want to move this Objective before.
           type: integer
           format: int64
-        num_points_unstarted:
-          description: The total number of unstarted points in this Epic.
-          type: integer
-          format: int64
-        num_stories_started:
-          description: The total number of started Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_unestimated:
-          description: The total number of Stories with no point estimate.
-          type: integer
-          format: int64
-        num_stories_backlog:
-          description: The total number of backlog Stories in this Epic.
-          type: integer
-          format: int64
-        num_points_backlog:
-          description: The total number of backlog points in this Epic.
-          type: integer
-          format: int64
-        num_points:
-          description: The total number of points in this Epic.
-          type: integer
-          format: int64
-        num_stories_done:
-          description: The total number of done Stories in this Epic.
+        after_id:
+          description: The ID of the Objective we want to move this Objective after.
           type: integer
           format: int64
       additionalProperties: false
-      required:
-      - num_points_done
-      - num_related_documents
-      - num_stories_unstarted
-      - num_stories_total
-      - last_story_update
-      - num_points_started
-      - num_points_unstarted
-      - num_stories_started
-      - num_stories_unestimated
-      - num_stories_backlog
-      - num_points_backlog
-      - num_points
-      - num_stories_done
-    EpicAssociatedGroup:
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
       type: object
       properties:
-        group_id:
-          description: The Group ID of the associated group.
+        app_url:
+          description: The Shortcut application url for the Label.
           type: string
-          format: uuid
-        associated_stories_count:
-          description: The number of stories this Group owns in the Epic.
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
           type: integer
           format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
       required:
-      - group_id
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    Category:
+      description: A Category can be used to associate Objectives.
+      type: object
+      properties:
+        archived:
+          description: A true/false boolean indicating if the Category has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Category.
+          type: string
+        global_id:
+          description: The Global ID of the Category.
+          x-doc-skip: true
+          type: string
+        type:
+          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Category was updated.
+          type: string
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Category.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Category was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - type
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    CreateObjective:
+      x-doc-skip: true
+      type: object
+      properties:
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of the Objective.
+          type: string
+        description:
+          maxLength: 100000
+          description: The Objective's description.
+          type: string
+        state:
+          description: The workflow state that the Objective is in.
+          type: string
+          enum:
+          - in progress
+          - to do
+          - done
+        started_at_override:
+          description: A manual override for the time/date the Objective was started.
+          type: string
+          format: date-time
+        completed_at_override:
+          description: A manual override for the time/date the Objective was completed.
+          type: string
+          format: date-time
+        categories:
+          description: An array of IDs of Categories attached to the Objective.
+          type: array
+          items:
+            $ref: '#/components/schemas/CreateCategoryParams'
+      additionalProperties: false
+      required:
+      - name
+    CreateCategoryParams:
+      description: Request parameters for creating a Category with a Objective.
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The name of the new Category.
+          type: string
+        color:
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          description: The hex color to be displayed with the Category (for example, "#ff0000").
+          minLength: 1
+          type: string
+        external_id:
+          maxLength: 128
+          minLength: 1
+          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
+          type: string
+      additionalProperties: false
+      required:
+      - name
     Objective:
       description: An Objective is a collection of Epics that represent a release or some other large initiative that you are working on.
       type: object
@@ -463,91 +608,38 @@ components:
       - position
       - stats
       - created_at
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+    EpicAssociatedGroup:
       type: object
       properties:
-        app_url:
-          description: The Shortcut application url for the Label.
+        group_id:
+          description: The Group ID of the associated group.
           type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
-    ObjectiveStats:
-      description: A group of calculated values for this Objective.
-      type: object
-      properties:
-        average_cycle_time:
-          description: The average cycle time (in seconds) of completed stories in this Objective.
-          type: integer
-          format: int64
-        average_lead_time:
-          description: The average lead time (in seconds) of completed stories in this Objective.
-          type: integer
-          format: int64
-        num_related_documents:
-          description: The number of related documents to this Objective.
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Epic.
           type: integer
           format: int64
       additionalProperties: false
       required:
-      - num_related_documents
+      - group_id
+    CreateObjectiveHealth:
+      x-doc-skip: true
+      type: object
+      properties:
+        status:
+          description: The health status of the Objective.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        text:
+          description: The description of the Health status.
+          type: string
+      additionalProperties: false
+      required:
+      - status
     Health:
       description: The current health status of the Epic.
       type: object
@@ -597,64 +689,6 @@ components:
       - entity_type
       - status
       - id
-    Category:
-      description: A Category can be used to associate Objectives.
-      type: object
-      properties:
-        archived:
-          description: A true/false boolean indicating if the Category has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Category (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Category.
-          type: string
-        global_id:
-          description: The Global ID of the Category.
-          x-doc-skip: true
-          type: string
-        type:
-          description: The type of entity this Category is associated with; currently Milestone or Objective is the only type of Category.
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Category was updated.
-          type: string
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Category.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Category was created.
-          type: string
-          format: date-time
-      additionalProperties: false
-      required:
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - type
-      - updated_at
-      - external_id
-      - id
-      - created_at
     UnusableEntitlementError:
       type: object
       properties:
@@ -678,6 +712,79 @@ components:
       - reason_tag
       - entitlement_tag
       - message
+    EpicStats:
+      description: A group of calculated values for this Epic.
+      type: object
+      properties:
+        num_points_done:
+          description: The total number of completed points in this Epic.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The total number of documents associated with this Epic.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of unstarted Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories in this Epic.
+          type: integer
+          format: int64
+        last_story_update:
+          description: The date of the last update of a Story in this Epic.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        num_points_started:
+          description: The total number of started points in this Epic.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points in this Epic.
+          type: integer
+          format: int64
+        num_stories_started:
+          description: The total number of started Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of backlog Stories in this Epic.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points in this Epic.
+          type: integer
+          format: int64
+        num_points:
+          description: The total number of points in this Epic.
+          type: integer
+          format: int64
+        num_stories_done:
+          description: The total number of done Stories in this Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_points_done
+      - num_related_documents
+      - num_stories_unstarted
+      - num_stories_total
+      - last_story_update
+      - num_points_started
+      - num_points_unstarted
+      - num_stories_started
+      - num_stories_unestimated
+      - num_stories_backlog
+      - num_points_backlog
+      - num_points
+      - num_stories_done
     EpicSlim:
       description: EpicSlim represents the same resource as an Epic but is more light-weight, including all Epic fields except the comments array. The description string can be optionally included. Use the [Get Epic](#Get-Epic) endpoint to fetch the unabridged payload for an Epic.
       type: object
@@ -924,132 +1031,25 @@ components:
       - deadline
       - stats
       - created_at
-    CreateObjectiveHealth:
-      x-doc-skip: true
+    ObjectiveStats:
+      description: A group of calculated values for this Objective.
       type: object
       properties:
-        status:
-          description: The health status of the Objective.
-          type: string
-          enum:
-          - At Risk
-          - On Track
-          - Off Track
-          - No Health
-        text:
-          description: The description of the Health status.
-          type: string
-      additionalProperties: false
-      required:
-      - status
-    CreateObjective:
-      x-doc-skip: true
-      type: object
-      properties:
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The name of the Objective.
-          type: string
-        description:
-          maxLength: 100000
-          description: The Objective's description.
-          type: string
-        state:
-          description: The workflow state that the Objective is in.
-          type: string
-          enum:
-          - in progress
-          - to do
-          - done
-        started_at_override:
-          description: A manual override for the time/date the Objective was started.
-          type: string
-          format: date-time
-        completed_at_override:
-          description: A manual override for the time/date the Objective was completed.
-          type: string
-          format: date-time
-        categories:
-          description: An array of IDs of Categories attached to the Objective.
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateCategoryParams'
-      additionalProperties: false
-      required:
-      - name
-    UpdateObjective:
-      x-doc-skip: true
-      type: object
-      properties:
-        description:
-          maxLength: 100000
-          description: The Objective's description.
-          type: string
-        archived:
-          description: A boolean indicating whether the Objective is archived or not
-          type: boolean
-        completed_at_override:
-          description: A manual override for the time/date the Objective was completed.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The name of the Objective.
-          type: string
-        state:
-          description: The workflow state that the Objective is in.
-          type: string
-          enum:
-          - in progress
-          - to do
-          - done
-        started_at_override:
-          description: A manual override for the time/date the Objective was started.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        categories:
-          description: An array of IDs of Categories attached to the Objective.
-          type: array
-          items:
-            $ref: '#/components/schemas/CreateCategoryParams'
-        before_id:
-          description: The ID of the Objective we want to move this Objective before.
+        average_cycle_time:
+          description: The average cycle time (in seconds) of completed stories in this Objective.
           type: integer
           format: int64
-        after_id:
-          description: The ID of the Objective we want to move this Objective after.
+        average_lead_time:
+          description: The average lead time (in seconds) of completed stories in this Objective.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The number of related documents to this Objective.
           type: integer
           format: int64
       additionalProperties: false
-    CreateCategoryParams:
-      description: Request parameters for creating a Category with a Objective.
-      type: object
-      properties:
-        name:
-          maxLength: 128
-          minLength: 1
-          description: The name of the new Category.
-          type: string
-        color:
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          description: The hex color to be displayed with the Category (for example, "#ff0000").
-          minLength: 1
-          type: string
-        external_id:
-          maxLength: 128
-          minLength: 1
-          description: This field can be set to another unique ID. In the case that the Category has been imported from another tool, the ID in the other tool can be indicated here.
-          type: string
-      additionalProperties: false
       required:
-      - name
+      - num_related_documents
   securitySchemes:
     api_token:
       type: apiKey

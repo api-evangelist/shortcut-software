@@ -32,6 +32,42 @@ paths:
       - Member
 components:
   schemas:
+    MemberInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        is_owner:
+          type: boolean
+        mention_name:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+        workspace2:
+          $ref: '#/components/schemas/BasicWorkspaceInfo'
+        organization2:
+          $ref: '#/components/schemas/MemberInfoOrganization2'
+      additionalProperties: false
+      required:
+      - id
+      - is_owner
+      - mention_name
+      - name
+      - role
+      - workspace2
+      - organization2
+    MemberInfoOrganization2:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+      additionalProperties: false
+      required:
+      - id
     BasicWorkspaceInfo:
       type: object
       properties:
@@ -66,42 +102,6 @@ components:
       - name
       - url_slug
       - utc_offset
-    MemberInfoOrganization2:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-      additionalProperties: false
-      required:
-      - id
-    MemberInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        is_owner:
-          type: boolean
-        mention_name:
-          type: string
-        name:
-          type: string
-        role:
-          type: string
-        workspace2:
-          $ref: '#/components/schemas/BasicWorkspaceInfo'
-        organization2:
-          $ref: '#/components/schemas/MemberInfoOrganization2'
-      additionalProperties: false
-      required:
-      - id
-      - is_owner
-      - mention_name
-      - name
-      - role
-      - workspace2
-      - organization2
   securitySchemes:
     api_token:
       type: apiKey

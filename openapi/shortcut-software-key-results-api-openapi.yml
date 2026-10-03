@@ -73,6 +73,20 @@ paths:
       - Key Results
 components:
   schemas:
+    UpdateKeyResult:
+      type: object
+      properties:
+        name:
+          maxLength: 1024
+          description: The name of the Key Result.
+          type: string
+        initial_observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        observed_value:
+          $ref: '#/components/schemas/KeyResultValue'
+        target_value:
+          $ref: '#/components/schemas/KeyResultValue'
+      additionalProperties: false
     KeyResult:
       type: object
       properties:
@@ -114,20 +128,6 @@ components:
       - current_observed_value
       - current_target_value
       - progress
-    UpdateKeyResult:
-      type: object
-      properties:
-        name:
-          maxLength: 1024
-          description: The name of the Key Result.
-          type: string
-        initial_observed_value:
-          $ref: '#/components/schemas/KeyResultValue'
-        observed_value:
-          $ref: '#/components/schemas/KeyResultValue'
-        target_value:
-          $ref: '#/components/schemas/KeyResultValue'
-      additionalProperties: false
     KeyResultValue:
       description: The starting value of the Key Result.
       type: object
