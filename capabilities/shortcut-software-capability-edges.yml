@@ -1,0 +1,25 @@
+slug: shortcut-software
+provider: Shortcut Software
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Epics
+  spec_file: shortcut-software-epics-api-openapi.yml
+  capability_id: BC-4200.10
+  capability_id_l1: BC-4200
+  capability_name: Product Discovery & Backlog Management
+  confidence: 0.7
+  evidence: POST /api/v3/epics  createEpic  Create Epic; schemas Epic, EpicStats, StorySlim, CreateEpicHealth
+  reason: Full lifecycle management of epics (large backlog items), their comments, stats and health in
+    a software team planning platform — backlog stewardship for software product engineering. Some ambiguity
+    versus generic Project Management (BC-900.30).
