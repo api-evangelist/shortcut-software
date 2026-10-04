@@ -1,24 +1,22 @@
-# Kin Score artifact — shortcut-software — 2026-08-30T220315
+# Kin Score artifact — shortcut-software — 2026-09-24T090406
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: shortcut-software
-  schema_version: 0.17.2
-  scored_at: '2026-08-30'
-  run_ts: 2026-08-30T220315
-  composite: 57.0
+  schema_version: 0.22.0
+  scored_at: '2026-09-24'
+  run_ts: 2026-09-24T090406
+  composite: 58.1
   band: strong
   facets:
     discoverability: 75.9
-    contract_quality: 65.1
-    governance: 18.2
-    operational_transparency: 81.6
-    developer_ergonomics: 54.2
-    commercial_clarity: 47.4
+    contract_quality: 64.2
     contract_governance: 18.2
+    operational_transparency: 81.6
+    developer_ergonomics: 50.6
     access_clarity: 47.4
   agent_readiness:
-    score: 52.0
+    score: 55.6
     band: agent-ready
     band_gated_from: agent-native
     dimensions:
@@ -38,7 +36,7 @@ kin_score:
       agent_card: false
       dry_run_mode: false
       delegated_identity: served
-      protected_resource_metadata: false
+      protected_resource_metadata: verified
       dynamic_client_registration: true
       agentic_commerce: false
   provenance:
