@@ -173,6 +173,36 @@ paths:
       - Files
 components:
   schemas:
+    UpdateFile:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 4096
+          description: The description of the file.
+          type: string
+        created_at:
+          description: The time/date that the file was uploaded.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date that the file was last updated.
+          type: string
+          format: date-time
+        name:
+          maxLength: 1024
+          minLength: 1
+          description: The name of the file.
+          type: string
+        uploader_id:
+          description: The unique ID assigned to the Member who uploaded the file to Shortcut.
+          type: string
+          format: uuid
+        external_id:
+          maxLength: 2048
+          description: An additional ID that you may wish to assign to the file.
+          type: string
+      additionalProperties: false
     UploadedFile:
       description: 'An UploadedFile is any document uploaded to your Shortcut Workspace. Files attached from a third-party service are different: see the Linked Files endpoint.'
       type: object
@@ -274,36 +304,6 @@ components:
       - id
       - url
       - created_at
-    UpdateFile:
-      x-doc-skip: true
-      type: object
-      properties:
-        description:
-          maxLength: 4096
-          description: The description of the file.
-          type: string
-        created_at:
-          description: The time/date that the file was uploaded.
-          type: string
-          format: date-time
-        updated_at:
-          description: The time/date that the file was last updated.
-          type: string
-          format: date-time
-        name:
-          maxLength: 1024
-          minLength: 1
-          description: The name of the file.
-          type: string
-        uploader_id:
-          description: The unique ID assigned to the Member who uploaded the file to Shortcut.
-          type: string
-          format: uuid
-        external_id:
-          maxLength: 2048
-          description: An additional ID that you may wish to assign to the file.
-          type: string
-      additionalProperties: false
   securitySchemes:
     api_token:
       type: apiKey

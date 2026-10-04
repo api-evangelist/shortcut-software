@@ -43,6 +43,55 @@ paths:
       - External Link
 components:
   schemas:
+    TypedStoryLink:
+      description: 'The type of Story Link. The string can be subject or object. '
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        object_id:
+          description: The ID of the object Story.
+          type: integer
+          format: int64
+        verb:
+          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+          type: string
+        type:
+          description: This indicates whether the Story is the subject or object in the Story Link.
+          type: string
+        updated_at:
+          description: The time/date when the Story Link was last updated.
+          type: string
+          format: date-time
+        id:
+          description: The unique identifier of the Story Link.
+          type: integer
+          format: int64
+        subject_id:
+          description: The ID of the subject Story.
+          type: integer
+          format: int64
+        subject_workflow_state_id:
+          description: The workflow state of the "subject" story.
+          x-doc-skip: true
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date when the Story Link was created.
+          type: string
+          format: date-time
+      additionalProperties: false
+      required:
+      - entity_type
+      - object_id
+      - verb
+      - type
+      - updated_at
+      - id
+      - subject_id
+      - subject_workflow_state_id
+      - created_at
     StoryStats:
       description: The stats object for Stories
       type: object
@@ -54,106 +103,6 @@ components:
       additionalProperties: false
       required:
       - num_related_documents
-    StoryCustomField:
-      type: object
-      properties:
-        field_id:
-          description: The unique public ID for a CustomField.
-          type: string
-          format: uuid
-        value_id:
-          description: The unique public ID for a CustomFieldEnumValue.
-          type: string
-          format: uuid
-        value:
-          description: A string representation of the value, if applicable.
-          type: string
-      additionalProperties: false
-      required:
-      - field_id
-      - value_id
-      - value
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Label.
-          type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
-    SyncedItem:
-      x-doc-skip: true
-      description: The synced item for the story.
-      type: object
-      properties:
-        external_id:
-          description: The id used to reference an external entity.
-          type: string
-        url:
-          description: The url to the external entity.
-          type: string
-      additionalProperties: false
-      required:
-      - external_id
-      - url
     StorySlim:
       description: StorySlim represents the same resource as a Story, but is more light-weight. For certain fields it provides ids rather than full resources (e.g., `comment_ids` and `file_ids`) and it also excludes certain aggregate values (e.g., `cycle_time`). The `description` field can be optionally included. Use the [Get Story](#Get-Story) endpoint to fetch the unabridged payload for a Story.
       type: object
@@ -470,55 +419,106 @@ components:
       - comment_ids
       - created_at
       - moved_at
-    TypedStoryLink:
-      description: 'The type of Story Link. The string can be subject or object. '
+    StoryCustomField:
       type: object
       properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
         entity_type:
           description: A string description of this resource.
           type: string
-        object_id:
-          description: The ID of the object Story.
-          type: integer
-          format: int64
-        verb:
-          description: How the subject Story acts on the object Story. This can be "blocks", "duplicates", or "relates to".
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
           type: string
-        type:
-          description: This indicates whether the Story is the subject or object in the Story Link.
+        global_id:
+          x-doc-skip: true
           type: string
         updated_at:
-          description: The time/date when the Story Link was last updated.
-          type: string
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
           format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
         id:
-          description: The unique identifier of the Story Link.
-          type: integer
-          format: int64
-        subject_id:
-          description: The ID of the subject Story.
-          type: integer
-          format: int64
-        subject_workflow_state_id:
-          description: The workflow state of the "subject" story.
-          x-doc-skip: true
+          description: The unique ID of the Label.
           type: integer
           format: int64
         created_at:
-          description: The time/date when the Story Link was created.
-          type: string
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
           format: date-time
       additionalProperties: false
       required:
+      - app_url
+      - description
+      - archived
       - entity_type
-      - object_id
-      - verb
-      - type
+      - color
+      - name
+      - global_id
       - updated_at
+      - external_id
       - id
-      - subject_id
-      - subject_workflow_state_id
       - created_at
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
+      type: object
+      properties:
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
+      additionalProperties: false
+      required:
+      - external_id
+      - url
   securitySchemes:
     api_token:
       type: apiKey

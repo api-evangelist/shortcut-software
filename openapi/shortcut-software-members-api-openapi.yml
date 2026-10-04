@@ -85,35 +85,6 @@ paths:
       - Members
 components:
   schemas:
-    Icon:
-      description: Icons are used to attach images to Groups, Workspaces, Members, and Loading screens in the Shortcut web application.
-      type: object
-      properties:
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        id:
-          description: The unique ID of the Icon.
-          type: string
-          format: uuid
-        created_at:
-          description: The time/date that the Icon was created.
-          type: string
-          format: date-time
-        updated_at:
-          description: The time/date that the Icon was updated.
-          type: string
-          format: date-time
-        url:
-          description: The URL of the Icon.
-          type: string
-      additionalProperties: false
-      required:
-      - entity_type
-      - id
-      - created_at
-      - updated_at
-      - url
     Member:
       description: Details about an individual user within the Workspace.
       type: object
@@ -244,6 +215,35 @@ components:
       - display_icon
       - is_owner
       - email_address
+    Icon:
+      description: Icons are used to attach images to Groups, Workspaces, Members, and Loading screens in the Shortcut web application.
+      type: object
+      properties:
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        id:
+          description: The unique ID of the Icon.
+          type: string
+          format: uuid
+        created_at:
+          description: The time/date that the Icon was created.
+          type: string
+          format: date-time
+        updated_at:
+          description: The time/date that the Icon was updated.
+          type: string
+          format: date-time
+        url:
+          description: The URL of the Icon.
+          type: string
+      additionalProperties: false
+      required:
+      - entity_type
+      - id
+      - created_at
+      - updated_at
+      - url
   securitySchemes:
     api_token:
       type: apiKey

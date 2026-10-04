@@ -143,6 +143,59 @@ paths:
       - Linked Files
 components:
   schemas:
+    CreateLinkedFile:
+      x-doc-skip: true
+      type: object
+      properties:
+        description:
+          maxLength: 512
+          description: The description of the file.
+          type: string
+        story_id:
+          description: The ID of the linked story.
+          type: integer
+          format: int64
+        name:
+          maxLength: 256
+          minLength: 1
+          description: The name of the file.
+          type: string
+        thumbnail_url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of the thumbnail, if the integration provided it.
+          type: string
+        type:
+          description: The integration type of the file (e.g. google, dropbox, box).
+          type: string
+          enum:
+          - google
+          - url
+          - dropbox
+          - box
+          - onedrive
+        size:
+          description: The filesize, if the integration provided it.
+          type: integer
+          format: int64
+        uploader_id:
+          description: The UUID of the member that uploaded the file.
+          type: string
+          format: uuid
+        content_type:
+          maxLength: 128
+          description: The content type of the image (e.g. txt/plain).
+          type: string
+        url:
+          pattern: ^https?://.+$
+          maxLength: 2048
+          description: The URL of linked file.
+          type: string
+      additionalProperties: false
+      required:
+      - name
+      - type
+      - url
     LinkedFile:
       description: Linked files are stored on a third-party website and linked to one or more Stories. Shortcut currently supports linking files from Google Drive, Dropbox, Box, and by URL.
       type: object
@@ -238,59 +291,6 @@ components:
       - id
       - url
       - created_at
-    CreateLinkedFile:
-      x-doc-skip: true
-      type: object
-      properties:
-        description:
-          maxLength: 512
-          description: The description of the file.
-          type: string
-        story_id:
-          description: The ID of the linked story.
-          type: integer
-          format: int64
-        name:
-          maxLength: 256
-          minLength: 1
-          description: The name of the file.
-          type: string
-        thumbnail_url:
-          pattern: ^https?://.+$
-          maxLength: 2048
-          description: The URL of the thumbnail, if the integration provided it.
-          type: string
-        type:
-          description: The integration type of the file (e.g. google, dropbox, box).
-          type: string
-          enum:
-          - google
-          - url
-          - dropbox
-          - box
-          - onedrive
-        size:
-          description: The filesize, if the integration provided it.
-          type: integer
-          format: int64
-        uploader_id:
-          description: The UUID of the member that uploaded the file.
-          type: string
-          format: uuid
-        content_type:
-          maxLength: 128
-          description: The content type of the image (e.g. txt/plain).
-          type: string
-        url:
-          pattern: ^https?://.+$
-          maxLength: 2048
-          description: The URL of linked file.
-          type: string
-      additionalProperties: false
-      required:
-      - name
-      - type
-      - url
     UpdateLinkedFile:
       x-doc-skip: true
       type: object
