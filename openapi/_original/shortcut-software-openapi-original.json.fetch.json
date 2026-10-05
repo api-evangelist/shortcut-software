@@ -1,0 +1,12 @@
+{
+ "url": "https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json",
+ "requested_url": "https://developer.shortcut.com/api/rest/v3/shortcut.swagger.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 522389,
+ "sha256": "471d5312066df3edcf3bffe15b57cb8612839aaf2a6036904f2d95bf26f6b2ec",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
