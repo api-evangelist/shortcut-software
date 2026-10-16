@@ -2,6 +2,27 @@
   "repo": "shortcut-software",
   "feeds": [
     {
+      "source": "https://www.shortcut.com/blog/",
+      "feed_url": "https://www.shortcut.com/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.shortcut.com/blog/rss.xml",
+      "feed_url": "https://www.shortcut.com/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.shortcut.com/blog",
+      "feed_url": "https://www.shortcut.com/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://help.shortcut.com",
       "feed_url": "https://help.shortcut.com",
       "title": "",
@@ -10,5 +31,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
