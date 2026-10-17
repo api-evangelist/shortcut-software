@@ -217,21 +217,6 @@ paths:
       - Labels
 components:
   schemas:
-    SyncedItem:
-      x-doc-skip: true
-      description: The synced item for the story.
-      type: object
-      properties:
-        external_id:
-          description: The id used to reference an external entity.
-          type: string
-        url:
-          description: The url to the external entity.
-          type: string
-      additionalProperties: false
-      required:
-      - external_id
-      - url
     TypedStoryLink:
       description: 'The type of Story Link. The string can be subject or object. '
       type: object
@@ -608,6 +593,93 @@ components:
       - comment_ids
       - created_at
       - moved_at
+    EpicStats:
+      description: A group of calculated values for this Epic.
+      type: object
+      properties:
+        num_points_done:
+          description: The total number of completed points in this Epic.
+          type: integer
+          format: int64
+        num_related_documents:
+          description: The total number of documents associated with this Epic.
+          type: integer
+          format: int64
+        num_stories_unstarted:
+          description: The total number of unstarted Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_total:
+          description: The total number of Stories in this Epic.
+          type: integer
+          format: int64
+        last_story_update:
+          description: The date of the last update of a Story in this Epic.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        num_points_started:
+          description: The total number of started points in this Epic.
+          type: integer
+          format: int64
+        num_points_unstarted:
+          description: The total number of unstarted points in this Epic.
+          type: integer
+          format: int64
+        num_stories_started:
+          description: The total number of started Stories in this Epic.
+          type: integer
+          format: int64
+        num_stories_unestimated:
+          description: The total number of Stories with no point estimate.
+          type: integer
+          format: int64
+        num_stories_backlog:
+          description: The total number of backlog Stories in this Epic.
+          type: integer
+          format: int64
+        num_points_backlog:
+          description: The total number of backlog points in this Epic.
+          type: integer
+          format: int64
+        num_points:
+          description: The total number of points in this Epic.
+          type: integer
+          format: int64
+        num_stories_done:
+          description: The total number of done Stories in this Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - num_points_done
+      - num_related_documents
+      - num_stories_unstarted
+      - num_stories_total
+      - last_story_update
+      - num_points_started
+      - num_points_unstarted
+      - num_stories_started
+      - num_stories_unestimated
+      - num_stories_backlog
+      - num_points_backlog
+      - num_points
+      - num_stories_done
+    EpicAssociatedGroup:
+      type: object
+      properties:
+        group_id:
+          description: The Group ID of the associated group.
+          type: string
+          format: uuid
+        associated_stories_count:
+          description: The number of stories this Group owns in the Epic.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - group_id
     LabelStats:
       description: A group of calculated values for this Label. This is not included if the slim? flag is set to true for the List Labels endpoint.
       type: object
@@ -699,79 +771,21 @@ components:
       - num_stories_in_progress
       - num_points_backlog
       - num_epics_completed
-    EpicStats:
-      description: A group of calculated values for this Epic.
+    SyncedItem:
+      x-doc-skip: true
+      description: The synced item for the story.
       type: object
       properties:
-        num_points_done:
-          description: The total number of completed points in this Epic.
-          type: integer
-          format: int64
-        num_related_documents:
-          description: The total number of documents associated with this Epic.
-          type: integer
-          format: int64
-        num_stories_unstarted:
-          description: The total number of unstarted Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_total:
-          description: The total number of Stories in this Epic.
-          type: integer
-          format: int64
-        last_story_update:
-          description: The date of the last update of a Story in this Epic.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        num_points_started:
-          description: The total number of started points in this Epic.
-          type: integer
-          format: int64
-        num_points_unstarted:
-          description: The total number of unstarted points in this Epic.
-          type: integer
-          format: int64
-        num_stories_started:
-          description: The total number of started Stories in this Epic.
-          type: integer
-          format: int64
-        num_stories_unestimated:
-          description: The total number of Stories with no point estimate.
-          type: integer
-          format: int64
-        num_stories_backlog:
-          description: The total number of backlog Stories in this Epic.
-          type: integer
-          format: int64
-        num_points_backlog:
-          description: The total number of backlog points in this Epic.
-          type: integer
-          format: int64
-        num_points:
-          description: The total number of points in this Epic.
-          type: integer
-          format: int64
-        num_stories_done:
-          description: The total number of done Stories in this Epic.
-          type: integer
-          format: int64
+        external_id:
+          description: The id used to reference an external entity.
+          type: string
+        url:
+          description: The url to the external entity.
+          type: string
       additionalProperties: false
       required:
-      - num_points_done
-      - num_related_documents
-      - num_stories_unstarted
-      - num_stories_total
-      - last_story_update
-      - num_points_started
-      - num_points_unstarted
-      - num_stories_started
-      - num_stories_unestimated
-      - num_stories_backlog
-      - num_points_backlog
-      - num_points
-      - num_stories_done
+      - external_id
+      - url
     EpicSlim:
       description: EpicSlim represents the same resource as an Epic but is more light-weight, including all Epic fields except the comments array. The description string can be optionally included. Use the [Get Epic](#Get-Epic) endpoint to fetch the unabridged payload for an Epic.
       type: object
@@ -1018,6 +1032,116 @@ components:
       - deadline
       - stats
       - created_at
+    LabelSlim:
+      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
+      type: object
+      properties:
+        app_url:
+          description: The Shortcut application url for the Label.
+          type: string
+        description:
+          description: The description of the Label.
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        name:
+          description: The name of the Label.
+          type: string
+        global_id:
+          x-doc-skip: true
+          type: string
+        updated_at:
+          description: The time/date that the Label was updated.
+          type:
+          - string
+          - 'null'
+          format: date-time
+        external_id:
+          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
+          type:
+          - string
+          - 'null'
+        id:
+          description: The unique ID of the Label.
+          type: integer
+          format: int64
+        created_at:
+          description: The time/date that the Label was created.
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+      required:
+      - app_url
+      - description
+      - archived
+      - entity_type
+      - color
+      - name
+      - global_id
+      - updated_at
+      - external_id
+      - id
+      - created_at
+    UpdateLabel:
+      x-doc-skip: true
+      type: object
+      properties:
+        name:
+          maxLength: 128
+          minLength: 1
+          description: The new name of the label.
+          type: string
+        description:
+          maxLength: 1024
+          description: The new description of the label.
+          type: string
+        color:
+          description: The hex color to be displayed with the Label (for example, "#ff0000").
+          pattern: ^#[a-fA-F0-9]{6}$
+          format: css-color
+          minLength: 1
+          type:
+          - string
+          - 'null'
+        archived:
+          description: A true/false boolean indicating if the Label has been archived.
+          type: boolean
+      additionalProperties: false
+    StoryCustomField:
+      type: object
+      properties:
+        field_id:
+          description: The unique public ID for a CustomField.
+          type: string
+          format: uuid
+        value_id:
+          description: The unique public ID for a CustomFieldEnumValue.
+          type: string
+          format: uuid
+        value:
+          description: A string representation of the value, if applicable.
+          type: string
+      additionalProperties: false
+      required:
+      - field_id
+      - value_id
+      - value
     Label:
       description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces.
       type: object
@@ -1086,50 +1210,6 @@ components:
       - external_id
       - id
       - created_at
-    StoryCustomField:
-      type: object
-      properties:
-        field_id:
-          description: The unique public ID for a CustomField.
-          type: string
-          format: uuid
-        value_id:
-          description: The unique public ID for a CustomFieldEnumValue.
-          type: string
-          format: uuid
-        value:
-          description: A string representation of the value, if applicable.
-          type: string
-      additionalProperties: false
-      required:
-      - field_id
-      - value_id
-      - value
-    UpdateLabel:
-      x-doc-skip: true
-      type: object
-      properties:
-        name:
-          maxLength: 128
-          minLength: 1
-          description: The new name of the label.
-          type: string
-        description:
-          maxLength: 1024
-          description: The new description of the label.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-      additionalProperties: false
     CreateLabelParams:
       description: Request parameters for creating a Label on a Shortcut Story.
       type: object
@@ -1157,86 +1237,6 @@ components:
       additionalProperties: false
       required:
       - name
-    LabelSlim:
-      description: A Label can be used to associate and filter Stories and Epics, and also create new Workspaces. A slim Label does not include aggregate stats. Fetch the Label using the labels endpoint to retrieve them.
-      type: object
-      properties:
-        app_url:
-          description: The Shortcut application url for the Label.
-          type: string
-        description:
-          description: The description of the Label.
-          type:
-          - string
-          - 'null'
-        archived:
-          description: A true/false boolean indicating if the Label has been archived.
-          type: boolean
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        color:
-          description: The hex color to be displayed with the Label (for example, "#ff0000").
-          pattern: ^#[a-fA-F0-9]{6}$
-          format: css-color
-          minLength: 1
-          type:
-          - string
-          - 'null'
-        name:
-          description: The name of the Label.
-          type: string
-        global_id:
-          x-doc-skip: true
-          type: string
-        updated_at:
-          description: The time/date that the Label was updated.
-          type:
-          - string
-          - 'null'
-          format: date-time
-        external_id:
-          description: This field can be set to another unique ID. In the case that the Label has been imported from another tool, the ID in the other tool can be indicated here.
-          type:
-          - string
-          - 'null'
-        id:
-          description: The unique ID of the Label.
-          type: integer
-          format: int64
-        created_at:
-          description: The time/date that the Label was created.
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-      required:
-      - app_url
-      - description
-      - archived
-      - entity_type
-      - color
-      - name
-      - global_id
-      - updated_at
-      - external_id
-      - id
-      - created_at
-    EpicAssociatedGroup:
-      type: object
-      properties:
-        group_id:
-          description: The Group ID of the associated group.
-          type: string
-          format: uuid
-        associated_stories_count:
-          description: The number of stories this Group owns in the Epic.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - group_id
   securitySchemes:
     api_token:
       type: apiKey

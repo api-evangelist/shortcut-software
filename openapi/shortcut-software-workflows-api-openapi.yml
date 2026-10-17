@@ -62,6 +62,66 @@ paths:
       - Workflows
 components:
   schemas:
+    Workflow:
+      description: 'Workflow is the array of defined Workflow States. Workflow can be queried using the API but must be updated in the Shortcut UI. '
+      type: object
+      properties:
+        description:
+          description: A description of the workflow.
+          type: string
+        entity_type:
+          description: A string description of this resource.
+          type: string
+        project_ids:
+          description: An array of IDs of projects within the Workflow.
+          type: array
+          items:
+            type: number
+            format: double
+        states:
+          description: A map of the states in this Workflow.
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkflowState'
+        name:
+          description: The name of the workflow.
+          type: string
+        updated_at:
+          description: The date the Workflow was updated.
+          type: string
+          format: date-time
+        auto_assign_owner:
+          description: Indicates if an owner is automatically assigned when an unowned story is started.
+          type: boolean
+        id:
+          description: The unique ID of the Workflow.
+          type: integer
+          format: int64
+        team_id:
+          description: The ID of the team the workflow belongs to.
+          type: integer
+          format: int64
+        created_at:
+          description: The date the Workflow was created.
+          type: string
+          format: date-time
+        default_state_id:
+          description: The unique ID of the default state that new Stories are entered into.
+          type: integer
+          format: int64
+      additionalProperties: false
+      required:
+      - description
+      - entity_type
+      - project_ids
+      - states
+      - name
+      - updated_at
+      - auto_assign_owner
+      - id
+      - team_id
+      - created_at
+      - default_state_id
     WorkflowState:
       description: 'Workflow State is any of the at least 3 columns. Workflow States correspond to one of 3 types: Unstarted, Started, or Done.'
       type: object
@@ -130,66 +190,6 @@ components:
       - num_story_templates
       - position
       - created_at
-    Workflow:
-      description: 'Workflow is the array of defined Workflow States. Workflow can be queried using the API but must be updated in the Shortcut UI. '
-      type: object
-      properties:
-        description:
-          description: A description of the workflow.
-          type: string
-        entity_type:
-          description: A string description of this resource.
-          type: string
-        project_ids:
-          description: An array of IDs of projects within the Workflow.
-          type: array
-          items:
-            type: number
-            format: double
-        states:
-          description: A map of the states in this Workflow.
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkflowState'
-        name:
-          description: The name of the workflow.
-          type: string
-        updated_at:
-          description: The date the Workflow was updated.
-          type: string
-          format: date-time
-        auto_assign_owner:
-          description: Indicates if an owner is automatically assigned when an unowned story is started.
-          type: boolean
-        id:
-          description: The unique ID of the Workflow.
-          type: integer
-          format: int64
-        team_id:
-          description: The ID of the team the workflow belongs to.
-          type: integer
-          format: int64
-        created_at:
-          description: The date the Workflow was created.
-          type: string
-          format: date-time
-        default_state_id:
-          description: The unique ID of the default state that new Stories are entered into.
-          type: integer
-          format: int64
-      additionalProperties: false
-      required:
-      - description
-      - entity_type
-      - project_ids
-      - states
-      - name
-      - updated_at
-      - auto_assign_owner
-      - id
-      - team_id
-      - created_at
-      - default_state_id
   securitySchemes:
     api_token:
       type: apiKey

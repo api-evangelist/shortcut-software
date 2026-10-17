@@ -46,22 +46,6 @@ paths:
       - Health
 components:
   schemas:
-    UpdateHealth:
-      x-doc-skip: true
-      type: object
-      properties:
-        status:
-          description: The health status of the Epic.
-          type: string
-          enum:
-          - At Risk
-          - On Track
-          - Off Track
-          - No Health
-        text:
-          description: The description of the Health status.
-          type: string
-      additionalProperties: false
     Health:
       description: The current health status of the Epic.
       type: object
@@ -111,6 +95,22 @@ components:
       - entity_type
       - status
       - id
+    UpdateHealth:
+      x-doc-skip: true
+      type: object
+      properties:
+        status:
+          description: The health status of the Epic.
+          type: string
+          enum:
+          - At Risk
+          - On Track
+          - Off Track
+          - No Health
+        text:
+          description: The description of the Health status.
+          type: string
+      additionalProperties: false
   securitySchemes:
     api_token:
       type: apiKey
