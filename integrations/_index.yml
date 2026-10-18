@@ -95,7 +95,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: shortcut-software-fivetran
   label: Fivetran
@@ -121,7 +121,7 @@
     - connectors/applications/shortcut
     vendor_link: https://www.shortcut.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: shortcut-software-meltano
   label: Meltano
@@ -153,7 +153,7 @@
     - silver
     - unknown
     builder: 'community (Meltano Hub variant maintainers: edgarrmondragon, envoy)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: shortcut-software-slack-own
   label: Slack (own)
