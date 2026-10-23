@@ -26,6 +26,9 @@ checked:
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
 - atlassian/integrations/atlassian-integration-edges.yml
+- https://ifttt.com/explore/services
+- https://ifttt.com/shortcut
+- https://ifttt.com/sitemap_services.xml
 source:
 - okta/integrations/okta-integration-edges.yml
 edges:
@@ -297,3 +300,28 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: Atlassian Marketplace app
+- partner_name: IFTTT
+  partner: ifttt
+  partner_match: aggregator
+  type: marketplace
+  marketplace: ifttt-services
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://ifttt.com/shortcut
+  category: null
+  contract_reference:
+    register: IFTTT service directory (ifttt.com/explore/services; ifttt.com/<service>)
+    spec_file: null
+    role: ipaas-connector:ifttt
+    registered_name: Shortcut
+    matched_domain: shortcut.com
+    matched_by: domain
+    app_slug: shortcut
+    ifttt_category: Project management & to-dos
+    builder: unknown (the service page does not say who built it)
+    detected_by: sweep-ifttt-services.py
+    detected: '2026-10-23'
+    signal_note: one edge per (provider, platform); triggers, actions and applet counts are context, never read
+  detected_by: sweep-ifttt-services.py
+  first_seen: '2026-10-23'
